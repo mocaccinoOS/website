@@ -1,0 +1,34 @@
+/*
+
+Add styles or override variables from the theme here.
+
+*/
+
+$primary: #6fbef9;
+$secondary: #6f79f9;
+$enable-gradients: true;
+$enable-rounded: false;
+$enable-shadows: true;
+$google_font_name: "Alata";
+$google_font_family: "Alata:300,300i,400,400i,700,700i";
+
+
+.td-box--primary a:hover {
+    color: #eee !important;
+}
+
+.nav-link, .td-box--primary a {
+    color: #292E1E !important;
+}
+
+section a {
+  //  color: #D3FFF3 !important;
+}
+
+.td-sidebar {
+    background-color: #eee !important;
+}
+
+.td-box--dark a {
+    color: #D3FFF3 !important;
+}

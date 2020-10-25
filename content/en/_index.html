@@ -1,0 +1,74 @@
++++
+title = "MocaccinoOS"
+linkTitle = "MocaccinoOS"
+
++++
+
+{{< blocks/cover title="MocaccinoOS" image_anchor="top" height="full" color="orange" >}}
+<div class="mx-auto">
+	<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs" >}}">
+		Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+	</a>
+	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://get.mocaccino.org/minio/mocaccino-iso">
+		Download <i class="fab fa-github ml-2 "></i>
+	</a>
+	<p class="lead mt-5">MocaccinoOS is a minimal Linux meta-Distribution</p>
+	{{< blocks/link-down color="info" >}}
+</div>
+{{< /blocks/cover >}}
+
+
+{{% blocks/lead color="primary" %}}
+MocaccinoOS uses [luet](https://luet-lab.github.io/docs) as Package Manager which is completely static, and it comes with two variants:
+
+* Mocaccino Micro: Musl-based Linux From Scratch using luet. Suited for cloud and docker, but more to come as a Desktop flavor.
+* Mocaccino Portage: Gentoo-based (former Sabayon branch) suited for Desktop environments
+
+{{% /blocks/lead %}}
+
+{{< blocks/section color="dark" >}}
+{{% blocks/feature icon="fa-lightbulb" title="No frills" %}}
+
+MocaccinoOS uses a layered approach for common packages, smoother upgrades so you can focus on the things that matters.
+
+{{% /blocks/feature %}}
+
+
+{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/MocaccinoOS" %}}
+MocaccinoOS is a Work in progress, [step over by our GitHub Organization](https://github.com/MocaccinoOS). New users are always welcome!
+{{% /blocks/feature %}}
+
+
+{{% blocks/feature icon="fab fa-slack" title="Get in touch on Slack!" url="https://join.slack.com/t/luet/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY" %}}
+For discussions, announcements, etc.
+{{% /blocks/feature %}}
+
+
+{{< /blocks/section >}}
+
+{{< blocks/section color="dark" >}}
+<div class="col">
+<h1 class="text-center">Upgrading is not anymore a nightmare</h1>
+<center>You can just focus on your stable system from now on
+</center>
+</div>
+
+{{< /blocks/section >}}
+
+
+{{< blocks/section >}}
+{{% blocks/feature icon="fa-truck" title="Static package manager" %}}
+Static package manager, your system will always be recoverable
+{{% /blocks/feature %}}
+
+
+{{% blocks/feature icon="fa-heartbeat" title="Layers" %}}
+Versioned rootfs as layers, delivered as upgrades or multiple single packages, 
+{{% /blocks/feature %}}
+
+
+{{% blocks/feature icon="fa-magic" title="Build your packages" %}}
+Thanks to the Docker-based package manager, building and sharing packages has never been so easy!
+{{% /blocks/feature %}}
+
+{{< /blocks/section >}}
