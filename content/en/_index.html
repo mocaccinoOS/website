@@ -82,18 +82,41 @@ Thanks to the Docker-based package manager, building and sharing packages has ne
 {{< /blocks/section  >}}
 
 {{< blocks/section color="primary" >}}
-{{% blocks/feature icon="fa-truck" title="Static package manager" %}}
-Versioned rootfs as layers, delivered as upgrades or multiple single packages. You can choose the format you like. Musl? Server variant ? we get you covered
+
+
+{{% blocks/feature icon="fa-magic" title="lxd-compose" %}}
+[lxd-compose](https://github.com/MocaccinoCI/lxd-compose) like docker-compose, but for lxd!
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fa-recycle" title="simplestreams-builder" %}}
+[simplestreams-builder](https://github.com/MottainaiCI/simplestreams-builder) simplifies the process for creating the files and directories tree for exposing LXC/LXD images over simplestreams protocol
 {{% /blocks/feature %}}
 
 
-{{% blocks/feature icon="fa-heartbeat" title="Layers" %}}
-Static package manager, your system will always be recoverable!
+{{% blocks/feature icon="fa-lock" title="Declarative user management" %}}
+With [entities](https://github.com/mudler/entities) users and groups in your systems are formally declared and can be carried over system easily
 {{% /blocks/feature %}}
 
 
-{{% blocks/feature icon="fa-magic" title="Build your packages" %}}
-Thanks to the Docker-based package manager, building and sharing packages has never been so easy!
+
+{{< /blocks/section >}}
+
+
+{{< blocks/section color="primary" >}}
+
+{{% blocks/feature icon="fa-wrench" title="Yip" %}}
+[yip](https://github.com/mudler/yip) is a small-footprint distro-agnostic cloud-init style tool. Statically built which executes and sets Linux system configurations.
 {{% /blocks/feature %}}
+
+
+{{% blocks/feature icon="fa-user-cog" title="Charty" %}}
+[charty](https://github.com/mudler/charty) is a small-footprint templated test-runner. We use it to run QA checks against our packages!
+{{% /blocks/feature %}}
+
+
+{{% blocks/feature icon="fa-truck" title="Luet" %}}
+[luet](https://github.com/mudler/luet) is a small-footprint static Golang package manager. It uses SAT and RL approaches to solve package dependencies.
+{{% /blocks/feature %}}
+
 
 {{< /blocks/section >}}
