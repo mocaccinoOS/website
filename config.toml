@@ -171,4 +171,7 @@ enable = false
 	icon = "fab fa-slack"
         desc = "Chat with other project developers"
 
-
+[[menu.main]]
+    name = "Packages"
+    weight = 50
+    url = "https://packages.mocaccino.org"
