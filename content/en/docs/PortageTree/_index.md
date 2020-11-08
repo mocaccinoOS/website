@@ -8,14 +8,21 @@ weight: 20
 
 [At the moment are available alpha ISO releases](https://get.mocaccino.org/minio/mocaccino-iso).
 
-## Migrating from Entropy systems
 
-You can convert a Sabayon system running Entropy to Mocaccino OS running luet with the following commands as root
+## Migrating from Sabayon systems
+
+{{< alert color="warning" title="Warning" >}}
+Mocacicno and Luet are under active development and should not be considered "production ready" at this time. The following steps should only be carried out on test systems. Do make sure you have any important data backed up before starting a migration.
+{{< /alert >}}
+
+You can convert a Sabayon system (running Entropy) to Mocaccino OS (running luet) with the following commands as root
 
 ```bash
 curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
 luet migrate-entropy
 ```
+
+Migrations have been checked for systems running Sabayon 18.05 and newer. You can check which version of Sabayon you are running with `cat /etc/sabayon-release`.
 
 ## Enabling the Portage Tree layer
 
@@ -34,6 +41,14 @@ luet install system/default-protect
 
 ## Upgrading to the latest packages
 
+Install all available newer packages from the Mocaccino repositories using:
+
 ```bash
 luet upgrade
+```
+
+And finally, review and merge any changes to your configuration files:
+
+```bash
+etc-update
 ```
