@@ -33,12 +33,6 @@ luet install repository/mocaccino-portage-stable
 luet install repository/mocaccino-extra
 ```
 
-For the moment, it is also necessary to install the config file protection package to prevent your config files being replaced during an upgrade. In future, these will be installed automatically.
-
-```bash
-luet install system/default-protect 
-```
-
 ## Upgrading to the latest packages
 
 Install all available newer packages from the Mocaccino repositories using:
