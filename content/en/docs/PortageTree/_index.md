@@ -12,7 +12,7 @@ weight: 20
 ## Migrating from Sabayon systems
 
 {{< alert color="warning" title="Warning" >}}
-Mocacicno and Luet are under active development and should not be considered "production ready" at this time. The following steps should only be carried out on test systems. Do make sure you have any important data backed up before starting a migration.
+Mocaccino and Luet are under active development and should not be considered "production ready" at this time. The following steps should only be carried out on test systems. Do make sure you have any important data backed up before starting a migration.
 {{< /alert >}}
 
 You can convert a Sabayon system (running Entropy) to Mocaccino OS (running luet) with the following commands as root
