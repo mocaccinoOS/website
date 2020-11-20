@@ -46,3 +46,11 @@ And finally, review and merge any changes to your configuration files:
 ```bash
 etc-update
 ```
+
+## Remove cached downloads
+
+If you wish to reclaim the disk space used by the upgrade process (downloaded packages and cached metadata), you can do so using:
+
+```bash
+luet cleanup
+```
