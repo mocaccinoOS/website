@@ -148,12 +148,12 @@ enable = false
 	name = "GitHub"
 	url = "https://github.com/MocaccinoOS"
 	icon = "fab fa-github"
-        desc = "Development takes place here!"
+    desc = "Development takes place here!"
 [[params.links.user]]
-	name = "Community"
+	name = "Discord"
 	url = "https://community.mocaccino.org/"
 	icon = "fab fa-discourse"
-        desc = "Community"
+    desc = "Join our community on Discord!"
 
 
 [[params.links.user]]
@@ -162,16 +162,18 @@ enable = false
 	icon = "fab fa-slack"
         desc = "Chat with other project users"
 
-
-
-
 [[params.links.developer]]
 	name = "Slack"
 	url = "https://join.slack.com/t/luet/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY"
 	icon = "fab fa-slack"
-        desc = "Chat with other project developers"
+        desc = "Chat with us!"
 
 [[menu.main]]
     name = "Packages"
     weight = 50
     url = "https://packages.mocaccino.org"
+
+[[menu.main]]
+    name = "Issue tracker"
+    weight = 10
+    url = "https://github.com/mocaccinoOS/issue-tracker/issues"
