@@ -155,6 +155,11 @@ enable = false
 	icon = "fab fa-discourse"
     desc = "Join our community on Discord!"
 
+[[params.links.user]]
+	name = "Telegram"
+	url = "https://t.me/mocaccinoOS"
+	icon = "fab fa-telegram"
+        desc = "Join us on the official Telegram group!"
 
 [[params.links.user]]
 	name = "Slack"
