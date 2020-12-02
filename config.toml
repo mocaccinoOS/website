@@ -150,10 +150,10 @@ enable = false
 	icon = "fab fa-github"
     desc = "Development takes place here!"
 [[params.links.user]]
-	name = "Discord"
+	name = "Forum"
 	url = "https://community.mocaccino.org/"
 	icon = "fab fa-discourse"
-    desc = "Join our community on Discord!"
+    desc = "Join our community in the Forum!"
 
 [[params.links.user]]
 	name = "Telegram"
