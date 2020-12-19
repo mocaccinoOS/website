@@ -74,6 +74,46 @@
     </item>
     
     <item>
+      <title>Docs: Installation notes</title>
+      <link>https://www.mocaccino.org/docs/micro/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/micro/installation/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+&lt;p&gt;At the moment &lt;code&gt;Micro&lt;/code&gt; images are tested to be bootable with Virtualbox, and can be installed in VMs.&lt;/p&gt;
+&lt;p&gt;To install &lt;code&gt;Micro&lt;/code&gt; on a virtual machine, run &lt;code&gt;mocaccino-unattended-installer&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;default-username&#34;&gt;Default username&lt;/h2&gt;
+&lt;p&gt;The default account is &lt;code&gt;root&lt;/code&gt; with password &lt;code&gt;mocaccino&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ssh-access&#34;&gt;SSH Access&lt;/h2&gt;
+&lt;p&gt;add &lt;code&gt;PermitRootLogin yes&lt;/code&gt; to &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt; with your editor of choice ( for nano, &lt;code&gt;luet install editors/nano&lt;/code&gt; )&lt;/p&gt;
+&lt;p&gt;Start the sshd daemon:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ runit-start sshd
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;You should be able to log-in to your machine, check the ip with &lt;code&gt;ip a&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To enable sshd on boot,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ runit-enable sshd
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Once logged in, remind to change the configuration settings!&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Switching kernels</title>
       <link>https://www.mocaccino.org/docs/micro/kernels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
