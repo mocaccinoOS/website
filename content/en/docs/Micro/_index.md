@@ -21,3 +21,48 @@ To enable them:
 ```bash
 $ luet install repository/mocaccino-extra
 ```
+
+## Init system
+
+The `Micro` and `MicroServer` ISO flavors are using `runit` as `init` system. For ease of use, a __very simple__ helper is provided, and can be used as follows:
+
+### List available services
+
+`runit-list`
+
+### Start a service
+
+`runit-start sshd`
+
+### Stop a service
+
+`runit-stop sshd`
+
+### Enable a service on boot
+
+`runit-enable sshd`
+
+### Disable a service from booting on startup
+
+`runit-disable sshd`
+
+
+## Switching kernels
+
+`Micro` and `MicroServer` images are shipping the latest available Kernel version. It is possible to switch kernels by running `luet kernel-switcher`. 
+
+### Switch to LTS kernels
+
+To switch to LTS kernels, run:
+
+```
+luet kernel-switcher kernel/mocaccino-lts-full
+```
+
+### Switch to main kernels
+
+To switch to main kernels, that gets updated more frequently:
+
+```
+luet kernel-switcher kernel/mocaccino-full
+```
