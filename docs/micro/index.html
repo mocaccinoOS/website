@@ -117,7 +117,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b7ec3801b36ed423a19444bde7e6e02063ab6e4871dd2ed343ff00c948a7cd25080711b42da392b25d4f2f384c0bcf12f7e6be9a91ead643893aa7a7d558bf5f.json"
+  data-offline-search-index-json-src="/offline-search-index.e4dc85ebb35e043b2517cf24e4cec11acc155bcdb2d4ecbb1790284923017d2685245ee6bdf0007ecde44aa82c3b2187b640a69163c6c719bd86183745596f38.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -149,7 +149,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b7ec3801b36ed423a19444bde7e6e02063ab6e4871dd2ed343ff00c948a7cd25080711b42da392b25d4f2f384c0bcf12f7e6be9a91ead643893aa7a7d558bf5f.json"
+  data-offline-search-index-json-src="/offline-search-index.e4dc85ebb35e043b2517cf24e4cec11acc155bcdb2d4ecbb1790284923017d2685245ee6bdf0007ecde44aa82c3b2187b640a69163c6c719bd86183745596f38.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -270,6 +270,27 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#extra-repositories">Extra repositories</a></li>
+    <li><a href="#init-system">Init system</a>
+      <ul>
+        <li><a href="#list-available-services">List available services</a></li>
+        <li><a href="#start-a-service">Start a service</a></li>
+        <li><a href="#stop-a-service">Stop a service</a></li>
+        <li><a href="#enable-a-service-on-boot">Enable a service on boot</a></li>
+        <li><a href="#disable-a-service-from-booting-on-startup">Disable a service from booting on startup</a></li>
+      </ul>
+    </li>
+    <li><a href="#switching-kernels">Switching kernels</a>
+      <ul>
+        <li><a href="#switch-to-lts-kernels">Switch to LTS kernels</a></li>
+        <li><a href="#switch-to-main-kernels">Switch to main kernels</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -327,7 +348,27 @@
 <pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ luet install repository/mocaccino-extra
 </code></pre></td></tr></table>
 </div>
-</div>
+</div><h2 id="init-system">Init system</h2>
+<p>The <code>Micro</code> and <code>MicroServer</code> ISO flavors are using <code>runit</code> as <code>init</code> system. For ease of use, a <strong>very simple</strong> helper is provided, and can be used as follows:</p>
+<h3 id="list-available-services">List available services</h3>
+<p><code>runit-list</code></p>
+<h3 id="start-a-service">Start a service</h3>
+<p><code>runit-start sshd</code></p>
+<h3 id="stop-a-service">Stop a service</h3>
+<p><code>runit-stop sshd</code></p>
+<h3 id="enable-a-service-on-boot">Enable a service on boot</h3>
+<p><code>runit-enable sshd</code></p>
+<h3 id="disable-a-service-from-booting-on-startup">Disable a service from booting on startup</h3>
+<p><code>runit-disable sshd</code></p>
+<h2 id="switching-kernels">Switching kernels</h2>
+<p><code>Micro</code> and <code>MicroServer</code> images are shipping the latest available Kernel version. It is possible to switch kernels by running <code>luet kernel-switcher</code>.</p>
+<h3 id="switch-to-lts-kernels">Switch to LTS kernels</h3>
+<p>To switch to LTS kernels, run:</p>
+<pre><code>luet kernel-switcher kernel/mocaccino-lts-full
+</code></pre><h3 id="switch-to-main-kernels">Switch to main kernels</h3>
+<p>To switch to main kernels, that gets updated more frequently:</p>
+<pre><code>luet kernel-switcher kernel/mocaccino-full
+</code></pre>
         <div class="section-index">
     
     
@@ -346,7 +387,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified December 2, 2020: <a  href="https://github.com/MocaccinoOS/website/commit/2c05ecb35742e508def32d459a8861bf9f4b4e0f">Merge pull request #3 from mocaccinoOS/jcfrosty-patch-1 (2c05ecb)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified December 19, 2020: <a  href="https://github.com/MocaccinoOS/website/commit/42e93367fdd69b795c000f8cee7ec1c68a6997ad">Add few docs on Mocaccino Micro (42e9336)</a>
 </div>
 </div>
 
