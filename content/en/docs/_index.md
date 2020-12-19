@@ -8,8 +8,10 @@ menu:
     weight: 20
 ---
 
-{{% pageinfo color="primary" %}}
+{{< alert color="warning" title="Warning" >}}
 MocaccinoOS and this wiki is a work in progress, please help us improve by opening a PR or filing an issue.
-{{% /pageinfo %}}
+
+Mocaccino and Luet are under active development and should not be considered "production ready" at this time. The steps described in the article are for development only and should only be carried out on test systems.
+{{< /alert >}}
 
 Welcome to the MocaccinoOS wiki!
