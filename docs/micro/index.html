@@ -117,7 +117,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e4dc85ebb35e043b2517cf24e4cec11acc155bcdb2d4ecbb1790284923017d2685245ee6bdf0007ecde44aa82c3b2187b640a69163c6c719bd86183745596f38.json"
+  data-offline-search-index-json-src="/offline-search-index.c0047c9a6a402b6527d74836ef620e67e72e79aa93b6648fe23b949b0cb4d4851162321a6bc4935ac12f3b7d7493ac0ccd14ecee877b35e8f0e48a3044d1d89c.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -149,7 +149,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e4dc85ebb35e043b2517cf24e4cec11acc155bcdb2d4ecbb1790284923017d2685245ee6bdf0007ecde44aa82c3b2187b640a69163c6c719bd86183745596f38.json"
+  data-offline-search-index-json-src="/offline-search-index.c0047c9a6a402b6527d74836ef620e67e72e79aa93b6648fe23b949b0cb4d4851162321a6bc4935ac12f3b7d7493ac0ccd14ecee877b35e8f0e48a3044d1d89c.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -272,7 +272,6 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#extra-repositories">Extra repositories</a></li>
     <li><a href="#init-system">Init system</a>
       <ul>
         <li><a href="#list-available-services">List available services</a></li>
@@ -288,6 +287,7 @@
         <li><a href="#switch-to-main-kernels">Switch to main kernels</a></li>
       </ul>
     </li>
+    <li><a href="#extra-repositories">Extra repositories</a></li>
   </ul>
 </nav>
 
@@ -327,7 +327,14 @@
 	<h1>Mocaccino Micro</h1>
         
 	
-	<p><a href="https://github.com/mocaccinoOS/mocaccino-micro">Mocaccino Micro</a> is a musl-based LFS distribution with a minimal set of packages in order to boot and build an entire OS.</p>
+	
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Warning</h4>
+Mocaccino and Luet are under active development and should not be considered &ldquo;production ready&rdquo; at this time. The following steps should only be carried out on test systems. Do make sure you have any important data backed up before.
+</div>
+
+<p><a href="https://github.com/mocaccinoOS/mocaccino-micro">Mocaccino Micro</a> is a musl-based LFS distribution with a minimal set of packages in order to boot and build an entire OS.</p>
 <p><a href="https://get.mocaccino.org/minio/mocaccino-iso">At the moment are available alpha ISO releases</a>, and the following <a href="https://quay.io/repository/mocaccino/micro">docker images</a> can be used:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -337,7 +344,70 @@
 <pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker pull quay.io/mocaccino/micro
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="extra-repositories">Extra repositories</h2>
+</div><h2 id="init-system">Init system</h2>
+<p>The <code>Micro</code> and <code>MicroServer</code> ISO flavors are using <code>runit</code> as <code>init</code> system. For ease of use, a <strong>very simple</strong> helper is provided, and can be used as follows:</p>
+<h3 id="list-available-services">List available services</h3>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ runit-list
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="start-a-service">Start a service</h3>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ runit-start sshd
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="stop-a-service">Stop a service</h3>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ runit-stop sshd
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="enable-a-service-on-boot">Enable a service on boot</h3>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ runit-enable sshd
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="disable-a-service-from-booting-on-startup">Disable a service from booting on startup</h3>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ runit-disable sshd
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="switching-kernels">Switching kernels</h2>
+<p><code>Micro</code> and <code>MicroServer</code> images are shipping the latest available Kernel version. It is possible to switch kernels by running <code>luet kernel-switcher</code>.</p>
+<p><code>kernel-switcher</code> is a luet extension, and is shipped by <code>system/luet-extensions</code>.</p>
+<h3 id="switch-to-lts-kernels">Switch to LTS kernels</h3>
+<p>To switch to LTS kernels, run:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ luet kernel-switcher kernel/mocaccino-lts-full
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="switch-to-main-kernels">Switch to main kernels</h3>
+<p>To switch to main kernels, that gets updated more frequently:</p>
+<pre><code>$ luet kernel-switcher kernel/mocaccino-full
+</code></pre><h2 id="extra-repositories">Extra repositories</h2>
 <p>Additional packages are available in the <a href="https://github.com/mocaccinoOS/mocaccino-extra">mocaccino-extra</a> repositories.</p>
 <p>To enable them:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -348,27 +418,7 @@
 <pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ luet install repository/mocaccino-extra
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="init-system">Init system</h2>
-<p>The <code>Micro</code> and <code>MicroServer</code> ISO flavors are using <code>runit</code> as <code>init</code> system. For ease of use, a <strong>very simple</strong> helper is provided, and can be used as follows:</p>
-<h3 id="list-available-services">List available services</h3>
-<p><code>runit-list</code></p>
-<h3 id="start-a-service">Start a service</h3>
-<p><code>runit-start sshd</code></p>
-<h3 id="stop-a-service">Stop a service</h3>
-<p><code>runit-stop sshd</code></p>
-<h3 id="enable-a-service-on-boot">Enable a service on boot</h3>
-<p><code>runit-enable sshd</code></p>
-<h3 id="disable-a-service-from-booting-on-startup">Disable a service from booting on startup</h3>
-<p><code>runit-disable sshd</code></p>
-<h2 id="switching-kernels">Switching kernels</h2>
-<p><code>Micro</code> and <code>MicroServer</code> images are shipping the latest available Kernel version. It is possible to switch kernels by running <code>luet kernel-switcher</code>.</p>
-<h3 id="switch-to-lts-kernels">Switch to LTS kernels</h3>
-<p>To switch to LTS kernels, run:</p>
-<pre><code>luet kernel-switcher kernel/mocaccino-lts-full
-</code></pre><h3 id="switch-to-main-kernels">Switch to main kernels</h3>
-<p>To switch to main kernels, that gets updated more frequently:</p>
-<pre><code>luet kernel-switcher kernel/mocaccino-full
-</code></pre>
+</div>
         <div class="section-index">
     
     
@@ -387,7 +437,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified December 19, 2020: <a  href="https://github.com/MocaccinoOS/website/commit/42e93367fdd69b795c000f8cee7ec1c68a6997ad">Add few docs on Mocaccino Micro (42e9336)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified December 19, 2020: <a  href="https://github.com/MocaccinoOS/website/commit/1a17b2df281b36fe8befb15918f37866e90b1513">Update _index.md (1a17b2d)</a>
 </div>
 </div>
 
