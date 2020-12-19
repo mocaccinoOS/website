@@ -68,7 +68,7 @@ $ luet kernel-switcher kernel/mocaccino-lts-full
 
 To switch to main kernels, that gets updated more frequently:
 
-```
+```bash
 $ luet kernel-switcher kernel/mocaccino-full
 ```
 
