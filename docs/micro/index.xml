@@ -422,7 +422,8 @@ quay.io/mocaccino/extra   latest              ce197d5b1a7e        &lt;span style
         
         
         &lt;h1 id=&#34;setup&#34;&gt;Setup&lt;/h1&gt;
-&lt;p&gt;First install &lt;code&gt;container/docker&lt;/code&gt;, or directly &lt;code&gt;runit-srv/docker&lt;/code&gt;, which provides the &lt;code&gt;runit&lt;/code&gt; service:&lt;/p&gt;
+&lt;p&gt;Wireguard comes embedded in the Mocaccino Kernels.&lt;/p&gt;
+&lt;p&gt;First install wireguard-tools and the &lt;code&gt;wg&lt;/code&gt; runit service:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
