@@ -7,7 +7,6 @@
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://www.mocaccino.org/docs/portagetree/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,16 +20,22 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Mocaccino Portage | MocaccinoOS</title><meta property="og:title" content="Mocaccino Portage" />
-<meta property="og:description" content="what&#39;s after a good Sabayon?" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.mocaccino.org/docs/portagetree/" />
-<meta property="og:site_name" content="MocaccinoOS" />
-<meta itemprop="name" content="Mocaccino Portage">
-<meta itemprop="description" content="what&#39;s after a good Sabayon?">
+<title>Running wireguard | MocaccinoOS</title><meta property="og:title" content="Running wireguard" />
+<meta property="og:description" content="Running Wireguard on Mocaccino Micro" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.mocaccino.org/docs/micro/wireguard/" />
+<meta property="article:modified_time" content="2020-12-21T00:34:17+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta itemprop="name" content="Running wireguard">
+<meta itemprop="description" content="Running Wireguard on Mocaccino Micro">
+<meta itemprop="dateModified" content="2020-12-21T00:34:17+01:00" />
+<meta itemprop="wordCount" content="110">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Mocaccino Portage"/>
-<meta name="twitter:description" content="what&#39;s after a good Sabayon?"/>
+<meta name="twitter:title" content="Running wireguard"/>
+<meta name="twitter:description" content="Running Wireguard on Mocaccino Micro"/>
 
 
 
@@ -56,7 +61,7 @@
 
 
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -189,10 +194,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/micro/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Mocaccino Micro</a>
+    <a  href="/docs/micro/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Mocaccino Micro</a>
   </li>
   <ul>
-    <li class="collapse " id="docsmicro">
+    <li class="collapse show" id="docsmicro">
       
       
       
@@ -229,7 +234,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsmicrowireguard" href="/docs/micro/wireguard/">Wireguard</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsmicrowireguard" href="/docs/micro/wireguard/">Wireguard</a>
       
       
     </li>
@@ -248,10 +253,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/portagetree/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Mocaccino Portage</a>
+    <a  href="/docs/portagetree/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Mocaccino Portage</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsportagetree">
+    <li class="collapse " id="docsportagetree">
       
       
       
@@ -292,9 +297,9 @@
 
 
 
-<a href="https://github.com/MocaccinoOS/website/edit/master/content/en/docs/PortageTree/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/MocaccinoOS/website/new/master/content/en/docs/PortageTree/_index.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-<a href="https://github.com/MocaccinoOS/website/issues/new?title=Mocaccino%20Portage" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/MocaccinoOS/website/edit/master/content/en/docs/Micro/wireguard.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/MocaccinoOS/website/new/master/content/en/docs/Micro/wireguard.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/MocaccinoOS/website/issues/new?title=Running%20wireguard" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/MocaccinoOS/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -305,15 +310,6 @@
 
 
 
-
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#migrating-from-sabayon-systems">Migrating from Sabayon systems</a></li>
-    <li><a href="#enabling-the-portage-tree-layer">Enabling the Portage Tree layer</a></li>
-    <li><a href="#upgrading-to-the-latest-packages">Upgrading to the latest packages</a></li>
-    <li><a href="#remove-cached-downloads">Remove cached downloads</a></li>
-  </ul>
-</nav>
 
 
 
@@ -332,6 +328,9 @@
 
 
 
+
+
+
 <li class="breadcrumb-item" >
 	<a href="https://www.mocaccino.org/docs/">Documentation</a>
 </li>
@@ -339,8 +338,15 @@
 
 
 
+<li class="breadcrumb-item" >
+	<a href="https://www.mocaccino.org/docs/micro/">Mocaccino Micro</a>
+</li>
+
+
+
+
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://www.mocaccino.org/docs/portagetree/">Mocaccino Portage</a>
+	<a href="https://www.mocaccino.org/docs/micro/wireguard/">Wireguard</a>
 </li>
 
 	</ol>
@@ -348,106 +354,50 @@
 
             
 <div class="td-content">
-	<h1>Mocaccino Portage</h1>
-        
-	
-	<p><a href="https://github.com/mocaccinoOS/portage-tree">Mocaccino Portage</a> is a Gentoo-based distribution (derived from Sabayon) oriented towards Desktop systems.</p>
-<p><a href="https://get.mocaccino.org/minio/mocaccino-iso">At the moment are available alpha ISO releases</a>.</p>
-<h2 id="migrating-from-sabayon-systems">Migrating from Sabayon systems</h2>
-
-
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Warning</h4>
-Mocaccino and Luet are under active development and should not be considered &ldquo;production ready&rdquo; at this time. The following steps should only be carried out on test systems. Do make sure you have any important data backed up before starting a migration.
-</div>
-
-<p>You can convert a Sabayon system (running Entropy) to Mocaccino OS (running luet) with the following commands as root</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
-luet migrate-entropy
-</code></pre></td></tr></table>
-</div>
-</div><p>Migrations have been checked for systems running Sabayon 18.05 and newer. You can check which version of Sabayon you are running with <code>cat /etc/sabayon-release</code>.</p>
-<h2 id="enabling-the-portage-tree-layer">Enabling the Portage Tree layer</h2>
-<p>Once converted to Mocaccino OS, you will want to enable the Mocaccino Repositories</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">luet install repository/mocaccino-portage-stable
-luet install repository/mocaccino-extra
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="upgrading-to-the-latest-packages">Upgrading to the latest packages</h2>
-<p>Install all available newer packages from the Mocaccino repositories using:</p>
+	<h1>Running wireguard</h1>
+    <div class="lead">Running Wireguard on Mocaccino Micro</div>
+	       
+	<h1 id="setup">Setup</h1>
+<p>First install <code>container/docker</code>, or directly <code>runit-srv/docker</code>, which provides the <code>runit</code> service:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">luet upgrade
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ luet install runit-srv/wg networking/wireguard-tools
 </code></pre></td></tr></table>
 </div>
-</div><p>And finally, review and merge any changes to your configuration files:</p>
+</div><p>By default, the service sets up the <code>wg0</code> interface, with configuration at <code>/etc/wireguard/wg0.conf</code>.</p>
+<p>Edit <code>/etc/wireguard/wg0.conf</code> with your configuration, or to change the default interface configuration, change the <code>/etc/sv/wg/conf</code> file accordingly.</p>
+<p>To start wg, just:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">etc-update
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ runit-start wg
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="remove-cached-downloads">Remove cached downloads</h2>
-<p>If you wish to reclaim the disk space used by the upgrade process (downloaded packages and cached metadata), you can do so using:</p>
+</div><p>or to enable at boot:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">luet cleanup
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ runit-enable wg
 </code></pre></td></tr></table>
 </div>
-</div>
-        <div class="section-index">
-    
-    
-    
-    
-    <hr class="panel-line">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    
-</div>
+</div><p>Now you should be able to see the wg interface with <code>wg show</code>.</p>
+<h2 id="multiple-connections">Multiple connections</h2>
+<p>For multiple connections, copy the <code>/etc/sv/wg/</code> service directory to your custom one, for example <code>/etc/sv/wg2</code> and tweak it accordingly to your needs.
+You can start it afterwards with <code>runit-start wg2</code></p>
 
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">Last modified December 21, 2020: <a  href="https://github.com/MocaccinoOS/website/commit/8659a57044601bf273d6707bbce3fcc2982ced3d">Create wireguard.md (8659a57)</a>
 </div>
 </div>
+
 
           </main>
         </div>
