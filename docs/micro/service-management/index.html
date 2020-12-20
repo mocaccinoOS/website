@@ -20,21 +20,21 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Init system | MocaccinoOS</title><meta property="og:title" content="Init system" />
+<title>Service Management and Init | MocaccinoOS</title><meta property="og:title" content="Service Management and Init" />
 <meta property="og:description" content="Service management on Mocaccino Micro" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.mocaccino.org/docs/micro/init/" />
-<meta property="article:modified_time" content="2020-12-20T01:10:08+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
-<meta itemprop="name" content="Init system">
+<meta property="og:url" content="https://www.mocaccino.org/docs/micro/service-management/" />
+<meta property="article:modified_time" content="2020-12-20T20:57:23+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta itemprop="name" content="Service Management and Init">
 <meta itemprop="description" content="Service management on Mocaccino Micro">
-<meta itemprop="dateModified" content="2020-12-20T01:10:08+01:00" />
-<meta itemprop="wordCount" content="94">
+<meta itemprop="dateModified" content="2020-12-20T20:57:23+01:00" />
+<meta itemprop="wordCount" content="268">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Init system"/>
+<meta name="twitter:title" content="Service Management and Init"/>
 <meta name="twitter:description" content="Service management on Mocaccino Micro"/>
 
 
@@ -122,7 +122,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.16016cac53142fae40587cc0ca6a781efbcafc4d53c9043324f1c7aa3f6b89efaa9a605222af2725f88b2619c5ecd30f1c994ae346fcc8eef1ee227f323dd602.json"
+  data-offline-search-index-json-src="/offline-search-index.f1236828581fb234b485c82cc946c893685afc7040d644102e144723629c0bf59c166c86cbcef637ab2dd1d731007a940a2bcfc1afbe72c1bcc8d24cd0fa56bc.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.16016cac53142fae40587cc0ca6a781efbcafc4d53c9043324f1c7aa3f6b89efaa9a605222af2725f88b2619c5ecd30f1c994ae346fcc8eef1ee227f323dd602.json"
+  data-offline-search-index-json-src="/offline-search-index.f1236828581fb234b485c82cc946c893685afc7040d644102e144723629c0bf59c166c86cbcef637ab2dd1d731007a940a2bcfc1afbe72c1bcc8d24cd0fa56bc.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -204,7 +204,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsmicroinit" href="/docs/micro/init/">Init system</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsmicroservice-management" href="/docs/micro/service-management/">Init and Services</a>
       
       
       
@@ -285,9 +285,9 @@
 
 
 
-<a href="https://github.com/MocaccinoOS/website/edit/master/content/en/docs/Micro/init.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/MocaccinoOS/website/new/master/content/en/docs/Micro/init.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-<a href="https://github.com/MocaccinoOS/website/issues/new?title=Init%20system" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/MocaccinoOS/website/edit/master/content/en/docs/Micro/service-management.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/MocaccinoOS/website/new/master/content/en/docs/Micro/service-management.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/MocaccinoOS/website/issues/new?title=Service%20Management%20and%20Init" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/MocaccinoOS/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -309,6 +309,12 @@
         <li><a href="#enable-a-service-on-boot">Enable a service on boot</a></li>
         <li><a href="#disable-a-service-from-booting-on-startup">Disable a service from booting on startup</a></li>
         <li><a href="#boot-scripts">Boot scripts</a></li>
+      </ul>
+    </li>
+    <li><a href="#yip-integration">Yip Integration</a>
+      <ul>
+        <li><a href="#recurring-yip-files">Recurring yip files</a></li>
+        <li><a href="#specifing-yip-files-from-boot">Specifing yip files from boot</a></li>
       </ul>
     </li>
   </ul>
@@ -349,7 +355,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://www.mocaccino.org/docs/micro/init/">Init system</a>
+	<a href="https://www.mocaccino.org/docs/micro/service-management/">Init and Services</a>
 </li>
 
 	</ol>
@@ -357,7 +363,7 @@
 
             
 <div class="td-content">
-	<h1>Init system</h1>
+	<h1>Service Management and Init</h1>
     <div class="lead">Service management on Mocaccino Micro</div>
 	       
 	<h2 id="init-system">Init system</h2>
@@ -418,10 +424,83 @@
 <pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;modprobe e1000e&#34;</span> &gt; /etc/runit/core-services/modules.sh
 </code></pre></td></tr></table>
 </div>
+</div><h2 id="yip-integration">Yip Integration</h2>
+<p>Mocaccino Micro can be configured to execute <code>yipfiles</code> during different stages.</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ luet install runit-srv/yip
+</code></pre></td></tr></table>
 </div>
+</div><p>To start the <code>yip</code> service:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ runit-start yip
+</code></pre></td></tr></table>
+</div>
+</div><p>To Enable yip on boot:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ runit-enable yip
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="recurring-yip-files">Recurring yip files</h3>
+<p>The yip service runs periodically yip files in <code>/etc/yip.d</code> or in <code>/etc/yip.yaml</code> on the system.</p>
+<p>For example, by creating a yip file as <code>/etc/yip.d/sshd.yaml</code>:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;sshd&#34;</span><span style="color:#666">
+</span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">stages</span>:<span style="color:#666">
+</span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">reconcile</span>:<span style="color:#666">
+</span><span style="color:#666">       </span>- <span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;sshd_config setup&#34;</span><span style="color:#666">
+</span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">commands</span>:<span style="color:#666"> 
+</span><span style="color:#666">          </span>- chmod<span style="color:#666"> </span><span style="color:#3677a9">644</span><span style="color:#666"> </span>/etc/ssh/sshd_config<span style="color:#666">
+</span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">files</span>:<span style="color:#666">
+</span><span style="color:#666">          </span>- <span style="color:#6ab825;font-weight:bold">path</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;/etc/ssh/sshd_config&#34;</span><span style="color:#666">
+</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">owner</span>:<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666">
+</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">group</span>:<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666">
+</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">permission</span>:<span style="color:#666"> </span><span style="color:#3677a9">644</span><span style="color:#666">
+</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">content</span>:<span style="color:#666"> </span><span style="color:#ed9d13">|
+</span><span style="color:#ed9d13">                      AuthorizedKeysFile %h/.ssh/authorized_keys</span><span style="color:#666">
+</span><span style="color:#666">                      </span>PermitRootLogin<span style="color:#666"> </span>yes<span style="color:#666">
+</span><span style="color:#666">                      </span>ListenAddress<span style="color:#666"> </span><span style="color:#3677a9">0.0.0.0</span><span style="color:#666">
+</span></code></pre></td></tr></table>
+</div>
+</div><p><code>yip</code> will make sure and keep sshd configured.</p>
+<p>There are two stages currently supported: <code>reconcile</code> and <code>boot</code>. The <code>boot</code> <code>yip</code> stage is run at start, during runit initialization, while the <code>reconcile</code> is called periodically.</p>
+<p>For more information about yip, <a href="https://github.com/mudler/yip">check here</a></p>
+<h3 id="specifing-yip-files-from-boot">Specifing yip files from boot</h3>
+<p>It is also possible to use <code>yip</code> to automatically configure the system from boot.</p>
+<p>Add <code>yip=...</code> to the boot command lines to specify the <code>yip</code> file to execute across the stages (can be a path to a local file, or either a URL)</p>
+
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified December 20, 2020: <a  href="https://github.com/MocaccinoOS/website/commit/021486e31d6a2daf87c712ba9e4e6f766e1b6f72">Update init.md (021486e)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified December 20, 2020: <a  href="https://github.com/MocaccinoOS/website/commit/e897812fe896231ae943925a5e4893cf1131bd85">Update and rename init.md to service-management.md (e897812)</a>
 </div>
 </div>
 
