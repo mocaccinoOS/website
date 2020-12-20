@@ -40,3 +40,7 @@ $ runit-enable sshd
 ```bash
 $ runit-disable sshd
 ```
+
+### Boot scripts
+
+It's possible to add scripts to be executed during boot execution, under `/etc/runit/core-services/*.sh`.
