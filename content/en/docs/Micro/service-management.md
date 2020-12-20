@@ -70,9 +70,9 @@ To Enable yip on boot:
 $ runit-enable yip
 ```
 
-### Recurring yip files
+### Yip files running periodically
 
-The yip service runs periodically yip files in `/etc/yip.d` or in `/etc/yip.yaml` on the system. 
+The yip service runs periodically yip files in `/etc/yip.d`, `/etc/yip.yaml` and from the boot cmdline on the system. 
 
 For example, by creating a yip file as `/etc/yip.d/sshd.yaml`:
 
@@ -80,18 +80,18 @@ For example, by creating a yip file as `/etc/yip.d/sshd.yaml`:
 name: "sshd"
 stages:
   reconcile:
-       -  name: "sshd_config setup"
-          commands: 
-          - chmod 644 /etc/ssh/sshd_config
-          files:
-          - path: "/etc/ssh/sshd_config"
-            owner: 0
-            group: 0
-            permission: 644
-            content: |
-                      AuthorizedKeysFile %h/.ssh/authorized_keys
-                      PermitRootLogin yes
-                      ListenAddress 0.0.0.0
+  -  name: "sshd_config setup"
+     commands: 
+     - chmod 644 /etc/ssh/sshd_config
+     files:
+     - path: "/etc/ssh/sshd_config"
+       owner: 0
+       group: 0
+       permission: 644
+       content: |
+                 AuthorizedKeysFile %h/.ssh/authorized_keys
+                 PermitRootLogin yes
+                 ListenAddress 0.0.0.0
 ```
 
 `yip` will make sure and keep sshd configured.
