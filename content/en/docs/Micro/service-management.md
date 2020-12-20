@@ -99,7 +99,7 @@ stages:
 
 There are two stages currently supported: `reconcile` and `boot`. The `boot` `yip` stage is run at start, during runit initialization, while the `reconcile` is called periodically.
 
-For more information about yip, [check here](https://github.com/mudler/yip)
+For more information about yip, [check here](https://github.com/mudler/yip). To see a sample `/etc/yip.d` control-repo [check here](https://github.com/mocaccinoOS/yipcontrol-sample).
 
 ### Specifing yip files from boot
 
@@ -107,3 +107,7 @@ It is also possible to use `yip` to automatically configure the system from boot
 
 Add `yip=...` to the boot command lines to specify the `yip` file to execute across the stages (can be a path to a local file, or either a URL)
 
+
+## Examples
+
+-  [yipcontrol-sample](https://github.com/mocaccinoOS/yipcontrol-sample)
