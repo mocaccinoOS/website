@@ -11,7 +11,7 @@ description: >-
 First install `container/docker`, or directly `runit-srv/docker`, which provides the `runit` service:
 
 ```bash
-$ luet install runit-srv/docker
+$ luet install runit-srv/dockerd
 ```
 
 To start dockerd, just:
