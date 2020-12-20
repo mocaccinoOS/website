@@ -69,7 +69,9 @@
 &lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ runit-disable sshd
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;boot-scripts&#34;&gt;Boot scripts&lt;/h3&gt;
+&lt;p&gt;It&amp;rsquo;s possible to add scripts to be executed during boot execution, under &lt;code&gt;/etc/runit/core-services/*.sh&lt;/code&gt;.&lt;/p&gt;
+
       </description>
     </item>
     
