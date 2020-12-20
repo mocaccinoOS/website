@@ -8,7 +8,9 @@ description: >-
 
 # Setup
 
-First install `container/docker`, or directly `runit-srv/docker`, which provides the `runit` service:
+Wireguard comes embedded in the Mocaccino Kernels.
+
+First install wireguard-tools and the `wg` runit service:
 
 ```bash
 $ luet install runit-srv/wg networking/wireguard-tools
