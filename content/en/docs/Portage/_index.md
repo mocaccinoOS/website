@@ -2,6 +2,8 @@
 title: "Mocaccino Portage"
 linkTitle: "Mocaccino Portage"
 weight: 20
+description: >-
+     MocaccinoOS variant based from Portage
 ---
 
 [Mocaccino Portage](https://github.com/mocaccinoOS/portage-tree) is a Gentoo-based distribution (derived from Sabayon) oriented towards Desktop systems.
