@@ -97,7 +97,7 @@ stages:
 `yip` will make sure and keep sshd configured.
 
 
-There are two stages currently supported: `reconcile` and `boot`. The `boot` `yip` stage is run at start, during runit initialization, while the `reconcile` is called periodically.
+There are two stages currently supported: `reconcile` and `boot`. The `boot` `yip` stage is run at start, during runit initialization, while the `reconcile` is called periodically. You can also run `yip-reconcile` to trigger the execution manually.
 
 For more information about yip, [check here](https://github.com/mudler/yip). To see a sample `/etc/yip.d` control-repo [check here](https://github.com/mocaccinoOS/yipcontrol-sample).
 
