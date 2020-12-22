@@ -148,7 +148,7 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;code&gt;yip&lt;/code&gt; will make sure and keep sshd configured.&lt;/p&gt;
-&lt;p&gt;There are two stages currently supported: &lt;code&gt;reconcile&lt;/code&gt; and &lt;code&gt;boot&lt;/code&gt;. The &lt;code&gt;boot&lt;/code&gt; &lt;code&gt;yip&lt;/code&gt; stage is run at start, during runit initialization, while the &lt;code&gt;reconcile&lt;/code&gt; is called periodically.&lt;/p&gt;
+&lt;p&gt;There are two stages currently supported: &lt;code&gt;reconcile&lt;/code&gt; and &lt;code&gt;boot&lt;/code&gt;. The &lt;code&gt;boot&lt;/code&gt; &lt;code&gt;yip&lt;/code&gt; stage is run at start, during runit initialization, while the &lt;code&gt;reconcile&lt;/code&gt; is called periodically. You can also run &lt;code&gt;yip-reconcile&lt;/code&gt; to trigger the execution manually.&lt;/p&gt;
 &lt;p&gt;For more information about yip, &lt;a href=&#34;https://github.com/mudler/yip&#34;&gt;check here&lt;/a&gt;. To see a sample &lt;code&gt;/etc/yip.d&lt;/code&gt; control-repo &lt;a href=&#34;https://github.com/mocaccinoOS/yipcontrol-sample&#34;&gt;check here&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;specifing-yip-files-from-boot&#34;&gt;Specifing yip files from boot&lt;/h3&gt;
 &lt;p&gt;It is also possible to use &lt;code&gt;yip&lt;/code&gt; to automatically configure the system from boot.&lt;/p&gt;
