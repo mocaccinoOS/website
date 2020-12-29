@@ -32,7 +32,7 @@ Once converted to Mocaccino OS, you will want to enable the Mocaccino Repositori
 
 ```bash
 luet install repository/mocaccino-portage-stable
-luet install repository/mocaccino-extra
+luet install repository/mocaccino-extra-stable
 ```
 
 ## Upgrading to the latest packages
