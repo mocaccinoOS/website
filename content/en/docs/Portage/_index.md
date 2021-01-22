@@ -8,7 +8,7 @@ description: >-
 
 [Mocaccino Portage](https://github.com/mocaccinoOS/portage-tree) is a Gentoo-based distribution (derived from Sabayon) oriented towards Desktop systems.
 
-[At the moment are available alpha ISO releases](https://get.mocaccino.org/minio/mocaccino-iso).
+[At the moment are available alpha ISO releases](https://get.mocaccino.org/minio/mocaccino-iso). The user is "root", the password is "mocaccino".
 
 
 ## Migrating from Sabayon systems
