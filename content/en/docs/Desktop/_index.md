@@ -49,7 +49,7 @@ luet migrate-entropy
 
 Migrations have been checked for systems running Sabayon 18.05 and newer. You can check which version of Sabayon you are running with `cat /etc/sabayon-release`.
 
-## Enabling the Portage Tree layer
+### Enabling the Portage Tree layer
 
 Once converted to Mocaccino OS, you will want to enable the Mocaccino Repositories
 
@@ -58,7 +58,7 @@ luet install repository/mocaccino-desktop-stable
 luet install repository/mocaccino-extra-stable
 ```
 
-## Upgrading to the latest packages
+### Upgrading to the latest packages
 
 Install all available newer packages from the Mocaccino repositories using:
 
@@ -72,7 +72,7 @@ And finally, review and merge any changes to your configuration files:
 etc-update
 ```
 
-## Remove cached downloads
+### Remove cached downloads
 
 If you wish to reclaim the disk space used by the upgrade process (downloaded packages and cached metadata), you can do so using:
 
