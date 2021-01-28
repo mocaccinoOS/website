@@ -1,12 +1,12 @@
 ---
-title: "Mocaccino Portage"
-linkTitle: "Mocaccino Portage"
+title: "Mocaccino Desktop"
+linkTitle: "Mocaccino Desktop"
 weight: 20
 description: >-
      MocaccinoOS variant based from Portage
 ---
 
-[Mocaccino Portage](https://github.com/mocaccinoOS/portage-tree) is a Gentoo-based distribution (derived from Sabayon) oriented towards Desktop systems.
+[Mocaccino Desktop](https://github.com/mocaccinoOS/desktop) is a Gentoo-based distribution (derived from Sabayon) oriented towards Desktop systems.
 
 [At the moment are available alpha ISO releases](https://get.mocaccino.org/minio/mocaccino-iso).
 
@@ -32,7 +32,7 @@ Migrations have been checked for systems running Sabayon 18.05 and newer. You ca
 Once converted to Mocaccino OS, you will want to enable the Mocaccino Repositories
 
 ```bash
-luet install repository/mocaccino-portage-stable
+luet install repository/mocaccino-desktop-stable
 luet install repository/mocaccino-extra-stable
 ```
 
