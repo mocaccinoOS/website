@@ -54,6 +54,7 @@ Migrations have been checked for systems running Sabayon 18.05 and newer. You ca
 Once converted to Mocaccino OS, you will want to enable the Mocaccino Repositories
 
 ```bash
+luet install repository/mocaccino-os-commons
 luet install repository/mocaccino-desktop-stable
 luet install repository/mocaccino-extra-stable
 ```
