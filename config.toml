@@ -181,4 +181,4 @@ enable = false
 [[menu.main]]
     name = "Issue tracker"
     weight = 10
-    url = "https://github.com/mocaccinoOS/issue-tracker/issues"
+    url = "https://github.com/mocaccinoOS/mocaccino/issues"
