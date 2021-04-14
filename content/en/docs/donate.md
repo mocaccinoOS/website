@@ -47,6 +47,19 @@ $ luet install -y systemd-service/xmrig system-profile/donate cryptocurrency/xmr
 
 done!
 
+### Stop the service
+
+To stop the service, on Mocaccino Micro:
+
+```bash
+$ runit-stop xmrig
+```
+
+while on Desktop:
+
+```bash
+$ systemctl stop xmrig
+```
 
 ### Uninstall
 
