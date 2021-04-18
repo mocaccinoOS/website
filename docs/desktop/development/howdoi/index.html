@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.74.3" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Frequent questions | MocaccinoOS</title><meta property="og:title" content="Frequent questions" />
+<meta property="og:description" content="How do I..? ~~hitchhiker&#39;s~~ Ops guide to the galaxy.  This document tries to collect the frequent questions while operating the MocaccinoOS tree" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.mocaccino.org/docs/desktop/development/howdoi/" />
+<meta property="article:modified_time" content="2021-04-18T16:58:17+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta itemprop="name" content="Frequent questions">
+<meta itemprop="description" content="How do I..? ~~hitchhiker&#39;s~~ Ops guide to the galaxy.  This document tries to collect the frequent questions while operating the MocaccinoOS tree">
+<meta itemprop="dateModified" content="2021-04-18T16:58:17+02:00" />
+<meta itemprop="wordCount" content="1338">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Frequent questions"/>
+<meta name="twitter:description" content="How do I..? ~~hitchhiker&#39;s~~ Ops guide to the galaxy.  This document tries to collect the frequent questions while operating the MocaccinoOS tree"/>
+
+
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.3d889200f2488f966de56dc6a011ee034940f303c40ab0e3029effbb650afccc.css" as="style">
+<link href="/scss/main.min.3d889200f2488f966de56dc6a011ee034940f303c40ab0e3029effbb650afccc.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"></span><span class="text-uppercase font-weight-bold">MocaccinoOS</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://github.com/mocaccinoOS/mocaccino/issues" target="_blank" ><span>Issue tracker</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/docs/" ><span class="active">Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/community/" ><span>Community</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://packages.mocaccino.org" target="_blank" ><span>Packages</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/contribution-guidelines/" ><span>Contribution guidelines</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/donate/" ><span>Support us</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.69736b6f825103a347f9b1c6c9009a59c316678f38d43c19bb246e5008a30d97c120730ade2e8c66fdffe645b2e43200ce1c81c93ebbd22d2b207e61b1cb23f3.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="10"
+>
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <div id="content-mobile">
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.69736b6f825103a347f9b1c6c9009a59c316678f38d43c19bb246e5008a30d97c120730ade2e8c66fdffe645b2e43200ce1c81c93ebbd22d2b207e61b1cb23f3.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="10"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  </div>
+  <div id="content-desktop"></div>
+  
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docs">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/micro/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Mocaccino Micro</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsmicro">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsmicroservice-management" href="/docs/micro/service-management/">Init and Services</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsmicroinstallation" href="/docs/micro/installation/">Installation notes</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsmicrokernels" href="/docs/micro/kernels/">Switching kernels</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsmicrobuilding-packages" href="/docs/micro/building-packages/">Building packages with Micro and k3s</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsmicrodocker" href="/docs/micro/docker/">Docker</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsmicrowireguard" href="/docs/micro/wireguard/">Wireguard</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/desktop/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Mocaccino Desktop</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsdesktop">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdesktopdownload" href="/docs/desktop/download/">Download</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdesktopmigrating" href="/docs/desktop/migrating/">Migrating from Sabayon</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdesktopusage" href="/docs/desktop/usage/">Luet commands</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdesktopappimage" href="/docs/desktop/appimage/">AppImage</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdesktopflatpak" href="/docs/desktop/flatpak/">Flatpak</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/desktop/development/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Development guidelines</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsdesktopdevelopment">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsdesktopdevelopmenthowdoi" href="/docs/desktop/development/howdoi/">Frequent questions</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontribution-guidelines" href="/docs/contribution-guidelines/">Contribution guidelines</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdonate" href="/docs/donate/">Support us</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://github.com/MocaccinoOS/website/edit/master/content/en/docs/Desktop/Development/howdoi.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/MocaccinoOS/website/new/master/content/en/docs/Desktop/Development/howdoi.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/MocaccinoOS/website/issues/new?title=Frequent%20questions" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+
+<a href="https://github.com/MocaccinoOS/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+
+</div>
+
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-do-i-start-contributing">How do I start contributing?</a></li>
+    <li><a href="#how-do-i-know-which-version-of-a-package-is-available-in-the-portage-tree">How do I know which version of a package is available in the Portage tree</a>
+      <ul>
+        <li><a href="#so-how-do-i-know-which-package-i-can-build">So, how do I know which package I can build?</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-do-i-revbump-a-package-and-when-its-actually-needed">How do I revbump a package? (and when it&rsquo;s actually needed?)</a>
+      <ul>
+        <li><a href="#when-i-do-need-to-bump-a-package">When I do need to bump a package?</a></li>
+        <li><a href="#when-i-do-need-to-revbump-a-package">When I do need to revbump a package?</a></li>
+        <li><a href="#what-about-packages-depending-on-it">What about packages depending on it?</a></li>
+        <li><a href="#how-do-i-do-that">How do I do that?</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-do-i-add-a-useflag-to-a-portage-package-or-layer">How do I add a useflag to a Portage package or layer?</a></li>
+    <li><a href="#how-do-i-split-a-package">How do I split a package?</a></li>
+    <li><a href="#how-do-i-try-my-changes">How do I try my changes?</a>
+      <ul>
+        <li><a href="#how-can-i-debug-the-build-environment">How can I debug the build environment?</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-do-i-add-a-package">How do I add a package?</a></li>
+    <li><a href="#how-do-i-update-provides-list-and-what-are-they">How do I update provides list, and what are they?</a></li>
+    <li><a href="#how-do-i-know-that-a-package-belongs-to-a-layer">How do I know that a package belongs to a Layer?</a></li>
+    <li><a href="#how-do-i-find-the-duplicate-files-in-the-package-repositories">How do I find the duplicate files in the package repositories?</a></li>
+    <li><a href="#the-package-i-want-to-add-needs-a-usergroup-where-do-i-add-it">The package I want to add needs a user/group. Where do I add it?</a></li>
+    <li><a href="#how-do-i-add-a-system-wide-extension-or-configure-a-gnome-setting">How do I add a system-wide extension, or configure a gnome setting?</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://www.mocaccino.org/docs/">Documentation</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://www.mocaccino.org/docs/desktop/">Mocaccino Desktop</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://www.mocaccino.org/docs/desktop/development/">Development guidelines</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://www.mocaccino.org/docs/desktop/development/howdoi/">Frequent questions</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Frequent questions</h1>
+    <div class="lead">How do I..? <del>hitchhiker&rsquo;s</del> Ops guide to the galaxy.  This document tries to collect the frequent questions while operating the MocaccinoOS tree</div>
+	       
+	<p>This document has the objective to address several questions that starts with &ldquo;How do I &hellip; ?&rdquo;</p>
+<h2 id="how-do-i-start-contributing">How do I start contributing?</h2>
+<p>Have a look at the official <a href="https://luet-lab.github.io/docs/docs/concepts/overview/build_packages/">Luet docs</a> about package building, and feel free to submit your first PR! Be sure to also read all this document to get an Idea on how things should look like.</p>
+<h2 id="how-do-i-know-which-version-of-a-package-is-available-in-the-portage-tree">How do I know which version of a package is available in the Portage tree</h2>
+<p>We pin Portage versions by using packages that are shipping a version of it.
+This guarantees that there are no moving parts, and we can in this way provide updates as part of a development lifecycle.</p>
+<p>We have an automated bot that automatically opens PR to track new version of the available Portage version. The package is available here: <a href="https://github.com/mocaccinoOS/desktop/tree/master/packages/portage">https://github.com/mocaccinoOS/desktop/tree/master/packages/portage</a>. You don&rsquo;t need to do it manually. Just wait for a PR from <code>MarvinHatesOceans</code> to pop-up, we will review it and merge it only when we decide (after proper QA) that a development lifecycle is over.</p>
+<p>A Portage bump happens when:</p>
+<ul>
+<li>We close a dev cycle (release, and upgrades)</li>
+<li>Security fixes</li>
+</ul>
+<h3 id="so-how-do-i-know-which-package-i-can-build">So, how do I know which package I can build?</h3>
+<p>At the moment is as easy as browsing the portage git and point it at the same commit of our package.</p>
+<p>For example:</p>
+<p><code>git.hash: &quot;b0e157b071cb23b348acab3d596b49f66c244808&quot;</code> in <a href="https://github.com/mocaccinoOS/desktop/blob/e9ae4aafead5a79d1d36630c932d907361d8c93c/packages/portage/definition.yaml#L6">https://github.com/mocaccinoOS/desktop/blob/e9ae4aafead5a79d1d36630c932d907361d8c93c/packages/portage/definition.yaml#L6</a> tells you that we are pinning at commit <code>b0e157b071cb23b348acab3d596b49f66c244808</code> of portage tree. So you can e.g. point your browser at : <a href="https://github.com/gentoo/gentoo/tree/b0e157b071cb23b348acab3d596b49f66c244808">https://github.com/gentoo/gentoo/tree/b0e157b071cb23b348acab3d596b49f66c244808</a></p>
+<h2 id="how-do-i-revbump-a-package-and-when-its-actually-needed">How do I revbump a package? (and when it&rsquo;s actually needed?)</h2>
+<p>By convention, we have chosen to increment the version of a package after the <code>+</code>, following <a href="https://semver.org/">semver</a> notation.</p>
+<p>That means, if a package version is at <code>1.0.0</code>, it&rsquo;s revbump version would be <code>1.0.0+1</code>, and a subsequent one would be for example <code>1.0.0+2</code>.</p>
+<h3 id="when-i-do-need-to-bump-a-package">When I do need to bump a package?</h3>
+<p>Only when there is a new version available!</p>
+<h3 id="when-i-do-need-to-revbump-a-package">When I do need to revbump a package?</h3>
+<p>A Package revbump is necessary when you apply changes to <code>build.yaml</code>, although, it&rsquo;s not always necessary, but just in few cases:</p>
+<ul>
+<li>When you change <code>steps</code> in the <code>build.yaml</code></li>
+<li>When you change <code>prelude</code> in the <code>build.yaml</code></li>
+<li>When you change <code>requires</code> in the <code>build.yaml</code></li>
+</ul>
+<h3 id="what-about-packages-depending-on-it">What about packages depending on it?</h3>
+<p>Always by convention, we have chosen to revbump <strong>manually</strong> those. Luet does support tracking automatically new package versions, but we want to make this transparent in the Git repository, so reverting changes introduced by mistakes it&rsquo;s easier, and so we also rely on the caching mechanism of Luet.</p>
+<p>If we don&rsquo;t revbump reverse dependencies our CI would skip such changes, because we enforced this by policy.</p>
+<h3 id="how-do-i-do-that">How do I do that?</h3>
+<p>Until <a href="https://github.com/mocaccinoOS/desktop/issues/7">https://github.com/mocaccinoOS/desktop/issues/7</a> is delivered, it is a manual process.</p>
+<h2 id="how-do-i-add-a-useflag-to-a-portage-package-or-layer">How do I add a useflag to a Portage package or layer?</h2>
+<p>If the useflag you are going to add doesn&rsquo;t have an huge impact on its dependencies (not requiring a rebuild) then it&rsquo;s fine to apply at the spec-level.
+Otherwise it might be required to specify the useflags needed in that specific package, or on the parent layer which your package is depending on, requiring a package revbump.</p>
+<p>Take the <a href="https://github.com/mocaccinoOS/desktop/tree/master/packages/layers/system-x">layers/system-x package</a> as an example, in the prelude steps of the package, we copy over the building container the custom useflags in the prelude steps:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#6ab825;font-weight:bold">prelude</span>:<span style="color:#666">
+</span><span style="color:#666"></span>- cp<span style="color:#666"> </span>-rf<span style="color:#666"> </span>package.use<span style="color:#666"> </span>/etc/portage/<span style="color:#666">
+</span><span style="color:#666"></span>- cp<span style="color:#666"> </span>-rf<span style="color:#666"> </span>make.conf<span style="color:#666"> </span>/etc/portage/<span style="color:#666">
+</span><span style="color:#666"></span>- cp<span style="color:#666"> </span>-rf<span style="color:#666"> </span>package.accept_keywords<span style="color:#666"> </span>/etc/portage/<span style="color:#666">
+</span><span style="color:#666"></span>- cp<span style="color:#666"> </span>-rf<span style="color:#666"> </span>package.license<span style="color:#666"> </span>/etc/portage/<span style="color:#666">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>the <code>package.use</code> folder is actually shipped with the <a href="https://github.com/mocaccinoOS/desktop/tree/master/packages/layers/system-x/package.use">package spec</a>. That approach can be used also in layers depending on <code>system-x</code>, with a separate set of flags. You just have to be sure to not override any useflag between layers, and to try to share as much as you can with parent layers while do you see it fit.</p>
+<h2 id="how-do-i-split-a-package">How do I split a package?</h2>
+<p>A layer can be split into multiple packages, using the <code>excludes</code>/<code>includes</code> pattern which is used for example by <code>gcc</code> and <code>gcc-base</code>. This means you can safely compile packages into parent-layers, and exclude those in the final artifact which gets installed by the end-user.</p>
+<p>For example, for <code>gcc</code> we drop the files from <code>system-x</code>, and we <code>include</code> explicitly files to the gcc package, which at that point doesn&rsquo;t need to compile anything by itself. It just needs to depend on the parent layer, so all the <code>gcc</code> files are accessible from that container.</p>
+<p>In the system-x spec, you will find something similar:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#6ab825;font-weight:bold">excludes</span>:<span style="color:#666">
+</span><span style="color:#666"></span>...<span style="color:#666">
+</span><span style="color:#666">
+</span><span style="color:#666"></span><span style="color:#999;font-style:italic"># GCC split</span><span style="color:#666">
+</span><span style="color:#666"></span>- ^/etc/env.d/04gcc-x86_64-pc-linux-gnu<span style="color:#666">
+</span><span style="color:#666"></span>- ^/etc/ld.so.conf.d/05gcc-x86_64-pc-linux-gnu.conf<span style="color:#666">
+</span><span style="color:#666"></span>- ^/etc/env.d/gcc.*<span style="color:#666">
+</span><span style="color:#666"></span>- ^/usr/lib/debug/usr/lib/gcc.*<span style="color:#666">
+</span><span style="color:#666"></span>- ^/usr/lib/gcc/x86_64-pc-linux-gnu.*<span style="color:#666">
+</span><span style="color:#666"></span>- ^/usr/share/gcc-data/x86_64-pc-linux-gnu.*<span style="color:#666">
+</span><span style="color:#666"></span>- ^/usr/bin/c\+\+.*<span style="color:#666">
+</span><span style="color:#666"></span>- ^/usr/bin/cc$<span style="color:#666">
+</span><span style="color:#666"></span>- ^/usr/bin/cpp.*<span style="color:#666">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>This tells luet to exclude those files from the final artifact.</p>
+<p>Similarly, you can find in the <a href="https://github.com/mocaccinoOS/desktop/blob/master/packages/layers/system-x/gcc/build.yaml">gcc</a> package those files being included:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#6ab825;font-weight:bold">includes</span>:<span style="color:#666">
+</span><span style="color:#666"></span>...<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/lib/gcc$<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/lib/gcc/x86_64-pc-linux-gnu$<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/lib/gcc/x86_64-pc-linux-gnu/{{.Values.version}}.*<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/lib/go$<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/lib/go/{{.Values.version}}.*<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/lib64$<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/lib64/go$<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/lib64/go/{{.Values.version}}.*<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/libexec$<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/libexec/gcc$<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/libexec/gcc/x86_64-pc-linux-gnu$<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/libexec/gcc/x86_64-pc-linux-gnu/{{.Values.version}}.*<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/share$<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/share/gcc-data$<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/share/gcc-data/x86_64-pc-linux-gnu$<span style="color:#666">
+</span><span style="color:#666"></span>- /usr/share/gcc-data/x86_64-pc-linux-gnu/{{.Values.version}}.*<span style="color:#666">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="how-do-i-try-my-changes">How do I try my changes?</h2>
+<p>You need at least Docker running locally, or img installed.</p>
+<p>To build a package, just edit/add the relevant specs and run <code>PACKAGES=&quot;..&quot; make rebuild-all</code>.</p>
+<h3 id="how-can-i-debug-the-build-environment">How can I debug the build environment?</h3>
+<p>Luet generates docker images for each package, you can start a shell by either retrieving manually the docker image of the package with <code>luet tree images</code>  and manually run <code>docker run..</code> on it or you can use the luet extension which does that already for you. You need to have installed <code>system/luet-devkit</code> package, and you can use it as follows:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#40ffff">DOCKER_HOST</span>=<span style="color:#ed9d13">&#34;...&#34;</span> <span style="color:#40ffff">LUET_ARGS</span>=<span style="color:#ed9d13">&#34;--image-repository quay.io/mocaccinocache/desktop&#34;</span> luet remote-exec packagename
+</code></pre></td></tr></table>
+</div>
+</div><p>Note: It&rsquo;s not required <code>DOCKER_HOST</code> unless you want to leverage a remote host.</p>
+<p>Once you are hooked into the container there are some limited tools at your disposal that might help you. For instance if you want to list all the atoms that are installed you can do:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">qlist -IRv
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="how-do-i-add-a-package">How do I add a package?</h2>
+<p>Have a look at the <a href="https://luet-lab.github.io/docs/docs/concepts/packages/specfile/">official docs</a> about specfile and their syntax. After you familiarize with it, you can just open up a PR, by taking as an example an already existing layer. <a href="https://github.com/mocaccinoOS/desktop/tree/master/packages/layers/calamares">See, for example calamares</a></p>
+<h2 id="how-do-i-update-provides-list-and-what-are-they">How do I update provides list, and what are they?</h2>
+<p>Provides are packages that your layer/package is going to satisfy. That means if other packages are depending on a <code>package/foo</code>, and that is provided by <code>package/bar</code>, <code>package/bar</code> will get installed in place of <code>package/foo</code>.</p>
+<p>At the moment it&rsquo;s a manual process - and we will work an automated way as soon as we have bandwidth for it. This mechanism it&rsquo;s used to ensure a smooth migration path from Sabayon/Entropy based systems.</p>
+<h2 id="how-do-i-know-that-a-package-belongs-to-a-layer">How do I know that a package belongs to a Layer?</h2>
+<p>Packages belonging to a layer should be listed as provides, and also part of the arguments to emerge for compiling that package. Until we deliver <a href="https://github.com/mocaccinoOS/desktop/issues/6">https://github.com/mocaccinoOS/desktop/issues/6</a> - it is also a manual process. Refer to the section of this document &ldquo;How can I debug the build environment?&rdquo; to see how to hook directly into a package container to inspect its content.</p>
+<h2 id="how-do-i-find-the-duplicate-files-in-the-package-repositories">How do I find the duplicate files in the package repositories?</h2>
+<p>You can use <code>luet search</code> and <code>luet filter</code> to compose a list of duplicate files.  <code>luet 0.11.3</code> returns the files in the packages as part of the json result:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">luet search -o json | luet filter
+</code></pre></td></tr></table>
+</div>
+</div><p>To install <code>luet-filter</code>, just run:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">luet install -y extension/filter
+</code></pre></td></tr></table>
+</div>
+</div><p><em>Note</em>: <code>luet search</code> searches into online repositories enabled in the system unless <code>--installed</code> is specified. You need to have the desktop repo enabled locally in order to retrieve this list.</p>
+<h2 id="the-package-i-want-to-add-needs-a-usergroup-where-do-i-add-it">The package I want to add needs a user/group. Where do I add it?</h2>
+<p>The user/groups in <strong>MocaccinoOS</strong> are defined by <a href="https://github.com/mudler/entities">entities</a>. They are an uniform way to define user/groups across different distributions in a unique and interoperable way. The same users/groups are indeed shared with Mocaccino Micro.</p>
+<p>All the users groups are defined in a unique <a href="https://luet-lab.github.io/docs/docs/concepts/packages/collections/">collection</a> inside the <a href="https://github.com/mocaccinoOS/os-commons">os-commons</a> repository, <a href="https://github.com/mocaccinoOS/os-commons/blob/master/packages/entities/collection.yaml">here</a></p>
+<h2 id="how-do-i-add-a-system-wide-extension-or-configure-a-gnome-setting">How do I add a system-wide extension, or configure a gnome setting?</h2>
+<p>We have a <a href="https://github.com/mocaccinoOS/desktop/tree/master/packages/mocaccino/gnome-skel">gnome-skel</a> package for that purpose. Check the content, apply the required changes and bump the package version.</p>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified April 18, 2021: <a  href="https://github.com/MocaccinoOS/website/commit/ead683abcd2d3110e34b28dba1e2fbfd7811c899">Split sections, add dev docs (ead683a)</a>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Forum" aria-label="Forum">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://community.mocaccino.org/">
+      <i class="fab fa-discourse"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Telegram" aria-label="Telegram">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://t.me/mocaccinoOS">
+      <i class="fab fa-telegram"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://join.slack.com/t/luet/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://github.com/MocaccinoOS">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://join.slack.com/t/luet/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2021 MocaccinoOS org. All Rights Reserved</small>
+        
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.460c8ae21829f9b330823a08f34ac961d7d0daa8874c8c9eba7ea0484bb42a79.js" integrity="sha256-RgyK4hgp&#43;bMwgjoI80rJYdfQ2qiHTIyeun6gSEu0Knk=" crossorigin="anonymous"></script>
+
+
+
+
+  </body>
+</html>
