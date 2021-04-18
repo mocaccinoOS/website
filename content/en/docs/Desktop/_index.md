@@ -1,7 +1,7 @@
 ---
 title: "Mocaccino Desktop"
 linkTitle: "Mocaccino Desktop"
-weight: 20
+weight: 3
 description: >-
      MocaccinoOS variant based from Portage
 ---
