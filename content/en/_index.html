@@ -50,11 +50,68 @@ For discussions, announcements, etc.
 {{< /blocks/section >}}
 
 {{< blocks/section color="secondary" >}}
-<div class="col">
+{{< column>}}
 <h1 class="text-center">Upgrading is not anymore a nightmare</h1>
-<center>You can just focus on your stable system from now on
+<center>
+	<h3>You can just focus on your <span id='work'>work</span> from now on</h3>
+<script>
+	var text = [ "game", "website", "music player", "ide"];
+var counter = 0;
+var elem = $("#work");
+setInterval(change, 3000);
+function change() {
+    elem.fadeOut(function(){
+        elem.html(text[counter]);
+        counter++;
+        if(counter >= text.length) { counter = 0; }
+        elem.fadeIn();
+    });
+}
+</script>
 </center>
-</div>
+
+{{< row >}}
+
+{{< column>}}
+{{< term name="upgrade" delay="10">}}
+<span data-ty="input"> luet upgrade -y </span>
+<span data-ty data-ty-delay="250">⠖  Downloaded repository.yaml of 0.00 MB ( 0.00 MiB/s )</span>
+<span data-ty data-ty-delay="250">	Repository mocaccino-repository-index is already up to date.</span>
+<span data-ty data-ty-delay="250">	ℹ Repository: mocaccino-repository-index Priority: 1 Type: http</span>
+<span data-ty data-ty-delay="250">  ⠦  Downloaded repository.yaml of 0.00 MB ( 0.00 MiB/s )</span>
+<span data-ty data-ty-delay="250">	Repository luet-official is already up to date.</span>
+<span data-ty data-ty-delay="250">	ℹ Repository: luet Priority: 1 Type: http</span>
+<span data-ty data-ty-delay="250">   ⠐  Downloaded repository.yaml of 0.00 MB ( 0.00 MiB/s )</span>
+<span data-ty data-ty-delay="250">	Repository mocaccino-extra is already up to date.</span>
+<span data-ty data-ty-delay="250">	ℹ Repository: mocaccino-extra-stable Priority: 2 Type: http</span>
+<span data-ty data-ty-delay="250">   ⠉  Downloaded repository.yaml of 0.00 MB ( 0.00 MiB/s )</span>
+<span data-ty data-ty-delay="250">	Repository mocaccino-extra is already up to date.</span>
+<span data-ty data-ty-delay="250">   ⠈  ℹ Repository: mocaccino-extra Priority: 2 Type: http</span>
+<span data-ty data-ty-delay="250">   ⠋  Downloaded repository.yaml of 0.00 MB ( 0.00 MiB/s )</span>
+<span data-ty data-ty-delay="250">	Repository mocaccino-repository-index is already up to date.</span>
+<span data-ty data-ty-delay="250">	ℹ Repository: mocaccino-repository-index Priority: 1 Type: http</span>
+<span data-ty data-ty-delay="250">	🤔  Computing upgrade, please hang tight... 💤 	</span>
+
+
+{{< /term >}}
+{{< /column>}}
+{{< column>}}
+<p></p>
+<center><h3>
+Focus on the things that matter. 
+</h3></center>
+<p class="lead mt-5">
+MocaccinoOS Desktop uses a layered approach. <br>
+Most common system packages and desktop environments (DE) are packaged as single installable layers, along with libraries. <br>
+The system set is only composed by 2 core layers<br><br>
+Completely out of sight ! <br>
+</p>
+<p class="lead mt-5">
+MocaccinoOS Micro is a LFS Musl OS, not based on layers, but with a tiny core package set, suitable for cloud and embedded environment. <br> Easy to build packages on. <br>
+</p>
+{{< /column>}}
+{{< /row >}}
+{{< /column>}}
 
 {{< /blocks/section >}}
 

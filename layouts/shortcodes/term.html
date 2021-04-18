@@ -1,0 +1,7 @@
+
+<div id="{{(.Get "name")}}" data-termynal data-ty-startDelay="{{(.Get "delay")}}">
+    {{.Inner}}
+</div>
+<script>
+    var termynal = new Termynal('#{{(.Get "name")}}')
+</script>
