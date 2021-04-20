@@ -1107,6 +1107,191 @@ You can although add paths that are accessible to a specific Flatpak app.&lt;/p&
     </item>
     
     <item>
+      <title>Docs: Building packages locally</title>
+      <link>https://www.mocaccino.org/docs/desktop/building_packages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/building_packages/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;
+&lt;p&gt;Building packages is a complex topic. Installing packages coming from untrusted repositories, or building packages in the &lt;em&gt;wrong&lt;/em&gt; way might break your system.&lt;/p&gt;
+&lt;p&gt;The following steps should only be carried out on test systems. Do make sure you have any important data backed up before installing any package.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;MocaccinoOS desktop, even if based on portage, doesn&amp;rsquo;t support the direct usage of &lt;code&gt;emerge&lt;/code&gt;. Although it&amp;rsquo;s possible to compile and install packages from portage.&lt;/p&gt;
+&lt;p&gt;To build a system package, instead use &lt;code&gt;luet build&lt;/code&gt;. The following document tries to summarize the steps to build a package with emerge with &lt;code&gt;luet build&lt;/code&gt;, and install and track it in a MocaccinoOS Desktop system, should cover the scenario: &lt;em&gt;&amp;ldquo;hey, can I install packages with emerge?&amp;quot;&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;
+&lt;p&gt;Be sure to have &lt;a href=&#34;https://www.mocaccino.org/docs/desktop/docker&#34;&gt;docker&lt;/a&gt; installed, and the daemon running. The document is assuming you are carrying the steps on MocaccinoOS Desktop (GNOME in the specific case).&lt;/p&gt;
+&lt;p&gt;Follow the steps described in &lt;a href=&#34;https://www.mocaccino.org/docs/desktop/docker&#34;&gt;this document&lt;/a&gt; before going ahead.&lt;/p&gt;
+&lt;h2 id=&#34;create-a-workspace&#34;&gt;Create a workspace&lt;/h2&gt;
+&lt;p&gt;First of all, let&amp;rsquo;s create a workspace. The packages that we will build have to persist somewhere in your local system, the location must be accessible while performing a &lt;code&gt;luet upgrade&lt;/code&gt;. We will use &lt;code&gt;/user/system_repository&lt;/code&gt; as an example. And we will assume the commands are running as root.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdir -p /user/system_repository/tree
+$ &lt;span style=&#34;color:#24909d&#34;&gt;cd&lt;/span&gt; /user/system_repository
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;All the commands from now on will be carried from the &lt;code&gt;/user/system_repository&lt;/code&gt; directory.&lt;/p&gt;
+&lt;h2 id=&#34;first-package&#34;&gt;First package&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s put our eyes on, let&amp;rsquo;s say, &lt;a href=&#34;https://packages.gentoo.org/packages/games-board/gnome-chess&#34;&gt;games-board/gnome-chess&lt;/a&gt;, and create a compilation definition for it.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s first declare it&amp;rsquo;s canonical name, or how you would actually install it afterwards with &lt;code&gt;luet&lt;/code&gt; (e.g. &lt;code&gt;luet install app/gnome-chess&lt;/code&gt;)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdir tree/gnome-chess
+$ cat &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;lt;&amp;lt;EOF &amp;gt;&amp;gt;tree/gnome-chess/definition.yaml
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;category: &amp;#34;apps&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;name: &amp;#34;gnome-chess&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;version: &amp;#34;0.1&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;EOF&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Here the version doesn&amp;rsquo;t really matter, it&amp;rsquo;s mostly for you to keep it track in your system. You can decide to follow strictly the versioning from gnome-chess, or not.&lt;/p&gt;
+&lt;p&gt;Now let&amp;rsquo;s get to the important part, the build definition. This tells luet how to compile your package:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cat &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;lt;&amp;lt;EOF &amp;gt;&amp;gt;tree/gnome-chess/build.yaml
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;steps:
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;- emerge games-board/gnome-chess
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;requires:
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;- category: &amp;#34;layers&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;  name: &amp;#34;gnome&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;  version: &amp;#34;&amp;gt;=0&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;EOF&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;as you see, we are using emerge here to compile the package. The requires section tells from where it runs the command, which in this case is the MocaccinoOS desktop gnome layer. To see all the layers available, run &lt;code&gt;luet search layers&lt;/code&gt; or to see the currently installed, you can run &lt;code&gt;luet search --installed layers&lt;/code&gt;).&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Even if the example shows how to build a package with emerge, it is although possible to create packages out from any docker image - even not by compiling. You have to be careful to check if any package dependencies are actually already shipped by the layers
+&lt;/div&gt;
+
+&lt;h2 id=&#34;building-the-package&#34;&gt;Building the package&lt;/h2&gt;
+&lt;p&gt;Now let&amp;rsquo;s build the packages (remember to run as root, or with &lt;code&gt;sudo&lt;/code&gt; upfront):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ luet build --tree tree --pull --pull-repository quay.io/mocaccinocache/desktop --from-repositories --live-output --only-target-package apps/gnome-chess
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+The first time can take up some time due to downloading the images, but those are cached locally for local iteration. Time for a coffee!
+&lt;/div&gt;
+
+&lt;p&gt;After build is completed, generate the repository metadata:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ luet create-repo --tree tree
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;install-the-package&#34;&gt;Install the package&lt;/h2&gt;
+&lt;p&gt;First let&amp;rsquo;s consume the repository we just created in our system:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cat &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;lt;&amp;lt;EOF &amp;gt;&amp;gt; /etc/luet/repos.conf.d/local.yaml
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;name: &amp;#34;local-repository&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;description: &amp;#34;Local repository&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;type: &amp;#34;disk&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;enable: true
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;cached: true
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;priority: 99
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;urls: # Repository URLs
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;  - /user/system_repository/build
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;EOF&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Now we are ready to install &lt;code&gt;gnome-chess&lt;/code&gt; locally:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ luet install apps/gnome-chess
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;advanced-topics&#34;&gt;Advanced topics&lt;/h2&gt;
+&lt;h3 id=&#34;showing-package-files&#34;&gt;Showing package files&lt;/h3&gt;
+&lt;p&gt;Luet shows already all the files shipped by a package with &lt;code&gt;luet search&lt;/code&gt;. For example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ luet search apps/gnome-chess -o yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;find-duplicate-files-shipped-by-packages&#34;&gt;Find duplicate files shipped by packages&lt;/h3&gt;
+&lt;p&gt;You can check duplicate files into the package shipped by repositories, also before installing them:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;luet search -o json | luet filter
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This is particularly useful to check for any conflicting files with the system packages and the ones you are generating.&lt;/p&gt;
+&lt;p&gt;See also the &lt;a href=&#34;https://www.mocaccino.org/docs/desktop/development/howdoi/#how-do-i-find-the-duplicate-files-in-the-package-repositories&#34;&gt;dev section&lt;/a&gt; regarding duplicate files.&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://luet-lab.github.io/docs&#34;&gt;Luet docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://luet-lab.github.io/docs/docs/concepts/packages/&#34;&gt;Luet Packages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://luet-lab.github.io/docs/docs/tutorials/hello_world/&#34;&gt;Luet hello world&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Contributing to MocaccinoOS</title>
       <link>https://www.mocaccino.org/docs/contribution-guidelines/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
