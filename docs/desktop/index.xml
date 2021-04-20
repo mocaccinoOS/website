@@ -529,11 +529,13 @@ $ cat &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;lt;&amp;lt;EOF &amp;gt;&amp
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;6
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;7
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;8
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;9
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
 &lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cat &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;lt;&amp;lt;EOF &amp;gt;&amp;gt;tree/gnome-chess/build.yaml
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;package_dir: &amp;#34;/package&amp;#34;
 &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;steps:
-&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;- emerge games-board/gnome-chess
+&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;- emerge --root /package games-board/gnome-chess
 &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;requires:
 &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;- category: &amp;#34;layers&amp;#34;
 &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;  name: &amp;#34;gnome&amp;#34;
@@ -542,6 +544,13 @@ $ cat &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;lt;&amp;lt;EOF &amp;gt;&amp
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;as you see, we are using emerge here to compile the package. The requires section tells from where it runs the command, which in this case is the MocaccinoOS desktop gnome layer. To see all the layers available, run &lt;code&gt;luet search layers&lt;/code&gt; or to see the currently installed, you can run &lt;code&gt;luet search --installed layers&lt;/code&gt;).&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+The &lt;code&gt;package_dir&lt;/code&gt; option tells luet where is the final package located. We use &lt;code&gt;emerge --root&lt;/code&gt; here to specify a different location where our package is installed. We could also drop &lt;code&gt;package_dir&lt;/code&gt; and &lt;code&gt;--root&lt;/code&gt; from emerge and let &lt;code&gt;luet&lt;/code&gt; compute the delta, but in this way it&amp;rsquo;s faster and less I/O intensive.
+&lt;/div&gt;
+
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
