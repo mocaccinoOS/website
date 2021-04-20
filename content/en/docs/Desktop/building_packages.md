@@ -73,6 +73,15 @@ Even if the example shows how to build a package with emerge, it is although pos
 
 {{< /alert >}}
 
+Now let's add an installation hook to our package, in our specific case (gnome-chess) we need a trigger to generate glib schemas right after the package gets installed in the system:
+
+```bash
+$ cat <<EOF >>tree/gnome-chess/finalize.yaml
+install:
+- glib-compile-schemas /usr/share/glib-2.0/schemas
+EOF
+```
+
 ## Building the package
 
 Now let's build the packages (remember to run as root, or with `sudo` upfront):
