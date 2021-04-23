@@ -6,7 +6,8 @@ description: >-
      Installing Apache webserver using Docker
 ---
 
-Create the webserver documentroot in your homedir
+
+### Create the webserver documentroot in your homedir
 ```bash
 $ mkdir website
 ```
