@@ -28,15 +28,15 @@ Your support means the world to us :)
 You can donate by going to our Patreon page or if you prefer cryptocurrencies, we accepts donations to the following XMR wallet: 84AsfE73Cy7hAYKy7PN8N8D3fh39JzXyLjaiYpgXm3NrJHH7cTPxUJSgsdFiSL6mwE9MKpvrYJQoaTxRG6sJX6aBRpr45dc." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/donate/" />
-<meta property="article:modified_time" content="2021-04-23T18:19:39+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2021-04-23T22:24:04+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 <meta itemprop="name" content="Donate">
 <meta itemprop="description" content="Become a donor today.
 If you want to help us, but you cannot contribute to code, you can still buy us a coffee, or just donate a little bit of your HW power.
 As a small open source project, know that every dollar will have an immense impact on our ability to continue working towards our mission.
 Your support means the world to us :)
 You can donate by going to our Patreon page or if you prefer cryptocurrencies, we accepts donations to the following XMR wallet: 84AsfE73Cy7hAYKy7PN8N8D3fh39JzXyLjaiYpgXm3NrJHH7cTPxUJSgsdFiSL6mwE9MKpvrYJQoaTxRG6sJX6aBRpr45dc.">
-<meta itemprop="dateModified" content="2021-04-23T18:19:39+02:00" />
-<meta itemprop="wordCount" content="238">
+<meta itemprop="dateModified" content="2021-04-23T22:24:04+02:00" />
+<meta itemprop="wordCount" content="270">
 
 
 
@@ -155,7 +155,7 @@ You can donate by going to our Patreon page or if you prefer cryptocurrencies, w
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5ac9034d454faaf1a5622482a7ae5be998b68d2d3799a1157279838124cd1a2d442646dfe2d912b53f3907ca23431583162163800b63c52149856f1eff34fdbb.json"
+  data-offline-search-index-json-src="/offline-search-index.771ef634ff9f282a7e60d9f3943fd39ee7da42ee4b1067f35b2525e0a79b8a2835d5826606700314b898ea381a198581e12bd712cd5f5305ee91e2798fa2c99c.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -187,7 +187,7 @@ You can donate by going to our Patreon page or if you prefer cryptocurrencies, w
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5ac9034d454faaf1a5622482a7ae5be998b68d2d3799a1157279838124cd1a2d442646dfe2d912b53f3907ca23431583162163800b63c52149856f1eff34fdbb.json"
+  data-offline-search-index-json-src="/offline-search-index.771ef634ff9f282a7e60d9f3943fd39ee7da42ee4b1067f35b2525e0a79b8a2835d5826606700314b898ea381a198581e12bd712cd5f5305ee91e2798fa2c99c.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -446,6 +446,7 @@ You can donate by going to our Patreon page or if you prefer cryptocurrencies, w
         <li><a href="#donate-from-mocaccino-micro">Donate from Mocaccino Micro</a></li>
         <li><a href="#donate-from-mocaccino-desktop">Donate from Mocaccino Desktop</a></li>
         <li><a href="#stop-the-service">Stop the service</a></li>
+        <li><a href="#disable">Disable</a></li>
         <li><a href="#uninstall">Uninstall</a></li>
       </ul>
     </li>
@@ -507,6 +508,15 @@ install/uninstall any time. It will kick-in automatically xmrig when it detects 
 <pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ luet install -y runit-srv/xmrig system-profile/donate cryptocurrency/xmrig
 </code></pre></td></tr></table>
 </div>
+</div><p>Enable the <code>donate</code> profile:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mos profile <span style="color:#24909d">enable</span> donate
+</code></pre></td></tr></table>
+</div>
 </div><p>done!</p>
 <h3 id="donate-from-mocaccino-desktop">Donate from Mocaccino Desktop</h3>
 <p>Install the following packages:</p>
@@ -516,6 +526,15 @@ install/uninstall any time. It will kick-in automatically xmrig when it detects 
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ luet install -y systemd-service/xmrig system-profile/donate cryptocurrency/xmrig
+</code></pre></td></tr></table>
+</div>
+</div><p>Enable the <code>donate</code> profile:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mos profile <span style="color:#24909d">enable</span> donate
 </code></pre></td></tr></table>
 </div>
 </div><p>done!</p>
@@ -536,6 +555,16 @@ install/uninstall any time. It will kick-in automatically xmrig when it detects 
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl stop xmrig
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="disable">Disable</h3>
+<p>Just disable the <code>donate</code> profile:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mos profile disable donate
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="uninstall">Uninstall</h3>
@@ -569,7 +598,7 @@ install/uninstall any time. It will kick-in automatically xmrig when it detects 
 </div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified April 23, 2021: <a  href="https://github.com/MocaccinoOS/website/commit/127da6f6c92bfc715f9ee8ac8011ddf8d01a313c">Update Apache_with_Docker.md (127da6f)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified April 23, 2021: <a  href="https://github.com/MocaccinoOS/website/commit/7deac5429f6bd9d0e5eab0f55532f7595af2b94e">Update donate.md (7deac54)</a>
 </div>
 </div>
 
