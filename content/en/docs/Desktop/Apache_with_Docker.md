@@ -3,17 +3,17 @@ title: "Install Apache"
 linkTitle: "Install Apache"
 weight: 100
 description: >-
-     Installing Apache using Docker.
+     Installing Apache using Docker
 ---
 
-## First we create the webserver documentroot in our homedir:
+## Create the webserver documentroot in your homedir
 ```bash
-~ $ mkdir website
+$ mkdir website
 ```
 ## Install Apache container
 Now we pull the httpd:2.4 container from dockerhub and map the documentroot to our just created directory
 ```bash
-~ $ sudo docker run -dit --name my-web -p 8080:80 -v ~/website/:/usr/local/apache2/htdocs/ httpd:2.4
+$ sudo docker run -dit --name my-web -p 8080:80 -v ~/website/:/usr/local/apache2/htdocs/ httpd:2.4
 ```
 We use docker ps to confirm our container is running
 ```bash
@@ -41,15 +41,15 @@ And we are done! To view the result simply open http://localhost:8080/ in your w
 
 ## Stop the container
 ```bash
-~ $ sudo docker stop my-web
+$ sudo docker stop my-web
 ```
 ## Remove the container
 ```bash
-~ $ sudo docker rm my-web
+$ sudo docker rm my-web
 ```
 ## Remove the dockerhub image
 ```bash
-~ $ sudo docker image remove httpd:2.4
+$ sudo docker image remove httpd:2.4
 ```
 ### References
 - [TecMint](https://www.tecmint.com/install-apache-web-server-in-a-docker-container/)
