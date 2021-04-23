@@ -35,6 +35,12 @@ Install the following packages:
 $ luet install -y runit-srv/xmrig system-profile/donate cryptocurrency/xmrig
 ```
 
+Enable the `donate` profile:
+
+```bash
+$ mos profile enable donate
+```
+
 done!
 
 ### Donate from Mocaccino Desktop
@@ -43,6 +49,12 @@ Install the following packages:
 
 ```bash
 $ luet install -y systemd-service/xmrig system-profile/donate cryptocurrency/xmrig
+```
+
+Enable the `donate` profile:
+
+```bash
+$ mos profile enable donate
 ```
 
 done!
@@ -59,6 +71,14 @@ while on Desktop:
 
 ```bash
 $ systemctl stop xmrig
+```
+
+### Disable
+
+Just disable the `donate` profile:
+
+```bash
+$ mos profile disable donate
 ```
 
 ### Uninstall
