@@ -51,3 +51,5 @@ And we are done! To view the result simply open http://localhost:8080/ in your w
 ```bash
 ~ $ sudo docker image remove httpd:2.4
 ```
+### References
+- [TecMint](https://www.tecmint.com/install-apache-web-server-in-a-docker-container/)
