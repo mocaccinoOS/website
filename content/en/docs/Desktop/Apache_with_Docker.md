@@ -38,3 +38,16 @@ cat <<EOF >>/website/index.html
 EOF
 ```
 And we are done! To view the result simply open http://localhost:8080/ in your webbrowser!
+
+## Stop the container
+```bash
+~ $ sudo docker stop my-web
+```
+## Remove the container
+```bash
+~ $ sudo docker rm my-web
+```
+## Remove the dockerhub image
+```bash
+~ $ sudo docker image remove httpd:2.4
+```
