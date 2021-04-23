@@ -585,6 +585,85 @@ This is currently experimental
     </item>
     
     <item>
+      <title>Docs: System Configuration</title>
+      <link>https://www.mocaccino.org/docs/general/system-config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/general/system-config/</guid>
+      <description>
+        
+        
+        &lt;p&gt;MocaccinoOS Desktop and Micro automatically protects &lt;code&gt;/etc&lt;/code&gt; from overwriting user-override changes. Although, upgrades might require to overwrite and upgrade specific default configuration. The &lt;code&gt;mos&lt;/code&gt; cli embeds a &lt;code&gt;config-update&lt;/code&gt; tool which is compatible with &lt;code&gt;etc-update&lt;/code&gt; and &lt;code&gt;dispatch-conf&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To show a summary of the config changes that requires merging:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mos config-update check
+Files with unmerged config files: &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;
+- /etc/test/foo (&lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt; unmerged config files)
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;merging-configuration&#34;&gt;Merging configuration&lt;/h2&gt;
+&lt;p&gt;To merge configurations interactively, run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mos config-update update
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;To check the configuration of all the files, 1-by-1, run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mos config-update update -a
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;auto-merging&#34;&gt;Auto-merging&lt;/h2&gt;
+&lt;p&gt;It&amp;rsquo;s possible to auto-merge configurations automatically with:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mos config-update update --interactive=&lt;span style=&#34;color:#24909d&#34;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: System profiles</title>
+      <link>https://www.mocaccino.org/docs/general/system-profiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/general/system-profiles/</guid>
+      <description>
+        
+        
+        &lt;p&gt;System profiles are specific &lt;code&gt;MocaccinoOS&lt;/code&gt; configuration that can be enabled/disabled from the &lt;code&gt;mos&lt;/code&gt; cli.&lt;/p&gt;
+&lt;h2 id=&#34;list-available-profiles&#34;&gt;List available profiles&lt;/h2&gt;
+&lt;p&gt;To list all the &lt;strong&gt;installed&lt;/strong&gt; available profiles, run &lt;code&gt;mos profile list&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;enable-profiles&#34;&gt;Enable profiles&lt;/h2&gt;
+&lt;p&gt;To enable a specific profile, run &lt;code&gt;mos profile enable &amp;lt;profile&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;disable-profiles&#34;&gt;Disable profiles&lt;/h2&gt;
+&lt;p&gt;To disable a profile, run &lt;code&gt;mos profile disable &amp;lt;profile&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;search-available-profiles&#34;&gt;Search available profiles&lt;/h2&gt;
+&lt;p&gt;To search all the available profiles for installation, run &lt;code&gt;luet search system-profiles&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To install a specific profile, run &lt;code&gt;luet install system-profile/&amp;lt;name&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Running docker</title>
       <link>https://www.mocaccino.org/docs/desktop/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
