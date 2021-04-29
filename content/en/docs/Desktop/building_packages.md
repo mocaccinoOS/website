@@ -168,3 +168,4 @@ $ docker system prune --force --volumes --all
 - [Luet docs](https://luet-lab.github.io/docs)
 - [Luet Packages](https://luet-lab.github.io/docs/docs/concepts/packages/)
 - [Luet hello world](https://luet-lab.github.io/docs/docs/tutorials/hello_world/)
+- [Emerge ebuild example](https://github.com/Luet-lab/examples/tree/master/demo3/tree)
