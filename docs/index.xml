@@ -1415,6 +1415,7 @@ $ docker image prune
 &lt;li&gt;&lt;a href=&#34;https://luet-lab.github.io/docs&#34;&gt;Luet docs&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://luet-lab.github.io/docs/docs/concepts/packages/&#34;&gt;Luet Packages&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://luet-lab.github.io/docs/docs/tutorials/hello_world/&#34;&gt;Luet hello world&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Luet-lab/examples/tree/master/demo3/tree&#34;&gt;Emerge ebuild example&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
