@@ -18,6 +18,7 @@ luet install system/luet-migrate-entropy
 luet migrate-entropy
 ```
 The migrate-entropy script detects packages that are installed and fills the luet database. If you for some reason need to repeat this step, please remove the luet database first. `rm /var/luet/db/luet.db`
+
 Migrations have been checked for systems running Sabayon 18.05 and newer. You can check which version of Sabayon you are running with `cat /etc/sabayon-release`.
 
 ### Enabling the Portage Tree layer
