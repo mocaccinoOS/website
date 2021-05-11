@@ -27,8 +27,8 @@ Once converted to Mocaccino OS, you will want to enable the Mocaccino Repositori
 
 ```bash
 luet install repository/mocaccino-os-commons
-luet install repository/mocaccino-desktop-stable
 luet install repository/mocaccino-extra-stable
+luet install repository/mocaccino-desktop-stable
 ```
 
 ### Upgrading to the latest packages
