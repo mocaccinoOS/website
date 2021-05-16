@@ -162,6 +162,12 @@ enable = false
         desc = "Join us on the official Telegram group!"
 
 [[params.links.user]]
+	name = "Twitter"
+	url = "https://twitter.com/MocaccinoOs"
+	icon = "fab fa-twitter"
+        desc = "Follow us on Twitter!"
+
+[[params.links.user]]
 	name = "Slack"
 	url = "https://join.slack.com/t/luet/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY"
 	icon = "fab fa-slack"
