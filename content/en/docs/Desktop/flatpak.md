@@ -17,7 +17,7 @@ $> luet install apps/flatpak
 Once flatpak is installed, from your user add the flathub repo:
 
 ```bash
-user $> flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo --user
+user $> flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 
 To install Firefox, for example, now you can: 
