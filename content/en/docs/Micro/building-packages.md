@@ -118,7 +118,7 @@ If all goes well, we should see some connection messages, and after a while we s
 
 ### Permanent setup
 
-Annotate the `IFACE`, `ADDRESS`, and `EDGEVPNCONFIG` in `/etc/sv/k3s/conf` in each node, or you can use the following yip file for example (to place under `/etc/yip.d`):
+Annotate the `IFACE`, `ADDRESS`, and `EDGEVPNCONFIG` in `/etc/sv/edgevpn/conf` in each node, and then you can use the following yip file for example to configure k3s (to place under `/etc/yip.d`):
 
 Node A:
 ```yaml
@@ -180,6 +180,13 @@ stages:
               LANG=C LC_ALL=C K3S_URL=https://10.1.0.1:6443 K3S_TOKEN=xxx \
               exec /usr/bin/k3s agent --flannel-iface=edgevpn0 --node-ip 10.1.0.13 2>&1
 
+```
+
+Then enable the services at boot:
+
+```bash
+$ runit-enable k3s
+$ runit-enable edgevpn
 ```
 ## Example
 
