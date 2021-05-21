@@ -24,11 +24,11 @@
 <meta property="og:description" content="How to build packages with Luet in Mocaccino Micro and k3s" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/micro/building-packages/" />
-<meta property="article:modified_time" content="2021-05-18T00:12:35+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2021-05-21T23:27:45+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 <meta itemprop="name" content="Building packages with Micro and k3s">
 <meta itemprop="description" content="How to build packages with Luet in Mocaccino Micro and k3s">
-<meta itemprop="dateModified" content="2021-05-18T00:12:35+02:00" />
-<meta itemprop="wordCount" content="163">
+<meta itemprop="dateModified" content="2021-05-21T23:27:45+02:00" />
+<meta itemprop="wordCount" content="478">
 
 
 
@@ -143,7 +143,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8b47fff5e405e09bbf12024a6b22f21a104f635fc29885b57e2bbd7ebc3f59a8a9ec19fca31fb476a5f61406d55b8030691e34de8c5e2232d8de08822e83542a.json"
+  data-offline-search-index-json-src="/offline-search-index.fb014f02f2ac3d2df0ad3a710c24e71046ce3595db9ccc290ab418c857f08cde3bae73d31fdfbb4fc2a2f6df992d5e8b60b4528fa678394f0560ac93878a9c5f.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -175,7 +175,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8b47fff5e405e09bbf12024a6b22f21a104f635fc29885b57e2bbd7ebc3f59a8a9ec19fca31fb476a5f61406d55b8030691e34de8c5e2232d8de08822e83542a.json"
+  data-offline-search-index-json-src="/offline-search-index.fb014f02f2ac3d2df0ad3a710c24e71046ce3595db9ccc290ab418c857f08cde3bae73d31fdfbb4fc2a2f6df992d5e8b60b4528fa678394f0560ac93878a9c5f.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -468,6 +468,21 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#advanced-multi-node-setup">(advanced) Multi-node setup</a>
+      <ul>
+        <li><a href="#install-edgevpn-and-k3s">Install edgevpn and k3s</a></li>
+        <li><a href="#generate-edgevpn-configuration">Generate edgevpn configuration</a></li>
+        <li><a href="#start-the-vpn">Start the vpn</a></li>
+        <li><a href="#start-k3s">Start k3s:</a></li>
+        <li><a href="#permanent-setup">Permanent setup</a></li>
+      </ul>
+    </li>
+    <li><a href="#example">Example</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -610,6 +625,182 @@ This is currently experimental
 <pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">k3s kubectl logs -f <span style="color:#24909d">test</span>
 </code></pre></td></tr></table>
 </div>
+</div><h2 id="advanced-multi-node-setup">(advanced) Multi-node setup</h2>
+<p>This section shows how to configure 2(or more) MocaccinoOS Micro instances with <a href="https://k3s.io">K3s</a> and <a href="https://github.com/mudler/edgevpn">edgevpn</a>.</p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Warning</h4>
+Note, this setup is for development purposes, and intended to be run in a trusted environment, and just on Virtual machines. The following steps should only be carried out on test systems. Do make sure you have any important data backed up before starting a migration.
+</div>
+
+<h3 id="install-edgevpn-and-k3s">Install edgevpn and k3s</h3>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">luet install -y runit-srv/edgevpn utils/edgevpn container/k3s runit-srv/k3s
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="generate-edgevpn-configuration">Generate edgevpn configuration</h3>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">edgevpn -g &gt; vpn.yaml
+</code></pre></td></tr></table>
+</div>
+</div><p>Save the configuration file, it has to be available on all the machines that will belong to the cluster.</p>
+<h3 id="start-the-vpn">Start the vpn</h3>
+<p>We are ready to try to start the vpn:</p>
+<ul>
+<li>
+<p>on node A: <code>sudo IFACE=edgevpn0 ADDRESS=10.1.0.3/24 EDGEVPNCONFIG=vpn.yml edgevpn</code></p>
+</li>
+<li>
+<p>on node B: <code>sudo IFACE=edgevpn0 ADDRESS=10.1.0.4/24 EDGEVPNCONFIG=vpm.yml edgevpn</code></p>
+</li>
+</ul>
+<p>Where:</p>
+<ul>
+<li><code>IFACE</code> is the vpn interface to be created</li>
+<li><code>ADDRESS</code> is the address of the node in the vpn network</li>
+<li><code>EDGEVPNCONFIG</code> is the path of the configuration which was generated before</li>
+</ul>
+<p>If all goes well, we should see some connection messages, and after a while we should be able to ping the nodes.</p>
+<h3 id="start-k3s">Start k3s:</h3>
+<ul>
+<li>
+<p>on node A: <code>k3s server --flannel-iface=edgevpn0</code></p>
+</li>
+<li>
+<p>on node B: <code>K3S_URL=https://10.1.0.3:6443 K3S_TOKEN=xx k3s agent --flannel-iface=edgevpn0 --node-ip 10.1.0.4</code></p>
+</li>
+</ul>
+<h3 id="permanent-setup">Permanent setup</h3>
+<p>Annotate the <code>IFACE</code>, <code>ADDRESS</code>, and <code>EDGEVPNCONFIG</code> in <code>/etc/sv/k3s/conf</code> in each node, or you can use the following yip file for example (to place under <code>/etc/yip.d</code>):</p>
+<p>Node A:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#6ab825;font-weight:bold">stages</span>:<span style="color:#666">
+</span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">boot</span>:<span style="color:#666">
+</span><span style="color:#666">       </span>- <span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;k3s&#34;</span><span style="color:#666">
+</span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">commands</span>:<span style="color:#666">
+</span><span style="color:#666">          </span>- <span style="color:#ed9d13">|
+</span><span style="color:#ed9d13">              if [ ! -e &#34;/usr/bin/k3s&#34; ]; then</span><span style="color:#666">
+</span><span style="color:#666">                </span>luet<span style="color:#666"> </span>install<span style="color:#666"> </span>-y<span style="color:#666"> </span>container/k3s<span style="color:#666"> </span>runit-srv/k3s<span style="color:#666">
+</span><span style="color:#666">                </span>runit-enable<span style="color:#666"> </span>k3s<span style="color:#666">
+</span><span style="color:#666">              </span>fi<span style="color:#666">
+</span><span style="color:#666">          </span>- ulimit<span style="color:#666"> </span>-u<span style="color:#666"> </span>unlimited<span style="color:#666">
+</span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">files</span>:<span style="color:#666">
+</span><span style="color:#666">          </span>- <span style="color:#6ab825;font-weight:bold">path</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;/etc/sv/k3s/run&#34;</span><span style="color:#666">
+</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">owner</span>:<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666">
+</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">group</span>:<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666">
+</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">permissions</span>:<span style="color:#666"> </span><span style="color:#3677a9">0755</span><span style="color:#666">
+</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">content</span>:<span style="color:#666"> </span><span style="color:#ed9d13">|
+</span><span style="color:#ed9d13">              #!/bin/sh</span><span style="color:#666">
+</span><span style="color:#666">
+</span><span style="color:#666">              </span>exec<span style="color:#666"> </span><span style="color:#3677a9">2</span>&gt;<span style="color:#cd2828;font-weight:bold">&amp;1</span><span style="color:#666">
+</span><span style="color:#666">
+</span><span style="color:#666">              </span>[<span style="color:#666"> </span>-r<span style="color:#666"> </span>./conf<span style="color:#666"> </span>]<span style="color:#666"> </span><span style="color:#cd2828;font-weight:bold">&amp;&amp;</span><span style="color:#666"> </span>.<span style="color:#666"> </span>./conf<span style="color:#666">
+</span><span style="color:#666">
+</span><span style="color:#666">              </span>echo<span style="color:#666"> </span><span style="color:#ed9d13">&#39;k3s starting.&#39;</span><span style="color:#666">
+</span><span style="color:#666">
+</span><span style="color:#666">              </span>LANG=C<span style="color:#666"> </span>LC_ALL=C<span style="color:#666"> </span>\<span style="color:#666">
+</span><span style="color:#666">              </span>exec<span style="color:#666"> </span>/usr/bin/k3s<span style="color:#666"> </span>server<span style="color:#666"> </span>--flannel-iface=edgevpn0<span style="color:#666"> </span><span style="color:#3677a9">2</span>&gt;<span style="color:#cd2828;font-weight:bold">&amp;1</span><span style="color:#666">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Node B:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">27
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#6ab825;font-weight:bold">stages</span>:<span style="color:#666">
+</span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">boot</span>:<span style="color:#666">
+</span><span style="color:#666">       </span>- <span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;k3s&#34;</span><span style="color:#666">
+</span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">commands</span>:<span style="color:#666">
+</span><span style="color:#666">          </span>- <span style="color:#ed9d13">|
+</span><span style="color:#ed9d13">              if [ ! -e &#34;/usr/bin/k3s&#34; ]; then</span><span style="color:#666">
+</span><span style="color:#666">                </span>luet<span style="color:#666"> </span>install<span style="color:#666"> </span>-y<span style="color:#666"> </span>container/k3s<span style="color:#666"> </span>runit-srv/k3s<span style="color:#666">
+</span><span style="color:#666">                </span>runit-enable<span style="color:#666"> </span>k3s<span style="color:#666">
+</span><span style="color:#666">              </span>fi<span style="color:#666">
+</span><span style="color:#666">          </span>- ulimit<span style="color:#666"> </span>-u<span style="color:#666"> </span>unlimited<span style="color:#666">
+</span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">files</span>:<span style="color:#666">
+</span><span style="color:#666">          </span>- <span style="color:#6ab825;font-weight:bold">path</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;/etc/sv/k3s/run&#34;</span><span style="color:#666">
+</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">owner</span>:<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666">
+</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">group</span>:<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666">
+</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">permissions</span>:<span style="color:#666"> </span><span style="color:#3677a9">0755</span><span style="color:#666">
+</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">content</span>:<span style="color:#666"> </span><span style="color:#ed9d13">|
+</span><span style="color:#ed9d13">              #!/bin/sh</span><span style="color:#666">
+</span><span style="color:#666">
+</span><span style="color:#666">              </span>exec<span style="color:#666"> </span><span style="color:#3677a9">2</span>&gt;<span style="color:#cd2828;font-weight:bold">&amp;1</span><span style="color:#666">
+</span><span style="color:#666">
+</span><span style="color:#666">              </span>[<span style="color:#666"> </span>-r<span style="color:#666"> </span>./conf<span style="color:#666"> </span>]<span style="color:#666"> </span><span style="color:#cd2828;font-weight:bold">&amp;&amp;</span><span style="color:#666"> </span>.<span style="color:#666"> </span>./conf<span style="color:#666">
+</span><span style="color:#666">
+</span><span style="color:#666">              </span>echo<span style="color:#666"> </span><span style="color:#ed9d13">&#39;k3s starting.&#39;</span><span style="color:#666">
+</span><span style="color:#666">
+</span><span style="color:#666">              </span>LANG=C<span style="color:#666"> </span>LC_ALL=C<span style="color:#666"> </span>K3S_URL=https://<span style="color:#3677a9">10.1.0.1</span>:<span style="color:#3677a9">6443</span><span style="color:#666"> </span>K3S_TOKEN=xxx<span style="color:#666"> </span>\<span style="color:#666">
+</span><span style="color:#666">              </span>exec<span style="color:#666"> </span>/usr/bin/k3s<span style="color:#666"> </span>agent<span style="color:#666"> </span>--flannel-iface=edgevpn0<span style="color:#666"> </span>--node-ip<span style="color:#666"> </span><span style="color:#3677a9">10.1.0.13</span><span style="color:#666"> </span><span style="color:#3677a9">2</span>&gt;<span style="color:#cd2828;font-weight:bold">&amp;1</span><span style="color:#666">
+</span><span style="color:#666">
+</span></code></pre></td></tr></table>
+</div>
 </div><h2 id="example">Example</h2>
 <ul>
 <li><a href="https://github.com/mudler/luet-k8s#full-example">Full package build example</a></li>
@@ -617,7 +808,7 @@ This is currently experimental
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified May 18, 2021: <a  href="https://github.com/MocaccinoOS/website/commit/e1126b55cff15d7b3698506abd6b20ad7f581f42">Update flatpak.md (e1126b5)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified May 21, 2021: <a  href="https://github.com/MocaccinoOS/website/commit/78846c21d7f68cd24a2cb2d73bb75a022010697e">Add multi-node setup (78846c2)</a>
 </div>
 </div>
 
