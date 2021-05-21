@@ -188,6 +188,7 @@ Then enable the services at boot:
 $ runit-enable k3s
 $ runit-enable edgevpn
 ```
+
 ## Example
 
 - [Full package build example](https://github.com/mudler/luet-k8s#full-example)
