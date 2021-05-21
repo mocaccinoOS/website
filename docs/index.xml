@@ -640,7 +640,7 @@ Note, this setup is for development purposes, and intended to be run in a truste
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;permanent-setup&#34;&gt;Permanent setup&lt;/h3&gt;
-&lt;p&gt;Annotate the &lt;code&gt;IFACE&lt;/code&gt;, &lt;code&gt;ADDRESS&lt;/code&gt;, and &lt;code&gt;EDGEVPNCONFIG&lt;/code&gt; in &lt;code&gt;/etc/sv/k3s/conf&lt;/code&gt; in each node, or you can use the following yip file for example (to place under &lt;code&gt;/etc/yip.d&lt;/code&gt;):&lt;/p&gt;
+&lt;p&gt;Annotate the &lt;code&gt;IFACE&lt;/code&gt;, &lt;code&gt;ADDRESS&lt;/code&gt;, and &lt;code&gt;EDGEVPNCONFIG&lt;/code&gt; in &lt;code&gt;/etc/sv/edgevpn/conf&lt;/code&gt; in each node, and then you can use the following yip file for example to configure k3s (to place under &lt;code&gt;/etc/yip.d&lt;/code&gt;):&lt;/p&gt;
 &lt;p&gt;Node A:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -760,6 +760,17 @@ Note, this setup is for development purposes, and intended to be run in a truste
 &lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;              &lt;/span&gt;exec&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;/usr/bin/k3s&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;agent&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;--flannel-iface=edgevpn0&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;--node-ip&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#3677a9&#34;&gt;10.1.0.13&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;&amp;amp;1&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Then enable the services at boot:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ runit-enable k3s
+$ runit-enable edgevpn
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
 &lt;ul&gt;
