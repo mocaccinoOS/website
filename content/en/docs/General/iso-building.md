@@ -46,8 +46,21 @@ WORKDIR /output
 ENTRYPOINT ["/usr/bin/luet-makeiso"]
 ```
 
-So what exactly is happening here? We're telling docker we want our image to start **FROM** the ubuntu core image which is very small and lean.
+So what exactly is happening here? We're telling docker we want our image to start **FROM** the ubuntu core image which is very small and extremely lean.
 Then we're telling docker to **RUN** these commands inside the docker for setup. These command update the apt repos, install a few required tools, install luet via a script, and add the makeiso luet extension. Then we're saying we need a **WORKDIR** where we're going to output our file file and we want that to be a folder we link outside the docker so we can have that ISO outside of the docker. Then we're using **ENTRYPOINT** to tell docker after the image is built and started, what command do we want the docker to run? 
+
+Want to start from Gentoo Stage3? Try this Dockerfile:
+
+```
+FROM gentoo/stage3:systemd
+RUN rm -rf /var/lock
+RUN mkdir -p /var/lock/
+RUN touch /var/lock/luet.lock
+RUN curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
+RUN luet install -y extension/makeiso
+WORKDIR /output
+ENTRYPOINT ["/usr/bin/luet-makeiso"]
+```
 
 ### Building the docker image
 
