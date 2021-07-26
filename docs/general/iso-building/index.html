@@ -24,11 +24,11 @@
 <meta property="og:description" content="Building ISOs for testing or custom ISOs." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/general/iso-building/" />
-<meta property="article:modified_time" content="2021-07-26T15:18:11-05:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2021-07-26T15:29:34-05:00" /><meta property="og:site_name" content="MocaccinoOS" />
 <meta itemprop="name" content="ISO building">
 <meta itemprop="description" content="Building ISOs for testing or custom ISOs.">
-<meta itemprop="dateModified" content="2021-07-26T15:18:11-05:00" />
-<meta itemprop="wordCount" content="869">
+<meta itemprop="dateModified" content="2021-07-26T15:29:34-05:00" />
+<meta itemprop="wordCount" content="879">
 
 
 
@@ -143,7 +143,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3a46b3ee1d18d1f215d8ea800f2ad938b45860e42b8a83c6fabc43f4cb04a0d6c6dbbc7f8e9553f2467916cfa9630945be9c6f34e036ab12b9e7528aa38706eb.json"
+  data-offline-search-index-json-src="/offline-search-index.21fd1cf228fbc16c73a56a535f829efba1780c229c5d486b4841096c9cee38429507ed2873647ad5194ac0e00e6bdf3036cccd88503d9d2aea51f66f5c12ab94.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -175,7 +175,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3a46b3ee1d18d1f215d8ea800f2ad938b45860e42b8a83c6fabc43f4cb04a0d6c6dbbc7f8e9553f2467916cfa9630945be9c6f34e036ab12b9e7528aa38706eb.json"
+  data-offline-search-index-json-src="/offline-search-index.21fd1cf228fbc16c73a56a535f829efba1780c229c5d486b4841096c9cee38429507ed2873647ad5194ac0e00e6bdf3036cccd88503d9d2aea51f66f5c12ab94.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -594,7 +594,7 @@ Then we&rsquo;re telling docker to <strong>RUN</strong> these commands inside th
 <pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@mocaccino:~/Docker/iso-builder# docker build -t iso-builder .
 </code></pre></td></tr></table>
 </div>
-</div><p>What is this command doing? Its telling <strong>docker</strong> to <strong>build</strong> the <strong>Dockerfile</strong> inside the current directory (.) and tag (-t) it with the name <strong>iso-builder</strong>. When this is complete you should see something like this at the end:</p>
+</div><p>What is this command doing? Its telling <strong>docker</strong> to <strong>build</strong> the <strong>Dockerfile</strong> inside the current directory <strong>(.)</strong> and tag <strong>(-t)</strong> it with the name <strong>iso-builder</strong>. When this is complete you should see something like this at the end:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
@@ -608,7 +608,7 @@ Successfully tagged iso-builder:latest
 </div><p>This means the docker image was successfully built and it has been tagged/named iso-builder:latest. What is with the &ldquo;:latest&rdquo;? Well you can have multiple revisions of docker and tag them with different version numbers. For example if I was maintaining 2 different versions such as how ubuntu LTS has multiple still supported versions we could tag it like :1804 and :2004, but for our usecases we won&rsquo;t be doing that. We&rsquo;ll just be using latest.</p>
 <h3 id="building-the-iso">Building the ISO</h3>
 <p>Now we have a docker image we can use to build clean ISOs from scratch, but we&rsquo;re still not done.  the <strong>ENTRYPOINT</strong> command luet-makeiso requires arguements. running the command alone doesn&rsquo;t just build an ISO. It needs instructions on the list of layers and packages to download and install to build a specific spin of MocaccinoOS. For the simplicity of the guide we&rsquo;ll just be using Gnome, but there are multiple Mocaccino flavors for you to choose from. You can build from a pre-built specification or you can tweak a specification to make your own ISO build. Our specification files are stored at <a href="https://github.com/mocaccinoOS/mocaccino/tree/master/specs">https://github.com/mocaccinoOS/mocaccino/tree/master/specs</a>.</p>
-<p>Lets download the gnome.yaml spec file into our iso-builder directory.</p>
+<p>Lets download the <code>gnome.yaml</code> spec file into our iso-builder directory.</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
@@ -638,11 +638,11 @@ Dockerfile  gnome.yaml
 </code></pre></td></tr></table>
 </div>
 </div><p>So whats happening here exactly? We&rsquo;re telling <strong>docker</strong> run a docker container using the <strong>iso-builder:latest</strong> image we built and we want to see the output run in a new tty/shell that is interactive <strong>(-ti)</strong> and we&rsquo;re binding <strong>(-v)</strong> our current folder <strong>($PWD)</strong> to a folder inside the docker <strong>/output</strong>. Now files in our current directly will be accessible to the docker and files the docker creates in that directory will be accessible to us. We also want the docker to delete itself when the job is complete <strong>(&ndash;rm)</strong>. We&rsquo;re passing an argument <strong>(gnome.yaml)</strong> to the command at the <strong>ENTRYPOINT</strong> command of the docker. So Effectively the docker is running the command <code>/usr/bin/luet-makeiso gnome.yaml</code> and that <code>gnome.yaml</code> file is accessible because its in the <strong>WORKDIR</strong> /output that we binded to the docker.</p>
-<p>Now the docker will begin as a minimal image installing all required files via luet to have a bootable mocaccino gnome system. This will take some time. After all the packages are installed into the docker it will begin building an ISO of the current snapshot of that docker. After the ISO build is complete, the ISO will be dumped into /output which also happens to be the current directory your in on the host system <code>~/Docker/iso-builder#</code>. After that is complete, the docker will proceed to remove itself. This cleans up any unncessary dockers and bloat on your system.</p>
+<p>Now the docker will begin as a minimal image installing all required files via luet to have a bootable mocaccino gnome system. This will take some time. After all the packages are installed into the docker it will begin building an ISO of the current snapshot of that docker. After the ISO build is complete, the ISO will be dumped into /output which also happens to be the current directory your in on the host system <code>~/Docker/iso-builder#</code>. After that is complete, the docker will proceed to remove itself. This cleans up any unncessary dockers and bloat on your system, but leaves you with the ISO in your iso-builder directory.</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified July 26, 2021: <a  href="https://github.com/MocaccinoOS/website/commit/370baa6232f99064326301755bc061c74991a88c">Create iso-building.md (370baa6)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified July 26, 2021: <a  href="https://github.com/MocaccinoOS/website/commit/091f9283a989ed8510239064f125f16ecfa8d0e7">Update iso-building.md (091f928)</a>
 </div>
 </div>
 
