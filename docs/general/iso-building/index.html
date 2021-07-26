@@ -24,11 +24,11 @@
 <meta property="og:description" content="Building ISOs for testing or custom ISOs." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/general/iso-building/" />
-<meta property="article:modified_time" content="2021-07-26T16:01:34-05:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2021-07-26T16:13:49-05:00" /><meta property="og:site_name" content="MocaccinoOS" />
 <meta itemprop="name" content="ISO building">
 <meta itemprop="description" content="Building ISOs for testing or custom ISOs.">
-<meta itemprop="dateModified" content="2021-07-26T16:01:34-05:00" />
-<meta itemprop="wordCount" content="916">
+<meta itemprop="dateModified" content="2021-07-26T16:13:49-05:00" />
+<meta itemprop="wordCount" content="928">
 
 
 
@@ -143,7 +143,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5a93abe76a8c6270a25a1dcfe25337b376c278ef49ed0d285a50d6f7733d081337a3c2dc9ce4d3fa6f0722077fefb98108efe12321fbc2db294031c8ff4636fd.json"
+  data-offline-search-index-json-src="/offline-search-index.3e9863f15011bbd98e648d1351100acb3972a7320994f05ef69d73233f7d2e786d7246ad4c77c5a8a67c7bc8a34f495e8563e9ef791267595303885656d5a93d.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -175,7 +175,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5a93abe76a8c6270a25a1dcfe25337b376c278ef49ed0d285a50d6f7733d081337a3c2dc9ce4d3fa6f0722077fefb98108efe12321fbc2db294031c8ff4636fd.json"
+  data-offline-search-index-json-src="/offline-search-index.3e9863f15011bbd98e648d1351100acb3972a7320994f05ef69d73233f7d2e786d7246ad4c77c5a8a67c7bc8a34f495e8563e9ef791267595303885656d5a93d.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -643,15 +643,15 @@ Dockerfile  gnome.yaml
 <pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@mocaccino:~/Docker/iso-builder# docker run -ti -v <span style="color:#40ffff">$PWD</span>:/output --rm iso-builder:latest gnome.yaml
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@mocaccino:~/Docker/iso-builder# docker run -ti -v <span style="color:#40ffff">$PWD</span>:/output --privileged=<span style="color:#24909d">true</span> --rm iso-builder:latest gnome.yaml
 </code></pre></td></tr></table>
 </div>
-</div><p>So whats happening here exactly? We&rsquo;re telling <strong>docker</strong> run a docker container using the <strong>iso-builder:latest</strong> image we built and we want to see the output run in a new tty/shell that is interactive <strong>(-ti)</strong> and we&rsquo;re binding <strong>(-v)</strong> our current folder <strong>($PWD)</strong> to a folder inside the docker <strong>/output</strong>. Now files in our current directly will be accessible to the docker and files the docker creates in that directory will be accessible to us. We also want the docker to delete itself when the job is complete <strong>(&ndash;rm)</strong>. We&rsquo;re passing an argument <strong>(gnome.yaml)</strong> to the command at the <strong>ENTRYPOINT</strong> command of the docker. So Effectively the docker is running the command <code>/usr/bin/luet-makeiso gnome.yaml</code> and that <code>gnome.yaml</code> file is accessible because its in the <strong>WORKDIR</strong> /output that we binded to the docker.</p>
+</div><p>So whats happening here exactly? We&rsquo;re telling <strong>docker</strong> run a docker container using the <strong>iso-builder:latest</strong> image we built and we want to see the output run in a new tty/shell that is interactive <strong>(-ti)</strong> and we&rsquo;re binding <strong>(-v)</strong> our current folder <strong>($PWD)</strong> to a folder inside the docker <strong>/output</strong>. Now files in our current directly will be accessible to the docker and files the docker creates in that directory will be accessible to us. We also want the docker to delete itself when the job is complete <strong>(&ndash;rm)</strong>. We also need privileges to fork the processes for speed <strong>(&ndash;privileged=true)</strong>. We&rsquo;re passing an argument <strong>(gnome.yaml)</strong> to the command at the <strong>ENTRYPOINT</strong> command of the docker. So Effectively the docker is running the command <code>/usr/bin/luet-makeiso gnome.yaml</code> and that <code>gnome.yaml</code> file is accessible because its in the <strong>WORKDIR</strong> /output that we binded to the docker.</p>
 <p>Now the docker will begin as a minimal image installing all required files via luet to have a bootable mocaccino gnome system. This will take some time. After all the packages are installed into the docker it will begin building an ISO of the current snapshot of that docker. After the ISO build is complete, the ISO will be dumped into /output which also happens to be the current directory your in on the host system <code>~/Docker/iso-builder#</code>. After that is complete, the docker will proceed to remove itself. This cleans up any unncessary dockers and bloat on your system, but leaves you with the ISO in your iso-builder directory.</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified July 26, 2021: <a  href="https://github.com/MocaccinoOS/website/commit/99276dc852b934ced44235a37a8fa5ffc654f5bd">Add Gentoo stage3 Systemd option (99276dc)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified July 26, 2021: <a  href="https://github.com/MocaccinoOS/website/commit/f744c1b4af9bf4437f3eec225baafb532b5f97c2">priviledges needed (f744c1b)</a>
 </div>
 </div>
 
