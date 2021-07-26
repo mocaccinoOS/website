@@ -439,6 +439,125 @@ $ luet search --table &amp;lt;regex&amp;gt;
     </item>
     
     <item>
+      <title>Docs: ISO building</title>
+      <link>https://www.mocaccino.org/docs/general/iso-building/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/general/iso-building/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;iso-building&#34;&gt;ISO Building&lt;/h2&gt;
+&lt;p&gt;The ISO building process is performed within dockers to keep ISOs clean and uncontaiminated by unnecessary dev files, temp files, etc.&lt;/p&gt;
+&lt;h3 id=&#34;docker-installation&#34;&gt;Docker installation&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re planning on using docker as a user rather than just from root, you&amp;rsquo;ll want additional packages such as entity/docker and acct-group/docker, but they aren&amp;rsquo;t necessary for our purposes.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~ &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# luet install container/docker systemd-service/dockerd```&lt;/span&gt;
+root@mocaccino:~ &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# systemctl enable docker; systemctl start docker```&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;If you&amp;rsquo;re using mocaccino-micro, you&amp;rsquo;ll use runit-srv/dockerd instead of systemd-service.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~ &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# luet install container/docker runit-srv/dockerd```&lt;/span&gt;
+root@mocaccino:~ &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# runit-enable dockerd; runit-start dockerd```&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;creating-a-dockerfile&#34;&gt;Creating a Dockerfile&lt;/h3&gt;
+&lt;p&gt;You&amp;rsquo;ll need a dockerfile that tells docker how to build our image and what it should do. Lets start by creating a dedicated directory for this work.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~ &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# mkdir -p Docker/iso-builder&lt;/span&gt;
+root@mocaccino:~/Docker/iso-builder# &lt;span style=&#34;color:#24909d&#34;&gt;cd&lt;/span&gt; Docker/iso-builder
+root@mocaccino:~/Docker/iso-builder# touch Dockerfile
+root@mocaccino:~/Docker/iso-builder# vim Dockerfile
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Now what do we need in this dockerfile?&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;FROM ubuntu
+RUN apt-get update
+RUN apt-get install curl xorriso squashfs-tools dosfstools
+RUN curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
+RUN luet install -y extension/makeiso
+WORKDIR /output
+ENTRYPOINT [&amp;quot;/usr/bin/luet-makeiso&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So what exactly is happening here? We&amp;rsquo;re telling docker we want our image to start &lt;strong&gt;FROM&lt;/strong&gt; the ubuntu core image which is very small and lean.
+Then we&amp;rsquo;re telling docker to &lt;strong&gt;RUN&lt;/strong&gt; these commands inside the docker for setup. These command update the apt repos, install a few required tools, install luet via a script, and add the makeiso luet extension. Then we&amp;rsquo;re saying we need a &lt;strong&gt;WORKDIR&lt;/strong&gt; where we&amp;rsquo;re going to output our file file and we want that to be a folder we link outside the docker so we can have that ISO outside of the docker. Then we&amp;rsquo;re using &lt;strong&gt;ENTRYPOINT&lt;/strong&gt; to tell docker after the image is built and started, what command do we want the docker to run?&lt;/p&gt;
+&lt;h3 id=&#34;building-the-docker-image&#34;&gt;Building the docker image&lt;/h3&gt;
+&lt;p&gt;Building the docker image and installing/running the docker container are different. Building the docker image means you have the starting point image built and ready, but doesn&amp;rsquo;t mean the docker container installed and running. We&amp;rsquo;ll be building and tagging this image with a name.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~/Docker/iso-builder# docker build -t iso-builder .
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;What is this command doing? Its telling &lt;strong&gt;docker&lt;/strong&gt; to &lt;strong&gt;build&lt;/strong&gt; the &lt;strong&gt;Dockerfile&lt;/strong&gt; inside the current directory (.) and tag (-t) it with the name &lt;strong&gt;iso-builder&lt;/strong&gt;. When this is complete you should see something like this at the end:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Successfully built af8d3b35de70
+Successfully tagged iso-builder:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This means the docker image was successfully built and it has been tagged/named iso-builder:latest. What is with the &amp;ldquo;:latest&amp;rdquo;? Well you can have multiple revisions of docker and tag them with different version numbers. For example if I was maintaining 2 different versions such as how ubuntu LTS has multiple still supported versions we could tag it like :1804 and :2004, but for our usecases we won&amp;rsquo;t be doing that. We&amp;rsquo;ll just be using latest.&lt;/p&gt;
+&lt;h3 id=&#34;building-the-iso&#34;&gt;Building the ISO&lt;/h3&gt;
+&lt;p&gt;Now we have a docker image we can use to build clean ISOs from scratch, but we&amp;rsquo;re still not done.  the &lt;strong&gt;ENTRYPOINT&lt;/strong&gt; command luet-makeiso requires arguements. running the command alone doesn&amp;rsquo;t just build an ISO. It needs instructions on the list of layers and packages to download and install to build a specific spin of MocaccinoOS. For the simplicity of the guide we&amp;rsquo;ll just be using Gnome, but there are multiple Mocaccino flavors for you to choose from. You can build from a pre-built specification or you can tweak a specification to make your own ISO build. Our specification files are stored at &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/tree/master/specs&#34;&gt;https://github.com/mocaccinoOS/mocaccino/tree/master/specs&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Lets download the gnome.yaml spec file into our iso-builder directory.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~/Docker/iso-builder# curl https://raw.githubusercontent.com/mocaccinoOS/mocaccino/master/specs/gnome.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Our iso-builder directory should now look like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~/Docker/iso-builder# ls
+Dockerfile  gnome.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Lets tell Docker to run our newly built docker container image and tell it to build us an ISO!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~/Docker/iso-builder# docker run -ti -v &lt;span style=&#34;color:#40ffff&#34;&gt;$PWD&lt;/span&gt;:/output --rm iso-builder:latest gnome.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;So whats happening here exactly? We&amp;rsquo;re telling &lt;strong&gt;docker&lt;/strong&gt; run a docker container using the &lt;strong&gt;iso-builder:latest&lt;/strong&gt; image we built and we want to see the output run in a new tty/shell that is interactive &lt;strong&gt;(-ti)&lt;/strong&gt; and we&amp;rsquo;re binding &lt;strong&gt;(-v)&lt;/strong&gt; our current folder &lt;strong&gt;($PWD)&lt;/strong&gt; to a folder inside the docker &lt;strong&gt;/output&lt;/strong&gt;. Now files in our current directly will be accessible to the docker and files the docker creates in that directory will be accessible to us. We also want the docker to delete itself when the job is complete &lt;strong&gt;(&amp;ndash;rm)&lt;/strong&gt;. We&amp;rsquo;re passing an argument &lt;strong&gt;(gnome.yaml)&lt;/strong&gt; to the command at the &lt;strong&gt;ENTRYPOINT&lt;/strong&gt; command of the docker. So Effectively the docker is running the command &lt;code&gt;/usr/bin/luet-makeiso gnome.yaml&lt;/code&gt; and that &lt;code&gt;gnome.yaml&lt;/code&gt; file is accessible because its in the &lt;strong&gt;WORKDIR&lt;/strong&gt; /output that we binded to the docker.&lt;/p&gt;
+&lt;p&gt;Now the docker will begin as a minimal image installing all required files via luet to have a bootable mocaccino gnome system. This will take some time. After all the packages are installed into the docker it will begin building an ISO of the current snapshot of that docker. After the ISO build is complete, the ISO will be dumped into /output which also happens to be the current directory your in on the host system &lt;code&gt;~/Docker/iso-builder#&lt;/code&gt;. After that is complete, the docker will proceed to remove itself. This cleans up any unncessary dockers and bloat on your system.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Switching kernels</title>
       <link>https://www.mocaccino.org/docs/general/kernels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
