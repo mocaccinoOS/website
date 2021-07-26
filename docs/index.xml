@@ -496,9 +496,18 @@ RUN curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
 RUN luet install -y extension/makeiso
 WORKDIR /output
 ENTRYPOINT [&amp;quot;/usr/bin/luet-makeiso&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So what exactly is happening here? We&amp;rsquo;re telling docker we want our image to start &lt;strong&gt;FROM&lt;/strong&gt; the ubuntu core image which is very small and lean.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So what exactly is happening here? We&amp;rsquo;re telling docker we want our image to start &lt;strong&gt;FROM&lt;/strong&gt; the ubuntu core image which is very small and extremely lean.
 Then we&amp;rsquo;re telling docker to &lt;strong&gt;RUN&lt;/strong&gt; these commands inside the docker for setup. These command update the apt repos, install a few required tools, install luet via a script, and add the makeiso luet extension. Then we&amp;rsquo;re saying we need a &lt;strong&gt;WORKDIR&lt;/strong&gt; where we&amp;rsquo;re going to output our file file and we want that to be a folder we link outside the docker so we can have that ISO outside of the docker. Then we&amp;rsquo;re using &lt;strong&gt;ENTRYPOINT&lt;/strong&gt; to tell docker after the image is built and started, what command do we want the docker to run?&lt;/p&gt;
-&lt;h3 id=&#34;building-the-docker-image&#34;&gt;Building the docker image&lt;/h3&gt;
+&lt;p&gt;Want to start from Gentoo Stage3? Try this Dockerfile:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;FROM gentoo/stage3:systemd
+RUN rm -rf /var/lock
+RUN mkdir -p /var/lock/
+RUN touch /var/lock/luet.lock
+RUN curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
+RUN luet install -y extension/makeiso
+WORKDIR /output
+ENTRYPOINT [&amp;quot;/usr/bin/luet-makeiso&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;building-the-docker-image&#34;&gt;Building the docker image&lt;/h3&gt;
 &lt;p&gt;Building the docker image and installing/running the docker container are different. Building the docker image means you have the starting point image built and ready, but doesn&amp;rsquo;t mean the docker container installed and running. We&amp;rsquo;ll be building and tagging this image with a name.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
