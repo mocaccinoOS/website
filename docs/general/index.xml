@@ -26,44 +26,18 @@
 &lt;p&gt;The ISO building process is performed within dockers to keep ISOs clean and uncontaiminated by unnecessary dev files, temp files, etc.&lt;/p&gt;
 &lt;h3 id=&#34;docker-installation&#34;&gt;Docker installation&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re planning on using docker as a user rather than just from root, you&amp;rsquo;ll want additional packages such as entity/docker and acct-group/docker, but they aren&amp;rsquo;t necessary for our purposes.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~# luet install container/docker systemd-service/dockerd&lt;span style=&#34;color:#ed9d13&#34;&gt;```&lt;/span&gt;
-root@mocaccino:~# systemctl &lt;span style=&#34;color:#24909d&#34;&gt;enable&lt;/span&gt; docker; systemctl start docker&lt;span style=&#34;color:#ed9d13&#34;&gt;```&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;If you&amp;rsquo;re using mocaccino-micro, you&amp;rsquo;ll use runit-srv/dockerd instead of systemd-service.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~# luet install container/docker runit-srv/dockerd&lt;span style=&#34;color:#ed9d13&#34;&gt;```&lt;/span&gt;
-root@mocaccino:~# runit-enable dockerd; runit-start dockerd&lt;span style=&#34;color:#ed9d13&#34;&gt;```&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;creating-a-dockerfile&#34;&gt;Creating a Dockerfile&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;root@mocaccino:~# luet install container/docker systemd-service/dockerd
+root@mocaccino:~# systemctl enable docker; systemctl start docker
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you&amp;rsquo;re using mocaccino-micro, you&amp;rsquo;ll use runit-srv/dockerd instead of systemd-service.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@mocaccino:~# luet install container/docker runit-srv/dockerd
+root@mocaccino:~# runit-enable dockerd; runit-start dockerd
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;creating-a-dockerfile&#34;&gt;Creating a Dockerfile&lt;/h3&gt;
 &lt;p&gt;You&amp;rsquo;ll need a dockerfile that tells docker how to build our image and what it should do. Lets start by creating a dedicated directory for this work.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
-&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
-&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~# mkdir -p Docker/iso-builder
-root@mocaccino:~/Docker/iso-builder# &lt;span style=&#34;color:#24909d&#34;&gt;cd&lt;/span&gt; Docker/iso-builder
+&lt;pre&gt;&lt;code&gt;root@mocaccino:~# mkdir -p Docker/iso-builder
+root@mocaccino:~/Docker/iso-builder# cd Docker/iso-builder
 root@mocaccino:~/Docker/iso-builder# touch Dockerfile
 root@mocaccino:~/Docker/iso-builder# vim Dockerfile
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Now what do we need in this dockerfile?&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now what do we need in this dockerfile?&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;FROM ubuntu
 RUN apt-get update
 RUN apt-get install curl xorriso squashfs-tools dosfstools
