@@ -14,14 +14,14 @@ The ISO building process is performed within dockers to keep ISOs clean and unco
 If you're planning on using docker as a user rather than just from root, you'll want additional packages such as entity/docker and acct-group/docker, but they aren't necessary for our purposes.
 
 ```bash
-root@mocaccino:~ # luet install container/docker systemd-service/dockerd```
-root@mocaccino:~ # systemctl enable docker; systemctl start docker```
+root@mocaccino:~# luet install container/docker systemd-service/dockerd```
+root@mocaccino:~# systemctl enable docker; systemctl start docker```
 ```
 If you're using mocaccino-micro, you'll use runit-srv/dockerd instead of systemd-service.
 
 ```bash
-root@mocaccino:~ # luet install container/docker runit-srv/dockerd```
-root@mocaccino:~ # runit-enable dockerd; runit-start dockerd```
+root@mocaccino:~# luet install container/docker runit-srv/dockerd```
+root@mocaccino:~# runit-enable dockerd; runit-start dockerd```
 ```
 
 ### Creating a Dockerfile
@@ -29,7 +29,7 @@ root@mocaccino:~ # runit-enable dockerd; runit-start dockerd```
 You'll need a dockerfile that tells docker how to build our image and what it should do. Lets start by creating a dedicated directory for this work.
 
 ```bash
-root@mocaccino:~ # mkdir -p Docker/iso-builder
+root@mocaccino:~# mkdir -p Docker/iso-builder
 root@mocaccino:~/Docker/iso-builder# cd Docker/iso-builder
 root@mocaccino:~/Docker/iso-builder# touch Dockerfile
 root@mocaccino:~/Docker/iso-builder# vim Dockerfile
@@ -41,7 +41,7 @@ FROM ubuntu
 RUN apt-get update
 RUN apt-get install curl xorriso squashfs-tools dosfstools
 RUN curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
-RUN luet install -y extension/makeiso
+RUN luet install -y extension/makeiso 
 WORKDIR /output
 ENTRYPOINT ["/usr/bin/luet-makeiso"]
 ```
@@ -49,7 +49,7 @@ ENTRYPOINT ["/usr/bin/luet-makeiso"]
 So what exactly is happening here? We're telling docker we want our image to start **FROM** the ubuntu core image which is very small and extremely lean.
 Then we're telling docker to **RUN** these commands inside the docker for setup. These command update the apt repos, install a few required tools, install luet via a script, and add the makeiso luet extension. Then we're saying we need a **WORKDIR** where we're going to output our file file and we want that to be a folder we link outside the docker so we can have that ISO outside of the docker. Then we're using **ENTRYPOINT** to tell docker after the image is built and started, what command do we want the docker to run? 
 
-Want to start from Gentoo Stage3? Try this Dockerfile:
+Want to start from Gentoo Stage3 **(WIP)**? Try this Dockerfile:
 
 ```
 FROM gentoo/stage3:systemd
@@ -57,7 +57,7 @@ RUN rm -rf /var/lock
 RUN mkdir -p /var/lock/
 RUN touch /var/lock/luet.lock
 RUN curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
-RUN luet install -y extension/makeiso
+RUN luet install -y extension/makeiso sys-fs/squashfs-tools sys-fs/dosfstools dev-libs/libisoburn
 WORKDIR /output
 ENTRYPOINT ["/usr/bin/luet-makeiso"]
 ```
