@@ -13,22 +13,22 @@ The ISO building process is performed within dockers to keep ISOs clean and unco
 ### Docker installation
 If you're planning on using docker as a user rather than just from root, you'll want additional packages such as entity/docker and acct-group/docker, but they aren't necessary for our purposes.
 
-```bash
-root@mocaccino:~# luet install container/docker systemd-service/dockerd```
-root@mocaccino:~# systemctl enable docker; systemctl start docker```
+```
+root@mocaccino:~# luet install container/docker systemd-service/dockerd
+root@mocaccino:~# systemctl enable docker; systemctl start docker
 ```
 If you're using mocaccino-micro, you'll use runit-srv/dockerd instead of systemd-service.
 
-```bash
-root@mocaccino:~# luet install container/docker runit-srv/dockerd```
-root@mocaccino:~# runit-enable dockerd; runit-start dockerd```
+```
+root@mocaccino:~# luet install container/docker runit-srv/dockerd
+root@mocaccino:~# runit-enable dockerd; runit-start dockerd
 ```
 
 ### Creating a Dockerfile
 
 You'll need a dockerfile that tells docker how to build our image and what it should do. Lets start by creating a dedicated directory for this work.
 
-```bash
+```
 root@mocaccino:~# mkdir -p Docker/iso-builder
 root@mocaccino:~/Docker/iso-builder# cd Docker/iso-builder
 root@mocaccino:~/Docker/iso-builder# touch Dockerfile
