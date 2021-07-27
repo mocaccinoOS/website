@@ -32,8 +32,8 @@
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~ &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# luet install container/docker systemd-service/dockerd```&lt;/span&gt;
-root@mocaccino:~ &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# systemctl enable docker; systemctl start docker```&lt;/span&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~# luet install container/docker systemd-service/dockerd&lt;span style=&#34;color:#ed9d13&#34;&gt;```&lt;/span&gt;
+root@mocaccino:~# systemctl &lt;span style=&#34;color:#24909d&#34;&gt;enable&lt;/span&gt; docker; systemctl start docker&lt;span style=&#34;color:#ed9d13&#34;&gt;```&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;If you&amp;rsquo;re using mocaccino-micro, you&amp;rsquo;ll use runit-srv/dockerd instead of systemd-service.&lt;/p&gt;
@@ -43,8 +43,8 @@ root@mocaccino:~ &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# syst
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~ &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# luet install container/docker runit-srv/dockerd```&lt;/span&gt;
-root@mocaccino:~ &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# runit-enable dockerd; runit-start dockerd```&lt;/span&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~# luet install container/docker runit-srv/dockerd&lt;span style=&#34;color:#ed9d13&#34;&gt;```&lt;/span&gt;
+root@mocaccino:~# runit-enable dockerd; runit-start dockerd&lt;span style=&#34;color:#ed9d13&#34;&gt;```&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;creating-a-dockerfile&#34;&gt;Creating a Dockerfile&lt;/h3&gt;
@@ -57,7 +57,7 @@ root@mocaccino:~ &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# runi
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;4
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~ &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# mkdir -p Docker/iso-builder&lt;/span&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@mocaccino:~# mkdir -p Docker/iso-builder
 root@mocaccino:~/Docker/iso-builder# &lt;span style=&#34;color:#24909d&#34;&gt;cd&lt;/span&gt; Docker/iso-builder
 root@mocaccino:~/Docker/iso-builder# touch Dockerfile
 root@mocaccino:~/Docker/iso-builder# vim Dockerfile
@@ -68,18 +68,18 @@ root@mocaccino:~/Docker/iso-builder# vim Dockerfile
 RUN apt-get update
 RUN apt-get install curl xorriso squashfs-tools dosfstools
 RUN curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
-RUN luet install -y extension/makeiso
+RUN luet install -y extension/makeiso 
 WORKDIR /output
 ENTRYPOINT [&amp;quot;/usr/bin/luet-makeiso&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So what exactly is happening here? We&amp;rsquo;re telling docker we want our image to start &lt;strong&gt;FROM&lt;/strong&gt; the ubuntu core image which is very small and extremely lean.
 Then we&amp;rsquo;re telling docker to &lt;strong&gt;RUN&lt;/strong&gt; these commands inside the docker for setup. These command update the apt repos, install a few required tools, install luet via a script, and add the makeiso luet extension. Then we&amp;rsquo;re saying we need a &lt;strong&gt;WORKDIR&lt;/strong&gt; where we&amp;rsquo;re going to output our file file and we want that to be a folder we link outside the docker so we can have that ISO outside of the docker. Then we&amp;rsquo;re using &lt;strong&gt;ENTRYPOINT&lt;/strong&gt; to tell docker after the image is built and started, what command do we want the docker to run?&lt;/p&gt;
-&lt;p&gt;Want to start from Gentoo Stage3? Try this Dockerfile:&lt;/p&gt;
+&lt;p&gt;Want to start from Gentoo Stage3 &lt;strong&gt;(WIP)&lt;/strong&gt;? Try this Dockerfile:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;FROM gentoo/stage3:systemd
 RUN rm -rf /var/lock
 RUN mkdir -p /var/lock/
 RUN touch /var/lock/luet.lock
 RUN curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
-RUN luet install -y extension/makeiso
+RUN luet install -y extension/makeiso sys-fs/squashfs-tools sys-fs/dosfstools dev-libs/libisoburn
 WORKDIR /output
 ENTRYPOINT [&amp;quot;/usr/bin/luet-makeiso&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;building-the-docker-image&#34;&gt;Building the docker image&lt;/h3&gt;
