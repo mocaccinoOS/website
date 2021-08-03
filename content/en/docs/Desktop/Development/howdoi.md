@@ -178,6 +178,18 @@ luet install -y extension/filter
 
 *Note*: `luet search` searches into online repositories enabled in the system unless `--installed` is specified. You need to have the desktop repo enabled locally in order to retrieve this list.
 
+### Filter by package fields
+
+As luet filter can be piped, you can use jq to narrow down the search by specific by package fields. For example, to filter out by category, you can:
+
+```bash
+$ luet search -o json | jq '{ packages: [.packages[] | select( .category == "kernel-modules" )] }' | luet filter
+Duplicate found for etc/modprobe.d/vboxdrv.conf in kernel-modules/virtualbox-modules kernel-modules/virtualbox-modules-lts
+Duplicate found for usr/lib/modules-load.d/virtualbox.conf in kernel-modules/virtualbox-modules kernel-modules/virtualbox-modules-lts
+```
+
+Note, the query is `select( .category == "kernel-modules" )` and you can customize it further to narrow down to specific queries.
+
 ## The package I want to add needs a user/group. Where do I add it?
 
 The user/groups in **MocaccinoOS** are defined by [entities](https://github.com/mudler/entities). They are an uniform way to define user/groups across different distributions in a unique and interoperable way. The same users/groups are indeed shared with Mocaccino Micro.
