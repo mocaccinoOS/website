@@ -24,11 +24,11 @@
 <meta property="og:description" content="How do I..? ~~hitchhiker&#39;s~~ Ops guide to the galaxy.  This document tries to collect the frequent questions while operating the MocaccinoOS tree" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/development/howdoi/" />
-<meta property="article:modified_time" content="2021-08-03T22:32:31+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2021-08-03T22:51:30+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 <meta itemprop="name" content="Frequent questions">
 <meta itemprop="description" content="How do I..? ~~hitchhiker&#39;s~~ Ops guide to the galaxy.  This document tries to collect the frequent questions while operating the MocaccinoOS tree">
-<meta itemprop="dateModified" content="2021-08-03T22:32:31+02:00" />
-<meta itemprop="wordCount" content="1429">
+<meta itemprop="dateModified" content="2021-08-03T22:51:30+02:00" />
+<meta itemprop="wordCount" content="1484">
 
 
 
@@ -143,7 +143,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6ab46862951705c29a811ec22b14bad757e3f869270da7722354f6c1b537f86b3333ffeaeed52a0972c80b88d13dedd01bb4f66f933bc22154f4bf69191b8643.json"
+  data-offline-search-index-json-src="/offline-search-index.fa9dfec80662b787f0965a68c7c7cae15c763ec825d05ba42b29c14bb7d52beca094d7c1139b40c940068e64153e7e8e4cf4c77ae5db93d250a9d41cb9b313e2.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -175,7 +175,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6ab46862951705c29a811ec22b14bad757e3f869270da7722354f6c1b537f86b3333ffeaeed52a0972c80b88d13dedd01bb4f66f933bc22154f4bf69191b8643.json"
+  data-offline-search-index-json-src="/offline-search-index.fa9dfec80662b787f0965a68c7c7cae15c763ec825d05ba42b29c14bb7d52beca094d7c1139b40c940068e64153e7e8e4cf4c77ae5db93d250a9d41cb9b313e2.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -794,6 +794,11 @@ Duplicate found <span style="color:#6ab825;font-weight:bold">for</span> usr/lib/
 </code></pre></td></tr></table>
 </div>
 </div><p>Note, the query is <code>select( .category == &quot;kernel-modules&quot; )</code> and you can customize it further to narrow down to specific queries.</p>
+<h4 id="examples">Examples</h4>
+<h5 id="filtering-kernel">Filtering kernel</h5>
+<p><code>luet search -o json | jq '{ packages: [.packages[] | select( .category != &quot;kernel&quot; )] }' | luet filter &gt;&gt; dups.txt</code></p>
+<h5 id="filtering-layers-and-repository-category">Filtering &lsquo;layers&rsquo; and &lsquo;repository category</h5>
+<p><code>luet search -o json | jq '{ packages: [.packages[] | select( .category != &quot;repository&quot; ) | select(.category != &quot;layers&quot;) ] }' | luet filter &gt;&gt; dups.txt</code></p>
 <h2 id="the-package-i-want-to-add-needs-a-usergroup-where-do-i-add-it">The package I want to add needs a user/group. Where do I add it?</h2>
 <p>The user/groups in <strong>MocaccinoOS</strong> are defined by <a href="https://github.com/mudler/entities">entities</a>. They are an uniform way to define user/groups across different distributions in a unique and interoperable way. The same users/groups are indeed shared with Mocaccino Micro.</p>
 <p>All the users groups are defined in a unique <a href="https://luet-lab.github.io/docs/docs/concepts/packages/collections/">collection</a> inside the <a href="https://github.com/mocaccinoOS/os-commons">os-commons</a> repository, <a href="https://github.com/mocaccinoOS/os-commons/blob/master/packages/entities/collection.yaml">here</a></p>
@@ -802,7 +807,7 @@ Duplicate found <span style="color:#6ab825;font-weight:bold">for</span> usr/lib/
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 3, 2021: <a  href="https://github.com/MocaccinoOS/website/commit/23c851d428d5381a969af7802c623d263582651e">Add tips on how to filter when checking dups (23c851d)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 3, 2021: <a  href="https://github.com/MocaccinoOS/website/commit/dc6b5a095c3ef8be54d3e46c7b719da915a19610">Add more samples (dc6b5a0)</a>
 </div>
 </div>
 
