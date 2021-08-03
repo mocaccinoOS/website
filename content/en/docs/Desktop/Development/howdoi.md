@@ -190,6 +190,18 @@ Duplicate found for usr/lib/modules-load.d/virtualbox.conf in kernel-modules/vir
 
 Note, the query is `select( .category == "kernel-modules" )` and you can customize it further to narrow down to specific queries.
 
+#### Examples
+
+##### Filtering kernel
+
+```luet search -o json | jq '{ packages: [.packages[] | select( .category != "kernel" )] }' | luet filter >> dups.txt```
+
+
+##### Filtering 'layers' and 'repository category
+
+```luet search -o json | jq '{ packages: [.packages[] | select( .category != "repository" ) | select(.category != "layers") ] }' | luet filter >> dups.txt```
+
+
 ## The package I want to add needs a user/group. Where do I add it?
 
 The user/groups in **MocaccinoOS** are defined by [entities](https://github.com/mudler/entities). They are an uniform way to define user/groups across different distributions in a unique and interoperable way. The same users/groups are indeed shared with Mocaccino Micro.
