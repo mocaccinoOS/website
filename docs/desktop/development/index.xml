@@ -206,6 +206,21 @@ Otherwise it might be required to specify the useflags needed in that specific p
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;em&gt;Note&lt;/em&gt;: &lt;code&gt;luet search&lt;/code&gt; searches into online repositories enabled in the system unless &lt;code&gt;--installed&lt;/code&gt; is specified. You need to have the desktop repo enabled locally in order to retrieve this list.&lt;/p&gt;
+&lt;h3 id=&#34;filter-by-package-fields&#34;&gt;Filter by package fields&lt;/h3&gt;
+&lt;p&gt;As luet filter can be piped, you can use jq to narrow down the search by specific by package fields. For example, to filter out by category, you can:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ luet search -o json | jq &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;{ packages: [.packages[] | select( .category == &amp;#34;kernel-modules&amp;#34; )] }&amp;#39;&lt;/span&gt; | luet filter
+Duplicate found &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; etc/modprobe.d/vboxdrv.conf in kernel-modules/virtualbox-modules kernel-modules/virtualbox-modules-lts
+Duplicate found &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; usr/lib/modules-load.d/virtualbox.conf in kernel-modules/virtualbox-modules kernel-modules/virtualbox-modules-lts
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Note, the query is &lt;code&gt;select( .category == &amp;quot;kernel-modules&amp;quot; )&lt;/code&gt; and you can customize it further to narrow down to specific queries.&lt;/p&gt;
 &lt;h2 id=&#34;the-package-i-want-to-add-needs-a-usergroup-where-do-i-add-it&#34;&gt;The package I want to add needs a user/group. Where do I add it?&lt;/h2&gt;
 &lt;p&gt;The user/groups in &lt;strong&gt;MocaccinoOS&lt;/strong&gt; are defined by &lt;a href=&#34;https://github.com/mudler/entities&#34;&gt;entities&lt;/a&gt;. They are an uniform way to define user/groups across different distributions in a unique and interoperable way. The same users/groups are indeed shared with Mocaccino Micro.&lt;/p&gt;
 &lt;p&gt;All the users groups are defined in a unique &lt;a href=&#34;https://luet-lab.github.io/docs/docs/concepts/packages/collections/&#34;&gt;collection&lt;/a&gt; inside the &lt;a href=&#34;https://github.com/mocaccinoOS/os-commons&#34;&gt;os-commons&lt;/a&gt; repository, &lt;a href=&#34;https://github.com/mocaccinoOS/os-commons/blob/master/packages/entities/collection.yaml&#34;&gt;here&lt;/a&gt;&lt;/p&gt;

@@ -24,11 +24,11 @@
 <meta property="og:description" content="How do I..? ~~hitchhiker&#39;s~~ Ops guide to the galaxy.  This document tries to collect the frequent questions while operating the MocaccinoOS tree" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/development/howdoi/" />
-<meta property="article:modified_time" content="2021-07-29T22:19:06+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2021-08-03T22:32:31+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 <meta itemprop="name" content="Frequent questions">
 <meta itemprop="description" content="How do I..? ~~hitchhiker&#39;s~~ Ops guide to the galaxy.  This document tries to collect the frequent questions while operating the MocaccinoOS tree">
-<meta itemprop="dateModified" content="2021-07-29T22:19:06+02:00" />
-<meta itemprop="wordCount" content="1338">
+<meta itemprop="dateModified" content="2021-08-03T22:32:31+02:00" />
+<meta itemprop="wordCount" content="1429">
 
 
 
@@ -143,7 +143,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d0a899f67ec924c8afc4fa2911b2e8cc7248208a3ed35e09bcc623b254a933421c1b8f75bd8dd7ef647a103611812cca44479cfc3c06c034c7cbbe9852be0e6c.json"
+  data-offline-search-index-json-src="/offline-search-index.6ab46862951705c29a811ec22b14bad757e3f869270da7722354f6c1b537f86b3333ffeaeed52a0972c80b88d13dedd01bb4f66f933bc22154f4bf69191b8643.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -175,7 +175,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d0a899f67ec924c8afc4fa2911b2e8cc7248208a3ed35e09bcc623b254a933421c1b8f75bd8dd7ef647a103611812cca44479cfc3c06c034c7cbbe9852be0e6c.json"
+  data-offline-search-index-json-src="/offline-search-index.6ab46862951705c29a811ec22b14bad757e3f869270da7722354f6c1b537f86b3333ffeaeed52a0972c80b88d13dedd01bb4f66f933bc22154f4bf69191b8643.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -529,7 +529,11 @@
     <li><a href="#how-do-i-add-a-package">How do I add a package?</a></li>
     <li><a href="#how-do-i-update-provides-list-and-what-are-they">How do I update provides list, and what are they?</a></li>
     <li><a href="#how-do-i-know-that-a-package-belongs-to-a-layer">How do I know that a package belongs to a Layer?</a></li>
-    <li><a href="#how-do-i-find-the-duplicate-files-in-the-package-repositories">How do I find the duplicate files in the package repositories?</a></li>
+    <li><a href="#how-do-i-find-the-duplicate-files-in-the-package-repositories">How do I find the duplicate files in the package repositories?</a>
+      <ul>
+        <li><a href="#filter-by-package-fields">Filter by package fields</a></li>
+      </ul>
+    </li>
     <li><a href="#the-package-i-want-to-add-needs-a-usergroup-where-do-i-add-it">The package I want to add needs a user/group. Where do I add it?</a></li>
     <li><a href="#how-do-i-add-a-system-wide-extension-or-configure-a-gnome-setting">How do I add a system-wide extension, or configure a gnome setting?</a></li>
   </ul>
@@ -775,6 +779,21 @@ Otherwise it might be required to specify the useflags needed in that specific p
 </code></pre></td></tr></table>
 </div>
 </div><p><em>Note</em>: <code>luet search</code> searches into online repositories enabled in the system unless <code>--installed</code> is specified. You need to have the desktop repo enabled locally in order to retrieve this list.</p>
+<h3 id="filter-by-package-fields">Filter by package fields</h3>
+<p>As luet filter can be piped, you can use jq to narrow down the search by specific by package fields. For example, to filter out by category, you can:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ luet search -o json | jq <span style="color:#ed9d13">&#39;{ packages: [.packages[] | select( .category == &#34;kernel-modules&#34; )] }&#39;</span> | luet filter
+Duplicate found <span style="color:#6ab825;font-weight:bold">for</span> etc/modprobe.d/vboxdrv.conf in kernel-modules/virtualbox-modules kernel-modules/virtualbox-modules-lts
+Duplicate found <span style="color:#6ab825;font-weight:bold">for</span> usr/lib/modules-load.d/virtualbox.conf in kernel-modules/virtualbox-modules kernel-modules/virtualbox-modules-lts
+</code></pre></td></tr></table>
+</div>
+</div><p>Note, the query is <code>select( .category == &quot;kernel-modules&quot; )</code> and you can customize it further to narrow down to specific queries.</p>
 <h2 id="the-package-i-want-to-add-needs-a-usergroup-where-do-i-add-it">The package I want to add needs a user/group. Where do I add it?</h2>
 <p>The user/groups in <strong>MocaccinoOS</strong> are defined by <a href="https://github.com/mudler/entities">entities</a>. They are an uniform way to define user/groups across different distributions in a unique and interoperable way. The same users/groups are indeed shared with Mocaccino Micro.</p>
 <p>All the users groups are defined in a unique <a href="https://luet-lab.github.io/docs/docs/concepts/packages/collections/">collection</a> inside the <a href="https://github.com/mocaccinoOS/os-commons">os-commons</a> repository, <a href="https://github.com/mocaccinoOS/os-commons/blob/master/packages/entities/collection.yaml">here</a></p>
@@ -783,7 +802,7 @@ Otherwise it might be required to specify the useflags needed in that specific p
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified July 29, 2021: <a  href="https://github.com/MocaccinoOS/website/commit/af1ca38f433f25525ade327eccb5aa55b37ea8ee">Add docs on how to migrate from Gentoo (af1ca38)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 3, 2021: <a  href="https://github.com/MocaccinoOS/website/commit/23c851d428d5381a969af7802c623d263582651e">Add tips on how to filter when checking dups (23c851d)</a>
 </div>
 </div>
 
