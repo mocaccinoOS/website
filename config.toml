@@ -151,7 +151,7 @@ enable = false
     desc = "Development takes place here!"
 [[params.links.user]]
 	name = "Forum"
-	url = "https://community.mocaccino.org/"
+	url = "https://github.com/mocaccinoOS/mocaccino/discussions"
 	icon = "fab fa-discourse"
     desc = "Join our community in the Forum!"
 
