@@ -10,7 +10,7 @@ Mocaccino and Luet are under active development and should not be considered "pr
 
 [Mocaccino Micro](https://github.com/mocaccinoOS/mocaccino-micro) is a musl-based LFS distribution with a minimal set of packages in order to boot and build an entire OS. 
 
-[At the moment are available alpha ISO releases](https://get.mocaccino.org/minio/mocaccino-iso), and the following [docker images](https://quay.io/repository/mocaccino/micro) can be used:
+[At the moment are available alpha ISO releases](https://github.com/mocaccinoOS/mocaccino/releases), and the following [docker images](https://quay.io/repository/mocaccino/micro) can be used:
 
 ```bash
 $ docker pull quay.io/mocaccino/micro
