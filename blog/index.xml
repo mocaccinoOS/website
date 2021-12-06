@@ -1,0 +1,37 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MocaccinoOS – MocaccinoOS Blog</title>
+    <link>https://www.mocaccino.org/blog/</link>
+    <description>Recent content in MocaccinoOS Blog on MocaccinoOS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://www.mocaccino.org/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blog: Updates on Funtoo collaboration</title>
+      <link>https://www.mocaccino.org/blog/2021/12/06/updates-on-funtoo-collaboration/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/blog/2021/12/06/updates-on-funtoo-collaboration/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Dear community,&lt;/p&gt;
+&lt;p&gt;Where we at first, with all good intentions, wanted to work on the binary end of Funtoo and strenghten both projects we ran into our first technical issue preventing us
+to quickly go ahead and develop against Funtoo. Not that that would scare us of, oh no, we decided to make this a R&amp;amp;D project and one of our developers was working fully on this.&lt;/p&gt;
+&lt;p&gt;Meanwhile the other team members were focusing their efforts for a MocaccinoOS Desktop alpha and pushing forward on developing a Luet based repository that is based on a layered concept and still originates on Gentoo Portage tree.&lt;/p&gt;
+&lt;p&gt;As weeks and months passed, several issues got resolved, but the projects really grew appart from eachother. Now that the R&amp;amp;D Funtoo/MocaccinoOS project lead decided to leave and work on his own fork within the Funtoo project it is time for us to let go of the initial idea of working together with Funtoo. We wish you luck in all future new endeavours.&lt;/p&gt;
+&lt;p&gt;MocaccinoOS Desktop hopes to release a first alpha image soon. Meanwhile we are always looking for help! Feel free to contact us in our slack channel!&lt;/p&gt;
+&lt;p&gt;On behalf of the MocaccinoOS team.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
