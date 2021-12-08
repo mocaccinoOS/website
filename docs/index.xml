@@ -130,6 +130,26 @@ luet install repository/mocaccino-desktop-stable
 
 &lt;/div&gt;
 
+&lt;h3 id=&#34;prepare-your-system&#34;&gt;Prepare your system&lt;/h3&gt;
+&lt;p&gt;If you are on a GNOME/MATE/XFCE system you probably do not need Qt related packages. The more you remove prior to migration, the more easy it will go.
+So for example if we do not need Qt we can uninstall qtcore using Entropy:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;equo remove dev-qt/qtcore --ask
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;
+
+    Migration can take some time. We advice you to disable screen-locking and power savings. If your screen gets locked during upgrade you might not be able to login again while the upgrade is running.
+
+&lt;/div&gt;
+
 &lt;p&gt;You can convert a Sabayon system (running Entropy) to Mocaccino OS (running luet) with the following commands as root&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -145,7 +165,7 @@ luet migrate-entropy
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;The migrate-entropy script detects packages that are installed and fills the luet database. If you for some reason need to repeat this step, please remove the luet database first. &lt;code&gt;rm /var/luet/db/luet.db&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Migrations have been checked for systems running Sabayon 18.05 and newer. You can check which version of Sabayon you are running with &lt;code&gt;cat /etc/sabayon-release&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;enabling-the-portage-tree-layer&#34;&gt;Enabling the Portage Tree layer&lt;/h3&gt;
+&lt;h3 id=&#34;enable-the-mocaccino-repositories&#34;&gt;Enable the Mocaccino Repositories&lt;/h3&gt;
 &lt;p&gt;Once converted to Mocaccino OS, you will want to enable the Mocaccino Repositories&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;

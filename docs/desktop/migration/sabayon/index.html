@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/migration/sabayon/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-12-06T20:19:03+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2021-12-08T11:45:22+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Migrating from Sabayon">
 <meta itemprop="description" content="Migrating from Sabayon to MocaccinoOS Desktop">
-<meta itemprop="dateModified" content="2021-12-06T20:19:03+01:00" />
-<meta itemprop="wordCount" content="219">
+<meta itemprop="dateModified" content="2021-12-08T11:45:22+01:00" />
+<meta itemprop="wordCount" content="304">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Migrating from Sabayon"/>
 <meta name="twitter:description" content="Migrating from Sabayon to MocaccinoOS Desktop"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c3aa8636f8a3f4772c358fdcc0bce6d6.json"
+  data-offline-search-index-json-src="/offline-search-index.9f27de3b2f7961ebac28231c68388f82.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c3aa8636f8a3f4772c358fdcc0bce6d6.json"
+  data-offline-search-index-json-src="/offline-search-index.9f27de3b2f7961ebac28231c68388f82.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -289,7 +289,8 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#enabling-the-portage-tree-layer">Enabling the Portage Tree layer</a></li>
+        <li><a href="#prepare-your-system">Prepare your system</a></li>
+        <li><a href="#enable-the-mocaccino-repositories">Enable the Mocaccino Repositories</a></li>
         <li><a href="#upgrading-to-the-latest-packages">Upgrading to the latest packages</a></li>
         <li><a href="#remove-cached-downloads">Remove cached downloads</a></li>
       </ul>
@@ -368,6 +369,26 @@
 
 </div>
 
+<h3 id="prepare-your-system">Prepare your system</h3>
+<p>If you are on a GNOME/MATE/XFCE system you probably do not need Qt related packages. The more you remove prior to migration, the more easy it will go.
+So for example if we do not need Qt we can uninstall qtcore using Entropy:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">equo remove dev-qt/qtcore --ask
+</code></pre></td></tr></table>
+</div>
+</div>
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Warning</h4>
+
+    Migration can take some time. We advice you to disable screen-locking and power savings. If your screen gets locked during upgrade you might not be able to login again while the upgrade is running.
+
+</div>
+
 <p>You can convert a Sabayon system (running Entropy) to Mocaccino OS (running luet) with the following commands as root</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -383,7 +404,7 @@ luet migrate-entropy
 </div>
 </div><p>The migrate-entropy script detects packages that are installed and fills the luet database. If you for some reason need to repeat this step, please remove the luet database first. <code>rm /var/luet/db/luet.db</code></p>
 <p>Migrations have been checked for systems running Sabayon 18.05 and newer. You can check which version of Sabayon you are running with <code>cat /etc/sabayon-release</code>.</p>
-<h3 id="enabling-the-portage-tree-layer">Enabling the Portage Tree layer</h3>
+<h3 id="enable-the-mocaccino-repositories">Enable the Mocaccino Repositories</h3>
 <p>Once converted to Mocaccino OS, you will want to enable the Mocaccino Repositories</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -430,7 +451,7 @@ luet install repository/mocaccino-desktop-stable
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified December 6, 2021: <a href="https://github.com/MocaccinoOS/website/commit/d981ea9a0e1a8effc7f81c48efd92fb9ac459557">Updates, cleanup front page (d981ea9)</a>
+  Last modified December 8, 2021: <a href="https://github.com/MocaccinoOS/website/commit/bf499d57f9a6d1cefbd157069a56df3a6290096a">Update sabayon.md (bf499d5)</a>
 </div>
 
 </div>
