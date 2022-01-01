@@ -17,7 +17,7 @@ As a small open source project, know that every dollar will have an immense impa
 
 Your support means the world to us :)
 
-You can donate by going to our [Patreon](https://www.patreon.com/sabayon) page or if you prefer cryptocurrencies, we accepts donations to the following XMR wallet: `84AsfE73Cy7hAYKy7PN8N8D3fh39JzXyLjaiYpgXm3NrJHH7cTPxUJSgsdFiSL6mwE9MKpvrYJQoaTxRG6sJX6aBRpr45dc`.
+You can donate by going to our [Patreon](https://www.patreon.com/mocaccinoos?fan_landing=true) page or if you prefer cryptocurrencies, we accepts donations to the following XMR wallet: `84AsfE73Cy7hAYKy7PN8N8D3fh39JzXyLjaiYpgXm3NrJHH7cTPxUJSgsdFiSL6mwE9MKpvrYJQoaTxRG6sJX6aBRpr45dc`.
 
 <a href="https://www.patreon.com/bePatron?u=11620572" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
 
