@@ -14,6 +14,70 @@
     
     
     <item>
+      <title>Blog: January updates</title>
+      <link>https://www.mocaccino.org/blog/2022/01/01/january-updates/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/blog/2022/01/01/january-updates/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Happy new 2022! Another year has passed, and yet we are here, really close to release an alpha release. Meanwhile, we are sharing updates and new packages available in our repositories.&lt;/p&gt;
+&lt;h2 id=&#34;maui-shell&#34;&gt;Maui shell&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Screenshot #1&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Screenshot #2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/2420543/147857306-749fbcd8-bdc6-4f56-822c-cb7406956a66.png&#34; alt=&#34;1&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/2420543/147857308-de75f19a-c3c7-41e6-bdad-8438a22b6a86.png&#34; alt=&#34;2&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;As you &lt;a href=&#34;https://news.itsfoss.com/maui-shell-unveiled/&#34;&gt;might have heard&lt;/a&gt; Maui shell was recently announced, and we are happy to share with you that is officially available in our development repositories as experimental version and going to land into stable repositories very soon.&lt;/p&gt;
+&lt;p&gt;In order to install Maui shell, just run:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;luet install layers/maui-shell
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Currently, it might be required a reboot in order to log-in as a first time.&lt;/p&gt;
+&lt;p&gt;We are also working on a dedicated ISO flavor with LightDM and Maui shell, stay tuned.&lt;/p&gt;
+&lt;h2 id=&#34;fynedesk&#34;&gt;Fynedesk&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Screenshot #1&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Screenshot #2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/2420543/147838264-d4838105-3e98-4002-9d5a-481cebfc76c7.png&#34; alt=&#34;screenshot-20211231T212120&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/2420543/147838276-fbfa47c8-5e49-4444-a9ab-605d7cb4cf56.png&#34; alt=&#34;screenshot-20211231T211211&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/2420543/147838288-8d6e7e7a-b6cb-4564-b058-294cf2e1787b.png&#34; alt=&#34;screenshot-20211231T210957&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/2420543/147838298-0637691b-a777-4b16-bfc8-5354acc6b424.png&#34; alt=&#34;screenshot-20211231T210807&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;If you don&amp;rsquo;t know about &lt;a href=&#34;https://github.com/fyne-io/fynedesk&#34;&gt;fynedesk&lt;/a&gt;, maybe you should. FyneDesk is an easy to use Linux/Unix desktop environment following material design. It is built using the &lt;a href=&#34;https://github.com/fyne-io/fyne&#34;&gt;Fyne toolkit&lt;/a&gt; and is designed to be easy to use as well as easy to develop.&lt;/p&gt;
+&lt;p&gt;Fynedesk is available in our development repositories and going to land into stable repositories very soon.&lt;/p&gt;
+&lt;p&gt;In order to install Fynedesk, just run:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;luet install layers/fynedesk
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We are also working on a dedicated ISO flavor with LightDM and fynedesk, stay tuned.&lt;/p&gt;
+&lt;h2 id=&#34;updater&#34;&gt;Updater&lt;/h2&gt;
+&lt;p&gt;We have been developing an alpha version of the updater app of &lt;code&gt;mOS&lt;/code&gt;. It is currently available in the development repositories, and you can download it already with:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;luet install apps/mos-updater
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;you can run it in the terminal with &lt;code&gt;mos-updater&lt;/code&gt; or via the application menu.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/2420543/147838266-46be2423-0495-4741-a612-272db9ec0a03.png&#34; alt=&#34;screenshot-20211231T211721&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If upgrades are available, a button will be present which if pressed will start upgrades automatically in the background. The GUI is intentionally simple to just handle upgrades and display notification upgrades to the user.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: Updates on Funtoo collaboration</title>
       <link>https://www.mocaccino.org/blog/2021/12/06/updates-on-funtoo-collaboration/</link>
       <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
