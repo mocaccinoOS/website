@@ -1,6 +1,6 @@
 ---
 title: "January updates"
-linkTitle: "Monthly Updates"
+linkTitle: "January Updates"
 date: 2022-01-01
 description: >
   End of year, December/January updates!
