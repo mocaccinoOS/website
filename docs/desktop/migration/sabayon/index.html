@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/migration/sabayon/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-01-11T23:37:01+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2022-01-11T23:43:04+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Migrating from Sabayon">
 <meta itemprop="description" content="Migrating from Sabayon to MocaccinoOS Desktop">
-<meta itemprop="dateModified" content="2022-01-11T23:37:01+01:00" />
-<meta itemprop="wordCount" content="281">
+<meta itemprop="dateModified" content="2022-01-11T23:43:04+01:00" />
+<meta itemprop="wordCount" content="414">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Migrating from Sabayon"/>
 <meta name="twitter:description" content="Migrating from Sabayon to MocaccinoOS Desktop"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.efc6771638fde5f569e25e2bc47899ea.json"
+  data-offline-search-index-json-src="/offline-search-index.00734ccac55c052d6887414ce88f190c.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.efc6771638fde5f569e25e2bc47899ea.json"
+  data-offline-search-index-json-src="/offline-search-index.00734ccac55c052d6887414ce88f190c.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -294,6 +294,7 @@
         <li><a href="#remove-cached-downloads">Remove cached downloads</a></li>
       </ul>
     </li>
+    <li><a href="#manual-migration">Manual migration</a></li>
   </ul>
 </nav></div>
 
@@ -434,11 +435,44 @@ luet migrate-entropy
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">luet cleanup
 </code></pre></td></tr></table>
 </div>
+</div><h2 id="manual-migration">Manual migration</h2>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    Note, the steps below are a work in progress and might not work at all and break your system. Consider using the steps below to try to recovery from a broken migration.
+
+</div>
+
+<p>It is possible to migrate manually a system by running <code>luet migrate-entropy</code> and replacing packages with the layers available in the <code>mOS</code> repositories, for instance, to migrate and replace all packages with the gnome variant:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
+luet install -y repository/mocaccino-os-commons repository/mocaccino-extra-stable repository/mocaccino-desktop-stable
+luet install -y system/luet-migrate-entropy utils/jq
+luet migrate-entropy
+mkdir -p /etc/mocaccino/
+<span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;desktop&#34;</span> &gt; /etc/mocaccino/release
+<span style="color:#40ffff">installed</span>=<span style="color:#6ab825;font-weight:bold">$(</span>luet search --installed -o json | jq <span style="color:#ed9d13">&#39;.packages | map(.category+&#34;/&#34;+.name)[]&#39;</span> -rc | xargs <span style="color:#24909d">echo</span><span style="color:#6ab825;font-weight:bold">)</span>
+luet replace <span style="color:#40ffff">$installed</span> --for kernel/mocaccino-lts-full --for kernel/mocaccino-lts-modules --for layers/firmware --for system-profile/default-systemd --for system/luet --for layers/system-x --for layers/gnome
+</code></pre></td></tr></table>
+</div>
 </div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified January 11, 2022: <a href="https://github.com/MocaccinoOS/website/commit/1ecf7197706a3405d1e6ee1113d3c29d9cddedff">Update sabayon.md (1ecf719)</a>
+  Last modified January 11, 2022: <a href="https://github.com/MocaccinoOS/website/commit/428b5c1dfedf7b758c69b97a862af487b4fe2002">Add a note on manual migration (428b5c1)</a>
 </div>
 
 </div>
