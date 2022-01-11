@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/migration/sabayon/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-01-11T22:49:54+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2022-01-11T23:37:01+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Migrating from Sabayon">
 <meta itemprop="description" content="Migrating from Sabayon to MocaccinoOS Desktop">
-<meta itemprop="dateModified" content="2022-01-11T22:49:54+01:00" />
-<meta itemprop="wordCount" content="304">
+<meta itemprop="dateModified" content="2022-01-11T23:37:01+01:00" />
+<meta itemprop="wordCount" content="281">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Migrating from Sabayon"/>
 <meta name="twitter:description" content="Migrating from Sabayon to MocaccinoOS Desktop"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5216be871f6ea24fe6443d38c0f5cf43.json"
+  data-offline-search-index-json-src="/offline-search-index.efc6771638fde5f569e25e2bc47899ea.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5216be871f6ea24fe6443d38c0f5cf43.json"
+  data-offline-search-index-json-src="/offline-search-index.efc6771638fde5f569e25e2bc47899ea.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -290,7 +290,6 @@
     <li>
       <ul>
         <li><a href="#prepare-your-system">Prepare your system</a></li>
-        <li><a href="#enable-the-mocaccino-repositories">Enable the Mocaccino Repositories</a></li>
         <li><a href="#upgrading-to-the-latest-packages">Upgrading to the latest packages</a></li>
         <li><a href="#remove-cached-downloads">Remove cached downloads</a></li>
       </ul>
@@ -395,30 +394,18 @@ So for example if we do not need Qt we can uninstall qtcore using Entropy:</p>
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
+luet install repository/mocaccino-os-commons repository/mocaccino-extra-stable repository/mocaccino-desktop-stable
 luet install system/luet-migrate-entropy
 luet migrate-entropy
 </code></pre></td></tr></table>
 </div>
 </div><p>The migrate-entropy script detects packages that are installed and fills the luet database. If you for some reason need to repeat this step, please remove the luet database first. <code>rm /var/luet/db/luet.db</code></p>
 <p>Migrations have been checked for systems running Sabayon 18.05 and newer. You can check which version of Sabayon you are running with <code>cat /etc/sabayon-release</code>.</p>
-<h3 id="enable-the-mocaccino-repositories">Enable the Mocaccino Repositories</h3>
-<p>Once converted to Mocaccino OS, you will want to enable the Mocaccino Repositories</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">luet install repository/mocaccino-os-commons
-luet install repository/mocaccino-extra-stable
-luet install repository/mocaccino-desktop-stable
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="upgrading-to-the-latest-packages">Upgrading to the latest packages</h3>
+<h3 id="upgrading-to-the-latest-packages">Upgrading to the latest packages</h3>
 <p>Install all available newer packages from the Mocaccino repositories using:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -451,7 +438,7 @@ luet install repository/mocaccino-desktop-stable
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified January 11, 2022: <a href="https://github.com/MocaccinoOS/website/commit/85037827f15eec3673bc34353dda2b15b5b92796">Update building_packages.md (8503782)</a>
+  Last modified January 11, 2022: <a href="https://github.com/MocaccinoOS/website/commit/1ecf7197706a3405d1e6ee1113d3c29d9cddedff">Update sabayon.md (1ecf719)</a>
 </div>
 
 </div>
