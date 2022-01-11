@@ -24,22 +24,13 @@ You can convert a Sabayon system (running Entropy) to Mocaccino OS (running luet
 
 ```bash
 curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
+luet install repository/mocaccino-os-commons repository/mocaccino-extra-stable repository/mocaccino-desktop-stable
 luet install system/luet-migrate-entropy
 luet migrate-entropy
 ```
 The migrate-entropy script detects packages that are installed and fills the luet database. If you for some reason need to repeat this step, please remove the luet database first. `rm /var/luet/db/luet.db`
 
 Migrations have been checked for systems running Sabayon 18.05 and newer. You can check which version of Sabayon you are running with `cat /etc/sabayon-release`.
-
-### Enable the Mocaccino Repositories
-
-Once converted to Mocaccino OS, you will want to enable the Mocaccino Repositories
-
-```bash
-luet install repository/mocaccino-os-commons
-luet install repository/mocaccino-extra-stable
-luet install repository/mocaccino-desktop-stable
-```
 
 ### Upgrading to the latest packages
 
