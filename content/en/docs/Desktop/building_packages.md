@@ -56,9 +56,8 @@ Now let's get to the important part, the build definition. This tells luet how t
 
 ```bash
 $ cat <<EOF >>tree/gnome-chess/build.yaml
-package_dir: "/package"
 steps:
-- emerge --root /package games-board/gnome-chess
+- emerge games-board/gnome-chess
 requires:
 - category: "layers"
   name: "gnome"
@@ -67,10 +66,6 @@ EOF
 ```
 
 as you see, we are using emerge here to compile the package. The requires section tells from where it runs the command, which in this case is the MocaccinoOS desktop gnome layer. To see all the layers available, run `luet search layers` or to see the currently installed, you can run `luet search --installed layers`). 
-
-{{< alert color="primary" title="Note" >}}
-The `package_dir` option tells luet where is the final package located. We use `emerge --root` here to specify a different location where our package is installed. We could also drop `package_dir` and `--root` from emerge and let `luet` compute the delta, but in this way it's faster and less I/O intensive.
-{{< /alert >}}
 
 {{< alert color="primary" title="Note" >}}
 Even if the example shows how to build a package with emerge, it is although possible to create packages out from any docker image - even not by compiling. You have to be careful to check if any package dependencies are actually already shipped by the layers
@@ -90,7 +85,7 @@ EOF
 Now let's build the packages (remember to run as root, or with `sudo` upfront):
 
 ```bash
-$ luet build --tree tree --pull --pull-repository quay.io/mocaccinocache/desktop --from-repositories --live-output --only-target-package apps/gnome-chess
+$ luet build --tree tree --pull --pull-repository quay.io/mocaccino/desktop --from-repositories --live-output --only-target-package apps/gnome-chess
 ```
 {{< alert color="primary" title="Note" >}}
 The first time can take up some time due to downloading the images, but those are cached locally for local iteration. Time for a coffee!
