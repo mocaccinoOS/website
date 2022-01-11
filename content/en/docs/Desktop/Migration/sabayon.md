@@ -53,3 +53,23 @@ If you wish to reclaim the disk space used by the upgrade process (downloaded pa
 ```bash
 luet cleanup
 ```
+
+## Manual migration
+
+{{< alert color="primary" title="Note" >}}
+Note, the steps below are a work in progress and might not work at all and break your system. Consider using the steps below to try to recovery from a broken migration.
+{{< /alert >}}
+
+It is possible to migrate manually a system by running `luet migrate-entropy` and replacing packages with the layers available in the `mOS` repositories, for instance, to migrate and replace all packages with the gnome variant:
+
+```bash
+curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
+luet install -y repository/mocaccino-os-commons repository/mocaccino-extra-stable repository/mocaccino-desktop-stable
+luet install -y system/luet-migrate-entropy utils/jq
+luet migrate-entropy
+mkdir -p /etc/mocaccino/
+echo "desktop" > /etc/mocaccino/release
+installed=$(luet search --installed -o json | jq '.packages | map(.category+"/"+.name)[]' -rc | xargs echo)
+luet replace $installed --for kernel/mocaccino-lts-full --for kernel/mocaccino-lts-modules --for layers/firmware --for system-profile/default-systemd --for system/luet --for layers/system-x --for layers/gnome
+```
+
