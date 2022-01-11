@@ -160,7 +160,7 @@ So for example if we do not need Qt we can uninstall qtcore using Entropy:&lt;/p
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
-luet install repository/mocaccino-os-commons repository/mocaccino-extra-stable repository/mocaccino-desktop-stable
+luet install repository/mocaccino-os-commons repository/mocaccino-extra repository/mocaccino-kernel-stable repository/mocaccino-desktop-stable
 luet install system/luet-migrate-entropy
 luet migrate-entropy
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
@@ -220,7 +220,7 @@ luet migrate-entropy
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
-luet install -y repository/mocaccino-os-commons repository/mocaccino-extra-stable repository/mocaccino-desktop-stable
+luet install -y repository/mocaccino-os-commons repository/mocaccino-kernel-stable repository/mocaccino-extra repository/mocaccino-desktop-stable
 luet install -y system/luet-migrate-entropy utils/jq
 luet migrate-entropy
 mkdir -p /etc/mocaccino/

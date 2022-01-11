@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/migration/sabayon/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-01-11T23:43:04+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2022-01-11T23:44:15+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Migrating from Sabayon">
 <meta itemprop="description" content="Migrating from Sabayon to MocaccinoOS Desktop">
-<meta itemprop="dateModified" content="2022-01-11T23:43:04+01:00" />
-<meta itemprop="wordCount" content="414">
+<meta itemprop="dateModified" content="2022-01-11T23:44:15+01:00" />
+<meta itemprop="wordCount" content="416">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Migrating from Sabayon"/>
 <meta name="twitter:description" content="Migrating from Sabayon to MocaccinoOS Desktop"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.00734ccac55c052d6887414ce88f190c.json"
+  data-offline-search-index-json-src="/offline-search-index.be2d574bcf8de0b73c39efdec20b428e.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.00734ccac55c052d6887414ce88f190c.json"
+  data-offline-search-index-json-src="/offline-search-index.be2d574bcf8de0b73c39efdec20b428e.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -399,7 +399,7 @@ So for example if we do not need Qt we can uninstall qtcore using Entropy:</p>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
-luet install repository/mocaccino-os-commons repository/mocaccino-extra-stable repository/mocaccino-desktop-stable
+luet install repository/mocaccino-os-commons repository/mocaccino-extra repository/mocaccino-kernel-stable repository/mocaccino-desktop-stable
 luet install system/luet-migrate-entropy
 luet migrate-entropy
 </code></pre></td></tr></table>
@@ -459,7 +459,7 @@ luet migrate-entropy
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
-luet install -y repository/mocaccino-os-commons repository/mocaccino-extra-stable repository/mocaccino-desktop-stable
+luet install -y repository/mocaccino-os-commons repository/mocaccino-kernel-stable repository/mocaccino-extra repository/mocaccino-desktop-stable
 luet install -y system/luet-migrate-entropy utils/jq
 luet migrate-entropy
 mkdir -p /etc/mocaccino/
@@ -472,7 +472,7 @@ luet replace <span style="color:#40ffff">$installed</span> --for kernel/mocaccin
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified January 11, 2022: <a href="https://github.com/MocaccinoOS/website/commit/428b5c1dfedf7b758c69b97a862af487b4fe2002">Add a note on manual migration (428b5c1)</a>
+  Last modified January 11, 2022: <a href="https://github.com/MocaccinoOS/website/commit/7f085a768549b6c715b05032764f05b7acc6fce6">Update sabayon.md (7f085a7)</a>
 </div>
 
 </div>
