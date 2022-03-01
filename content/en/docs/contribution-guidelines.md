@@ -16,12 +16,12 @@ We love your input! We want to make contributing to this project as easy and tra
 - Proposing new features
 - Becoming a maintainer
 
-## We Develop with Github
-We use github to host code, to track issues and feature requests, as well as accept pull requests.
+## We Develop with GitHub
+We use GitHub to host code, to track issues and feature requests, as well as accept pull requests.
 
 ## Stay in touch
 
-Join us in [slack](https://luet.slack.com/join/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY#/) and hang out with the community! It will be much easier to get started and do your first steps in contributing to the project.
+Join us in [Slack](https://luet.slack.com/join/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY#/) and hang out with the community! It will be much easier to get started and take your first steps toward contributing to the project.
 
 ## All Code Changes Happen Through Pull Requests
 Pull requests are the best way to propose changes to the codebase. We actively welcome your pull requests:
@@ -36,7 +36,7 @@ Pull requests are the best way to propose changes to the codebase. We actively w
 ## Any contributions you make will be under the Software License of the repository
 In short, when you submit code changes, your submissions are understood to be under the same License that covers the project. Feel free to contact the maintainers if that's a concern.
 
-## Report bugs using Github's [issues](https://github.com/mocaccinoOS/mocaccino/issues)
+## Report bugs using GitHub's [issues](https://github.com/mocaccinoOS/mocaccino/issues)
 We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/mocaccinoOS/mocaccino/issues/new); it's that easy!
 
 ## Write bug reports with detail, background, and sample code
@@ -50,7 +50,7 @@ Try to be as more descriptive as possible. When opening a new issue you will be 
   - Give sample code if you can. 
 - What you expected would happen
 - What actually happens
-- Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
+- Notes (possibly including why you think this might be happening, or things you tried that didn't work)
 
 People *love* thorough bug reports.
 
