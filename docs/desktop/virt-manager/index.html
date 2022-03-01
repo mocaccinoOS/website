@@ -19,21 +19,21 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Virt-manager | MocaccinoOS</title>
-<meta name="description" content="Page description for heading and indexes.">
+<meta name="description" content="Installing virt-manager in Mocaccino Desktop">
 <meta property="og:title" content="Virt-manager" />
-<meta property="og:description" content="Page description for heading and indexes." />
+<meta property="og:description" content="Installing virt-manager in Mocaccino Desktop" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/virt-manager/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-03-01T16:01:41+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2022-03-01T16:07:21+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Virt-manager">
-<meta itemprop="description" content="Page description for heading and indexes.">
-<meta itemprop="dateModified" content="2022-03-01T16:01:41+01:00" />
-<meta itemprop="wordCount" content="34">
+<meta itemprop="description" content="Installing virt-manager in Mocaccino Desktop">
+<meta itemprop="dateModified" content="2022-03-01T16:07:21+01:00" />
+<meta itemprop="wordCount" content="54">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Virt-manager"/>
-<meta name="twitter:description" content="Page description for heading and indexes."/>
+<meta name="twitter:description" content="Installing virt-manager in Mocaccino Desktop"/>
 
 
 
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.bcc5c9b84e4cde19bd5a95203982d759.json"
+  data-offline-search-index-json-src="/offline-search-index.bef36a0a9e4d5280f26cf7265f74cd8a.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.bcc5c9b84e4cde19bd5a95203982d759.json"
+  data-offline-search-index-json-src="/offline-search-index.bef36a0a9e4d5280f26cf7265f74cd8a.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -330,7 +330,7 @@
             
 <div class="td-content">
 	<h1>Virt-manager</h1>
-	<div class="lead">Page description for heading and indexes.</div>
+	<div class="lead">Installing virt-manager in Mocaccino Desktop</div>
 	<header class="article-meta">
 		
 		
@@ -346,21 +346,58 @@
 		
 		
 	</header>    
-	<h2 id="installing-virt-manager">Installing virt-manager</h2>
-<p>luet install apps/virt-manager</p>
-<p>edit /etc/libvirt/libvirtd.conf and uncomment these lines:
-unix_sock_group = &ldquo;libvirt&rdquo;
-unix_sock_ro_perms = &ldquo;0777&rdquo;
-unix_sock_rw_perms = &ldquo;0770&rdquo;</p>
-<p>usermod -aG libvirt joost
-usermod -aG kvm joost</p>
-<p>systemctl enable libvirtd
-systemctl start libvirtd</p>
-
+	<h1 id="setup">Setup</h1>
+<p>Install virt-manager using Luet:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># luet install apps/virt-manager</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>edit <code>/etc/libvirt/libvirtd.conf</code> and uncomment these lines:</p>
+<p><code>unix_sock_group = &quot;libvirt&quot;</code></p>
+<p><code>unix_sock_ro_perms = &quot;0777&quot;</code></p>
+<p><code>unix_sock_rw_perms = &quot;0770&quot;</code></p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># usermod -aG libvirt username</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># usermod -aG kvm username</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Enable and start the libvirtd systemd service</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># systemctl enable libvirtd</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># systemctl start libvirtd</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified March 1, 2022: <a href="https://github.com/MocaccinoOS/website/commit/c0b471b518b7ac75e4656e741fa5ee0caf71aeeb">Create Virt-manager.md (c0b471b)</a>
+  Last modified March 1, 2022: <a href="https://github.com/MocaccinoOS/website/commit/027ba9268505475e8cc89d1b463af19d70b31de6">Update Virt-manager.md (027ba92)</a>
 </div>
 
 </div>
