@@ -11,7 +11,7 @@ description: >-
 Install virt-manager using Luet:
 
 ```bash
-# luet install apps/virt-manager
+$ sudo luet install apps/virt-manager
 ```
 
 edit `/etc/libvirt/libvirtd.conf` and uncomment these lines:
@@ -23,15 +23,15 @@ edit `/etc/libvirt/libvirtd.conf` and uncomment these lines:
 `unix_sock_rw_perms = "0770"`
 
 ```bash
-# usermod -aG libvirt username
+$ sudo usermod -aG libvirt username
 ```
 ```bash
-# usermod -aG kvm username
+$ sudo usermod -aG kvm username
 ```
 Enable and start the libvirtd systemd service
 ```bash
-# systemctl enable libvirtd
+$ sudo systemctl enable libvirtd
 ```
 ```bash
-# systemctl start libvirtd
+$ sudo systemctl start libvirtd
 ```
