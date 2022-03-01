@@ -1,6 +1,6 @@
 ---
 title: "Install Apache webserver"
-linkTitle: "Install Apache webserver"
+linkTitle: "Apache webserver"
 weight: 100
 description: >-
      Installing Apache webserver using Docker
