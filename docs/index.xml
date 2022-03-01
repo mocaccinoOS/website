@@ -2139,10 +2139,10 @@ mocaccino-repository-index
 &lt;li&gt;Proposing new features&lt;/li&gt;
 &lt;li&gt;Becoming a maintainer&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;we-develop-with-github&#34;&gt;We Develop with Github&lt;/h2&gt;
-&lt;p&gt;We use github to host code, to track issues and feature requests, as well as accept pull requests.&lt;/p&gt;
+&lt;h2 id=&#34;we-develop-with-github&#34;&gt;We Develop with GitHub&lt;/h2&gt;
+&lt;p&gt;We use GitHub to host code, to track issues and feature requests, as well as accept pull requests.&lt;/p&gt;
 &lt;h2 id=&#34;stay-in-touch&#34;&gt;Stay in touch&lt;/h2&gt;
-&lt;p&gt;Join us in &lt;a href=&#34;https://luet.slack.com/join/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY#/&#34;&gt;slack&lt;/a&gt; and hang out with the community! It will be much easier to get started and do your first steps in contributing to the project.&lt;/p&gt;
+&lt;p&gt;Join us in &lt;a href=&#34;https://luet.slack.com/join/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY#/&#34;&gt;Slack&lt;/a&gt; and hang out with the community! It will be much easier to get started and take your first steps toward contributing to the project.&lt;/p&gt;
 &lt;h2 id=&#34;all-code-changes-happen-through-pull-requests&#34;&gt;All Code Changes Happen Through Pull Requests&lt;/h2&gt;
 &lt;p&gt;Pull requests are the best way to propose changes to the codebase. We actively welcome your pull requests:&lt;/p&gt;
 &lt;ol&gt;
@@ -2155,7 +2155,7 @@ mocaccino-repository-index
 &lt;/ol&gt;
 &lt;h2 id=&#34;any-contributions-you-make-will-be-under-the-software-license-of-the-repository&#34;&gt;Any contributions you make will be under the Software License of the repository&lt;/h2&gt;
 &lt;p&gt;In short, when you submit code changes, your submissions are understood to be under the same License that covers the project. Feel free to contact the maintainers if that&amp;rsquo;s a concern.&lt;/p&gt;
-&lt;h2 id=&#34;report-bugs-using-githubs-issueshttpsgithubcommocaccinoosmocaccinoissues&#34;&gt;Report bugs using Github&amp;rsquo;s &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/issues&#34;&gt;issues&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;report-bugs-using-githubs-issueshttpsgithubcommocaccinoosmocaccinoissues&#34;&gt;Report bugs using GitHub&amp;rsquo;s &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/issues&#34;&gt;issues&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;We use GitHub issues to track public bugs. Report a bug by &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/issues/new&#34;&gt;opening a new issue&lt;/a&gt;; it&amp;rsquo;s that easy!&lt;/p&gt;
 &lt;h2 id=&#34;write-bug-reports-with-detail-background-and-sample-code&#34;&gt;Write bug reports with detail, background, and sample code&lt;/h2&gt;
 &lt;p&gt;Try to be as more descriptive as possible. When opening a new issue you will be prompted to choose between a bug or a feature request, with a small template to fill details with. Be specific!&lt;/p&gt;
@@ -2170,7 +2170,7 @@ mocaccino-repository-index
 &lt;/li&gt;
 &lt;li&gt;What you expected would happen&lt;/li&gt;
 &lt;li&gt;What actually happens&lt;/li&gt;
-&lt;li&gt;Notes (possibly including why you think this might be happening, or stuff you tried that didn&amp;rsquo;t work)&lt;/li&gt;
+&lt;li&gt;Notes (possibly including why you think this might be happening, or things you tried that didn&amp;rsquo;t work)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;People &lt;em&gt;love&lt;/em&gt; thorough bug reports.&lt;/p&gt;
 &lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
@@ -2191,10 +2191,10 @@ mocaccino-repository-index
         
         
         &lt;p&gt;Become a donor today.&lt;/p&gt;
-&lt;p&gt;If you want to help us, but you cannot contribute to code, you can still buy us a coffee, or just donate a little bit of your HW power.&lt;/p&gt;
+&lt;p&gt;If you want to help us, but you cannot contribute to code, you can still buy us a coffee, or just donate a little bit of your hardware power.&lt;/p&gt;
 &lt;p&gt;As a small open source project, know that every dollar will have an immense impact on our ability to continue working towards our mission.&lt;/p&gt;
 &lt;p&gt;Your support means the world to us :)&lt;/p&gt;
-&lt;p&gt;You can donate by going to our &lt;a href=&#34;https://www.patreon.com/mocaccinoos?fan_landing=true&#34;&gt;Patreon&lt;/a&gt; page or if you prefer cryptocurrencies, we accepts donations to the following XMR wallet: &lt;code&gt;84AsfE73Cy7hAYKy7PN8N8D3fh39JzXyLjaiYpgXm3NrJHH7cTPxUJSgsdFiSL6mwE9MKpvrYJQoaTxRG6sJX6aBRpr45dc&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can donate by going to our &lt;a href=&#34;https://www.patreon.com/mocaccinoos?fan_landing=true&#34;&gt;Patreon&lt;/a&gt; page, or if you prefer cryptocurrencies, we accept donations to the following XMR wallet: &lt;code&gt;84AsfE73Cy7hAYKy7PN8N8D3fh39JzXyLjaiYpgXm3NrJHH7cTPxUJSgsdFiSL6mwE9MKpvrYJQoaTxRG6sJX6aBRpr45dc&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.patreon.com/bePatron?u=11620572&#34; data-patreon-widget-type=&#34;become-patron-button&#34;&gt;Become a Patron!&lt;/a&gt;&lt;script async src=&#34;https://c6.patreon.com/becomePatronButton.bundle.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 &lt;h2 id=&#34;donating-computing-power&#34;&gt;Donating computing power&lt;/h2&gt;
 &lt;p&gt;If you want, you can also support our project by donating your idle computing power. We have a &amp;ldquo;donor&amp;rdquo; profile that you can
