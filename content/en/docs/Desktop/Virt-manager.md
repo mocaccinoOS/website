@@ -22,9 +22,11 @@ edit `/etc/libvirt/libvirtd.conf` and uncomment these lines:
 
 `unix_sock_rw_perms = "0770"`
 
+Add your user to the libvirt group
 ```bash
 $ sudo usermod -aG libvirt username
 ```
+Add your user to the kvm group
 ```bash
 $ sudo usermod -aG kvm username
 ```
