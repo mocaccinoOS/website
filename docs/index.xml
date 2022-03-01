@@ -1977,6 +1977,29 @@ e837d58776cd        httpd:2.4           &lt;span style=&#34;color:#ed9d13&#34;&g
     </item>
     
     <item>
+      <title>Docs: Virt-manager</title>
+      <link>https://www.mocaccino.org/docs/desktop/virt-manager/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/virt-manager/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;installing-virt-manager&#34;&gt;Installing virt-manager&lt;/h2&gt;
+&lt;p&gt;luet install apps/virt-manager&lt;/p&gt;
+&lt;p&gt;edit /etc/libvirt/libvirtd.conf and uncomment these lines:
+unix_sock_group = &amp;ldquo;libvirt&amp;rdquo;
+unix_sock_ro_perms = &amp;ldquo;0777&amp;rdquo;
+unix_sock_rw_perms = &amp;ldquo;0770&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;usermod -aG libvirt joost
+usermod -aG kvm joost&lt;/p&gt;
+&lt;p&gt;systemctl enable libvirtd
+systemctl start libvirtd&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Repositories</title>
       <link>https://www.mocaccino.org/docs/desktop/repositories/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
