@@ -174,9 +174,9 @@ enable = false
         desc = "Chat with other project users"
 
 [[params.links.user]]
-	name = "Matrix chat"
-	url = "https://matrix.to/#/#mocaccinoOS:matrix.org"
-	icon = "fas fa-comments"
+        name = "Matrix chat"
+        url = "https://matrix.to/#/#mocaccinoOS:matrix.org"
+        icon = "fas fa-comments"
         desc = "Chat with other project users"
 
 [[params.links.developer]]
