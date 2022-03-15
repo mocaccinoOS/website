@@ -23,7 +23,7 @@ Migration can take some time. We advice you to disable screen-locking and power 
 You can convert a Sabayon system (running Entropy) to Mocaccino OS (running luet) with the following commands as root
 
 ```bash
-curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
+curl -k https://get.mocaccino.org/luet/get_luet_root.sh | sh
 luet install repository/mocaccino-os-commons repository/mocaccino-extra repository/mocaccino-kernel-stable repository/mocaccino-desktop-stable
 luet install system/luet-migrate-entropy
 luet migrate-entropy
@@ -63,7 +63,7 @@ Note, the steps below are a work in progress and might not work at all and break
 It is possible to migrate manually a system by running `luet migrate-entropy` and replacing packages with the layers available in the `mOS` repositories, for instance, to migrate and replace all packages with the gnome variant:
 
 ```bash
-curl https://get.mocaccino.org/luet/get_luet_root.sh | sh
+curl -k https://get.mocaccino.org/luet/get_luet_root.sh | sh
 luet install -y repository/mocaccino-os-commons repository/mocaccino-kernel-stable repository/mocaccino-extra repository/mocaccino-desktop-stable
 luet install -y system/luet-migrate-entropy utils/jq
 luet migrate-entropy
