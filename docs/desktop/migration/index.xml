@@ -208,7 +208,7 @@ luet install -y system/luet-migrate-entropy utils/jq
 luet migrate-entropy
 mkdir -p /etc/mocaccino/
 &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;desktop&amp;#34;&lt;/span&gt; &amp;gt; /etc/mocaccino/release
-&lt;span style=&#34;color:#40ffff&#34;&gt;installed&lt;/span&gt;=&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;$(&lt;/span&gt;luet search --installed -o json | jq &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;.packages | map(.category+&amp;#34;/&amp;#34;+.name)[]&amp;#39;&lt;/span&gt; -rc | xargs &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#40ffff&#34;&gt;installed&lt;/span&gt;=&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;$(&lt;/span&gt;luet search --installed -o json | jq &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;.packages | map(.category+&amp;#34;/&amp;#34;+.name+&amp;#34;@&amp;#34;+.version)[]&amp;#39;&lt;/span&gt; -rc | xargs &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;)&lt;/span&gt;
 luet replace &lt;span style=&#34;color:#40ffff&#34;&gt;$installed&lt;/span&gt; --for kernel/mocaccino-lts-full --for kernel/mocaccino-lts-modules --for layers/firmware --for system-profile/default-systemd --for system/luet --for layers/system-x --for layers/gnome
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
