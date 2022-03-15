@@ -69,7 +69,7 @@ luet install -y system/luet-migrate-entropy utils/jq
 luet migrate-entropy
 mkdir -p /etc/mocaccino/
 echo "desktop" > /etc/mocaccino/release
-installed=$(luet search --installed -o json | jq '.packages | map(.category+"/"+.name)[]' -rc | xargs echo)
+installed=$(luet search --installed -o json | jq '.packages | map(.category+"/"+.name+"@"+.version)[]' -rc | xargs echo)
 luet replace $installed --for kernel/mocaccino-lts-full --for kernel/mocaccino-lts-modules --for layers/firmware --for system-profile/default-systemd --for system/luet --for layers/system-x --for layers/gnome
 ```
 
