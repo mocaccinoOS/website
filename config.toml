@@ -173,6 +173,12 @@ enable = false
 	icon = "fab fa-slack"
         desc = "Chat with other project users"
 
+[[params.links.user]]
+	name = "Matrix chat"
+	url = "https://matrix.to/#/#mocaccinoOS:matrix.org"
+	icon = "fas fa-comments"
+        desc = "Chat with other project users"
+
 [[params.links.developer]]
 	name = "Slack"
 	url = "https://join.slack.com/t/luet/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY"
