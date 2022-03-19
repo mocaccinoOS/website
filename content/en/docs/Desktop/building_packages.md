@@ -148,7 +148,7 @@ By default, images are tagged under `luet/cache`. So it's possible to remove all
 
 ```bash
 $ docker images --filter='reference=luet/cache' --format='{{.Repository}}:{{.Tag}}' | xargs -r docker rmi
-$ docker images --filter='reference=quay.io/mocaccinocache/desktop' --format='{{.Repository}}:{{.Tag}}' | xargs -r docker rmi
+$ docker images --filter='reference=quay.io/mocaccino/desktop' --format='{{.Repository}}:{{.Tag}}' | xargs -r docker rmi
 $ docker image prune
 ```
 
