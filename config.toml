@@ -168,12 +168,6 @@ enable = false
         desc = "Follow us on Twitter!"
 
 [[params.links.user]]
-	name = "Slack"
-	url = "https://join.slack.com/t/luet/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY"
-	icon = "fab fa-slack"
-        desc = "Chat with other project users"
-
-[[params.links.user]]
         name = "Matrix chat"
         url = "https://matrix.to/#/#mocaccinoOS:matrix.org"
         icon = "fas fa-comments"
@@ -183,7 +177,7 @@ enable = false
 	name = "Slack"
 	url = "https://join.slack.com/t/luet/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY"
 	icon = "fab fa-slack"
-        desc = "Chat with us!"
+        desc = "Join the development channel on slack"
 
 [[menu.main]]
     name = "Packages"
