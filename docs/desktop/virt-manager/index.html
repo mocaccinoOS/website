@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/virt-manager/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-04-24T22:49:45+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2022-05-07T21:22:15+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Virt-manager">
 <meta itemprop="description" content="Installing virt-manager in Mocaccino Desktop">
-<meta itemprop="dateModified" content="2022-04-24T22:49:45+02:00" />
-<meta itemprop="wordCount" content="73">
+<meta itemprop="dateModified" content="2022-05-07T21:22:15+02:00" />
+<meta itemprop="wordCount" content="185">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Virt-manager"/>
 <meta name="twitter:description" content="Installing virt-manager in Mocaccino Desktop"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.08bc2a02c0f94d8a99bdb973a273c429.json"
+  data-offline-search-index-json-src="/offline-search-index.b432353ab869420c3ca3f5d3c188f50c.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.08bc2a02c0f94d8a99bdb973a273c429.json"
+  data-offline-search-index-json-src="/offline-search-index.b432353ab869420c3ca3f5d3c188f50c.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -395,11 +395,90 @@
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl start libvirtd
 </code></pre></td></tr></table>
 </div>
+</div><h2 id="networking">Networking</h2>
+<p>By default libvirt comes with no network configured by default.</p>
+<p>You can check that by running:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo virsh net-list --all
+
+Name                 State      Autostart     Persistent
+----------------------------------------------------------
+</code></pre></td></tr></table>
 </div>
+</div><p>Create the default network by copy-pasting the following lines into a file called default.xml</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#6ab825;font-weight:bold">&lt;network&gt;</span>
+  <span style="color:#6ab825;font-weight:bold">&lt;name&gt;</span>default<span style="color:#6ab825;font-weight:bold">&lt;/name&gt;</span>
+  <span style="color:#6ab825;font-weight:bold">&lt;uuid&gt;</span>9a05da11-e96b-47f3-8253-a3a482e445f5<span style="color:#6ab825;font-weight:bold">&lt;/uuid&gt;</span>
+  <span style="color:#6ab825;font-weight:bold">&lt;forward</span> <span style="color:#bbb">mode=</span><span style="color:#ed9d13">&#39;nat&#39;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+  <span style="color:#6ab825;font-weight:bold">&lt;bridge</span> <span style="color:#bbb">name=</span><span style="color:#ed9d13">&#39;virbr0&#39;</span> <span style="color:#bbb">stp=</span><span style="color:#ed9d13">&#39;on&#39;</span> <span style="color:#bbb">delay=</span><span style="color:#ed9d13">&#39;0&#39;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+  <span style="color:#6ab825;font-weight:bold">&lt;mac</span> <span style="color:#bbb">address=</span><span style="color:#ed9d13">&#39;52:54:00:0a:cd:21&#39;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+  <span style="color:#6ab825;font-weight:bold">&lt;ip</span> <span style="color:#bbb">address=</span><span style="color:#ed9d13">&#39;192.168.122.1&#39;</span> <span style="color:#bbb">netmask=</span><span style="color:#ed9d13">&#39;255.255.255.0&#39;</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+    <span style="color:#6ab825;font-weight:bold">&lt;dhcp&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;range</span> <span style="color:#bbb">start=</span><span style="color:#ed9d13">&#39;192.168.122.2&#39;</span> <span style="color:#bbb">end=</span><span style="color:#ed9d13">&#39;192.168.122.254&#39;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+    <span style="color:#6ab825;font-weight:bold">&lt;/dhcp&gt;</span>
+  <span style="color:#6ab825;font-weight:bold">&lt;/ip&gt;</span>
+<span style="color:#6ab825;font-weight:bold">&lt;/network&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now add it:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo virsh net-define --file default.xml
+</code></pre></td></tr></table>
+</div>
+</div><p>To start it, run:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo virsh net-start default
+</code></pre></td></tr></table>
+</div>
+</div><p>Start it permanently by default:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo virsh net-autostart --network default
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="references">References</h2>
+<ul>
+<li><a href="https://blog.programster.org/kvm-missing-default-network">https://blog.programster.org/kvm-missing-default-network</a></li>
+</ul>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified April 24, 2022: <a href="https://github.com/MocaccinoOS/website/commit/888c941164dc109ec6a676549a6070bcd8aba92c">Update howdoi.md (888c941)</a>
+  Last modified May 7, 2022: <a href="https://github.com/MocaccinoOS/website/commit/5cbfdd35a401cd6ef7689f91459845f907197a0b">Update Virt-manager.md (5cbfdd3)</a>
 </div>
 
 </div>
