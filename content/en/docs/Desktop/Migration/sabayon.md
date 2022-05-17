@@ -24,7 +24,7 @@ You can convert a Sabayon system (running Entropy) to Mocaccino OS (running luet
 
 ```bash
 curl -k https://get.mocaccino.org/luet/get_luet_root.sh | sh
-luet install repository/mocaccino-os-commons repository/mocaccino-extra repository/mocaccino-kernel-stable repository/mocaccino-desktop-stable
+luet install repository/mocaccino-os-commons repository/mocaccino-extra repository/mocaccino-desktop-stable
 luet install system/luet-migrate-entropy
 luet migrate-entropy
 ```
