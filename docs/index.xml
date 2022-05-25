@@ -2277,6 +2277,10 @@ Name                 State      Autostart     Persistent
 &lt;p&gt;Your support means the world to us :)&lt;/p&gt;
 &lt;p&gt;You can donate by going to our &lt;a href=&#34;https://www.patreon.com/mocaccinoos?fan_landing=true&#34;&gt;Patreon&lt;/a&gt; page, or if you prefer cryptocurrencies, we accept donations to the following XMR wallet: &lt;code&gt;84AsfE73Cy7hAYKy7PN8N8D3fh39JzXyLjaiYpgXm3NrJHH7cTPxUJSgsdFiSL6mwE9MKpvrYJQoaTxRG6sJX6aBRpr45dc&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.patreon.com/bePatron?u=11620572&#34; data-patreon-widget-type=&#34;become-patron-button&#34;&gt;Become a Patron!&lt;/a&gt;&lt;script async src=&#34;https://c6.patreon.com/becomePatronButton.bundle.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;h2 id=&#34;donate-through-liberapay&#34;&gt;Donate through Liberapay&lt;/h2&gt;
+&lt;p&gt;Liberapay is a very easy platform to make micro donations to FOSS projects.&lt;/p&gt;
+&lt;p&gt;&lt;noscript&gt;&lt;a href=&#34;https://liberapay.com/MocaccinoOS/donate&#34;&gt;&lt;img alt=&#34;Donate using Liberapay&#34; src=&#34;https://liberapay.com/assets/widgets/donate.svg&#34;&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://img.shields.io/liberapay/patrons/MocaccinoOS.svg?logo=liberapay&#34;&gt; &lt;img src=&#34;https://img.shields.io/liberapay/receives/MocaccinoOS.svg?logo=liberapay&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;donating-computing-power&#34;&gt;Donating computing power&lt;/h2&gt;
 &lt;p&gt;If you want, you can also support our project by donating your idle computing power. We have a &amp;ldquo;donor&amp;rdquo; profile that you can
 install/uninstall any time. It will kick-in automatically xmrig when it detects a idle cpu in a range of &lt;code&gt;15m&lt;/code&gt;.&lt;/p&gt;
