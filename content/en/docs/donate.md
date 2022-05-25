@@ -21,6 +21,13 @@ You can donate by going to our [Patreon](https://www.patreon.com/mocaccinoos?fan
 
 <a href="https://www.patreon.com/bePatron?u=11620572" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
 
+## Donate through Liberapay
+
+Liberapay is a very easy platform to make micro donations to FOSS projects.
+
+<noscript><a href="https://liberapay.com/MocaccinoOS/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
+
+<img src="https://img.shields.io/liberapay/patrons/MocaccinoOS.svg?logo=liberapay"> <img src="https://img.shields.io/liberapay/receives/MocaccinoOS.svg?logo=liberapay">
 
 ## Donating computing power
 
