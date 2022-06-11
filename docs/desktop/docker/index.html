@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/docker/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-05-25T12:00:22+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2022-06-11T11:45:02+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Running docker">
 <meta itemprop="description" content="Running Docker on Mocaccino Desktop">
-<meta itemprop="dateModified" content="2022-05-25T12:00:22+02:00" />
-<meta itemprop="wordCount" content="83">
+<meta itemprop="dateModified" content="2022-06-11T11:45:02+02:00" />
+<meta itemprop="wordCount" content="97">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Running docker"/>
 <meta name="twitter:description" content="Running Docker on Mocaccino Desktop"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.53943eadd2bc5814af13cfad4a42edf9.json"
+  data-offline-search-index-json-src="/offline-search-index.0c1119275941656f1093600f31688dcf.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.53943eadd2bc5814af13cfad4a42edf9.json"
+  data-offline-search-index-json-src="/offline-search-index.0c1119275941656f1093600f31688dcf.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -374,7 +374,9 @@
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl <span style="color:#24909d">enable</span> docker
 </code></pre></td></tr></table>
 </div>
-</div><p>Now you should be able to use docker as usual, for example:</p>
+</div><p>Optionally add your user to the docker group:</p>
+<pre tabindex="0"><code>$ sudo usermod -aG docker $USER
+</code></pre><p>Now you should be able to use docker as usual, for example:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
@@ -399,7 +401,7 @@ quay.io/mocaccino/extra   latest              ce197d5b1a7e        <span style="c
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified May 25, 2022: <a href="https://github.com/MocaccinoOS/website/commit/25dbfaa9e68c0f8051ee8557b3727b7b6dc80057">Update donate.md (25dbfaa)</a>
+  Last modified June 11, 2022: <a href="https://github.com/MocaccinoOS/website/commit/27f26d6ec74829f92afdc7111a8c2437d85c4642">Update docker.md (27f26d6)</a>
 </div>
 
 </div>
