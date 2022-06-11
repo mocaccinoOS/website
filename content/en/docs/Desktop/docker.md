@@ -25,6 +25,11 @@ or to enable at boot:
 $ systemctl enable docker
 ```
 
+Optionally add your user to the docker group:
+
+```
+$ sudo usermod -aG docker $USER
+```
 Now you should be able to use docker as usual, for example:
 
 ```bash
