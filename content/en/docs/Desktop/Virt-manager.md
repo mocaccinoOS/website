@@ -24,11 +24,11 @@ edit `/etc/libvirt/libvirtd.conf` and uncomment these lines:
 
 Add your user to the libvirt group
 ```bash
-$ sudo usermod -aG libvirt username
+$ sudo usermod -aG libvirt $USER
 ```
 Add your user to the kvm group
 ```bash
-$ sudo usermod -aG kvm username
+$ sudo usermod -aG kvm $USER
 ```
 Enable and start the libvirtd systemd service
 ```bash
