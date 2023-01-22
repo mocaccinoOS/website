@@ -169,7 +169,7 @@ qlist -IRv
 
 ## How do I add a package?
 
-Have a look at the [official docs](https://luet-lab.github.io/docs/docs/concepts/packages/specfile/) about specfile and their syntax. After you familiarize with it, you can just open up a PR, by taking as an example an already existing layer. [See, for example calamares](https://github.com/mocaccinoOS/desktop/tree/master/packages/apps/calamares)
+Have a look at the [official docs](https://luet.io/docs/concepts/packages/specfile/) about specfile and their syntax. After you familiarize with it, you can just open up a PR, by taking as an example an already existing layer. [See, for example calamares](https://github.com/mocaccinoOS/desktop/tree/master/packages/apps/calamares)
 
 ## How do I update provides list, and what are they?
 
