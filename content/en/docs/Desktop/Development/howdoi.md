@@ -134,7 +134,26 @@ To build a package, just edit/add the relevant specs and run `PACKAGES=".." make
 
 ### How can I debug the build environment?
 
-Luet generates docker images for each package, you can start a shell by either retrieving manually the docker image of the package with `luet tree images`  and manually run `docker run..` on it or you can use the luet extension which does that already for you. You need to have installed `system/luet-devkit` package, and you can use it as follows:
+Luet generates docker images for each package, you can start a shell by either retrieving the docker image of the package manually with `luet tree images`  and manually run `docker run..` on it. Here an example how we shell into layers/X:
+
+```bash
+luet tree images --image-repository quay.io/mocaccino/desktop layers/X
+```
+This returns a list of docker containers where layers/X image is created from. 
+
+```bash
+layers/gentoo-portage-0.20230110: quay.io/mocaccino/desktop:febbfe7192e42abb3671acd65ff3ec7a6cfad063334f5c24301f30b56f0ad7dd
+layers/system-x-0.20230110: quay.io/mocaccino/desktop:7343fcc6f4bbbf5906b3104ad96431192a0110fb020186825409abac6587ddc3
+layers/codecs-7+22: quay.io/mocaccino/desktop:4e885e2b509102e808f21efa38f4734c98e23279775beb2b3a0ec6db182f7ebd
+layers/sys-fs-0.9+27: quay.io/mocaccino/desktop:e1ae4a4e732e8a866721d380c7a30c930996d6d0e1840deaa5901d35f72a3b35
+layers/X-1.1+28: quay.io/mocaccino/desktop:865b8d9662679f9c145f13b82c803f3380d7b5dbfad2fa2316646a46977ad3c2
+```
+Now that we know the image string we can apply that to our docker command:
+
+```bash
+docker run -ti --rm quay.io/mocaccino/desktop:865b8d9662679f9c145f13b82c803f3380d7b5dbfad2fa2316646a46977ad3c2 /bin/bash
+```
+Or you can use the luet extension which does that already for you. You need to have installed `system/luet-devkit` package, and you can use it as follows:
 
 ```bash
 DOCKER_HOST="..." LUET_ARGS="--image-repository quay.io/mocaccino/desktop" luet remote-exec packagename
