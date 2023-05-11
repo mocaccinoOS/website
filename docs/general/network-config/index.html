@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/general/network-config/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-05-11T19:08:36+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2023-05-11T19:46:56+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Network configuration">
 <meta itemprop="description" content="Configure your network">
-<meta itemprop="dateModified" content="2023-05-11T19:08:36+02:00" />
-<meta itemprop="wordCount" content="188">
+<meta itemprop="dateModified" content="2023-05-11T19:46:56+02:00" />
+<meta itemprop="wordCount" content="218">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Network configuration"/>
 <meta name="twitter:description" content="Configure your network"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3a009c6968e9ab08cd1c9acbca499db0.json"
+  data-offline-search-index-json-src="/offline-search-index.9fb2c51f9cdaefcc8259204245cc62a5.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3a009c6968e9ab08cd1c9acbca499db0.json"
+  data-offline-search-index-json-src="/offline-search-index.9fb2c51f9cdaefcc8259204245cc62a5.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -354,50 +354,122 @@ Currently Network Manager is installed on the system as a part of layers/X.</p>
 <h2 id="systemd-networkd">systemd-networkd</h2>
 <p>If you want to use systemd-networkd instead of Network Manager follow these steps.</p>
 <p>First disable Network Manager service and enable systemd-networkd service:</p>
-<pre tabindex="0"><code>root@mocaccino:~# systemctl stop NetworkManager
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@mocaccino:~# systemctl stop NetworkManager
 root@mocaccino:~# systemctl disable NetworkManager
-root@mocaccino:~# systemctl enable systemd-networkd
-</code></pre><p>Enable the systemd-resolved service:</p>
-<pre tabindex="0"><code>root@mocaccino:~# systemctl enable systemd-resolved
+root@mocaccino:~# systemctl <span style="color:#24909d">enable</span> systemd-networkd
+</code></pre></td></tr></table>
+</div>
+</div><p>Enable the systemd-resolved service:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@mocaccino:~# systemctl <span style="color:#24909d">enable</span> systemd-resolved
 root@mocaccino:~# systemctl start systemd-resolved
-</code></pre><p>Configure your connection:
+</code></pre></td></tr></table>
+</div>
+</div><p>Configure your connection:
 To list available connectiond you can run networkctl</p>
-<pre tabindex="0"><code>root@mocaccino:~# networkctl
-</code></pre><p>This will display a list like this:</p>
-<pre tabindex="0"><code>IDX LINK        TYPE     OPERATIONAL SETUP     
-  1 lo          loopback carrier     unmanaged
-  2 enp3s0      ether    routable    configured
-  3 enp2s0      ether    off         unmanaged
-  4 edgevpn0    none     routable    unmanaged
-  5 docker0     bridge   routable    unmanaged
-  7 vethf4478cf ether    enslaved    unmanaged
-  9 veth65a81ba ether    enslaved    unmanaged
- 11 veth6df3fd4 ether    enslaved    unmanaged
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@mocaccino:~# networkctl
+</code></pre></td></tr></table>
+</div>
+</div><p>This will display a list like this:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">IDX LINK        TYPE     OPERATIONAL SETUP     
+  <span style="color:#3677a9">1</span> lo          loopback carrier     unmanaged
+  <span style="color:#3677a9">2</span> enp3s0      ether    routable    configured
+  <span style="color:#3677a9">3</span> enp2s0      ether    off         unmanaged
+  <span style="color:#3677a9">4</span> edgevpn0    none     routable    unmanaged
+  <span style="color:#3677a9">5</span> docker0     bridge   routable    unmanaged
+  <span style="color:#3677a9">7</span> vethf4478cf ether    enslaved    unmanaged
+  <span style="color:#3677a9">9</span> veth65a81ba ether    enslaved    unmanaged
+ <span style="color:#3677a9">11</span> veth6df3fd4 ether    enslaved    unmanaged
 
-8 links listed.
-</code></pre><p>In our example we want to configure enp3s0</p>
+<span style="color:#3677a9">8</span> links listed.
+</code></pre></td></tr></table>
+</div>
+</div><p>In our example we want to configure enp3s0</p>
 <p>Static config:</p>
-<pre tabindex="0"><code>root@mocaccino:~# nano /etc/systemd/network/00-enp3s0.network
-</code></pre><p>And as an example add this to the file</p>
-<pre tabindex="0"><code>[Match]
-Name=enp3s0
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@mocaccino:~# nano /etc/systemd/network/00-enp3s0.network
+</code></pre></td></tr></table>
+</div>
+</div><p>And as an example add this to the file</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[Match]
+<span style="color:#40ffff">Name</span>=enp3s0
 
 [Network]
-Address=192.168.1.50/24
-Gateway=192.168.1.1
-DNS=192.168.1.1
-</code></pre><p>DHCP:
+<span style="color:#40ffff">Address</span>=192.168.1.50/24
+<span style="color:#40ffff">Gateway</span>=192.168.1.1
+<span style="color:#40ffff">DNS</span>=192.168.1.1
+</code></pre></td></tr></table>
+</div>
+</div><p>DHCP:
 We edit the same file as above but now we put in this config</p>
-<pre tabindex="0"><code>[Match]
-Name=enp3s0
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[Match]
+<span style="color:#40ffff">Name</span>=enp3s0
 
 [Network]
-DHCP=yes
-</code></pre>
+<span style="color:#40ffff">DHCP</span>=yes
+</code></pre></td></tr></table>
+</div>
+</div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified May 11, 2023: <a href="https://github.com/MocaccinoOS/website/commit/420c3d6cee88525b5c1ea7e40608aed571f21eba">Update network-config.md (420c3d6)</a>
+  Last modified May 11, 2023: <a href="https://github.com/MocaccinoOS/website/commit/9e99aaa3875960185d4d038eb3a9e545b64ed996">Update network-config.md (9e99aaa)</a>
 </div>
 
 </div>
