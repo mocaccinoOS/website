@@ -1,7 +1,7 @@
 ---
 title: "Network configuration"
 linkTitle: "Network configuration"
-weight: 100
+weight: 3
 description: >-
      Configure your network
 ---
