@@ -109,7 +109,7 @@ This command installs the Hyprland desktop environment.
 
 ```bash
 
-$ sudo luet install layers/trinity 
+$ sudo luet install layers/hyprland 
 
 ```
 
