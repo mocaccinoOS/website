@@ -5,7 +5,6 @@ weight: 4
 date: 2024-02-04
 description: >
   MocaccinoOS supports several popular desktop environments.
-This page explains how to install them.
 ---
 
 ## KDE Plasma
