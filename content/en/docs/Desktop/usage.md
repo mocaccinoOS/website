@@ -18,6 +18,14 @@ To install a package with `luet`, simply run:
 $ luet install <package_name>
 
 ```
+Be sure you write the full package name that includes the category. 
+So if you are installing for example `neofetch`:
+
+```bash
+
+$ luet install apps/neofetch
+
+```
 
 ## Uninstalling a package
 
@@ -99,4 +107,4 @@ $ luet search --table <regex>
 
 ## References
 
-- [Luet docs](https://luet-lab.github.io/docs/docs/concepts/overview/managing_packages/)
+- [Luet docs](https://luet.io/docs/concepts/overview/usage/)
