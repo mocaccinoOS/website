@@ -9,6 +9,16 @@ description: >
 
 MocaccinoOS uses **luet** as a package manager. Here in this document are collected references from the luet docs.
 
+## Update the repositories
+
+This command updates your repository database.
+
+```bash
+
+$ luet repo update
+
+```
+
 ## Installing a package
 
 To install a package with `luet`, simply run:
