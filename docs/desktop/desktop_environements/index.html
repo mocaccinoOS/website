@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/desktop_environements/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2024-02-04T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-02-04T21:10:26+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2024-02-04T21:15:55+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Desktop environements">
 <meta itemprop="description" content="MocaccinoOS supports several popular desktop environments.
 "><meta itemprop="datePublished" content="2024-02-04T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2024-02-04T21:10:26+01:00" />
-<meta itemprop="wordCount" content="150">
+<meta itemprop="dateModified" content="2024-02-04T21:15:55+01:00" />
+<meta itemprop="wordCount" content="200">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Desktop environements"/>
 <meta name="twitter:description" content="MocaccinoOS supports several popular desktop environments.
@@ -158,7 +158,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.af374c67dad3581e136c61200993cdb6.json"
+  data-offline-search-index-json-src="/offline-search-index.b08bd47529cb456d31299c20953f0f6b.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -181,7 +181,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.af374c67dad3581e136c61200993cdb6.json"
+  data-offline-search-index-json-src="/offline-search-index.b08bd47529cb456d31299c20953f0f6b.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -301,6 +301,8 @@
     <li><a href="#gnome">GNOME</a></li>
     <li><a href="#mate">MATE</a></li>
     <li><a href="#xfce">XFCE</a></li>
+    <li><a href="#cinnamon">Cinnamon</a></li>
+    <li><a href="#enlightenment">Enlightenment</a></li>
   </ul>
 </nav></div>
 
@@ -378,7 +380,8 @@ $ sudo luet install layers/plasma layers/kde-apps-minimal
 
 </code></pre></td></tr></table>
 </div>
-</div><p>If you prefer to use SDDM as your login manager run this command:</p>
+</div><p>The layers/plasma package ships with the SDDM login manager.
+If you prefer to use SDDM as your login manager run this command:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
@@ -405,7 +408,8 @@ $ sudo luet install layers/gnome
 
 </code></pre></td></tr></table>
 </div>
-</div><p>If you prefer to use GDM as your login manager run this command:</p>
+</div><p>The layers/gnome package ships with the GDM login manager.
+If you prefer to use GDM as your login manager run this command:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
@@ -471,11 +475,39 @@ $ sudo luet install layers/xfce
 
 </code></pre></td></tr></table>
 </div>
+</div><h2 id="cinnamon">Cinnamon</h2>
+<p>This command installs the Cinnamon desktop environment.</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+$ sudo luet install layers/cinnamon 
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="enlightenment">Enlightenment</h2>
+<p>This command installs the Cinnamon desktop environment.</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+$ sudo luet install layers/enlightenment 
+
+</code></pre></td></tr></table>
+</div>
 </div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified February 4, 2024: <a href="https://github.com/MocaccinoOS/website/commit/ed73d5f20ccd5cf2e02f64a3a5f8fe488bb8dc28">Update desktop_environements.md (ed73d5f)</a>
+  Last modified February 4, 2024: <a href="https://github.com/MocaccinoOS/website/commit/c30938a57ca12438839fbbdfe4ded026a86b80ea">Update desktop_environements.md (c30938a)</a>
 </div>
 
 </div>
