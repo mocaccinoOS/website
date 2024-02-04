@@ -15,7 +15,7 @@ This command updates your repository database.
 
 ```bash
 
-$ luet repo update
+$ sudo luet repo update
 
 ```
 
@@ -25,7 +25,7 @@ To install a package with `luet`, simply run:
 
 ```bash
 
-$ luet install <package_name>
+$ sudo luet install <package_name>
 
 ```
 Be sure you write the full package name that includes the category. 
@@ -33,7 +33,7 @@ So if you are installing for example `neofetch`:
 
 ```bash
 
-$ luet install apps/neofetch
+$ sudo luet install apps/neofetch
 
 ```
 
@@ -43,7 +43,7 @@ To uninstall a package with `luet`, simply run:
 
 ```bash
 
-$ luet uninstall <package_name>
+$ sudo luet uninstall <package_name>
 
 ```
 
@@ -53,7 +53,7 @@ To upgrade your system, simply run:
 
 ```bash
 
-$ luet upgrade
+$ sudo luet upgrade
 
 ```
 
@@ -63,7 +63,7 @@ To search a package:
 
 ```bash
 
-$ luet search <regex>
+$ sudo luet search <regex>
 
 ```
 
@@ -71,7 +71,7 @@ To search a package and display results in a table:
 
 ```bash
 
-$ luet search --table <regex>
+$ sudo luet search --table <regex>
 
 ```
 
@@ -79,7 +79,7 @@ To look into the installed packages:
 
 ```bash
 
-$ luet search --installed <regex>
+$ sudo luet search --installed <regex>
 
 ```
 
@@ -94,7 +94,7 @@ Search can return results in the terminal in different ways: as terminal output,
 
 ```bash
 
-$ luet search --json <regex>
+$ sudo luet search --json <regex>
 
 ```
 
@@ -102,7 +102,7 @@ $ luet search --json <regex>
 
 ```bash
 
-$ luet search --yaml <regex>
+$ sudo luet search --yaml <regex>
 
 ```
 
@@ -111,7 +111,7 @@ $ luet search --yaml <regex>
 
 ```bash
 
-$ luet search --table <regex>
+$ sudo luet search --table <regex>
 
 ```
 
