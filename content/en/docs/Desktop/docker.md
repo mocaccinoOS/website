@@ -11,18 +11,18 @@ description: >-
 First install `container/docker` and `systemd-service/dockerd`, which provides the `systemd` service:
 
 ```bash
-$ luet install container/docker systemd-service/dockerd
+$ sudo luet install container/docker systemd-service/dockerd
 ```
 
 To start dockerd, just:
 ```bash
-$ systemctl start docker
+$ sudo systemctl start docker
 ```
 
 or to enable at boot:
 
 ```bash
-$ systemctl enable docker
+$ sudo systemctl enable docker
 ```
 
 Optionally add your user to the docker group:
