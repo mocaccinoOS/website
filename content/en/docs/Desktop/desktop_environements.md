@@ -7,6 +7,8 @@ description: >
   MocaccinoOS supports several popular desktop environments.
 ---
 
+This page explains how to install several desktop environments.
+
 ## KDE Plasma
 
 This command installs the KDE Plasma desktop environment.
