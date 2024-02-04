@@ -55,19 +55,6 @@ $ sudo luet install layers/mate
 
 ```
 
-If you prefer to use Lightdm as your login manager run these commands:
-
-```bash
-
-$ sudo luet install apps/lightdm
-
-```
-```bash
-
-$ sudo systemctl enable lightdm --force
-
-```
-
 ## XFCE
 
 This command installs the XFCE desktop environment.
@@ -94,5 +81,42 @@ This command installs the Cinnamon desktop environment.
 ```bash
 
 $ sudo luet install layers/enlightenment 
+
+```
+
+## Trinity
+
+This command installs the Trinity desktop environment.
+
+```bash
+
+$ sudo luet install layers/trinity 
+
+```
+## Login managers
+
+If you prefer to use Lightdm as your login manager run these commands:
+
+```bash
+
+$ sudo luet install apps/lightdm
+
+```
+```bash
+
+$ sudo systemctl enable lightdm --force
+
+```
+
+If you prefer to use Slim as your login manager run these commands:
+
+```bash
+
+$ sudo luet install apps/slim
+
+```
+```bash
+
+$ sudo systemctl enable slim --force
 
 ```
