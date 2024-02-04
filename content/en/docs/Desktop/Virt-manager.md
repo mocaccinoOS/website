@@ -1,7 +1,7 @@
 ---
 title: "Virt-manager"
 linkTitle: "Virt-manager"
-weight: 100
+weight: 22
 description: >-
      Installing virt-manager in Mocaccino Desktop
 ---
