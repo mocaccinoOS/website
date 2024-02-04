@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/docker/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2024-02-04T20:23:40+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2024-02-04T20:26:31+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Running docker">
 <meta itemprop="description" content="Running Docker on Mocaccino Desktop">
-<meta itemprop="dateModified" content="2024-02-04T20:23:40+01:00" />
-<meta itemprop="wordCount" content="111">
+<meta itemprop="dateModified" content="2024-02-04T20:26:31+01:00" />
+<meta itemprop="wordCount" content="114">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Running docker"/>
 <meta name="twitter:description" content="Running Docker on Mocaccino Desktop"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.19e018e6a30df4c77503913e9f358670.json"
+  data-offline-search-index-json-src="/offline-search-index.8a6965e9aabbe34ccb5db5c4ca2f2d3a.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.19e018e6a30df4c77503913e9f358670.json"
+  data-offline-search-index-json-src="/offline-search-index.8a6965e9aabbe34ccb5db5c4ca2f2d3a.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -355,7 +355,7 @@
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ luet install container/docker systemd-service/dockerd
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo luet install container/docker systemd-service/dockerd
 </code></pre></td></tr></table>
 </div>
 </div><p>To start dockerd, just:</p>
@@ -364,7 +364,7 @@
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl start docker
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl start docker
 </code></pre></td></tr></table>
 </div>
 </div><p>or to enable at boot:</p>
@@ -373,7 +373,7 @@
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl <span style="color:#24909d">enable</span> docker
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl <span style="color:#24909d">enable</span> docker
 </code></pre></td></tr></table>
 </div>
 </div><p>Optionally add your user to the docker group:</p>
@@ -404,7 +404,7 @@ quay.io/mocaccino/extra   latest              ce197d5b1a7e        <span style="c
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified February 4, 2024: <a href="https://github.com/MocaccinoOS/website/commit/f587be69012ad232c37ac9f8510b8bcaf1a2dbb8">Update usage.md (f587be6)</a>
+  Last modified February 4, 2024: <a href="https://github.com/MocaccinoOS/website/commit/47edf573fd0aebf36f12cdc4acee91950cf91bf2">Update docker.md (47edf57)</a>
 </div>
 
 </div>
