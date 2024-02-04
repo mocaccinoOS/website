@@ -208,7 +208,8 @@ $ sudo luet search --table &amp;lt;regex&amp;gt;
       <description>
         
         
-        &lt;h2 id=&#34;kde-plasma&#34;&gt;KDE Plasma&lt;/h2&gt;
+        &lt;p&gt;This page explains how to install several desktop environments.&lt;/p&gt;
+&lt;h2 id=&#34;kde-plasma&#34;&gt;KDE Plasma&lt;/h2&gt;
 &lt;p&gt;This command installs the KDE Plasma desktop environment.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
