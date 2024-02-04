@@ -103,6 +103,16 @@ This command installs the Trinity desktop environment.
 $ sudo luet install layers/trinity 
 
 ```
+## Hyprland
+
+This command installs the Hyprland desktop environment.
+
+```bash
+
+$ sudo luet install layers/trinity 
+
+```
+
 ## Login managers
 
 If you prefer to use Lightdm as your login manager run these commands:
