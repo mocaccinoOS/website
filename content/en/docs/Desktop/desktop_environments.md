@@ -1,6 +1,6 @@
 ---
-title: "Desktop environements"
-linkTitle: "Desktop environements"
+title: "Desktop environments"
+linkTitle: "Desktop environemnts"
 weight: 4
 date: 2024-02-04
 description: >
