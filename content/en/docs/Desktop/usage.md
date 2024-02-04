@@ -1,6 +1,6 @@
 ---
-title: "Luet commands"
-linkTitle: "Luet commands"
+title: "Package manager"
+linkTitle: "Package manager"
 weight: 3
 date: 2019-12-14
 description: >
