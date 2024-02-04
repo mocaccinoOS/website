@@ -113,6 +113,16 @@ $ sudo luet install layers/hyprland
 
 ```
 
+## Fluxbox
+
+This command installs the Fluxbox desktop environment.
+
+```bash
+
+$ sudo luet install layers/fluxbox 
+
+```
+
 ## Login managers
 
 If you prefer to use Lightdm as your login manager run these commands:
