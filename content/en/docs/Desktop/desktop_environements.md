@@ -55,10 +55,26 @@ $ sudo luet install layers/mate
 
 ```
 
-If you prefer to use Lightdm as your login manager run this command:
+If you prefer to use Lightdm as your login manager run these commands:
 
 ```bash
+
 $ sudo luet install apps/lightdm
-$ sudo systemctl enable gdm --force
 
 ```
+```bash
+
+$ sudo systemctl enable lightdm --force
+
+```
+
+## XFCE
+
+This command installs the XFCE desktop environment.
+
+```bash
+
+$ sudo luet install layers/xfce 
+
+```
+
