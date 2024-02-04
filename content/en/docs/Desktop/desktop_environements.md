@@ -15,7 +15,7 @@ This command installs the KDE Plasma desktop environment.
 
 ```bash
 
-$ sudo luet install layers/plasma layers/kde-apps-minimal
+$ sudo luet install layers/plasma layers/kde-apps-minimal apps/discover
 
 ```
 The layers/plasma package ships with the SDDM login manager.
@@ -33,7 +33,7 @@ This command installs the GNOME desktop environment.
 
 ```bash
 
-$ sudo luet install layers/gnome
+$ sudo luet install layers/gnome apps/gnome-software
 
 ```
 The layers/gnome package ships with the GDM login manager.
@@ -51,7 +51,7 @@ This command installs the MATE desktop environment.
 
 ```bash
 
-$ sudo luet install layers/mate  
+$ sudo luet install layers/mate themes/mate 
 
 ```
 
@@ -64,6 +64,16 @@ This command installs the XFCE desktop environment.
 $ sudo luet install layers/xfce 
 
 ```
+## LXQT
+
+This command installs the LXQT desktop environment.
+
+```bash
+
+$ sudo luet install layers/lxqt 
+
+```
+
 ## Cinnamon
 
 This command installs the Cinnamon desktop environment.
