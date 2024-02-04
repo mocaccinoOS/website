@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/usage/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2019-12-14T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-02-04T20:02:06+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2024-02-04T20:04:24+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Luet commands">
 <meta itemprop="description" content="Frequent commands
 "><meta itemprop="datePublished" content="2019-12-14T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2024-02-04T20:02:06+01:00" />
-<meta itemprop="wordCount" content="214">
+<meta itemprop="dateModified" content="2024-02-04T20:04:24+01:00" />
+<meta itemprop="wordCount" content="225">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Luet commands"/>
 <meta name="twitter:description" content="Frequent commands
@@ -158,7 +158,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.0c9e453a9b830e58d06b3a4b6c9864d9.json"
+  data-offline-search-index-json-src="/offline-search-index.df273df05e1e1913d656957ad490e241.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -181,7 +181,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.0c9e453a9b830e58d06b3a4b6c9864d9.json"
+  data-offline-search-index-json-src="/offline-search-index.df273df05e1e1913d656957ad490e241.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -378,7 +378,7 @@
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ luet repo update
+$ sudo luet repo update
 
 </code></pre></td></tr></table>
 </div>
@@ -392,7 +392,7 @@ $ luet repo update
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ luet install &lt;package_name&gt;
+$ sudo luet install &lt;package_name&gt;
 
 </code></pre></td></tr></table>
 </div>
@@ -406,7 +406,7 @@ So if you are installing for example <code>neofetch</code>:</p>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ luet install apps/neofetch
+$ sudo luet install apps/neofetch
 
 </code></pre></td></tr></table>
 </div>
@@ -420,7 +420,7 @@ $ luet install apps/neofetch
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ luet uninstall &lt;package_name&gt;
+$ sudo luet uninstall &lt;package_name&gt;
 
 </code></pre></td></tr></table>
 </div>
@@ -434,7 +434,7 @@ $ luet uninstall &lt;package_name&gt;
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ luet upgrade
+$ sudo luet upgrade
 
 </code></pre></td></tr></table>
 </div>
@@ -448,7 +448,7 @@ $ luet upgrade
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ luet search &lt;regex&gt;
+$ sudo luet search &lt;regex&gt;
 
 </code></pre></td></tr></table>
 </div>
@@ -461,7 +461,7 @@ $ luet search &lt;regex&gt;
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ luet search --table &lt;regex&gt;
+$ sudo luet search --table &lt;regex&gt;
 
 </code></pre></td></tr></table>
 </div>
@@ -474,7 +474,7 @@ $ luet search --table &lt;regex&gt;
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ luet search --installed &lt;regex&gt;
+$ sudo luet search --installed &lt;regex&gt;
 
 </code></pre></td></tr></table>
 </div>
@@ -490,7 +490,7 @@ $ luet search --installed &lt;regex&gt;
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ luet search --json &lt;regex&gt;
+$ sudo luet search --json &lt;regex&gt;
 
 </code></pre></td></tr></table>
 </div>
@@ -503,7 +503,7 @@ $ luet search --json &lt;regex&gt;
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ luet search --yaml &lt;regex&gt;
+$ sudo luet search --yaml &lt;regex&gt;
 
 </code></pre></td></tr></table>
 </div>
@@ -516,7 +516,7 @@ $ luet search --yaml &lt;regex&gt;
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ luet search --table &lt;regex&gt;
+$ sudo luet search --table &lt;regex&gt;
 
 </code></pre></td></tr></table>
 </div>
@@ -528,7 +528,7 @@ $ luet search --table &lt;regex&gt;
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified February 4, 2024: <a href="https://github.com/MocaccinoOS/website/commit/6473bd0d73c1a39c8cab8e3a904c0ee0ac306481">Update usage.md (6473bd0)</a>
+  Last modified February 4, 2024: <a href="https://github.com/MocaccinoOS/website/commit/fda4e4c605deb14876676572fdcd06223009343c">Update usage.md (fda4e4c)</a>
 </div>
 
 </div>
