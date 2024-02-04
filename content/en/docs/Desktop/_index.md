@@ -10,7 +10,7 @@ description: >-
 
 It contains installable "apps" that we refer internally as "layers" to install common suite of packages needed to bootstrap a pure and simple OS.
 
-A User, should be able then to install KDE by calling `luet install layers/plasma` and nothing else. That package should bring all the necessary components to make the "app" work as expected. The user shouldn't be exposed to the typical OS architecture of bringing with it dozens of dependencies. 
+A user should be able then to install KDE Plasma by running `luet install layers/plasma` and nothing else. That package should install all the necessary components to make the "app" work as expected. The user shouldn't be exposed to the typical OS architecture of bringing with it dozens of dependencies. Simply said: All micropackages are abstracted away and are included in a layer and installed as a single package.
 
 Think at it like Android apps: Install and uninstall should be as simple as that.
 
