@@ -8,7 +8,7 @@ description: >-
 
 ### Steam
 
-We recommend installing Steam directly from the desktop repository. You can also use the flatpak version but that could give problems because it is basically running in a sandbox.
+We recommend installing Steam directly from the desktop repository. You can also use the [flatpak](/docs/desktop/flatpak) version but that could give problems because it is basically running in a sandbox.
 To install Steam from the desktop repository you can issue the following installation command:
 
 ```bash
@@ -30,7 +30,7 @@ gamemoderun %command%
 
 ### Heroic Games Launcher
 
-Installing and playing games using the Epic games store or GOC we recommend using Heroic Games Launcher. You can install this using flatpak.
+Installing and playing games using the Epic games store or GOC we recommend using Heroic Games Launcher. You can install this using [flatpak](/docs/desktop/flatpak).
 
 ### Nvidia drivers
 
@@ -42,7 +42,7 @@ If you require these proprietary drivers you can issue this command:
 $ sudo luet install kernel-modules/nvidia-drivers-lts
 
 ```
-For older cards we alos offer the 470 series:
+For older cards we also offer the 470 series:
 
 ```bash
 
