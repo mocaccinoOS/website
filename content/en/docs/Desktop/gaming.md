@@ -41,11 +41,11 @@ If you require these proprietary drivers you can issue this command:
 
 $ sudo luet install kernel-modules/nvidia-drivers-lts
 
-``
+```
 For older cards we alos offer the 470 series:
 
 ```bash
 
 $ sudo luet install kernel-modules/nvidia-drivers-470-lts
 
-``
+```
