@@ -17,7 +17,7 @@ $ sudo luet install apps/steam
 
 ```
 
-## Gamemode
+#### Gamemode
 
 Gamemode allows you to temporarily apply some optimizations when you launch a game. This functionality is bundled in the apps/steam package. So if you install Steam you also have Gamemode installed.
 To make Steam start a game with gamemode, right click the game in the Library, select Properties..., then in the Launch Options text box enter:
