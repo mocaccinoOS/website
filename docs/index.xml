@@ -2064,6 +2064,33 @@ You can although add paths that are accessible to a specific Flatpak app.&lt;/p&
     </item>
     
     <item>
+      <title>Docs: Gaming</title>
+      <link>https://www.mocaccino.org/docs/desktop/gaming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/gaming/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;steam&#34;&gt;Steam&lt;/h3&gt;
+&lt;p&gt;We recommend installing Steam directly from the desktop repository. You can also use the flathub version but that could give problems because it is basically running in a sandbox.
+To install Steam from the desktop repository you can issue the following installation command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo luet install apps/steam
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;gamemode&#34;&gt;Gamemode&lt;/h2&gt;
+&lt;h3 id=&#34;heroic-games-launcher&#34;&gt;Heroic Games Launcher&lt;/h3&gt;
+&lt;h3 id=&#34;nvidia&#34;&gt;Nvidia&lt;/h3&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Virt-manager</title>
       <link>https://www.mocaccino.org/docs/desktop/virt-manager/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
