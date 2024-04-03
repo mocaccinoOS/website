@@ -32,6 +32,15 @@ gamemoderun %command%
 
 Installing and playing games using the Epic games store or GOC we recommend using Heroic Games Launcher. You can install this using [flatpak](/docs/desktop/flatpak).
 
+### Lutris
+
+An alternative platform for gamers is Lutris. 
+
+```bash
+
+$ sudo luet install apps/lutris
+
+```
 ### Nvidia drivers
 
 MocaccinoOS does not come with Nvidia-drivers pre-installed.
