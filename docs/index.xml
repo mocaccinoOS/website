@@ -2122,6 +2122,24 @@ $ ln -s ~/.steam/steam/steamapps/compatdata /media/gamedisk/Steam/steamapps/
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;em&gt;If the /compatdata folder already exists on the mounted disk BEFORE the symlink, DELETE IT!&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=&#34;proton-ge&#34;&gt;Proton GE&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/GloriousEggroll/proton-ge-custom?tab=readme-ov-file#proton-ge-custom&#34;&gt;Proton GE&lt;/a&gt; is a fork of Valve&amp;rsquo;s Proton.
+This custom Proton version has several patches and bleeding edge technology that could help increase performance.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;GE stands for &amp;ldquo;GloriousEggroll&amp;rdquo; and is the nickname of Thomas Crider who works for RedHat.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Proton GE is available in the &lt;a href=&#34;https://github.com/mocaccinoOS/community-repository?tab=readme-ov-file#-community-repository&#34;&gt;Community repository&lt;/a&gt;. If you have enabled this repository you can install it by using this command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;
+$ sudo luet install apps/proton-ge-custom-bin
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;After installation you should restart Steam. Afterwards you will have Proton GE available in the compatibility settings.&lt;/p&gt;
 &lt;h3 id=&#34;heroic-games-launcher&#34;&gt;Heroic Games Launcher&lt;/h3&gt;
 &lt;p&gt;Installing and playing games using the Epic games store or GOG we recommend using Heroic Games Launcher. You can install this using &lt;a href=&#34;https://www.mocaccino.org/docs/desktop/flatpak&#34;&gt;flatpak&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;lutris&#34;&gt;Lutris&lt;/h3&gt;
@@ -2180,24 +2198,7 @@ $ sudo luet install apps/mangohud
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;proton-ge&#34;&gt;Proton GE&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/GloriousEggroll/proton-ge-custom?tab=readme-ov-file#proton-ge-custom&#34;&gt;Proton GE&lt;/a&gt; is a fork of Valve&amp;rsquo;s Proton.
-This custom Proton version has several patches and bleeding edge technology that could help increase performance.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;GE stands for &amp;ldquo;GloriousEggroll&amp;rdquo; and is the nickname of Thomas Crider who works for RedHat.&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
-&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;
-$ sudo luet install apps/proton-ge-custom-bin
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;After installation you should restart Steam. Afterwards you will have Proton GE available in the compatibility settings.&lt;/p&gt;
-&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;/div&gt;&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/ValveSoftware/Proton/wiki/Using-a-NTFS-disk-with-Linux-and-Windows#preventing-ntfs-read-errors&#34;&gt;https://github.com/ValveSoftware/Proton/wiki/Using-a-NTFS-disk-with-Linux-and-Windows#preventing-ntfs-read-errors&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://wiki.archlinux.org/title/Gamemode#Run_Steam_with_gamemode&#34;&gt;https://wiki.archlinux.org/title/Gamemode#Run_Steam_with_gamemode&lt;/a&gt;&lt;/li&gt;
