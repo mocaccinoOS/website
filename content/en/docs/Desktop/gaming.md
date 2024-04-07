@@ -75,3 +75,18 @@ For older cards we also offer the 470 series:
 $ sudo luet install kernel-modules/nvidia-drivers-470-lts
 
 ```
+
+### Mangohud
+
+Mangohud is available in the [Community repository](https://github.com/mocaccinoOS/community-repository?tab=readme-ov-file#-community-repository). If you have enabled this repository you can install it by using this command:
+
+```bash
+
+$ sudo luet install apps/mangohud
+
+```
+
+## References
+
+- https://github.com/ValveSoftware/Proton/wiki/Using-a-NTFS-disk-with-Linux-and-Windows#preventing-ntfs-read-errors
+- https://wiki.archlinux.org/title/Gamemode#Run_Steam_with_gamemode
