@@ -2087,7 +2087,7 @@ $ sudo luet install apps/steam
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;gamemode&#34;&gt;Gamemode&lt;/h4&gt;
+&lt;/div&gt;&lt;h5 id=&#34;gamemode&#34;&gt;Gamemode&lt;/h5&gt;
 &lt;p&gt;Gamemode allows you to temporarily apply some optimizations when you launch a game. This functionality is bundled in the apps/steam package. So if you install Steam you also have Gamemode installed.
 To make Steam start a game with gamemode, right click the game in the Library, select Properties&amp;hellip;, then in the Launch Options text box enter:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
@@ -2102,7 +2102,27 @@ gamemoderun %command%
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;heroic-games-launcher&#34;&gt;Heroic Games Launcher&lt;/h3&gt;
+&lt;/div&gt;&lt;h5 id=&#34;additional-steam-library-ntfs&#34;&gt;Additional Steam library NTFS&lt;/h5&gt;
+&lt;p&gt;If you share a partition between Windows and MocaccinoOS that has a Steam library, please keep in mind that this can cause issues when trying to launch the game.
+Due to the nature of NTFS, creating files/folders with names that are invalid on Windows will cause disk errors (leading to games that don&amp;rsquo;t launch). The most common issue is a : (colon) character in filenames that Proton creates on the NTFS disk.&lt;/p&gt;
+&lt;p&gt;Fixing this is pretty simple: create the /compatdata folder on the mounted NTFS disk as a symlink that points to a folder on a Linux partition.&lt;/p&gt;
+&lt;p&gt;Creating the symlink:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;
+$ mkdir -p ~/.steam/steam/steamapps/compatdata
+$ ln -s ~/.steam/steam/steamapps/compatdata /media/gamedisk/Steam/steamapps/
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;em&gt;If the /compatdata folder already exists on the mounted disk BEFORE the symlink, DELETE IT!&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;heroic-games-launcher&#34;&gt;Heroic Games Launcher&lt;/h3&gt;
 &lt;p&gt;Installing and playing games using the Epic games store or GOG we recommend using Heroic Games Launcher. You can install this using &lt;a href=&#34;https://www.mocaccino.org/docs/desktop/flatpak&#34;&gt;flatpak&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;lutris&#34;&gt;Lutris&lt;/h3&gt;
 &lt;p&gt;An alternative platform for gamers is Lutris.&lt;/p&gt;

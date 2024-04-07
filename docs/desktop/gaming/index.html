@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/gaming/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2024-04-07T16:25:51+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2024-04-07T18:57:22+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Gaming">
 <meta itemprop="description" content="Essentials you need to know.">
-<meta itemprop="dateModified" content="2024-04-07T16:25:51+02:00" />
-<meta itemprop="wordCount" content="201">
+<meta itemprop="dateModified" content="2024-04-07T18:57:22+02:00" />
+<meta itemprop="wordCount" content="334">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Gaming"/>
 <meta name="twitter:description" content="Essentials you need to know."/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.37fa8dcadff3b57e1845fa059d121e40.json"
+  data-offline-search-index-json-src="/offline-search-index.bca6d0a43717c1b3612a32e4ee39bc22.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.37fa8dcadff3b57e1845fa059d121e40.json"
+  data-offline-search-index-json-src="/offline-search-index.bca6d0a43717c1b3612a32e4ee39bc22.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -380,7 +380,7 @@ $ sudo luet install apps/steam
 
 </code></pre></td></tr></table>
 </div>
-</div><h4 id="gamemode">Gamemode</h4>
+</div><h5 id="gamemode">Gamemode</h5>
 <p>Gamemode allows you to temporarily apply some optimizations when you launch a game. This functionality is bundled in the apps/steam package. So if you install Steam you also have Gamemode installed.
 To make Steam start a game with gamemode, right click the game in the Library, select Properties&hellip;, then in the Launch Options text box enter:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -395,7 +395,27 @@ gamemoderun %command%
 
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="heroic-games-launcher">Heroic Games Launcher</h3>
+</div><h5 id="additional-steam-library-ntfs">Additional Steam library NTFS</h5>
+<p>If you share a partition between Windows and MocaccinoOS that has a Steam library, please keep in mind that this can cause issues when trying to launch the game.
+Due to the nature of NTFS, creating files/folders with names that are invalid on Windows will cause disk errors (leading to games that don&rsquo;t launch). The most common issue is a : (colon) character in filenames that Proton creates on the NTFS disk.</p>
+<p>Fixing this is pretty simple: create the /compatdata folder on the mounted NTFS disk as a symlink that points to a folder on a Linux partition.</p>
+<p>Creating the symlink:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+$ mkdir -p ~/.steam/steam/steamapps/compatdata
+$ ln -s ~/.steam/steam/steamapps/compatdata /media/gamedisk/Steam/steamapps/
+
+</code></pre></td></tr></table>
+</div>
+</div><p><em>If the /compatdata folder already exists on the mounted disk BEFORE the symlink, DELETE IT!</em></p>
+<h3 id="heroic-games-launcher">Heroic Games Launcher</h3>
 <p>Installing and playing games using the Epic games store or GOG we recommend using Heroic Games Launcher. You can install this using <a href="/docs/desktop/flatpak">flatpak</a>.</p>
 <h3 id="lutris">Lutris</h3>
 <p>An alternative platform for gamers is Lutris.</p>
@@ -443,7 +463,7 @@ $ sudo luet install kernel-modules/nvidia-drivers-470-lts
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified April 7, 2024: <a href="https://github.com/MocaccinoOS/website/commit/3382e9d0fb66b379e5390a88759feadd5a569842">Gaming: fix typo (3382e9d)</a>
+  Last modified April 7, 2024: <a href="https://github.com/MocaccinoOS/website/commit/c7deef13ab951a66e4ff9628deba655cd2af82de">Update gaming.md (c7deef1)</a>
 </div>
 
 </div>
