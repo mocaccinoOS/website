@@ -45,6 +45,23 @@ $ ln -s ~/.steam/steam/steamapps/compatdata /media/gamedisk/Steam/steamapps/
 ```
 *If the /compatdata folder already exists on the mounted disk BEFORE the symlink, DELETE IT!*
 
+#### Proton GE
+
+[Proton GE](https://github.com/GloriousEggroll/proton-ge-custom?tab=readme-ov-file#proton-ge-custom) is a fork of Valve's Proton.
+This custom Proton version has several patches and bleeding edge technology that could help increase performance.
+
+*GE stands for "GloriousEggroll" and is the nickname of Thomas Crider who works for RedHat.*
+
+Proton GE is available in the [Community repository](https://github.com/mocaccinoOS/community-repository?tab=readme-ov-file#-community-repository). If you have enabled this repository you can install it by using this command:
+
+```bash
+
+$ sudo luet install apps/proton-ge-custom-bin
+
+```
+
+After installation you should restart Steam. Afterwards you will have Proton GE available in the compatibility settings.
+
 ### Heroic Games Launcher
 
 Installing and playing games using the Epic games store or GOG we recommend using Heroic Games Launcher. You can install this using [flatpak](/docs/desktop/flatpak).
@@ -85,21 +102,6 @@ Mangohud is available in the [Community repository](https://github.com/mocaccino
 $ sudo luet install apps/mangohud
 
 ```
-### Proton GE
-
-[Proton GE](https://github.com/GloriousEggroll/proton-ge-custom?tab=readme-ov-file#proton-ge-custom) is a fork of Valve's Proton. 
-This custom Proton version has several patches and bleeding edge technology that could help increase performance.
-
-*GE stands for "GloriousEggroll" and is the nickname of Thomas Crider who works for RedHat.*
-
-
-```bash
-
-$ sudo luet install apps/proton-ge-custom-bin
-
-```
-
-After installation you should restart Steam. Afterwards you will have Proton GE available in the compatibility settings.
 
 ## References
 
