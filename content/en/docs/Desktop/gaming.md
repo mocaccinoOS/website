@@ -85,6 +85,21 @@ Mangohud is available in the [Community repository](https://github.com/mocaccino
 $ sudo luet install apps/mangohud
 
 ```
+### Proton GE
+
+[Proton GE](https://github.com/GloriousEggroll/proton-ge-custom?tab=readme-ov-file#proton-ge-custom) is a fork of Valve's Proton. 
+This custom Proton version has several patches and bleeding edge technology that could help increase performance.
+
+*GE stands for "GloriousEggroll" and is the nickname of Thomas Crider who works for RedHat.*
+
+
+```bash
+
+$ sudo luet install apps/proton-ge-custom-bin
+
+```
+
+After installation you should restart Steam. Afterwards you will have Proton GE available in the compatibility settings.
 
 ## References
 
