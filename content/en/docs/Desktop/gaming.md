@@ -17,7 +17,7 @@ $ sudo luet install apps/steam
 
 ```
 
-#### Gamemode
+##### Gamemode
 
 Gamemode allows you to temporarily apply some optimizations when you launch a game. This functionality is bundled in the apps/steam package. So if you install Steam you also have Gamemode installed.
 To make Steam start a game with gamemode, right click the game in the Library, select Properties..., then in the Launch Options text box enter:
@@ -27,6 +27,23 @@ To make Steam start a game with gamemode, right click the game in the Library, s
 gamemoderun %command%
 
 ```
+
+##### Additional Steam library NTFS
+
+If you share a partition between Windows and MocaccinoOS that has a Steam library, please keep in mind that this can cause issues when trying to launch the game.
+Due to the nature of NTFS, creating files/folders with names that are invalid on Windows will cause disk errors (leading to games that don't launch). The most common issue is a : (colon) character in filenames that Proton creates on the NTFS disk.
+
+Fixing this is pretty simple: create the /compatdata folder on the mounted NTFS disk as a symlink that points to a folder on a Linux partition.
+
+Creating the symlink:
+
+```bash
+
+$ mkdir -p ~/.steam/steam/steamapps/compatdata
+$ ln -s ~/.steam/steam/steamapps/compatdata /media/gamedisk/Steam/steamapps/
+
+```
+*If the /compatdata folder already exists on the mounted disk BEFORE the symlink, DELETE IT!*
 
 ### Heroic Games Launcher
 
