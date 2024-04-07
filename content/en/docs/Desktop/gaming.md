@@ -30,7 +30,7 @@ gamemoderun %command%
 
 ### Heroic Games Launcher
 
-Installing and playing games using the Epic games store or GOC we recommend using Heroic Games Launcher. You can install this using [flatpak](/docs/desktop/flatpak).
+Installing and playing games using the Epic games store or GOG we recommend using Heroic Games Launcher. You can install this using [flatpak](/docs/desktop/flatpak).
 
 ### Lutris
 
