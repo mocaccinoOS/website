@@ -28,6 +28,27 @@ gamemoderun %command%
 
 ```
 
+##### VKBasalt 
+
+VKBasalt is a post processing layer for Vulkan which enables you to enhance graphics further. It only works with Vulkan, This includes all Proton games.
+This functionality is bundled in the apps/steam package. So if you install Steam you also have VKBasalt installed.
+
+To use VKBasalt for any particular game enter this as a launch option:
+
+```bash
+
+ENABLE_VKBASALT=1 %command%
+
+```
+
+You can also start non Steam games this way by typing the following command:
+
+```bash
+
+ENABLE_VKBASALT=1 mygame
+
+```
+
 ##### Additional Steam library NTFS
 
 If you share a partition between Windows and MocaccinoOS that has a Steam library, please keep in mind that this can cause issues when trying to launch the game.
