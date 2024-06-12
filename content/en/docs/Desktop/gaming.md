@@ -128,3 +128,4 @@ $ sudo luet install apps/mangohud
 
 - https://github.com/ValveSoftware/Proton/wiki/Using-a-NTFS-disk-with-Linux-and-Windows#preventing-ntfs-read-errors
 - https://wiki.archlinux.org/title/Gamemode#Run_Steam_with_gamemode
+- https://steamcommunity.com/sharedfiles/filedetails/?id=1787799592
