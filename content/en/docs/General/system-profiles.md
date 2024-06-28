@@ -22,6 +22,6 @@ To disable a profile, run `mos profile disable <profile>`
 
 ## Search available profiles
 
-To search all the available profiles for installation, run `luet search system-profiles`.
+To search all the available profiles for installation, run `luet search system-profile`.
 
 To install a specific profile, run `luet install system-profile/<name>`.
