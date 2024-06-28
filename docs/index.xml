@@ -1476,7 +1476,7 @@ Files with unmerged config files: &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt
 &lt;h2 id=&#34;disable-profiles&#34;&gt;Disable profiles&lt;/h2&gt;
 &lt;p&gt;To disable a profile, run &lt;code&gt;mos profile disable &amp;lt;profile&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;search-available-profiles&#34;&gt;Search available profiles&lt;/h2&gt;
-&lt;p&gt;To search all the available profiles for installation, run &lt;code&gt;luet search system-profiles&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To search all the available profiles for installation, run &lt;code&gt;luet search system-profile&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;To install a specific profile, run &lt;code&gt;luet install system-profile/&amp;lt;name&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 
       </description>
