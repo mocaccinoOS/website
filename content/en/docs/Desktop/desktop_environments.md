@@ -123,6 +123,16 @@ $ sudo luet install layers/fluxbox
 
 ```
 
+## COSMIC
+
+This command installs the COSMIC desktop environment.
+
+```bash
+
+$ sudo luet install layers/cosmic apps/cosmic-store 
+
+```
+
 ## Login managers
 
 If you prefer to use Lightdm as your login manager run these commands:
