@@ -86,7 +86,7 @@ $ sudo luet install layers/cinnamon
 
 ## Enlightenment
 
-This command installs the Cinnamon desktop environment.
+This command installs the Enlightenment desktop environment.
 
 ```bash
 
