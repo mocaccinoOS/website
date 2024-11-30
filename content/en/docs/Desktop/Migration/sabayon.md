@@ -20,6 +20,10 @@ equo remove dev-qt/qtcore --ask
 Migration can take some time. We advice you to disable screen-locking and power savings. If your screen gets locked during upgrade you might not be able to login again while the upgrade is running.
 {{< /alert >}}
 
+{{< alert color="warning" title="Warning" >}}
+Because we need to basically download everything in addition to the current installation you need a significant ammount of free disk space. We recommend at least 30GB of free space for a basic installation.
+{{< /alert >}}
+
 You can convert a Sabayon system (running Entropy) to Mocaccino OS (running luet) with the following commands as root
 
 ```bash
