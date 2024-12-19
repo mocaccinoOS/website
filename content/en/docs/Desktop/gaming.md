@@ -91,6 +91,8 @@ Installing and playing games using the Epic games store or GOG we recommend usin
 
 An alternative platform for gamers is Lutris. 
 
+Lutris is available in the [Community repository](https://github.com/mocaccinoOS/community-repository?tab=readme-ov-file#-community-repository). If you have enabled this repository you can install it by using this command:
+
 ```bash
 
 $ sudo luet install apps/lutris
@@ -104,13 +106,6 @@ If you require these proprietary drivers you can issue this command:
 ```bash
 
 $ sudo luet install kernel-modules/nvidia-drivers-lts
-
-```
-For older cards we also offer the 470 series:
-
-```bash
-
-$ sudo luet install kernel-modules/nvidia-drivers-470-lts
 
 ```
 
