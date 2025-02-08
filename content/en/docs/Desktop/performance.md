@@ -74,6 +74,10 @@ fs.inotify.max_user_instances=1024
 ### Customizing TCP Buffer Sizes
 MocaccinoOS provides **example settings** for different workloads.
 
+{{< alert color="warning" title="Warning" >}}
+Only one of these should be used at a time!
+{{< /alert >}}
+
 ### Low Latency (Gaming, Video Calls)**
 ```ini
 net.core.rmem_max=4194304
@@ -89,8 +93,6 @@ net.core.wmem_max=16777216
 net.ipv4.tcp_rmem=4096 87380 16777216
 net.ipv4.tcp_wmem=4096 65536 16777216
 ```
-
-### **📝 Note:** **Only one of these should be used at a time!**
 Copy the settings into `/etc/sysctl.d/99-custom.conf` to make them permanent.
 
 ---
