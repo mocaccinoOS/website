@@ -38,32 +38,32 @@ sudo sysctl --system
 
 ### Default Optimizations (Already Enabled)
 ### **1️⃣ Network Performance Tweaks**
-✅ **FQ (Fair Queuing) for reduced bufferbloat:**
+**FQ (Fair Queuing) for reduced bufferbloat:**
 ```ini
 net.core.default_qdisc=fq
 ```
-✅ **BBR congestion control for low latency:**
+**BBR congestion control for low latency:**
 ```ini
 net.ipv4.tcp_congestion_control=bbr
 ```
 
 ### **2️⃣ Memory Management Optimizations**
-✅ **Reduce swap usage for better responsiveness:**
+**Reduce swap usage for better responsiveness:**
 ```ini
 vm.swappiness=10
 ```
-✅ **Prevent stutters by optimizing disk writeback:**
+**Prevent stutters by optimizing disk writeback:**
 ```ini
 vm.dirty_ratio=20
 vm.dirty_background_ratio=5
 ```
-✅ **Reduce VFS cache pressure for better I/O performance:**
+**Reduce VFS cache pressure for better I/O performance:**
 ```ini
 vm.vfs_cache_pressure=50
 ```
 
 ### **3️⃣ Filesystem & Process Optimizations**
-✅ **Improve file monitoring (for IDEs, Docker, game engines):**
+**Improve file monitoring (for IDEs, Docker, game engines):**
 ```ini
 fs.inotify.max_user_watches=524288
 fs.inotify.max_user_instances=1024
@@ -148,5 +148,3 @@ sudo sysctl --system
 ✔ **MocaccinoOS includes performance optimizations by default**  
 ✔ **Users can test additional tweaks by uncommenting settings in `70-mocaccino.conf`**  
 ✔ **To make changes permanent, users must use `/etc/sysctl.d/99-custom.conf`**  
-
-This guide helps users **understand how to safely tweak their system for maximum performance!** 🚀🔥
