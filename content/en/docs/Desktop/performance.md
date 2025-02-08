@@ -37,7 +37,7 @@ sudo sysctl --system
 ---
 
 ### Default Optimizations (Already Enabled)
-### ** Network Performance Tweaks**
+### **Network Performance Tweaks**
 **FQ (Fair Queuing) for reduced bufferbloat:**
 ```ini
 net.core.default_qdisc=fq
@@ -47,7 +47,7 @@ net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
 ```
 
-### ** Memory Management Optimizations**
+### **Memory Management Optimizations**
 **Reduce swap usage for better responsiveness:**
 ```ini
 vm.swappiness=10
@@ -62,7 +62,7 @@ vm.dirty_background_ratio=5
 vm.vfs_cache_pressure=50
 ```
 
-### ** Filesystem & Process Optimizations**
+### **Filesystem & Process Optimizations**
 **Improve file monitoring (for IDEs, Docker, game engines):**
 ```ini
 fs.inotify.max_user_watches=524288
@@ -78,7 +78,7 @@ MocaccinoOS provides **example settings** for different workloads.
 Only one of these should be used at a time!
 {{< /alert >}}
 
-### Low Latency (Gaming, Video Calls)**
+### Low Latency (Gaming, Video Calls)
 ```ini
 net.core.rmem_max=4194304
 net.core.wmem_max=4194304
@@ -86,7 +86,7 @@ net.ipv4.tcp_rmem=4096 87380 4194304
 net.ipv4.tcp_wmem=4096 16384 4194304
 ```
 
-### High Bandwidth (File Transfers, Streaming)**
+### High Bandwidth (File Transfers, Streaming)
 ```ini
 net.core.rmem_max=16777216
 net.core.wmem_max=16777216
