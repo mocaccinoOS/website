@@ -2023,7 +2023,7 @@ sudo sysctl --system
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;hr&gt;
-&lt;h2 id=&#34;-default-optimizations-already-enabled&#34;&gt;🔹 Default Optimizations (Already Enabled)&lt;/h2&gt;
+&lt;h3 id=&#34;default-optimizations-already-enabled&#34;&gt;Default Optimizations (Already Enabled)&lt;/h3&gt;
 &lt;h3 id=&#34;1-network-performance-tweaks&#34;&gt;&lt;strong&gt;1️⃣ Network Performance Tweaks&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;✅ &lt;strong&gt;FQ (Fair Queuing) for reduced bufferbloat:&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
@@ -2086,9 +2086,9 @@ sudo sysctl --system
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;hr&gt;
-&lt;h2 id=&#34;-customizing-tcp-buffer-sizes&#34;&gt;🔹 Customizing TCP Buffer Sizes&lt;/h2&gt;
+&lt;h3 id=&#34;customizing-tcp-buffer-sizes&#34;&gt;Customizing TCP Buffer Sizes&lt;/h3&gt;
 &lt;p&gt;MocaccinoOS provides &lt;strong&gt;example settings&lt;/strong&gt; for different workloads.&lt;/p&gt;
-&lt;h3 id=&#34;-low-latency-gaming-video-calls&#34;&gt;&lt;strong&gt;⚡ Low Latency (Gaming, Video Calls)&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;low-latency-gaming-video-calls&#34;&gt;Low Latency (Gaming, Video Calls)**&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
@@ -2103,7 +2103,7 @@ sudo sysctl --system
 &lt;span style=&#34;color:#bbb&#34;&gt;net.ipv4.tcp_wmem&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;4096 16384 4194304&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;-high-bandwidth-file-transfers-streaming&#34;&gt;&lt;strong&gt;📡 High Bandwidth (File Transfers, Streaming)&lt;/strong&gt;&lt;/h3&gt;
+&lt;/div&gt;&lt;h3 id=&#34;high-bandwidth-file-transfers-streaming&#34;&gt;High Bandwidth (File Transfers, Streaming)**&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
@@ -2121,7 +2121,7 @@ sudo sysctl --system
 &lt;/div&gt;&lt;h3 id=&#34;-note-only-one-of-these-should-be-used-at-a-time&#34;&gt;&lt;strong&gt;📝 Note:&lt;/strong&gt; &lt;strong&gt;Only one of these should be used at a time!&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;Copy the settings into &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt; to make them permanent.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;-adjusting-vmmax_map_count-advanced-users&#34;&gt;📌 Adjusting &lt;code&gt;vm.max_map_count&lt;/code&gt; (Advanced Users)&lt;/h2&gt;
+&lt;h3 id=&#34;adjusting-vmmax_map_count-advanced-users&#34;&gt;Adjusting &lt;code&gt;vm.max_map_count&lt;/code&gt; (Advanced Users)&lt;/h3&gt;
 &lt;p&gt;Default &lt;strong&gt;&lt;code&gt;vm.max_map_count=65530&lt;/code&gt;&lt;/strong&gt; works for most users.
 Some applications (&lt;strong&gt;Elasticsearch, game engines, AI tools&lt;/strong&gt;) may need a higher limit.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example: Increase to 262144 for database workloads:&lt;/strong&gt;&lt;/p&gt;
@@ -2142,7 +2142,7 @@ sudo sysctl --system
 &lt;li&gt;&lt;strong&gt;High-performance workloads:&lt;/strong&gt; 1048576+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;-how-to-apply-changes&#34;&gt;🔹 How to Apply Changes&lt;/h2&gt;
+&lt;h3 id=&#34;how-to-apply-changes&#34;&gt;How to Apply Changes&lt;/h3&gt;
 &lt;p&gt;After modifying &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt;, apply changes immediately:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -2162,7 +2162,7 @@ sudo sysctl --system
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;hr&gt;
-&lt;h2 id=&#34;-faq&#34;&gt;💡 FAQ&lt;/h2&gt;
+&lt;h3 id=&#34;faq&#34;&gt;FAQ&lt;/h3&gt;
 &lt;h3 id=&#34;q-what-happens-if-i-edit-usrlibsysctld70-mocaccinoconf&#34;&gt;&lt;strong&gt;Q: What happens if I edit &lt;code&gt;/usr/lib/sysctl.d/70-mocaccino.conf&lt;/code&gt;?&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;⚠ &lt;strong&gt;Do NOT edit this file!&lt;/strong&gt; It will be overwritten when the system updates.
 Instead, create &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt;.&lt;/p&gt;
@@ -2186,7 +2186,7 @@ Instead, create &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt;.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;hr&gt;
-&lt;h2 id=&#34;-summary&#34;&gt;🚀 Summary&lt;/h2&gt;
+&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
 &lt;p&gt;✔ &lt;strong&gt;MocaccinoOS includes performance optimizations by default&lt;/strong&gt;&lt;br&gt;
 ✔ &lt;strong&gt;Users can test additional tweaks by uncommenting settings in &lt;code&gt;70-mocaccino.conf&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;
 ✔ &lt;strong&gt;To make changes permanent, users must use &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
