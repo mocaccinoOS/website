@@ -598,7 +598,7 @@ sudo sysctl --system
 &lt;/div&gt;
 &lt;/div&gt;&lt;hr&gt;
 &lt;h3 id=&#34;default-optimizations-already-enabled&#34;&gt;Default Optimizations (Already Enabled)&lt;/h3&gt;
-&lt;h3 id=&#34;-network-performance-tweaks&#34;&gt;** Network Performance Tweaks**&lt;/h3&gt;
+&lt;h3 id=&#34;network-performance-tweaks&#34;&gt;&lt;strong&gt;Network Performance Tweaks&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;FQ (Fair Queuing) for reduced bufferbloat:&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -617,7 +617,7 @@ sudo sysctl --system
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#bbb&#34;&gt;net.ipv4.tcp_congestion_control&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;bbr&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;-memory-management-optimizations&#34;&gt;** Memory Management Optimizations**&lt;/h3&gt;
+&lt;/div&gt;&lt;h3 id=&#34;memory-management-optimizations&#34;&gt;&lt;strong&gt;Memory Management Optimizations&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Reduce swap usage for better responsiveness:&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -647,7 +647,7 @@ sudo sysctl --system
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#bbb&#34;&gt;vm.vfs_cache_pressure&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;50&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;-filesystem--process-optimizations&#34;&gt;** Filesystem &amp;amp; Process Optimizations**&lt;/h3&gt;
+&lt;/div&gt;&lt;h3 id=&#34;filesystem--process-optimizations&#34;&gt;&lt;strong&gt;Filesystem &amp;amp; Process Optimizations&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Improve file monitoring (for IDEs, Docker, game engines):&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -671,7 +671,7 @@ sudo sysctl --system
 
 &lt;/div&gt;
 
-&lt;h3 id=&#34;low-latency-gaming-video-calls&#34;&gt;Low Latency (Gaming, Video Calls)**&lt;/h3&gt;
+&lt;h3 id=&#34;low-latency-gaming-video-calls&#34;&gt;Low Latency (Gaming, Video Calls)&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
@@ -686,7 +686,7 @@ sudo sysctl --system
 &lt;span style=&#34;color:#bbb&#34;&gt;net.ipv4.tcp_wmem&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;4096 16384 4194304&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;high-bandwidth-file-transfers-streaming&#34;&gt;High Bandwidth (File Transfers, Streaming)**&lt;/h3&gt;
+&lt;/div&gt;&lt;h3 id=&#34;high-bandwidth-file-transfers-streaming&#34;&gt;High Bandwidth (File Transfers, Streaming)&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
