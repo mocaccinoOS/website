@@ -37,7 +37,7 @@ sudo sysctl --system
 ---
 
 ### Default Optimizations (Already Enabled)
-### **1️⃣ Network Performance Tweaks**
+### ** Network Performance Tweaks**
 **FQ (Fair Queuing) for reduced bufferbloat:**
 ```ini
 net.core.default_qdisc=fq
@@ -47,7 +47,7 @@ net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
 ```
 
-### **2️⃣ Memory Management Optimizations**
+### ** Memory Management Optimizations**
 **Reduce swap usage for better responsiveness:**
 ```ini
 vm.swappiness=10
@@ -62,7 +62,7 @@ vm.dirty_background_ratio=5
 vm.vfs_cache_pressure=50
 ```
 
-### **3️⃣ Filesystem & Process Optimizations**
+### ** Filesystem & Process Optimizations**
 **Improve file monitoring (for IDEs, Docker, game engines):**
 ```ini
 fs.inotify.max_user_watches=524288
