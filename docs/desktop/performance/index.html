@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/performance/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2025-02-08T19:07:12+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2025-02-08T19:10:26+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Performance Optimizations">
 <meta itemprop="description" content="Optimizing MocaccinoOS for enhanced performance.">
-<meta itemprop="dateModified" content="2025-02-08T19:07:12+01:00" />
-<meta itemprop="wordCount" content="420">
+<meta itemprop="dateModified" content="2025-02-08T19:10:26+01:00" />
+<meta itemprop="wordCount" content="419">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Performance Optimizations"/>
 <meta name="twitter:description" content="Optimizing MocaccinoOS for enhanced performance."/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.95af2fe0acf0e86a5bcf55f72fcd485a.json"
+  data-offline-search-index-json-src="/offline-search-index.3acaecaf71632dfc01636f4ebda2f661.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.95af2fe0acf0e86a5bcf55f72fcd485a.json"
+  data-offline-search-index-json-src="/offline-search-index.3acaecaf71632dfc01636f4ebda2f661.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -308,7 +308,6 @@
         <li><a href="#customizing-tcp-buffer-sizes">Customizing TCP Buffer Sizes</a></li>
         <li><a href="#low-latency-gaming-video-calls">Low Latency (Gaming, Video Calls)**</a></li>
         <li><a href="#high-bandwidth-file-transfers-streaming">High Bandwidth (File Transfers, Streaming)**</a></li>
-        <li><a href="#-note-only-one-of-these-should-be-used-at-a-time"><strong>📝 Note:</strong> <strong>Only one of these should be used at a time!</strong></a></li>
         <li><a href="#adjusting-vmmax_map_count-advanced-users">Adjusting <code>vm.max_map_count</code> (Advanced Users)</a></li>
         <li><a href="#recommended-values"><strong>Recommended Values:</strong></a></li>
         <li><a href="#how-to-apply-changes">How to Apply Changes</a></li>
@@ -487,6 +486,15 @@ sudo sysctl --system
 </div><hr>
 <h3 id="customizing-tcp-buffer-sizes">Customizing TCP Buffer Sizes</h3>
 <p>MocaccinoOS provides <strong>example settings</strong> for different workloads.</p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Warning</h4>
+
+    Only one of these should be used at a time!
+
+</div>
+
 <h3 id="low-latency-gaming-video-calls">Low Latency (Gaming, Video Calls)**</h3>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -517,8 +525,7 @@ sudo sysctl --system
 <span style="color:#bbb">net.ipv4.tcp_wmem</span>=<span style="color:#ed9d13">4096 65536 16777216</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="-note-only-one-of-these-should-be-used-at-a-time"><strong>📝 Note:</strong> <strong>Only one of these should be used at a time!</strong></h3>
-<p>Copy the settings into <code>/etc/sysctl.d/99-custom.conf</code> to make them permanent.</p>
+</div><p>Copy the settings into <code>/etc/sysctl.d/99-custom.conf</code> to make them permanent.</p>
 <hr>
 <h3 id="adjusting-vmmax_map_count-advanced-users">Adjusting <code>vm.max_map_count</code> (Advanced Users)</h3>
 <p>Default <strong><code>vm.max_map_count=65530</code></strong> works for most users.
@@ -594,7 +601,7 @@ Instead, create <code>/etc/sysctl.d/99-custom.conf</code>.</p>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified February 8, 2025: <a href="https://github.com/MocaccinoOS/website/commit/c1744095882a225c39b66e1d74671758590c0ad5">Update performance.md (c174409)</a>
+  Last modified February 8, 2025: <a href="https://github.com/MocaccinoOS/website/commit/ff5ce850fa3efb55491dbec07c5d803a4a6f2853">Update performance.md (ff5ce85)</a>
 </div>
 
 </div>
