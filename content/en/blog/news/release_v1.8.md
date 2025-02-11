@@ -46,6 +46,6 @@ Support our work!
 https://www.mocaccino.org/docs/donate/
 
 Acknowledgement:
-The project heavily depends on the work done by upstream [Gentoo Linux](https://gentoo.org) and we would like to thank them for their hard and excellent work! MocaccinoOS compiles all software available in the repositories using their own infrastructure that is powered by Kairos.
+The project heavily depends on the work done by upstream [Gentoo Linux](https://gentoo.org) and we would like to thank them for their hard and excellent work! MocaccinoOS compiles all software available in the repositories using their own infrastructure that is powered by [Kairos](https://kairos.io).
 
 Check out our [download page](https://github.com/mocaccinoOS/mocaccino/releases) for all recent releases.
