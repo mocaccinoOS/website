@@ -13,6 +13,92 @@
     
     
     <item>
+      <title>Blog: MocaccinoOS v1.1</title>
+      <link>https://www.mocaccino.org/blog/2022/12/25/mocaccinoos-v1.1/</link>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/blog/2022/12/25/mocaccinoos-v1.1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Hello everybody!&lt;/p&gt;
+&lt;p&gt;Today we are releasing MocaccinoOS v1.1
+This is mostly an upgraded version that doesn&amp;rsquo;t introduce too many new features. Everything is compiled against a very recent (7 days old) Gentoo Portage tree.  With this release we also introduce the XFCE edition. A nice addition to the MOS family.&lt;/p&gt;
+&lt;p&gt;The team hopes you enjoy our effort.
+With kind regards,&lt;/p&gt;
+&lt;p&gt;Ettore Di Giacinto
+Joost Ruis
+Mihai Dobrescu
+Jerrod Frost&lt;/p&gt;
+&lt;p&gt;Changes since 1.0:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kernel is upgraded to 5.15.83 (LTS)&lt;/li&gt;
+&lt;li&gt;GNOME version 43.2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Issues and improvements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Enable cpupower-frequency-set service ( &lt;a href=&#34;https://github.com/mocaccinoOS/os-commons/commit/d4a519edf07a15d2302fbe5dc95bff66f21a29aa&#34;&gt;https://github.com/mocaccinoOS/os-commons/commit/d4a519edf07a15d2302fbe5dc95bff66f21a29aa&lt;/a&gt; )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Notes for testers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Additional software can be installed through flatpak, docker or the &lt;a href=&#34;https://github.com/mocaccinoOS/community-repository&#34;&gt;community repository&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Please give us feedback by reporting bugs or sharing your ideas with us.&lt;/li&gt;
+&lt;li&gt;Check out our &lt;a href=&#34;https://www.mocaccino.org/docs/&#34;&gt;documentation pages&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Support our work!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mocaccino.org/docs/donate/&#34;&gt;https://www.mocaccino.org/docs/donate/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Check out our &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/releases&#34;&gt;download page&lt;/a&gt; for all recent releases.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: MocaccinoOS v1.0</title>
+      <link>https://www.mocaccino.org/blog/2022/09/03/mocaccinoos-v1.0/</link>
+      <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/blog/2022/09/03/mocaccinoos-v1.0/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Hello everybody!&lt;/p&gt;
+&lt;p&gt;We have decided to finally release MocaccinoOS 1.0 &amp;ldquo;Lisa&amp;rdquo;.
+Many thanks for the feedback we got during the beta stage. Also many thanks to our patrons who supported the project financially.&lt;/p&gt;
+&lt;p&gt;Although we are releasing version 1.0 this doesn&amp;rsquo;t mean everything is perfect yet.
+Many things still need to be improved, for instance artwork, themes and documentation.
+Hopefully we can work together with the community to achieve this in a matter of months.&lt;/p&gt;
+&lt;p&gt;Special thanks to our upstream Gentoo Linux for providing us the tools and packages that are of the highest quality.
+To our former developer Daniele Rondina we want to say: Good luck building a distrubution based on Funtoo Linux.&lt;/p&gt;
+&lt;p&gt;The team hopes you enjoy our effort.
+With kind regards,&lt;/p&gt;
+&lt;p&gt;Ettore Di Giacinto
+Joost Ruis
+Mihai Dobrescu
+Jerrod Frost&lt;/p&gt;
+&lt;p&gt;Changes since Beta 6:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kernel is upgraded to 5.15.63 (LTS)&lt;/li&gt;
+&lt;li&gt;Xorg server is upgraded to 21.1.4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Issues and improvements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Better out-of-the-box support for Realtek wifi adapters ( &lt;a href=&#34;https://github.com/mocaccinoOS/desktop/commit/8e914b9032deb788727ff49b73994946483b2c50&#34;&gt;https://github.com/mocaccinoOS/desktop/commit/8e914b9032deb788727ff49b73994946483b2c50&lt;/a&gt; )&lt;/li&gt;
+&lt;li&gt;Improve iso metadata ( &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/commit/ef6923901dfa40ec343519494a60166e0fa712af&#34;&gt;https://github.com/mocaccinoOS/mocaccino/commit/ef6923901dfa40ec343519494a60166e0fa712af&lt;/a&gt; )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Notes for testers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Additional software can be installed through flatpak, docker or the &lt;a href=&#34;https://github.com/mocaccinoOS/community-repository&#34;&gt;community repository&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Please give us feedback by reporting bugs or sharing your ideas with us.&lt;/li&gt;
+&lt;li&gt;Check out our &lt;a href=&#34;https://www.mocaccino.org/docs/&#34;&gt;documentation pages&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Support our work!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mocaccino.org/docs/donate/&#34;&gt;https://www.mocaccino.org/docs/donate/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Check out our &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/releases&#34;&gt;download page&lt;/a&gt; for all recent releases.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: MocaccinoOS beta06</title>
       <link>https://www.mocaccino.org/blog/2022/07/29/mocaccinoos-beta06/</link>
       <pubDate>Fri, 29 Jul 2022 00:00:00 +0000</pubDate>
