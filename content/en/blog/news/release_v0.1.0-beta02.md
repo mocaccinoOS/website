@@ -1,6 +1,6 @@
 ---
-title: "MocaccinoOS beta"
-linkTitle: "MocaccinoOS beta"
+title: "MocaccinoOS beta02"
+linkTitle: "MocaccinoOS beta02"
 date: 2022-04-02
 description: >-
      MocaccinoOS v0.1.0-beta02 release
