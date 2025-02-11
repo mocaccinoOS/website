@@ -13,6 +13,36 @@
     
     
     <item>
+      <title>Blog: MocaccinoOS beta</title>
+      <link>https://www.mocaccino.org/blog/2022/03/15/mocaccinoos-beta/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/blog/2022/03/15/mocaccinoos-beta/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Hello everybody!&lt;/p&gt;
+&lt;p&gt;After many months of hard work we can finally tag our first beta release!
+MOS comes in several flavors, pick whatever suits you best.&lt;/p&gt;
+&lt;p&gt;New in this release:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Split firmware packages &lt;em&gt;(We&amp;rsquo;ve split the linux-firmware package into smaller packages to free up additional space.)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Kernel is upgraded to 5.15.25 (LTS)&lt;/li&gt;
+&lt;li&gt;Luet version 0.22.7&lt;/li&gt;
+&lt;li&gt;Virt-manager is now available in the desktop repository.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Notes for testers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Additional software can be installed through flatpak, docker or the &lt;a href=&#34;https://github.com/mocaccinoOS/community-repository&#34;&gt;community repository&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Please give us feedback by reporting bugs or sharing your ideas with us.&lt;/li&gt;
+&lt;li&gt;Check out our &lt;a href=&#34;https://www.mocaccino.org/docs/&#34;&gt;documentation pages&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Check out our &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/releases&#34;&gt;download page&lt;/a&gt; for all recent releases.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: January updates</title>
       <link>https://www.mocaccino.org/blog/2022/01/01/january-updates/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
