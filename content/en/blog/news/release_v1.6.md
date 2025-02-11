@@ -1,7 +1,7 @@
 ---
 title: "MocaccinoOS v1.6"
 linkTitle: "MocaccinoOS v1.6"
-date: 2024-29-05
+date: 2024-05-29
 description: >-
      MocaccinoOS v1.6 release
 ---
