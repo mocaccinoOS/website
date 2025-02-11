@@ -19,13 +19,13 @@ Special thanks to our upstream Gentoo Linux for providing us the tools and packa
 To our former developer Daniele Rondina we want to say: Good luck building a distrubution based on Funtoo Linux.
 
 
-The team hopes you enjoy our effort.
-With kind regards,
+The team hopes you enjoy our effort.  
+With kind regards,  
 
-Ettore Di Giacinto
-Joost Ruis
-Mihai Dobrescu
-Jerrod Frost
+Ettore Di Giacinto  
+Joost Ruis  
+Mihai Dobrescu  
+Jerrod Frost  
 
 Changes since Beta 6:
 
