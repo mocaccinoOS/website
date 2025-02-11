@@ -11,13 +11,13 @@ Hello everybody!
 Today we are releasing MocaccinoOS v1.1
 This is mostly an upgraded version that doesn't introduce too many new features. Everything is compiled against a very recent (7 days old) Gentoo Portage tree.  With this release we also introduce the XFCE edition. A nice addition to the MOS family.
 
-The team hopes you enjoy our effort.
-With kind regards,
+The team hopes you enjoy our effort.  
+With kind regards,  
 
-Ettore Di Giacinto
-Joost Ruis
-Mihai Dobrescu
-Jerrod Frost
+Ettore Di Giacinto  
+Joost Ruis  
+Mihai Dobrescu  
+Jerrod Frost  
 
 Changes since 1.0:
 
