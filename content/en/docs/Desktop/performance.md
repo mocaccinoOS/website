@@ -96,8 +96,8 @@ The default `vm.max_map_count=65530` works for most users. Some applications (**
 
 ### Example: Increase to 262144 for database workloads:
 ```bash
-echo "vm.max_map_count=262144" | sudo tee -a /etc/sysctl.d/99-custom.conf
-sudo sysctl --system
+echo "vm.max_map_count=262144" >> /etc/sysctl.d/99-custom.conf
+sysctl --system
 ```
 
 ### **Recommended Values:**
