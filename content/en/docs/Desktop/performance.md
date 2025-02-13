@@ -105,6 +105,8 @@ sysctl --system
 - **Elasticsearch & Databases:** 262144
 - **High-performance workloads:** 1048576+
 
+The game Dayz requires 1048576[^1]
+
 ---
 
 ## How to Apply Changes
@@ -145,3 +147,5 @@ sudo sysctl --system
 ✔ **MocaccinoOS includes performance optimizations by default**  
 ✔ **Users can test additional tweaks by uncommenting settings in `70-mocaccino.conf`**  
 ✔ **To make changes permanent, users must use `/etc/sysctl.d/99-custom.conf`**
+
+[^1]: https://steamcommunity.com/app/221100/discussions/0/3199241400256965913/#c3199241400263431941
