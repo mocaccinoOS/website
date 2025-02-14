@@ -620,19 +620,20 @@ Many thanks for the feedback we got thus far. It really helps us creating a bett
         &lt;p&gt;Hello everybody!&lt;/p&gt;
 &lt;p&gt;After many months of hard work we can finally tag our first beta release!
 MOS comes in several flavors, pick whatever suits you best.&lt;/p&gt;
-&lt;p&gt;New in this release:&lt;/p&gt;
+&lt;h3 id=&#34;new-in-this-release&#34;&gt;New in this release&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Split firmware packages &lt;em&gt;(We&amp;rsquo;ve split the linux-firmware package into smaller packages to free up additional space.)&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;Kernel is upgraded to 5.15.25 (LTS)&lt;/li&gt;
 &lt;li&gt;Luet version 0.22.7&lt;/li&gt;
 &lt;li&gt;Virt-manager is now available in the desktop repository.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Notes for testers:&lt;/p&gt;
+&lt;h3 id=&#34;notes-for-testers&#34;&gt;Notes for testers&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Additional software can be installed through flatpak, docker or the &lt;a href=&#34;https://github.com/mocaccinoOS/community-repository&#34;&gt;community repository&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Please give us feedback by reporting bugs or sharing your ideas with us.&lt;/li&gt;
 &lt;li&gt;Check out our &lt;a href=&#34;https://www.mocaccino.org/docs/&#34;&gt;documentation pages&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;download&#34;&gt;Download&lt;/h2&gt;
 &lt;p&gt;Check out our &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/releases&#34;&gt;download page&lt;/a&gt; for all recent releases.&lt;/p&gt;
 
       </description>
