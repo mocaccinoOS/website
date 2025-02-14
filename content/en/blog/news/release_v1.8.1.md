@@ -58,8 +58,9 @@ Check out our [download page](https://github.com/mocaccinoOS/mocaccino/releases)
 
 ### Screenshots
 
-![XFCE_1](https://github.com/user-attachments/assets/01b29c8d-deef-471c-86ad-dd948d5c8832)
-![XFCE_2](https://github.com/user-attachments/assets/2b5ccc31-2e94-4f92-90f8-b6241470e599)
-![XFCE_3](https://github.com/user-attachments/assets/024dff69-c9ab-4da7-8266-3fa67c35ccd2)
-
-
+![XFCE_1](https://github.com/user-attachments/assets/01b29c8d-deef-471c-86ad-dd948d5c8832)  
+![XFCE_2](https://github.com/user-attachments/assets/2b5ccc31-2e94-4f92-90f8-b6241470e599)  
+![XFCE_3](https://github.com/user-attachments/assets/024dff69-c9ab-4da7-8266-3fa67c35ccd2)  
+![KDE_1](https://github.com/user-attachments/assets/daf2a64e-04b9-4d87-9215-659852a59892)  
+![KDE_2](https://github.com/user-attachments/assets/094becb0-1d41-4d03-bf99-258fd7e15208)  
+![KDE_3](https://github.com/user-attachments/assets/363475b1-323a-47c2-8c35-f412a497bb84)  
