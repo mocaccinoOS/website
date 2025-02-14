@@ -227,27 +227,28 @@ With kind regards,&lt;/p&gt;
 Joost Ruis&lt;br&gt;
 Mihai Dobrescu&lt;br&gt;
 Jerrod Frost&lt;/p&gt;
-&lt;p&gt;Changes since 1.3:&lt;/p&gt;
+&lt;h3 id=&#34;changes-since-13&#34;&gt;Changes since 1.3&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Kernel is upgraded to 6.1.72 (LTS)&lt;/li&gt;
 &lt;li&gt;GNOME is upgraded to version 45.2&lt;/li&gt;
 &lt;li&gt;PLASMA is upgraded to version 5.27.10&lt;/li&gt;
 &lt;li&gt;Integrated Gentoo binaries in our build process. ( This certainly lowered our products CO₂ footprint! )&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Issues and improvements:&lt;/p&gt;
+&lt;h3 id=&#34;issues-and-improvements&#34;&gt;Issues and improvements&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Better support for the XFS filesystem ( &lt;a href=&#34;https://github.com/mocaccinoOS/desktop/commit/d33d5412cec16ddb185ea4d3fc92a4eca020cafb&#34;&gt;https://github.com/mocaccinoOS/desktop/commit/d33d5412cec16ddb185ea4d3fc92a4eca020cafb&lt;/a&gt; )&lt;/li&gt;
 &lt;li&gt;Better support for Wifi/Bluetooth for MT7921E ( &lt;a href=&#34;https://github.com/mocaccinoOS/desktop/commit/db323a2ba9b54b7ef1d6f7faba352aabbec626d3&#34;&gt;https://github.com/mocaccinoOS/desktop/commit/db323a2ba9b54b7ef1d6f7faba352aabbec626d3&lt;/a&gt; )&lt;/li&gt;
 &lt;li&gt;We are aware that MOS images are not fully EFI complaint, certain (mostly older) systems are not booting properly with EFISTUB used in our images. At the moment we do not have a proper solution and the workaround is to change your BIOS settings to boot in legacy mode. ( &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/issues/130&#34;&gt;https://github.com/mocaccinoOS/mocaccino/issues/130&lt;/a&gt; )&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Notes for testers:&lt;/p&gt;
+&lt;h3 id=&#34;notes-for-testers&#34;&gt;Notes for testers&lt;/h3&gt;
 &lt;p&gt;Additional software can be installed through flatpak, docker or the community repository.
 Please give us feedback by reporting bugs or sharing your ideas with us.
 Check out our &lt;a href=&#34;https://www.mocaccino.org/docs/&#34;&gt;documentation&lt;/a&gt; pages&lt;/p&gt;
-&lt;p&gt;Support our work!&lt;/p&gt;
+&lt;h3 id=&#34;support-our-work&#34;&gt;Support our work!&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.mocaccino.org/docs/donate/&#34;&gt;https://www.mocaccino.org/docs/donate/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Acknowledgement:
-The project heavily depends on the work done by upstream &lt;a href=&#34;https://gentoo.org&#34;&gt;Gentoo Linux&lt;/a&gt; and we would like to thank them for their hard and excellent work! MocaccinoOS compiles all software available in the repositories using their own infrastructure that is powered by Kairos.&lt;/p&gt;
+&lt;h3 id=&#34;acknowledgement&#34;&gt;Acknowledgement&lt;/h3&gt;
+&lt;p&gt;The project heavily depends on the work done by upstream &lt;a href=&#34;https://gentoo.org&#34;&gt;Gentoo Linux&lt;/a&gt; and we would like to thank them for their hard and excellent work! MocaccinoOS compiles all software available in the repositories using their own infrastructure that is powered by Kairos.&lt;/p&gt;
+&lt;h3 id=&#34;download&#34;&gt;Download&lt;/h3&gt;
 &lt;p&gt;Check out our &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/releases&#34;&gt;download page&lt;/a&gt; for all recent releases.&lt;/p&gt;
 
       </description>
