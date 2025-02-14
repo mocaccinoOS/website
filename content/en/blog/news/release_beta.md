@@ -24,6 +24,6 @@ MOS comes in several flavors, pick whatever suits you best.
 - Please give us feedback by reporting bugs or sharing your ideas with us.
 - Check out our [documentation pages](https://www.mocaccino.org/docs/)
 
-## Download
+### Download
 
 Check out our [download page](https://github.com/mocaccinoOS/mocaccino/releases) for all recent releases.
