@@ -39,6 +39,15 @@
         
         
         &lt;p&gt;MocaccinoOS uses &lt;strong&gt;luet&lt;/strong&gt; as a package manager. Here in this document are collected references from the luet docs.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+
+    Luet does not recognize packages installed on top of its layers (e.g., by Flatpak) and functions as an immutable system, meaning its core components remain unchanged.
+
+&lt;/div&gt;
+
 &lt;h2 id=&#34;update-the-repositories&#34;&gt;Update the repositories&lt;/h2&gt;
 &lt;p&gt;This command updates your repository database.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
