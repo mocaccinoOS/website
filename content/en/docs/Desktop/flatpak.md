@@ -1,7 +1,7 @@
 ---
 title: "Flatpak"
 linkTitle: "Flatpak"
-weight: 21
+weight: 3.1
 description: >-
      MocaccinoOS and Flatpak integration
 ---
