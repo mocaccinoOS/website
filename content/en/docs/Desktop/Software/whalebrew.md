@@ -1,7 +1,7 @@
 ---
 title: "Whalebrew"
 linkTitle: "Whalebrew"
-weight: 3.3
+weight: 3
 description: >-
      Whalebrew on Mocaccino Desktop
 ---
