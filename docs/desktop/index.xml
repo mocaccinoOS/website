@@ -793,7 +793,7 @@ Instead, create &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt;.&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;MocaccinoOS Desktop supports &lt;code&gt;flatpak&lt;/code&gt;, and it&amp;rsquo;s usage is encouraged for packages like &lt;code&gt;Firefox&lt;/code&gt;, &lt;code&gt;LibreOffice&lt;/code&gt;, &amp;hellip;&lt;/p&gt;
+        &lt;p&gt;MocaccinoOS Desktop supports flatpak, and its usage is encouraged for packages like Spotify, Telegram, and others not found in the default desktop repository or community repository.&lt;/p&gt;
 &lt;p&gt;To install flatpak, run as root:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -812,13 +812,13 @@ Instead, create &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt;.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user $&amp;gt; flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;To install Firefox, for example, now you can:&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;To install Spotify, for example, now you can:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user $&amp;gt; flatpak install org.mozilla.firefox
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user $&amp;gt; flatpak install Spotify
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;For a detailed documentation, we suggest as a follow-up reading the &lt;a href=&#34;https://docs.flatpak.org/en/latest/using-flatpak.html&#34;&gt;official docs&lt;/a&gt;, here you can find a short summary of the most used commands.&lt;/p&gt;
