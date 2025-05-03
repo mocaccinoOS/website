@@ -6,9 +6,13 @@ description: >-
      MocaccinoOS and Snap integration
 ---
 
+{{< alert color="warning" title="Warning" >}}
+Using Snap is currently experimental on MocaccinoOS
+{{< /alert >}}
+
 Besides (prefered) flatpak, MocaccinoOS also supports snap.
 
-## Install
+## Installing and configuring
 
 To install snap, run as root:
 
@@ -22,7 +26,7 @@ Once the snap package is installed, enable these services:
 systemctl enable --now snapd.socket
 ```
 
-## AppArmor
+### AppArmor
 
 Snap’s fallback behavior without AppArmor is flaky, and some snaps won’t work at all.
 So we must enable AppArmor on our system. It is bundled with the apps/snapd package so we already have it on the system.
@@ -33,13 +37,19 @@ Enable these services:
 systemctl enable --now apparmor.service snapd.apparmor.service
 ```
 
-
 Enable required boot parameters. Edit /etc/default/grub and append apparmor=1 security=apparmor parameters.
 
 ```bash
 GRUB_CMDLINE_LINUX_DEFAULT="apparmor=1 security=apparmor"
 ```
+After editting this file, regenerate the grub config file:
 
+```bash
+grub-mkconfig -o /boot/grub/crug.cfg
+```
+Now restart the system.
+
+## Using snap
 
 To install Spotify, for example, now you can: 
 
