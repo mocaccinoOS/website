@@ -31,7 +31,7 @@ systemctl enable --now snapd.socket
 Snap’s fallback behavior without AppArmor is flaky, and some snaps won’t work at all.
 So we must enable AppArmor on our system. It is bundled with the apps/snapd package so we already have it on the system.
 
-Enable these services:
+Enable the apparmor service:
 
 ```bash
 systemctl enable --now apparmor.service snapd.apparmor.service
@@ -42,7 +42,7 @@ Enable required boot parameters. Edit /etc/default/grub and append apparmor=1 se
 ```bash
 GRUB_CMDLINE_LINUX_DEFAULT="apparmor=1 security=apparmor"
 ```
-After editting this file, regenerate the grub config file:
+After editing this file, regenerate the grub config file:
 
 ```bash
 grub-mkconfig -o /boot/grub/crug.cfg
