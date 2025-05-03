@@ -1,7 +1,7 @@
 ---
 title: "AppImages"
 linkTitle: "AppImage"
-weight: 21
+weight: 3.2
 description: >-
      MocaccinoOS and AppImage integration
 ---
