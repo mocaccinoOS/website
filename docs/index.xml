@@ -428,8 +428,17 @@ mocaccino-repository-index
       <description>
         
         
-        &lt;p&gt;Besides (prefered) flatpak, MocaccinoOS also supports snap.&lt;/p&gt;
-&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
+        
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;
+
+    Using Snap is currently experimental on MocaccinoOS
+
+&lt;/div&gt;
+
+&lt;p&gt;Besides (prefered) flatpak, MocaccinoOS also supports snap.&lt;/p&gt;
+&lt;h2 id=&#34;installing-and-configuring&#34;&gt;Installing and configuring&lt;/h2&gt;
 &lt;p&gt;To install snap, run as root:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -448,7 +457,7 @@ mocaccino-repository-index
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;systemctl &lt;span style=&#34;color:#24909d&#34;&gt;enable&lt;/span&gt; --now snapd.socket
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;apparmor&#34;&gt;AppArmor&lt;/h2&gt;
+&lt;/div&gt;&lt;h3 id=&#34;apparmor&#34;&gt;AppArmor&lt;/h3&gt;
 &lt;p&gt;Snap’s fallback behavior without AppArmor is flaky, and some snaps won’t work at all.
 So we must enable AppArmor on our system. It is bundled with the apps/snapd package so we already have it on the system.&lt;/p&gt;
 &lt;p&gt;Enable these services:&lt;/p&gt;
@@ -469,7 +478,18 @@ So we must enable AppArmor on our system. It is bundled with the apps/snapd pack
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;GRUB_CMDLINE_LINUX_DEFAULT&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;apparmor=1 security=apparmor&amp;#34;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;To install Spotify, for example, now you can:&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;After editting this file, regenerate the grub config file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;grub-mkconfig -o /boot/grub/crug.cfg
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Now restart the system.&lt;/p&gt;
+&lt;h2 id=&#34;using-snap&#34;&gt;Using snap&lt;/h2&gt;
+&lt;p&gt;To install Spotify, for example, now you can:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1

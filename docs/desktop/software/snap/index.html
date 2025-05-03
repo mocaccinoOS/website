@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/software/snap/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2025-05-03T20:09:16+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2025-05-03T21:46:14+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Snap">
 <meta itemprop="description" content="MocaccinoOS and Snap integration">
-<meta itemprop="dateModified" content="2025-05-03T20:09:16+02:00" />
-<meta itemprop="wordCount" content="196">
+<meta itemprop="dateModified" content="2025-05-03T21:46:14+02:00" />
+<meta itemprop="wordCount" content="225">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Snap"/>
 <meta name="twitter:description" content="MocaccinoOS and Snap integration"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7d0664baaf1ef2e7b834bb3ec0402e86.json"
+  data-offline-search-index-json-src="/offline-search-index.592a010889a5ab9d50ac7a0911038202.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7d0664baaf1ef2e7b834bb3ec0402e86.json"
+  data-offline-search-index-json-src="/offline-search-index.592a010889a5ab9d50ac7a0911038202.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -310,8 +310,12 @@
 
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
-    <li><a href="#install">Install</a></li>
-    <li><a href="#apparmor">AppArmor</a></li>
+    <li><a href="#installing-and-configuring">Installing and configuring</a>
+      <ul>
+        <li><a href="#apparmor">AppArmor</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-snap">Using snap</a></li>
     <li><a href="#search">Search</a></li>
     <li><a href="#running-applications">Running applications</a></li>
     <li><a href="#updating">Updating</a>
@@ -384,8 +388,17 @@
 		
 		
 	</header>    
-	<p>Besides (prefered) flatpak, MocaccinoOS also supports snap.</p>
-<h2 id="install">Install</h2>
+	
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Warning</h4>
+
+    Using Snap is currently experimental on MocaccinoOS
+
+</div>
+
+<p>Besides (prefered) flatpak, MocaccinoOS also supports snap.</p>
+<h2 id="installing-and-configuring">Installing and configuring</h2>
 <p>To install snap, run as root:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -404,7 +417,7 @@
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl <span style="color:#24909d">enable</span> --now snapd.socket
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="apparmor">AppArmor</h2>
+</div><h3 id="apparmor">AppArmor</h3>
 <p>Snap’s fallback behavior without AppArmor is flaky, and some snaps won’t work at all.
 So we must enable AppArmor on our system. It is bundled with the apps/snapd package so we already have it on the system.</p>
 <p>Enable these services:</p>
@@ -425,7 +438,18 @@ So we must enable AppArmor on our system. It is bundled with the apps/snapd pack
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#40ffff">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span style="color:#ed9d13">&#34;apparmor=1 security=apparmor&#34;</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>To install Spotify, for example, now you can:</p>
+</div><p>After editting this file, regenerate the grub config file:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">grub-mkconfig -o /boot/grub/crug.cfg
+</code></pre></td></tr></table>
+</div>
+</div><p>Now restart the system.</p>
+<h2 id="using-snap">Using snap</h2>
+<p>To install Spotify, for example, now you can:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
@@ -474,7 +498,7 @@ So we must enable AppArmor on our system. It is bundled with the apps/snapd pack
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified May 3, 2025: <a href="https://github.com/MocaccinoOS/website/commit/c250a770507874c2b35ef9f5a9b48b97d553117b">add snap documentation (c250a77)</a>
+  Last modified May 3, 2025: <a href="https://github.com/MocaccinoOS/website/commit/2a42bd72d94c04b8157a105c17729d2907d1f5c3">Update snap.md (2a42bd7)</a>
 </div>
 
 </div>
