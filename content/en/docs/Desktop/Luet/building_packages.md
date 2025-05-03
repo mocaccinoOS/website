@@ -1,7 +1,7 @@
 ---
 title: "Building packages locally"
 linkTitle: "Building packages locally"
-weight: 100
+weight: 2
 description: >-
      How to build packages on MocaccinoOS with portage (or not)
 ---
