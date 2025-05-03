@@ -209,6 +209,27 @@ $ sudo luet search --table &amp;lt;regex&amp;gt;
     </item>
     
     <item>
+      <title>Docs: AppImages</title>
+      <link>https://www.mocaccino.org/docs/desktop/appimage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/appimage/</guid>
+      <description>
+        
+        
+        &lt;p&gt;An &lt;a href=&#34;https://appimage.org/&#34;&gt;AppImage&lt;/a&gt; is a downloadable file for Linux that contains an application and everything the application needs to run (e.g., libraries, icons, fonts, translations, etc.) that cannot be reasonably expected to be part of each target system.&lt;/p&gt;
+&lt;p&gt;AppImages should work in MocaccinoOS as in other distributions, with no exception. If you encounter issues, please file a bug&lt;/p&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://appimage.org/&#34;&gt;AppImage website&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://appimage.github.io/apps/&#34;&gt;List of some AppImage apps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://bintray.com/probono/AppImages&#34;&gt;Another list of AppImage apps&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Flatpak</title>
       <link>https://www.mocaccino.org/docs/desktop/flatpak/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -851,27 +872,6 @@ Instead, create &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: AppImages</title>
-      <link>https://www.mocaccino.org/docs/desktop/appimage/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mocaccino.org/docs/desktop/appimage/</guid>
-      <description>
-        
-        
-        &lt;p&gt;An &lt;a href=&#34;https://appimage.org/&#34;&gt;AppImage&lt;/a&gt; is a downloadable file for Linux that contains an application and everything the application needs to run (e.g., libraries, icons, fonts, translations, etc.) that cannot be reasonably expected to be part of each target system.&lt;/p&gt;
-&lt;p&gt;AppImages should work in MocaccinoOS as in other distributions, with no exception. If you encounter issues, please file a bug&lt;/p&gt;
-&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://appimage.org/&#34;&gt;AppImage website&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://appimage.github.io/apps/&#34;&gt;List of some AppImage apps&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://bintray.com/probono/AppImages&#34;&gt;Another list of AppImage apps&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
       </description>
     </item>
