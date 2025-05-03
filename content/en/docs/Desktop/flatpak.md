@@ -6,7 +6,7 @@ description: >-
      MocaccinoOS and Flatpak integration
 ---
 
-MocaccinoOS Desktop supports `flatpak`, and it's usage is encouraged for packages like `Firefox`, `LibreOffice`, ...
+MocaccinoOS Desktop supports flatpak, and its usage is encouraged for packages like Spotify, Telegram, and others not found in the default desktop repository or community repository.
 
 To install flatpak, run as root:
 
@@ -20,10 +20,10 @@ Once flatpak is installed, from your user add the flathub repo:
 user $> flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 
-To install Firefox, for example, now you can: 
+To install Spotify, for example, now you can: 
 
 ```bash
-user $> flatpak install org.mozilla.firefox
+user $> flatpak install Spotify
 ```
 
 For a detailed documentation, we suggest as a follow-up reading the [official docs](https://docs.flatpak.org/en/latest/using-flatpak.html), here you can find a short summary of the most used commands.
