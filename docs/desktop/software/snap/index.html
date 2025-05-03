@@ -18,22 +18,22 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Building packages with Micro and k3s | MocaccinoOS</title>
-<meta name="description" content="How to build packages with Luet in Mocaccino Micro and k3s">
-<meta property="og:title" content="Building packages with Micro and k3s" />
-<meta property="og:description" content="How to build packages with Luet in Mocaccino Micro and k3s" />
+<title>Snap | MocaccinoOS</title>
+<meta name="description" content="MocaccinoOS and Snap integration">
+<meta property="og:title" content="Snap" />
+<meta property="og:description" content="MocaccinoOS and Snap integration" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.mocaccino.org/docs/micro/building-packages/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://www.mocaccino.org/docs/desktop/software/snap/" /><meta property="article:section" content="docs" />
 
 <meta property="article:modified_time" content="2025-05-03T20:09:16+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
-<meta itemprop="name" content="Building packages with Micro and k3s">
-<meta itemprop="description" content="How to build packages with Luet in Mocaccino Micro and k3s">
+<meta itemprop="name" content="Snap">
+<meta itemprop="description" content="MocaccinoOS and Snap integration">
 <meta itemprop="dateModified" content="2025-05-03T20:09:16+02:00" />
-<meta itemprop="wordCount" content="554">
+<meta itemprop="wordCount" content="196">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Building packages with Micro and k3s"/>
-<meta name="twitter:description" content="How to build packages with Luet in Mocaccino Micro and k3s"/>
+<meta name="twitter:title" content="Snap"/>
+<meta name="twitter:description" content="MocaccinoOS and Snap integration"/>
 
 
 
@@ -192,7 +192,7 @@
       <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docs-li">
   <a href="/docs/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-docs"><span class="">Documentation</span></a>
   <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdesktop-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdesktop-li">
   <a href="/docs/desktop/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdesktop"><span class="">Mocaccino Desktop</span></a>
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopdownload-li">
@@ -206,13 +206,13 @@
   <a href="/docs/desktop/luet/building_packages/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopluetbuilding_packages"><span class="">Building packages locally</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdesktopsoftware-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdesktopsoftware-li">
   <a href="/docs/desktop/software/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdesktopsoftware"><span class="">Software installation</span></a>
   <ul class="ul-3 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopsoftwareflatpak-li">
   <a href="/docs/desktop/software/flatpak/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopsoftwareflatpak"><span class="">Flatpak</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopsoftwaresnap-li">
-  <a href="/docs/desktop/software/snap/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopsoftwaresnap"><span class="">Snap</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsdesktopsoftwaresnap-li">
+  <a href="/docs/desktop/software/snap/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-docsdesktopsoftwaresnap"><span class="td-sidebar-nav-active-item">Snap</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopsoftwareappimage-li">
   <a href="/docs/desktop/software/appimage/" title="AppImages" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopsoftwareappimage"><span class="">AppImage</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopsoftwarewhalebrew-li">
@@ -267,15 +267,15 @@
   <a href="/docs/general/system-profiles/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsgeneralsystem-profiles"><span class="">System profiles</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsmicro-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsmicro-li">
   <a href="/docs/micro/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsmicro"><span class="">Mocaccino Micro</span></a>
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsmicroservice-management-li">
   <a href="/docs/micro/service-management/" title="Service Management and Init" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsmicroservice-management"><span class="">Init and Services</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsmicroinstallation-li">
   <a href="/docs/micro/installation/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsmicroinstallation"><span class="">Installation notes</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsmicrobuilding-packages-li">
-  <a href="/docs/micro/building-packages/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-docsmicrobuilding-packages"><span class="td-sidebar-nav-active-item">Building packages with Micro and k3s</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsmicrobuilding-packages-li">
+  <a href="/docs/micro/building-packages/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsmicrobuilding-packages"><span class="">Building packages with Micro and k3s</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsmicrodocker-li">
   <a href="/docs/micro/docker/" title="Running docker" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsmicrodocker"><span class="">Docker</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsmicrowireguard-li">
@@ -297,10 +297,10 @@
           <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
             
 <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-<a href="https://github.com/MocaccinoOS/website/tree/master/content/en/docs/Micro/building-packages.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa fa-file-alt fa-fw"></i> View page source</a>
-  <a href="https://github.com/MocaccinoOS/website/edit/master/content/en/docs/Micro/building-packages.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-  <a href="https://github.com/MocaccinoOS/website/new/master/content/en/docs/Micro/building-packages.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-  <a href="https://github.com/MocaccinoOS/website/issues/new?title=Building%20packages%20with%20Micro%20and%20k3s" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/MocaccinoOS/website/tree/master/content/en/docs/Desktop/Software/snap.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+  <a href="https://github.com/MocaccinoOS/website/edit/master/content/en/docs/Desktop/Software/snap.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+  <a href="https://github.com/MocaccinoOS/website/new/master/content/en/docs/Desktop/Software/snap.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+  <a href="https://github.com/MocaccinoOS/website/issues/new?title=Snap" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
   <a href="https://github.com/MocaccinoOS/issues/new" class="td-page-meta--project-issue" target="_blank" rel="noopener"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
   
 </div>
@@ -310,16 +310,15 @@
 
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
-    <li><a href="#advanced-multi-node-setup">(advanced) Multi-node setup</a>
+    <li><a href="#install">Install</a></li>
+    <li><a href="#apparmor">AppArmor</a></li>
+    <li><a href="#search">Search</a></li>
+    <li><a href="#running-applications">Running applications</a></li>
+    <li><a href="#updating">Updating</a>
       <ul>
-        <li><a href="#install-edgevpn-and-k3s">Install edgevpn and k3s</a></li>
-        <li><a href="#generate-edgevpn-configuration">Generate edgevpn configuration</a></li>
-        <li><a href="#start-the-vpn">Start the vpn</a></li>
-        <li><a href="#start-k3s">Start k3s:</a></li>
-        <li><a href="#permanent-setup">Permanent setup</a></li>
+        <li><a href="#references">References</a></li>
       </ul>
     </li>
-    <li><a href="#example">Example</a></li>
   </ul>
 </nav></div>
 
@@ -356,17 +355,20 @@
     <a href="https://www.mocaccino.org/docs/">Documentation</a>
   </li>
   <li class="breadcrumb-item">
-    <a href="https://www.mocaccino.org/docs/micro/">Mocaccino Micro</a>
+    <a href="https://www.mocaccino.org/docs/desktop/">Mocaccino Desktop</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="https://www.mocaccino.org/docs/desktop/software/">Software installation</a>
   </li>
   <li class="breadcrumb-item active" aria-current="page">
-    <a href="https://www.mocaccino.org/docs/micro/building-packages/">Building packages with Micro and k3s</a>
+    <a href="https://www.mocaccino.org/docs/desktop/software/snap/">Snap</a>
   </li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>Building packages with Micro and k3s</h1>
-	<div class="lead">How to build packages with Luet in Mocaccino Micro and k3s</div>
+	<h1>Snap</h1>
+	<div class="lead">MocaccinoOS and Snap integration</div>
 	<header class="article-meta">
 		
 		
@@ -382,296 +384,91 @@
 		
 		
 	</header>    
-	
-
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Warning</h4>
-
-    This is currently experimental
-
-</div>
-
-<p>In <code>Micro</code>, currently it&rsquo;s possible to build packages with <a href="https://k3s.io">K3s</a> and <a href="https://github.com/mudler/luet-k8s">Luet</a></p>
-<p>First install k3s:</p>
+	<p>Besides (prefered) flatpak, MocaccinoOS also supports snap.</p>
+<h2 id="install">Install</h2>
+<p>To install snap, run as root:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">luet install -y container/k3s runit-srv/k3s
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">luet install apps/snapd
 </code></pre></td></tr></table>
 </div>
-</div><p>And start it:</p>
+</div><p>Once the snap package is installed, enable these services:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ runit-start k3s
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl <span style="color:#24909d">enable</span> --now snapd.socket
 </code></pre></td></tr></table>
 </div>
-</div><p>To enable it permanently on boot, run <code>runit-enable k3s</code></p>
-<p>Wait for k3s to be ready (Until <code>ContainerCreating</code> becomes <code>Ready</code>):</p>
+</div><h2 id="apparmor">AppArmor</h2>
+<p>Snap’s fallback behavior without AppArmor is flaky, and some snaps won’t work at all.
+So we must enable AppArmor on our system. It is bundled with the apps/snapd package so we already have it on the system.</p>
+<p>Enable these services:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ watch k3s kubectl get pods -A
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl <span style="color:#24909d">enable</span> --now apparmor.service snapd.apparmor.service
 </code></pre></td></tr></table>
 </div>
-</div><p>Now install the <a href="https://github.com/mudler/luet-k8s">luet controller</a>:</p>
+</div><p>Enable required boot parameters. Edit /etc/default/grub and append apparmor=1 security=apparmor parameters.</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ k3s kubectl apply -f https://raw.githubusercontent.com/mudler/luet-k8s/master/hack/kube.yaml
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#40ffff">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span style="color:#ed9d13">&#34;apparmor=1 security=apparmor&#34;</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>And wait for it to be ready:</p>
+</div><p>To install Spotify, for example, now you can:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ watch k3s kubectl get pods -A
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo snap install spotify
 </code></pre></td></tr></table>
 </div>
-</div><p>Once all is up, we are ready to build packages, try for example with:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">13
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat <span style="color:#ed9d13">&lt;&lt;EOF | k3s kubectl apply -f -
-</span><span style="color:#ed9d13">apiVersion: luet.k8s.io/v1alpha1
-</span><span style="color:#ed9d13">kind: PackageBuild
-</span><span style="color:#ed9d13">metadata:
-</span><span style="color:#ed9d13">  name: test
-</span><span style="color:#ed9d13">spec:
-</span><span style="color:#ed9d13">  packageName: container/img
-</span><span style="color:#ed9d13">  repository: 
-</span><span style="color:#ed9d13">    url: &#34;https://github.com/mocaccinoOS/mocaccino-extra&#34;
-</span><span style="color:#ed9d13">  options:
-</span><span style="color:#ed9d13">    pull: true
-</span><span style="color:#ed9d13">    imageRepository: &#34;quay.io/mocaccinocache/extra-amd64-cache&#34;
-</span><span style="color:#ed9d13">EOF</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>In this case, we can inspect the build logs with:</p>
+</div><p>For a detailed documentation, we suggest as a follow-up reading the <a href="https://snapcraft.io/docs/get-started">official docs</a>, here you can find a short summary of the most used commands.</p>
+<h2 id="search">Search</h2>
+<p>Applications can be found in any of the added remotes using the search command. For example:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">k3s kubectl logs -f <span style="color:#24909d">test</span>
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">snap find spotify
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="advanced-multi-node-setup">(advanced) Multi-node setup</h2>
-<p>This section shows how to configure 2(or more) MocaccinoOS Micro instances with <a href="https://k3s.io">K3s</a> and <a href="https://github.com/mudler/edgevpn">edgevpn</a>.</p>
-
-
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Warning</h4>
-
-    Note, this setup is for development purposes, and intended to be run in a trusted environment, and just on Virtual machines. The following steps should only be carried out on test systems. Do make sure you have any important data backed up before starting a migration.
-
-</div>
-
-<h3 id="install-edgevpn-and-k3s">Install edgevpn and k3s</h3>
+</div><h2 id="running-applications">Running applications</h2>
+<p>After an application is installed, can be run by their id:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">luet install -y runit-srv/edgevpn utils/edgevpn container/k3s runit-srv/k3s
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">snap run spotify
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="generate-edgevpn-configuration">Generate edgevpn configuration</h3>
+</div><h2 id="updating">Updating</h2>
+<p>To update all your installed applications and runtimes to the latest available version in Flatpak, run:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">edgevpn -g &gt; vpn.yaml
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">snap refresh
 </code></pre></td></tr></table>
 </div>
-</div><p>Save the configuration file, it has to be available on all the machines that will belong to the cluster.</p>
-<h3 id="start-the-vpn">Start the vpn</h3>
-<p>We are ready to try to start the vpn:</p>
+</div><h3 id="references">References</h3>
 <ul>
-<li>
-<p>on node A: <code>sudo IFACE=edgevpn0 ADDRESS=10.1.0.3/24 EDGEVPNCONFIG=vpn.yml edgevpn</code></p>
-</li>
-<li>
-<p>on node B: <code>sudo IFACE=edgevpn0 ADDRESS=10.1.0.4/24 EDGEVPNCONFIG=vpm.yml edgevpn</code></p>
-</li>
-</ul>
-<p>Where:</p>
-<ul>
-<li><code>IFACE</code> is the vpn interface to be created</li>
-<li><code>ADDRESS</code> is the address of the node in the vpn network</li>
-<li><code>EDGEVPNCONFIG</code> is the path of the configuration which was generated before</li>
-</ul>
-<p>If all goes well, we should see some connection messages, and after a while we should be able to ping the nodes.</p>
-<h3 id="start-k3s">Start k3s:</h3>
-<ul>
-<li>
-<p>on node A: <code>k3s server --flannel-iface=edgevpn0</code></p>
-</li>
-<li>
-<p>on node B: <code>K3S_URL=https://10.1.0.3:6443 K3S_TOKEN=xx k3s agent --flannel-iface=edgevpn0 --node-ip 10.1.0.4</code></p>
-</li>
-</ul>
-<h3 id="permanent-setup">Permanent setup</h3>
-<p>Annotate the <code>IFACE</code>, <code>ADDRESS</code>, and <code>EDGEVPNCONFIG</code> in <code>/etc/sv/edgevpn/conf</code> in each node, and then you can use the following yip file for example to configure k3s (to place under <code>/etc/yip.d</code>):</p>
-<p>Node A:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">26
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#6ab825;font-weight:bold">stages</span>:<span style="color:#666">
-</span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">boot</span>:<span style="color:#666">
-</span><span style="color:#666">       </span>- <span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;k3s&#34;</span><span style="color:#666">
-</span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">commands</span>:<span style="color:#666">
-</span><span style="color:#666">          </span>- |<span style="color:#ed9d13">
-</span><span style="color:#ed9d13">              if [ ! -e &#34;/usr/bin/k3s&#34; ]; then
-</span><span style="color:#ed9d13">                luet install -y container/k3s runit-srv/k3s
-</span><span style="color:#ed9d13">                runit-enable k3s
-</span><span style="color:#ed9d13">              fi</span><span style="color:#666">              
-</span><span style="color:#666">          </span>- ulimit -u unlimited<span style="color:#666">
-</span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">files</span>:<span style="color:#666">
-</span><span style="color:#666">          </span>- <span style="color:#6ab825;font-weight:bold">path</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;/etc/sv/k3s/run&#34;</span><span style="color:#666">
-</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">owner</span>:<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666">
-</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">group</span>:<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666">
-</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">permissions</span>:<span style="color:#666"> </span><span style="color:#3677a9">0755</span><span style="color:#666">
-</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">content</span>:<span style="color:#666"> </span>|<span style="color:#ed9d13">
-</span><span style="color:#ed9d13">              #!/bin/sh
-</span><span style="color:#ed9d13">
-</span><span style="color:#ed9d13">              exec 2&gt;&amp;1
-</span><span style="color:#ed9d13">
-</span><span style="color:#ed9d13">              [ -r ./conf ] &amp;&amp; . ./conf
-</span><span style="color:#ed9d13">
-</span><span style="color:#ed9d13">              echo &#39;k3s starting.&#39;
-</span><span style="color:#ed9d13">
-</span><span style="color:#ed9d13">              LANG=C LC_ALL=C \
-</span><span style="color:#ed9d13">              exec /usr/bin/k3s server --flannel-iface=edgevpn0 2&gt;&amp;1</span><span style="color:#666">              
-</span></code></pre></td></tr></table>
-</div>
-</div><p>Node B:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">27
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#6ab825;font-weight:bold">stages</span>:<span style="color:#666">
-</span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">boot</span>:<span style="color:#666">
-</span><span style="color:#666">       </span>- <span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;k3s&#34;</span><span style="color:#666">
-</span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">commands</span>:<span style="color:#666">
-</span><span style="color:#666">          </span>- |<span style="color:#ed9d13">
-</span><span style="color:#ed9d13">              if [ ! -e &#34;/usr/bin/k3s&#34; ]; then
-</span><span style="color:#ed9d13">                luet install -y container/k3s runit-srv/k3s
-</span><span style="color:#ed9d13">                runit-enable k3s
-</span><span style="color:#ed9d13">              fi</span><span style="color:#666">              
-</span><span style="color:#666">          </span>- ulimit -u unlimited<span style="color:#666">
-</span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">files</span>:<span style="color:#666">
-</span><span style="color:#666">          </span>- <span style="color:#6ab825;font-weight:bold">path</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;/etc/sv/k3s/run&#34;</span><span style="color:#666">
-</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">owner</span>:<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666">
-</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">group</span>:<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666">
-</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">permissions</span>:<span style="color:#666"> </span><span style="color:#3677a9">0755</span><span style="color:#666">
-</span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">content</span>:<span style="color:#666"> </span>|<span style="color:#ed9d13">
-</span><span style="color:#ed9d13">              #!/bin/sh
-</span><span style="color:#ed9d13">
-</span><span style="color:#ed9d13">              exec 2&gt;&amp;1
-</span><span style="color:#ed9d13">
-</span><span style="color:#ed9d13">              [ -r ./conf ] &amp;&amp; . ./conf
-</span><span style="color:#ed9d13">
-</span><span style="color:#ed9d13">              echo &#39;k3s starting.&#39;
-</span><span style="color:#ed9d13">
-</span><span style="color:#ed9d13">              LANG=C LC_ALL=C K3S_URL=https://10.1.0.1:6443 K3S_TOKEN=xxx \
-</span><span style="color:#ed9d13">              exec /usr/bin/k3s agent --flannel-iface=edgevpn0 --node-ip 10.1.0.13 2&gt;&amp;1</span><span style="color:#666">              
-</span><span style="color:#666">
-</span></code></pre></td></tr></table>
-</div>
-</div><p>Then enable the services at boot:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ runit-enable k3s
-$ runit-enable edgevpn
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="example">Example</h2>
-<ul>
-<li><a href="https://github.com/mudler/luet-k8s#full-example">Full package build example</a></li>
+<li>[Gentoo Security Handbook] <a href="https://wiki.gentoo.org/wiki/Security_Handbook/Linux_Security_Modules/AppArmor">https://wiki.gentoo.org/wiki/Security_Handbook/Linux_Security_Modules/AppArmor</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Snap">Gentoo documentation</a></li>
 </ul>
 
 	
