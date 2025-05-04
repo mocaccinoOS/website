@@ -6,11 +6,11 @@ description: >-
      MocaccinoOS and Snap integration
 ---
 
+Besides (prefered) flatpak, MocaccinoOS also offers snap.
+
 {{< alert color="warning" title="Warning" >}}
 Using Snap is currently experimental on MocaccinoOS
 {{< /alert >}}
-
-Besides (prefered) flatpak, MocaccinoOS also supports snap.
 
 ## Installing and configuring
 
