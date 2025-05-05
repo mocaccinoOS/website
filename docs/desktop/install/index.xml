@@ -41,32 +41,25 @@ Default username and password is &lt;em&gt;mocaccino&lt;/em&gt;&lt;/p&gt;
         
         &lt;p&gt;Installing MocaccinoOS Using the Calamares Installer&lt;/p&gt;
 &lt;p&gt;This guide walks you through installing MocaccinoOS to your hard drive using the Calamares graphical installer. It applies to all editions of MocaccinoOS, including KDE Plasma, GNOME, XFCE, and MATE.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Boot into the Live Environment\&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2 id=&#34;boot-into-the-live-environment&#34;&gt;Boot into the Live Environment\&lt;/h2&gt;
 &lt;p&gt;After downloading the MocaccinoOS ISO and writing it to a USB stick, boot your computer from the USB. You’ll be greeted with the live session desktop.\&lt;/p&gt;
 &lt;p&gt;[screenshot]&lt;/p&gt;
 &lt;p&gt;From here, you can explore the live environment or go straight to installation.\&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Launch the Calamares Installer&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2 id=&#34;launch-the-calamares-installer&#34;&gt;Launch the Calamares Installer&lt;/h2&gt;
 &lt;p&gt;Look for the installer icon labeled “Install MocaccinoOS” on the desktop or in the application menu. Click to start the installation process.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://github.com/user-attachments/assets/4fca3673-edcb-443c-ac08-73be62688444&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Choose Your Language&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2 id=&#34;choose-your-language&#34;&gt;Choose Your Language&lt;/h2&gt;
 &lt;p&gt;Select your preferred language for the installation process. This choice will also set the default language for the installed system.&lt;/p&gt;
-&lt;p&gt;[screenshot]&lt;/p&gt;
-&lt;p&gt;Click Next to continue.
-4. Select Your Location and Time Zone&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/user-attachments/assets/4fca3673-edcb-443c-ac08-73be62688444&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Click Next to continue.\&lt;/p&gt;
+&lt;h2 id=&#34;select-your-location-and-time-zone&#34;&gt;Select Your Location and Time Zone&lt;/h2&gt;
 &lt;p&gt;Choose your region and time zone. This sets your system clock and affects time/date display.&lt;/p&gt;
 &lt;p&gt;[screenshot]&lt;/p&gt;
-&lt;p&gt;Click Next to proceed.
-5. Keyboard Layout&lt;/p&gt;
+&lt;p&gt;Click Next to proceed.&lt;/p&gt;
+&lt;h2 id=&#34;keyboard-layout&#34;&gt;Keyboard Layout&lt;/h2&gt;
 &lt;p&gt;Choose the keyboard layout that matches your hardware or preferences. You can test your keyboard in the input field provided.&lt;/p&gt;
 &lt;p&gt;[screenshot]&lt;/p&gt;
-&lt;p&gt;Click Next when ready.
-6. Partition Your Disk&lt;/p&gt;
+&lt;p&gt;Click Next when ready.&lt;/p&gt;
+&lt;h2 id=&#34;partition-your-disk&#34;&gt;Partition Your Disk&lt;/h2&gt;
 &lt;p&gt;In this step, you choose how to partition your hard drive. You typically have three options:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Erase disk – Wipes the entire disk and installs MocaccinoOS.
 
@@ -76,19 +69,19 @@ Manual partitioning – Advanced option for custom layouts.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;ake sure to back up important data before continuing.&lt;/p&gt;
 &lt;p&gt;[screenshot]&lt;/p&gt;
-&lt;p&gt;Click Next once you’ve made your choice.
-7. Create a User Account&lt;/p&gt;
+&lt;p&gt;Click Next once you’ve made your choice.\&lt;/p&gt;
+&lt;h2 id=&#34;create-a-user-account&#34;&gt;Create a User Account&lt;/h2&gt;
 &lt;p&gt;Enter your full name, desired username, and password. Optionally, choose to log in automatically or use the same password for the administrator account.&lt;/p&gt;
 &lt;p&gt;[screenshot]&lt;/p&gt;
-&lt;p&gt;Click Next to continue.
-8. Summary&lt;/p&gt;
+&lt;p&gt;Click Next to continue.&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;Review the installation summary. Double-check partition choices and user information. If everything looks correct, click Install.&lt;/p&gt;
 &lt;p&gt;[screenshot]&lt;/p&gt;
-&lt;p&gt;Confirm that you want to proceed when prompted.
-9. Installation Progress&lt;/p&gt;
+&lt;p&gt;Confirm that you want to proceed when prompted.&lt;/p&gt;
+&lt;h2 id=&#34;installation-progress&#34;&gt;Installation Progress&lt;/h2&gt;
 &lt;p&gt;Calamares will now install MocaccinoOS to your disk. This can take a few minutes.&lt;/p&gt;
-&lt;p&gt;[screenshot]
-10. Installation Complete&lt;/p&gt;
+&lt;p&gt;[screenshot]&lt;/p&gt;
+&lt;h2 id=&#34;installation-complete&#34;&gt;Installation Complete&lt;/h2&gt;
 &lt;p&gt;Once the process is finished, you’ll see a confirmation screen. You can choose to restart immediately or stay in the live session.&lt;/p&gt;
 &lt;p&gt;[screenshot]&lt;/p&gt;
 &lt;p&gt;Remove the installation media when prompted and reboot.&lt;/p&gt;
