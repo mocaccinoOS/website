@@ -6,8 +6,6 @@ description: >-
      Install MocaccinoOS using the Calamares installer
 ---
 
-Installing MocaccinoOS Using the Calamares Installer
-
 This guide walks you through installing MocaccinoOS to your hard drive using the Calamares graphical installer. It applies to all editions of MocaccinoOS, including KDE Plasma, GNOME, XFCE, and MATE.
 
 ## Boot into the Live Environment
@@ -85,7 +83,8 @@ Confirm that you want to proceed when prompted.
 
 Calamares will now install MocaccinoOS to your disk. This can take a few minutes.
 
-[screenshot]
+![Calamares_Installing](https://github.com/user-attachments/assets/f47a6347-5424-4a2d-99c9-e2ea034807e6)
+
 
 Please note: Near the end of the installation, the system will generate locale data. This step may take several minutes, so please be patient.
 
@@ -93,6 +92,7 @@ Please note: Near the end of the installation, the system will generate locale d
 
 Once the process is finished, you’ll see a confirmation screen. You can choose to restart immediately or stay in the live session.
 
-[screenshot]
+![Calamares_Complete](https://github.com/user-attachments/assets/e339cbff-d38d-4dfc-aac1-42b21b9db08c)
+
 
 Remove the installation media when prompted and reboot.
