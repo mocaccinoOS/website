@@ -58,7 +58,7 @@ Default username and password is &lt;em&gt;mocaccino&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Click Next to proceed.&lt;/p&gt;
 &lt;h2 id=&#34;keyboard-layout&#34;&gt;Keyboard Layout&lt;/h2&gt;
 &lt;p&gt;Choose the keyboard layout that matches your hardware or preferences. You can test your keyboard in the input field provided.&lt;/p&gt;
-&lt;p&gt;[screenshot]&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/user-attachments/assets/a3b991c1-631b-46b0-baa9-3a6979ac6daa&#34; alt=&#34;Calamares_Keyboard&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Click Next when ready.&lt;/p&gt;
 &lt;h2 id=&#34;partition-your-disk&#34;&gt;Partition Your Disk&lt;/h2&gt;
 &lt;p&gt;In this step, you choose how to partition your hard drive. You typically have three options:&lt;/p&gt;
@@ -68,20 +68,21 @@ Replace a partition – Overwrites an existing partition.
 
 Manual partitioning – Advanced option for custom layouts.
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;ake sure to back up important data before continuing.&lt;/p&gt;
-&lt;p&gt;[screenshot]&lt;/p&gt;
-&lt;p&gt;Click Next once you’ve made your choice.\&lt;/p&gt;
+&lt;p&gt;Make sure to back up important data before continuing.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/user-attachments/assets/cd84e0bc-2381-4a5b-8716-f8d652dd0b13&#34; alt=&#34;Calamares_Partition&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Click Next once you’ve made your choice.&lt;/p&gt;
 &lt;h2 id=&#34;create-a-user-account&#34;&gt;Create a User Account&lt;/h2&gt;
 &lt;p&gt;Enter your full name, desired username, and password. Optionally, choose to log in automatically or use the same password for the administrator account.&lt;/p&gt;
-&lt;p&gt;[screenshot]&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/user-attachments/assets/ce09bd08-fdd4-4a45-ba34-15b516e3975a&#34; alt=&#34;Calamares_User&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Click Next to continue.&lt;/p&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;Review the installation summary. Double-check partition choices and user information. If everything looks correct, click Install.&lt;/p&gt;
-&lt;p&gt;[screenshot]&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/user-attachments/assets/f1404628-5a5d-4c1c-990e-730f39dfcd54&#34; alt=&#34;Calamares_Summary&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Confirm that you want to proceed when prompted.&lt;/p&gt;
 &lt;h2 id=&#34;installation-progress&#34;&gt;Installation Progress&lt;/h2&gt;
 &lt;p&gt;Calamares will now install MocaccinoOS to your disk. This can take a few minutes.&lt;/p&gt;
 &lt;p&gt;[screenshot]&lt;/p&gt;
+&lt;p&gt;Please note: Near the end of the installation, the system will generate locale data. This step may take several minutes, so please be patient.&lt;/p&gt;
 &lt;h2 id=&#34;installation-complete&#34;&gt;Installation Complete&lt;/h2&gt;
 &lt;p&gt;Once the process is finished, you’ll see a confirmation screen. You can choose to restart immediately or stay in the live session.&lt;/p&gt;
 &lt;p&gt;[screenshot]&lt;/p&gt;
