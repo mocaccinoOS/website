@@ -42,15 +42,19 @@ Default username and password is &lt;em&gt;mocaccino&lt;/em&gt;&lt;/p&gt;
         &lt;p&gt;Installing MocaccinoOS Using the Calamares Installer&lt;/p&gt;
 &lt;p&gt;This guide walks you through installing MocaccinoOS to your hard drive using the Calamares graphical installer. It applies to all editions of MocaccinoOS, including KDE Plasma, GNOME, XFCE, and MATE.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Boot into the Live Environment&lt;/li&gt;
+&lt;li&gt;Boot into the Live Environment\&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;After downloading the MocaccinoOS ISO and writing it to a USB stick, boot your computer from the USB. You’ll be greeted with the live session desktop.&lt;/p&gt;
+&lt;p&gt;After downloading the MocaccinoOS ISO and writing it to a USB stick, boot your computer from the USB. You’ll be greeted with the live session desktop.\&lt;/p&gt;
 &lt;p&gt;[screenshot]&lt;/p&gt;
-&lt;p&gt;From here, you can explore the live environment or go straight to installation.
-2. Launch the Calamares Installer&lt;/p&gt;
+&lt;p&gt;From here, you can explore the live environment or go straight to installation.\&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Launch the Calamares Installer&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;Look for the installer icon labeled “Install MocaccinoOS” on the desktop or in the application menu. Click to start the installation process.&lt;/p&gt;
-&lt;p&gt;[screenshot]
-3. Choose Your Language&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/user-attachments/assets/4fca3673-edcb-443c-ac08-73be62688444&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Choose Your Language&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;Select your preferred language for the installation process. This choice will also set the default language for the installed system.&lt;/p&gt;
 &lt;p&gt;[screenshot]&lt;/p&gt;
 &lt;p&gt;Click Next to continue.
