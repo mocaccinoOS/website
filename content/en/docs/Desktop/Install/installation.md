@@ -24,7 +24,7 @@ Look for the installer icon labeled “Install MocaccinoOS” on the desktop or 
 
 ## Choose Your Language
 
-Select your preferred language for the installation process. This choice will also set the default language for the installed system.
+Select your preferred language for the installation process. This will also set the system language after installation.
 
 ![Calamares_Language](https://github.com/user-attachments/assets/c364f6da-fdcd-4905-946c-16a21e3b7e28)
 
@@ -86,11 +86,12 @@ Calamares will now install MocaccinoOS to your disk. This can take a few minutes
 ![Calamares_Installing](https://github.com/user-attachments/assets/f47a6347-5424-4a2d-99c9-e2ea034807e6)
 
 
-Please note: Near the end of the installation, the system will generate locale data. This step may take several minutes, so please be patient.
+Note: Near the end of the installation, the system will generate locale data. This step may take several minutes—please be patient.
 
 ## Installation Complete
 
 Once the process is finished, you’ll see a confirmation screen. You can choose to restart immediately or stay in the live session.
+After rebooting, you can log into your new MocaccinoOS system using the username and password you created earlier.
 
 ![Calamares_Complete](https://github.com/user-attachments/assets/e339cbff-d38d-4dfc-aac1-42b21b9db08c)
 
