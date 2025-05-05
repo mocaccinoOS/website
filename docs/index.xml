@@ -950,8 +950,7 @@ $ docker image prune
       <description>
         
         
-        &lt;p&gt;Installing MocaccinoOS Using the Calamares Installer&lt;/p&gt;
-&lt;p&gt;This guide walks you through installing MocaccinoOS to your hard drive using the Calamares graphical installer. It applies to all editions of MocaccinoOS, including KDE Plasma, GNOME, XFCE, and MATE.&lt;/p&gt;
+        &lt;p&gt;This guide walks you through installing MocaccinoOS to your hard drive using the Calamares graphical installer. It applies to all editions of MocaccinoOS, including KDE Plasma, GNOME, XFCE, and MATE.&lt;/p&gt;
 &lt;h2 id=&#34;boot-into-the-live-environment&#34;&gt;Boot into the Live Environment&lt;/h2&gt;
 &lt;p&gt;After downloading the MocaccinoOS ISO and writing it to a USB stick, boot your computer from the USB. You’ll be greeted with the live session desktop.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://github.com/user-attachments/assets/2a8c585d-5ee3-4ff3-9ce0-cd72d00c7f42&#34; alt=&#34;Boot_EFI&#34;&gt;&lt;/p&gt;
@@ -992,11 +991,11 @@ Manual partitioning – Advanced option for custom layouts.
 &lt;p&gt;Confirm that you want to proceed when prompted.&lt;/p&gt;
 &lt;h2 id=&#34;installation-progress&#34;&gt;Installation Progress&lt;/h2&gt;
 &lt;p&gt;Calamares will now install MocaccinoOS to your disk. This can take a few minutes.&lt;/p&gt;
-&lt;p&gt;[screenshot]&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/user-attachments/assets/f47a6347-5424-4a2d-99c9-e2ea034807e6&#34; alt=&#34;Calamares_Installing&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Please note: Near the end of the installation, the system will generate locale data. This step may take several minutes, so please be patient.&lt;/p&gt;
 &lt;h2 id=&#34;installation-complete&#34;&gt;Installation Complete&lt;/h2&gt;
 &lt;p&gt;Once the process is finished, you’ll see a confirmation screen. You can choose to restart immediately or stay in the live session.&lt;/p&gt;
-&lt;p&gt;[screenshot]&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/user-attachments/assets/e339cbff-d38d-4dfc-aac1-42b21b9db08c&#34; alt=&#34;Calamares_Complete&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Remove the installation media when prompted and reboot.&lt;/p&gt;
 
       </description>
