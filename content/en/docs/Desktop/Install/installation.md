@@ -10,13 +10,15 @@ Installing MocaccinoOS Using the Calamares Installer
 
 This guide walks you through installing MocaccinoOS to your hard drive using the Calamares graphical installer. It applies to all editions of MocaccinoOS, including KDE Plasma, GNOME, XFCE, and MATE.
 
-## Boot into the Live Environment\
+## Boot into the Live Environment
 
-After downloading the MocaccinoOS ISO and writing it to a USB stick, boot your computer from the USB. You’ll be greeted with the live session desktop.\
+After downloading the MocaccinoOS ISO and writing it to a USB stick, boot your computer from the USB. You’ll be greeted with the live session desktop.
 
-[screenshot]
+![Boot_EFI](https://github.com/user-attachments/assets/2a8c585d-5ee3-4ff3-9ce0-cd72d00c7f42)
 
-From here, you can explore the live environment or go straight to installation.\
+![Live_desktop_KDE](https://github.com/user-attachments/assets/51214539-0a14-46bc-8aef-3b6d2416db4f)
+
+From here, you can explore the live environment or go straight to installation.
 
 ## Launch the Calamares Installer
 
@@ -26,17 +28,18 @@ Look for the installer icon labeled “Install MocaccinoOS” on the desktop or 
 
 Select your preferred language for the installation process. This choice will also set the default language for the installed system.
 
-![image](https://github.com/user-attachments/assets/4fca3673-edcb-443c-ac08-73be62688444)
+![Calamares_Language](https://github.com/user-attachments/assets/c364f6da-fdcd-4905-946c-16a21e3b7e28)
 
-Click Next to continue.\
+Click Next to continue.
 
 ## Select Your Location and Time Zone
 
 Choose your region and time zone. This sets your system clock and affects time/date display.
 
-[screenshot]
+![Calamares_TimeZone](https://github.com/user-attachments/assets/9bba939b-861e-437f-b30d-05d8f0b999e6)
 
 Click Next to proceed.
+
 ## Keyboard Layout
 
 Choose the keyboard layout that matches your hardware or preferences. You can test your keyboard in the input field provided.
