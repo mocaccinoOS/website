@@ -44,9 +44,10 @@ Click Next to proceed.
 
 Choose the keyboard layout that matches your hardware or preferences. You can test your keyboard in the input field provided.
 
-[screenshot]
+![Calamares_Keyboard](https://github.com/user-attachments/assets/a3b991c1-631b-46b0-baa9-3a6979ac6daa)
 
 Click Next when ready.
+
 ## Partition Your Disk
 
 In this step, you choose how to partition your hard drive. You typically have three options:
@@ -57,30 +58,37 @@ In this step, you choose how to partition your hard drive. You typically have th
 
     Manual partitioning – Advanced option for custom layouts.
 
-ake sure to back up important data before continuing.
+Make sure to back up important data before continuing.
 
-[screenshot]
+![Calamares_Partition](https://github.com/user-attachments/assets/cd84e0bc-2381-4a5b-8716-f8d652dd0b13)
 
-Click Next once you’ve made your choice.\
+Click Next once you’ve made your choice.
+
 ## Create a User Account
 
 Enter your full name, desired username, and password. Optionally, choose to log in automatically or use the same password for the administrator account.
 
-[screenshot]
+![Calamares_User](https://github.com/user-attachments/assets/ce09bd08-fdd4-4a45-ba34-15b516e3975a)
 
 Click Next to continue.
+
 ## Summary
 
 Review the installation summary. Double-check partition choices and user information. If everything looks correct, click Install.
 
-[screenshot]
+![Calamares_Summary](https://github.com/user-attachments/assets/f1404628-5a5d-4c1c-990e-730f39dfcd54)
+
 
 Confirm that you want to proceed when prompted.
+
 ## Installation Progress
 
 Calamares will now install MocaccinoOS to your disk. This can take a few minutes.
 
 [screenshot]
+
+Please note: Near the end of the installation, the system will generate locale data. This step may take several minutes, so please be patient.
+
 ## Installation Complete
 
 Once the process is finished, you’ll see a confirmation screen. You can choose to restart immediately or stay in the live session.
