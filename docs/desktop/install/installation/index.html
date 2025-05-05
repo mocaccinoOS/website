@@ -18,22 +18,22 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Repositories | MocaccinoOS</title>
-<meta name="description" content="This document describes how to switch between stable and unstable repositories">
-<meta property="og:title" content="Repositories" />
-<meta property="og:description" content="This document describes how to switch between stable and unstable repositories" />
+<title>Installation | MocaccinoOS</title>
+<meta name="description" content="Install MocaccinoOS using the Calamares installer">
+<meta property="og:title" content="Installation" />
+<meta property="og:description" content="Install MocaccinoOS using the Calamares installer" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.mocaccino.org/docs/desktop/luet/repositories/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://www.mocaccino.org/docs/desktop/install/installation/" /><meta property="article:section" content="docs" />
 
 <meta property="article:modified_time" content="2025-05-05T19:07:52+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
-<meta itemprop="name" content="Repositories">
-<meta itemprop="description" content="This document describes how to switch between stable and unstable repositories">
+<meta itemprop="name" content="Installation">
+<meta itemprop="description" content="Install MocaccinoOS using the Calamares installer">
 <meta itemprop="dateModified" content="2025-05-05T19:07:52+02:00" />
-<meta itemprop="wordCount" content="247">
+<meta itemprop="wordCount" content="368">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Repositories"/>
-<meta name="twitter:description" content="This document describes how to switch between stable and unstable repositories"/>
+<meta name="twitter:title" content="Installation"/>
+<meta name="twitter:description" content="Install MocaccinoOS using the Calamares installer"/>
 
 
 
@@ -195,20 +195,20 @@
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdesktop-li">
   <a href="/docs/desktop/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdesktop"><span class="">Mocaccino Desktop</span></a>
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdesktopinstall-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdesktopinstall-li">
   <a href="/docs/desktop/install/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdesktopinstall"><span class="">Download and install</span></a>
   <ul class="ul-3 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopinstalldownload-li">
   <a href="/docs/desktop/install/download/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopinstalldownload"><span class="">Download</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopinstallinstallation-li">
-  <a href="/docs/desktop/install/installation/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopinstallinstallation"><span class="">Installation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsdesktopinstallinstallation-li">
+  <a href="/docs/desktop/install/installation/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-docsdesktopinstallinstallation"><span class="td-sidebar-nav-active-item">Installation</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdesktopluet-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdesktopluet-li">
   <a href="/docs/desktop/luet/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdesktopluet"><span class="">Luet Package manager</span></a>
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsdesktopluetrepositories-li">
-  <a href="/docs/desktop/luet/repositories/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-docsdesktopluetrepositories"><span class="td-sidebar-nav-active-item">Repositories</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopluetrepositories-li">
+  <a href="/docs/desktop/luet/repositories/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopluetrepositories"><span class="">Repositories</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopluetbuilding_packages-li">
   <a href="/docs/desktop/luet/building_packages/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopluetbuilding_packages"><span class="">Building packages locally</span></a>
 </li>
@@ -304,23 +304,16 @@
           <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
             
 <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-<a href="https://github.com/MocaccinoOS/website/tree/master/content/en/docs/Desktop/Luet/repositories.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa fa-file-alt fa-fw"></i> View page source</a>
-  <a href="https://github.com/MocaccinoOS/website/edit/master/content/en/docs/Desktop/Luet/repositories.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-  <a href="https://github.com/MocaccinoOS/website/new/master/content/en/docs/Desktop/Luet/repositories.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-  <a href="https://github.com/MocaccinoOS/website/issues/new?title=Repositories" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/MocaccinoOS/website/tree/master/content/en/docs/Desktop/Install/installation.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+  <a href="https://github.com/MocaccinoOS/website/edit/master/content/en/docs/Desktop/Install/installation.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+  <a href="https://github.com/MocaccinoOS/website/new/master/content/en/docs/Desktop/Install/installation.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+  <a href="https://github.com/MocaccinoOS/website/issues/new?title=Installation" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
   <a href="https://github.com/MocaccinoOS/issues/new" class="td-page-meta--project-issue" target="_blank" rel="noopener"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
   
 </div>
 
             
 
-
-<div class="td-toc"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#identify-the-installed-repositories">Identify the installed repositories</a></li>
-    <li><a href="#switch-repositories">Switch repositories</a></li>
-  </ul>
-</nav></div>
 
 
 
@@ -358,17 +351,17 @@
     <a href="https://www.mocaccino.org/docs/desktop/">Mocaccino Desktop</a>
   </li>
   <li class="breadcrumb-item">
-    <a href="https://www.mocaccino.org/docs/desktop/luet/">Luet Package manager</a>
+    <a href="https://www.mocaccino.org/docs/desktop/install/">Download and install</a>
   </li>
   <li class="breadcrumb-item active" aria-current="page">
-    <a href="https://www.mocaccino.org/docs/desktop/luet/repositories/">Repositories</a>
+    <a href="https://www.mocaccino.org/docs/desktop/install/installation/">Installation</a>
   </li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>Repositories</h1>
-	<div class="lead">This document describes how to switch between stable and unstable repositories</div>
+	<h1>Installation</h1>
+	<div class="lead">Install MocaccinoOS using the Calamares installer</div>
 	<header class="article-meta">
 		
 		
@@ -384,79 +377,55 @@
 		
 		
 	</header>    
-	<p>Development isos have the <code>-dev</code> suffix. Those are coming with the development repositories pre-installed. The -dev ISOs
-are intended for development and testing only, so this document outlines the steps to switch back and forth from the stable and unstable repositories.</p>
-<h2 id="identify-the-installed-repositories">Identify the installed repositories</h2>
-<p>With <code>luet repo list</code> you can check the repositories currently installed in the system, for example:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">16
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ luet repo list       
-mocaccino-repository-index
-  MocaccinoOS Repository Index
-  Revision <span style="color:#3677a9">1</span> - 2021-01-02 17:47:32 +0100 CET
-luet
-  Luet official Repository
-  Revision <span style="color:#3677a9">1</span> - 2021-04-23 20:11:47 +0200 CEST
-mocaccino-extra-stable
-  MocaccinoOS extra Repository (stable)
-  Revision <span style="color:#3677a9">178</span> - 2021-04-23 18:35:14 +0200 CEST
-mocaccino-extra
-  MocaccinoOS extra Repository
-  Revision <span style="color:#3677a9">178</span> - 2021-04-23 18:35:14 +0200 CEST
-mocaccino-repository-index
-  MocaccinoOS Repository Index
-  Revision <span style="color:#3677a9">1</span> - 2021-01-02 17:47:32 +0100 CET
-</code></pre></td></tr></table>
-</div>
-</div><p>If the output doesn&rsquo;t contain repositories named with <code>-stable</code> at the end, most likely you are using the development repositories.</p>
-<h2 id="switch-repositories">Switch repositories</h2>
+	<p>Installing MocaccinoOS Using the Calamares Installer</p>
+<p>This guide walks you through installing MocaccinoOS to your hard drive using the Calamares graphical installer. It applies to all editions of MocaccinoOS, including KDE Plasma, GNOME, XFCE, and MATE.</p>
+<ol>
+<li>Boot into the Live Environment</li>
+</ol>
+<p>After downloading the MocaccinoOS ISO and writing it to a USB stick, boot your computer from the USB. You’ll be greeted with the live session desktop.</p>
+<p>[screenshot]</p>
+<p>From here, you can explore the live environment or go straight to installation.
+2. Launch the Calamares Installer</p>
+<p>Look for the installer icon labeled “Install MocaccinoOS” on the desktop or in the application menu. Click to start the installation process.</p>
+<p>[screenshot]
+3. Choose Your Language</p>
+<p>Select your preferred language for the installation process. This choice will also set the default language for the installed system.</p>
+<p>[screenshot]</p>
+<p>Click Next to continue.
+4. Select Your Location and Time Zone</p>
+<p>Choose your region and time zone. This sets your system clock and affects time/date display.</p>
+<p>[screenshot]</p>
+<p>Click Next to proceed.
+5. Keyboard Layout</p>
+<p>Choose the keyboard layout that matches your hardware or preferences. You can test your keyboard in the input field provided.</p>
+<p>[screenshot]</p>
+<p>Click Next when ready.
+6. Partition Your Disk</p>
+<p>In this step, you choose how to partition your hard drive. You typically have three options:</p>
+<pre><code>Erase disk – Wipes the entire disk and installs MocaccinoOS.
 
+Replace a partition – Overwrites an existing partition.
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Warning</h4>
-
-    Do not mix development and stable repositories! Be sure to have installed in the system or the <code>stable</code> or the development repositories only.
-
-</div>
-
-<p>In MocaccinoOS repositories are standard packages. To remove the development repositories, you can:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ luet uninstall -y repository/mocaccino-extra repository/mocaccino-kernel repository/mocaccino-desktop repository/mocaccino-os-commons
-</code></pre></td></tr></table>
-</div>
-</div><p>And then to enable the stable repositories:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">luet install -y --nodeps repository/mocaccino-extra-stable repository/mocaccino-kernel-stable repository/mocaccino-desktop-stable repository/mocaccino-os-commons-stable
-</code></pre></td></tr></table>
-</div>
-</div><p>The same procedure is valid as well to switch from <code>-stable</code> to development repositories.</p>
-<p>The difference is that you have to remove the <code>-stable</code> ones instead.</p>
+Manual partitioning – Advanced option for custom layouts.
+</code></pre>
+<p>ake sure to back up important data before continuing.</p>
+<p>[screenshot]</p>
+<p>Click Next once you’ve made your choice.
+7. Create a User Account</p>
+<p>Enter your full name, desired username, and password. Optionally, choose to log in automatically or use the same password for the administrator account.</p>
+<p>[screenshot]</p>
+<p>Click Next to continue.
+8. Summary</p>
+<p>Review the installation summary. Double-check partition choices and user information. If everything looks correct, click Install.</p>
+<p>[screenshot]</p>
+<p>Confirm that you want to proceed when prompted.
+9. Installation Progress</p>
+<p>Calamares will now install MocaccinoOS to your disk. This can take a few minutes.</p>
+<p>[screenshot]
+10. Installation Complete</p>
+<p>Once the process is finished, you’ll see a confirmation screen. You can choose to restart immediately or stay in the live session.</p>
+<p>[screenshot]</p>
+<p>Remove the installation media when prompted and reboot.</p>
 
 	
 	
