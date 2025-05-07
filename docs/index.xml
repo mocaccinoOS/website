@@ -532,7 +532,7 @@ So we must enable AppArmor on our system. It is bundled with the apps/snapd pack
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;[Gentoo Security Handbook] &lt;a href=&#34;https://wiki.gentoo.org/wiki/Security_Handbook/Linux_Security_Modules/AppArmor&#34;&gt;https://wiki.gentoo.org/wiki/Security_Handbook/Linux_Security_Modules/AppArmor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wiki.gentoo.org/wiki/Security_Handbook/Linux_Security_Modules/AppArmor&#34;&gt;Gentoo Security Handbook&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://wiki.gentoo.org/wiki/Snap&#34;&gt;Gentoo documentation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
