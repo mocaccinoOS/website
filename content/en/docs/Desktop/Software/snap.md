@@ -85,5 +85,5 @@ snap refresh
 
 ### References
 
-- [Gentoo Security Handbook] https://wiki.gentoo.org/wiki/Security_Handbook/Linux_Security_Modules/AppArmor
+- [Gentoo Security Handbook](https://wiki.gentoo.org/wiki/Security_Handbook/Linux_Security_Modules/AppArmor)
 - [Gentoo documentation](https://wiki.gentoo.org/wiki/Snap)
