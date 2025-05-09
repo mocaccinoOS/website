@@ -14,6 +14,53 @@
     
     
     <item>
+      <title>Blog: MocaccinoOS v1.8.2</title>
+      <link>https://www.mocaccino.org/blog/2025/05/09/mocaccinoos-v1.8.2/</link>
+      <pubDate>Fri, 09 May 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/blog/2025/05/09/mocaccinoos-v1.8.2/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Hello everybody!&lt;/p&gt;
+&lt;p&gt;Today we are releasing MocaccinoOS v1.8.2&lt;/p&gt;
+&lt;p&gt;This is mostly an upgraded version that doesn&amp;rsquo;t introduce too many new features. Everything is compiled against a very recent Gentoo Portage tree.&lt;/p&gt;
+&lt;p&gt;The team hopes you enjoy our effort.&lt;br&gt;
+With kind regards,&lt;/p&gt;
+&lt;p&gt;Ettore Di Giacinto&lt;br&gt;
+Joost Ruis&lt;br&gt;
+Mihai Dobrescu&lt;br&gt;
+Jerrod Frost&lt;/p&gt;
+&lt;h3 id=&#34;changes-since-181&#34;&gt;Changes since 1.8.1&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Cosmic DE Alpha7 version (available in repository)&lt;/li&gt;
+&lt;li&gt;Kernel is upgraded to 6.12.15 (LTS)&lt;/li&gt;
+&lt;li&gt;Mesa version 25.0.4&lt;/li&gt;
+&lt;li&gt;Nvidia-drivers version 570.133.07 (available in repository)&lt;/li&gt;
+&lt;li&gt;KDE Plasma 6.3.4&lt;/li&gt;
+&lt;li&gt;GNOME 47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;issues-and-improvements&#34;&gt;Issues and improvements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Improved documentation&lt;/li&gt;
+&lt;li&gt;Better support for Intel Xe GPU (&lt;a href=&#34;https://github.com/mocaccinoOS/desktop/commit/42bede49beaea7e5459122a71b37f280b4d6461f&#34;&gt;https://github.com/mocaccinoOS/desktop/commit/42bede49beaea7e5459122a71b37f280b4d6461f&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;We are aware that MOS images are not fully EFI complaint, certain (mostly older) systems are not booting properly with EFISTUB used in our images. At the moment we do not have a proper solution and the workaround is to change your BIOS settings to boot in legacy mode. ( &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/issues/130&#34;&gt;https://github.com/mocaccinoOS/mocaccino/issues/130&lt;/a&gt; )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;notes-for-testers&#34;&gt;Notes for testers&lt;/h3&gt;
+&lt;p&gt;Additional software can be installed through flatpak, docker or the community repository.
+Please give us feedback by reporting bugs or sharing your ideas with us.
+Check out our &lt;a href=&#34;https://www.mocaccino.org/docs/&#34;&gt;documentation&lt;/a&gt; pages&lt;/p&gt;
+&lt;h3 id=&#34;support-our-work&#34;&gt;Support our work!&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mocaccino.org/docs/donate/&#34;&gt;https://www.mocaccino.org/docs/donate/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;acknowledgement&#34;&gt;Acknowledgement&lt;/h3&gt;
+&lt;p&gt;The project heavily depends on the work done by upstream &lt;a href=&#34;https://gentoo.org&#34;&gt;Gentoo Linux&lt;/a&gt; and we would like to thank them for their hard and excellent work! MocaccinoOS compiles all software available in the repositories using their own infrastructure that is powered by &lt;a href=&#34;https://kairos.io&#34;&gt;Kairos&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;download&#34;&gt;Download&lt;/h3&gt;
+&lt;p&gt;Check out our &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/releases&#34;&gt;download page&lt;/a&gt; for all recent releases.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: MocaccinoOS v1.8.1</title>
       <link>https://www.mocaccino.org/blog/2025/02/13/mocaccinoos-v1.8.1/</link>
       <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
