@@ -173,6 +173,12 @@ enable = false
         icon = "fas fa-comments"
         desc = "Chat with other project users"
 
+[[params.links.user]]
+        name = "Signal chat"
+        url = "https://signal.group/#CjQKIJ7Faj4or6bTZtRDJEzqTPC-DFEtEjhnStePhXS-LPETEhBlAPIS7UPGRK-8SUSMMrm6"
+        icon = "si si-signal"
+        desc = "Join us on the official Signal group!"
+
 [[params.links.developer]]
 	name = "Slack"
 	url = "https://join.slack.com/t/luet/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY"
