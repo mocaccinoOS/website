@@ -176,7 +176,7 @@ enable = false
 [[params.links.user]]
         name = "Signal chat"
         url = "https://signal.group/#CjQKIJ7Faj4or6bTZtRDJEzqTPC-DFEtEjhnStePhXS-LPETEhBlAPIS7UPGRK-8SUSMMrm6"
-        icon = "si si-signal"
+        icon = "fas fa-comments"
         desc = "Join us on the official Signal group!"
 
 [[params.links.developer]]
