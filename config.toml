@@ -157,6 +157,12 @@ enable = false
     	desc = "Join our community in the Forum!"
 
 [[params.links.user]]
+	name = "Discord"
+	url = "https://discord.gg/6xxCfeDC"
+	icon = "fab fa-discord"
+    	desc = "Join us on Discord!"
+     
+[[params.links.user]]
         name = "Signal"
         url = "https://signal.group/#CjQKIJ7Faj4or6bTZtRDJEzqTPC-DFEtEjhnStePhXS-LPETEhBlAPIS7UPGRK-8SUSMMrm6"
         icon = "fas fa-comments"
