@@ -156,6 +156,12 @@ enable = false
     desc = "Join our community in the Forum!"
 
 [[params.links.user]]
+        name = "Signal"
+        url = "https://signal.group/#CjQKIJ7Faj4or6bTZtRDJEzqTPC-DFEtEjhnStePhXS-LPETEhBlAPIS7UPGRK-8SUSMMrm6"
+        icon = "fas fa-comments"
+        desc = "Join us on the official Signal group!"
+
+[[params.links.user]]
 	name = "Telegram"
 	url = "https://t.me/mocaccinoOS"
 	icon = "fab fa-telegram"
@@ -172,13 +178,7 @@ enable = false
         url = "https://matrix.to/#/#mocaccinoOS:matrix.org"
         icon = "fas fa-comments"
         desc = "Chat with other project users"
-
-[[params.links.user]]
-        name = "Signal chat"
-        url = "https://signal.group/#CjQKIJ7Faj4or6bTZtRDJEzqTPC-DFEtEjhnStePhXS-LPETEhBlAPIS7UPGRK-8SUSMMrm6"
-        icon = "fas fa-comments"
-        desc = "Join us on the official Signal group!"
-
+	
 [[params.links.developer]]
 	name = "Slack"
 	url = "https://join.slack.com/t/luet/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY"
