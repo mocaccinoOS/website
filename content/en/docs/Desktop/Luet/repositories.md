@@ -45,13 +45,13 @@ Do not mix development and stable repositories! Be sure to have installed in the
 In MocaccinoOS repositories are standard packages. To remove the development repositories, you can:
 
 ```bash
-$ luet uninstall -y repository/mocaccino-extra repository/mocaccino-kernel repository/mocaccino-desktop repository/mocaccino-os-commons
+$ luet uninstall -y repository/mocaccino-extra repository/mocaccino-desktop repository/mocaccino-os-commons
 ```
 
 And then to enable the stable repositories:
 
 ```bash
-luet install -y --nodeps repository/mocaccino-extra-stable repository/mocaccino-kernel-stable repository/mocaccino-desktop-stable repository/mocaccino-os-commons-stable
+luet install -y --nodeps repository/mocaccino-extra-stable repository/mocaccino-desktop-stable repository/mocaccino-os-commons-stable
 ```
 
 The same procedure is valid as well to switch from `-stable` to development repositories. 
