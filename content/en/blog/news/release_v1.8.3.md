@@ -31,8 +31,6 @@ Jerrod Frost
 
 ### Issues and improvements
 
-- Improved documentation
-- Better support for Intel Xe GPU (https://github.com/mocaccinoOS/desktop/commit/42bede49beaea7e5459122a71b37f280b4d6461f)
 - We are aware that MOS images are not fully EFI complaint, certain (mostly older) systems are not booting properly with EFISTUB used in our images. At the moment we do not have a proper solution and the workaround is to change your BIOS settings to boot in legacy mode. ( https://github.com/mocaccinoOS/mocaccino/issues/130 )
 
 ### Notes for testers
