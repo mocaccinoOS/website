@@ -29,7 +29,7 @@ systemctl enable --now snapd.socket
 ### AppArmor
 
 Snap’s fallback behavior without AppArmor is flaky, and some snaps won’t work at all.
-So we must enable AppArmor on our system. It is bundled with the apps/snapd package so we already have it on the system.
+So we must enable AppArmor on our system. It is pulled in as a dependency of the apps/snapd package so we already have it on the system.
 
 Enable the apparmor service:
 
