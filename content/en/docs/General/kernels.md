@@ -31,3 +31,8 @@ To switch to LTS kernels, run:
 ```bash
 $ mos kernel-switcher switch kernel/mocaccino-lts-full
 ```
+
+{{< alert color="warning" title="Warning" >}}
+Please note that due a [bug](https://github.com/mocaccinoOS/mocaccino/issues/109) you might end up without a working initramfs causing the system to fail to boot.
+Make sure you have the proper kernel/mocaccino-lts-initramfs or kernel/mocaccino-initramfs installed before rebooting the system!
+{{< /alert >}}
