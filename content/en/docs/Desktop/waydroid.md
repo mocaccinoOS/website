@@ -40,7 +40,7 @@ Since it is installed as a dependency of lxc, you might as well enable it.
 Enable the apparmor service:
 
 ```bash
-systemctl enable --now apparmor.service snapd.apparmor.service
+systemctl enable --now apparmor.service
 ```
 
 Enable required boot parameters. Edit /etc/default/grub and append apparmor=1 security=apparmor parameters.
