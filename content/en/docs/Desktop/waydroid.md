@@ -29,13 +29,13 @@ $ sudo waydroid init
 ```
 or for android with Gapps do:
 ```bash
-$sudo waydroid init -s GAPPS
+$ sudo waydroid init -s GAPPS
 ```
 
 ### AppArmor (optional)
 
 Waydroid can use AppArmor to sandbox Android processes, but it is not a hard requirement.
-Since it is installed as a dpendency of lxc, you might as well enable it.
+Since it is installed as a dependency of lxc, you might as well enable it.
 
 Enable the apparmor service:
 
