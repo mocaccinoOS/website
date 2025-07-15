@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/migration/sabayon/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2025-07-15T09:53:02+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2025-07-15T09:55:12+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Migrating from Sabayon">
 <meta itemprop="description" content="Migrating from Sabayon to MocaccinoOS Desktop">
-<meta itemprop="dateModified" content="2025-07-15T09:53:02+02:00" />
-<meta itemprop="wordCount" content="452">
+<meta itemprop="dateModified" content="2025-07-15T09:55:12+02:00" />
+<meta itemprop="wordCount" content="482">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Migrating from Sabayon"/>
 <meta name="twitter:description" content="Migrating from Sabayon to MocaccinoOS Desktop"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8c49cafcbd0398b1bea37a90a01a16dc.json"
+  data-offline-search-index-json-src="/offline-search-index.e28335bc81062a6f248ac4f2c413019e.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8c49cafcbd0398b1bea37a90a01a16dc.json"
+  data-offline-search-index-json-src="/offline-search-index.e28335bc81062a6f248ac4f2c413019e.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -409,7 +409,7 @@ So for example if we do not need Qt we can uninstall qtcore using Entropy:</p>
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">equo remove dev-qt/qtcore --ask
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo equo remove dev-qt/qtcore --ask
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -439,10 +439,10 @@ So for example if we do not need Qt we can uninstall qtcore using Entropy:</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -k https://get.mocaccino.org/luet/get_luet_root.sh | sh
-luet install repository/mocaccino-os-commons repository/mocaccino-extra repository/mocaccino-desktop-stable
-luet install system/luet-migrate-entropy
-luet migrate-entropy
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo curl -k https://get.mocaccino.org/luet/get_luet_root.sh | sh
+$ sudo luet install repository/mocaccino-os-commons repository/mocaccino-extra repository/mocaccino-desktop-stable
+$ sudo luet install system/luet-migrate-entropy
+$ sudo luet migrate-entropy
 </code></pre></td></tr></table>
 </div>
 </div><p>The migrate-entropy script detects packages that are installed and fills the luet database. If you for some reason need to repeat this step, please remove the luet database first. <code>rm /var/luet/db/luet.db</code></p>
@@ -454,7 +454,7 @@ luet migrate-entropy
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">luet upgrade
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo luet upgrade
 </code></pre></td></tr></table>
 </div>
 </div><p>And finally, review and merge any changes to your configuration files:</p>
@@ -463,7 +463,7 @@ luet migrate-entropy
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">etc-update
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo etc-update
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="remove-cached-downloads">Remove cached downloads</h3>
@@ -473,7 +473,7 @@ luet migrate-entropy
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">luet cleanup
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo luet cleanup
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="manual-migration">Manual migration</h2>
@@ -499,13 +499,13 @@ luet migrate-entropy
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -k https://get.mocaccino.org/luet/get_luet_root.sh | sh
-luet install -y repository/mocaccino-os-commons repository/mocaccino-kernel-stable repository/mocaccino-extra repository/mocaccino-desktop-stable
-luet install -y system/luet-migrate-entropy utils/jq
-luet migrate-entropy
-mkdir -p /etc/mocaccino/
-<span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;desktop&#34;</span> &gt; /etc/mocaccino/release
-<span style="color:#40ffff">installed</span>=<span style="color:#6ab825;font-weight:bold">$(</span>luet search --installed -o json | jq <span style="color:#ed9d13">&#39;.packages | map(.category+&#34;/&#34;+.name+&#34;@&#34;+.version)[]&#39;</span> -rc | xargs <span style="color:#24909d">echo</span><span style="color:#6ab825;font-weight:bold">)</span>
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo curl -k https://get.mocaccino.org/luet/get_luet_root.sh | sh
+$ sudo luet install -y repository/mocaccino-os-commons repository/mocaccino-kernel-stable repository/mocaccino-extra repository/mocaccino-desktop-stable
+$ sudo luet install -y system/luet-migrate-entropy utils/jq
+$ sudo luet migrate-entropy
+$ sudo mkdir -p /etc/mocaccino/
+$ sudo <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;desktop&#34;</span> &gt; /etc/mocaccino/release
+$ sudo <span style="color:#40ffff">installed</span>=<span style="color:#6ab825;font-weight:bold">$(</span>luet search --installed -o json | jq <span style="color:#ed9d13">&#39;.packages | map(.category+&#34;/&#34;+.name+&#34;@&#34;+.version)[]&#39;</span> -rc | xargs <span style="color:#24909d">echo</span><span style="color:#6ab825;font-weight:bold">)</span>
 luet replace <span style="color:#40ffff">$installed</span> --for kernel/mocaccino-lts-full --for kernel/mocaccino-lts-modules --for layers/firmware --for system-profile/default-systemd --for system/luet --for layers/system-x --for layers/gnome
 </code></pre></td></tr></table>
 </div>
@@ -513,7 +513,7 @@ luet replace <span style="color:#40ffff">$installed</span> --for kernel/mocaccin
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified July 15, 2025: <a href="https://github.com/MocaccinoOS/website/commit/fe1d7b38a3f5edf1c84d163d777967e4691a6fc5">Bump (fe1d7b3)</a>
+  Last modified July 15, 2025: <a href="https://github.com/MocaccinoOS/website/commit/8ac83e371c36622d0d3778f9f75ae273179fc3b4">Bump (8ac83e3)</a>
 </div>
 
 </div>

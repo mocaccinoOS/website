@@ -121,7 +121,7 @@ So for example if we do not need Qt we can uninstall qtcore using Entropy:&lt;/p
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;equo remove dev-qt/qtcore --ask
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo equo remove dev-qt/qtcore --ask
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -151,10 +151,10 @@ So for example if we do not need Qt we can uninstall qtcore using Entropy:&lt;/p
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;4
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl -k https://get.mocaccino.org/luet/get_luet_root.sh | sh
-luet install repository/mocaccino-os-commons repository/mocaccino-extra repository/mocaccino-desktop-stable
-luet install system/luet-migrate-entropy
-luet migrate-entropy
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo curl -k https://get.mocaccino.org/luet/get_luet_root.sh | sh
+$ sudo luet install repository/mocaccino-os-commons repository/mocaccino-extra repository/mocaccino-desktop-stable
+$ sudo luet install system/luet-migrate-entropy
+$ sudo luet migrate-entropy
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;The migrate-entropy script detects packages that are installed and fills the luet database. If you for some reason need to repeat this step, please remove the luet database first. &lt;code&gt;rm /var/luet/db/luet.db&lt;/code&gt;&lt;/p&gt;
@@ -166,7 +166,7 @@ luet migrate-entropy
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;luet upgrade
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo luet upgrade
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;And finally, review and merge any changes to your configuration files:&lt;/p&gt;
@@ -175,7 +175,7 @@ luet migrate-entropy
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;etc-update
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo etc-update
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;remove-cached-downloads&#34;&gt;Remove cached downloads&lt;/h3&gt;
@@ -185,7 +185,7 @@ luet migrate-entropy
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;luet cleanup
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo luet cleanup
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;manual-migration&#34;&gt;Manual migration&lt;/h2&gt;
@@ -211,13 +211,13 @@ luet migrate-entropy
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;8
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl -k https://get.mocaccino.org/luet/get_luet_root.sh | sh
-luet install -y repository/mocaccino-os-commons repository/mocaccino-kernel-stable repository/mocaccino-extra repository/mocaccino-desktop-stable
-luet install -y system/luet-migrate-entropy utils/jq
-luet migrate-entropy
-mkdir -p /etc/mocaccino/
-&lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;desktop&amp;#34;&lt;/span&gt; &amp;gt; /etc/mocaccino/release
-&lt;span style=&#34;color:#40ffff&#34;&gt;installed&lt;/span&gt;=&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;$(&lt;/span&gt;luet search --installed -o json | jq &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;.packages | map(.category+&amp;#34;/&amp;#34;+.name+&amp;#34;@&amp;#34;+.version)[]&amp;#39;&lt;/span&gt; -rc | xargs &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo curl -k https://get.mocaccino.org/luet/get_luet_root.sh | sh
+$ sudo luet install -y repository/mocaccino-os-commons repository/mocaccino-kernel-stable repository/mocaccino-extra repository/mocaccino-desktop-stable
+$ sudo luet install -y system/luet-migrate-entropy utils/jq
+$ sudo luet migrate-entropy
+$ sudo mkdir -p /etc/mocaccino/
+$ sudo &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;desktop&amp;#34;&lt;/span&gt; &amp;gt; /etc/mocaccino/release
+$ sudo &lt;span style=&#34;color:#40ffff&#34;&gt;installed&lt;/span&gt;=&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;$(&lt;/span&gt;luet search --installed -o json | jq &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;.packages | map(.category+&amp;#34;/&amp;#34;+.name+&amp;#34;@&amp;#34;+.version)[]&amp;#39;&lt;/span&gt; -rc | xargs &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;)&lt;/span&gt;
 luet replace &lt;span style=&#34;color:#40ffff&#34;&gt;$installed&lt;/span&gt; --for kernel/mocaccino-lts-full --for kernel/mocaccino-lts-modules --for layers/firmware --for system-profile/default-systemd --for system/luet --for layers/system-x --for layers/gnome
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
