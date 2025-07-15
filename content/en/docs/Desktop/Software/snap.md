@@ -40,7 +40,7 @@ systemctl enable --now apparmor.service snapd.apparmor.service
 Enable required boot parameters. Edit /etc/default/grub and append apparmor=1 security=apparmor parameters.
 
 ```bash
-GRUB_CMDLINE_LINUX_DEFAULT="apparmor=1 security=apparmor"
+GRUB_CMDLINE_LINUX="apparmor=1 security=apparmor"
 ```
 After editing this file, regenerate the grub config file:
 
