@@ -76,4 +76,5 @@ Now restart the system.
 
 ## References
 
-- https://wiki.gentoo.org/wiki/Waydroid
+- [Gentoo Wiki](https://wiki.gentoo.org/wiki/Waydroid)
+- [Waydroid homepage](https://waydro.id/#gpus1)
