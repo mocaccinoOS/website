@@ -6,18 +6,19 @@ description: >-
      Installing and configuring waydroid in Mocaccino Desktop
 ---
 
-## Installing and configuring
+## Install and configure Waydroid
 
 Waydroid is available in the [Community repository](https://github.com/mocaccinoOS/community-repository?tab=readme-ov-file#-community-repository). If you have enabled this repository you can install it by using this command:
 
 ```bash
 $ sudo luet install apps/waydroid-vanilla
 ```
-or
+or for Google Apps (GApps) support:
 
 ```bash
 $ sudo luet install apps/waydroid-gapps
 ```
+### Configure GRUB
 
 We need to pass some arguments to the GRUB bootloader.
 Edit /etc/default/grub with your preferred text editor (e.g., sudo nano /etc/default/grub) and find GRUB_CMDLINE_LINUX and add:
@@ -31,6 +32,9 @@ After editing this file, regenerate the grub config file:
 ```bash
 $ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
+
+### Enable Waydroid container
+
 Enable and start the waydroid systemd service
 ```bash
 $ sudo systemctl enable --now waydroid-container.service
