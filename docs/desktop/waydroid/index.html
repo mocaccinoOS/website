@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/waydroid/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2025-07-15T08:23:24+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2025-07-15T08:26:23+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Waydroid">
 <meta itemprop="description" content="Installing and configuring waydroid in Mocaccino Desktop">
-<meta itemprop="dateModified" content="2025-07-15T08:23:24+02:00" />
-<meta itemprop="wordCount" content="219">
+<meta itemprop="dateModified" content="2025-07-15T08:26:23+02:00" />
+<meta itemprop="wordCount" content="230">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Waydroid"/>
 <meta name="twitter:description" content="Installing and configuring waydroid in Mocaccino Desktop"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.def21e4345f65122ee31a79e6c60acd7.json"
+  data-offline-search-index-json-src="/offline-search-index.f79150da6c43cc662d07d94f59a0478e.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.def21e4345f65122ee31a79e6c60acd7.json"
+  data-offline-search-index-json-src="/offline-search-index.f79150da6c43cc662d07d94f59a0478e.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -319,8 +319,10 @@
 
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
-    <li><a href="#installing-and-configuring">Installing and configuring</a>
+    <li><a href="#install-and-configure-waydroid">Install and configure Waydroid</a>
       <ul>
+        <li><a href="#configure-grub">Configure GRUB</a></li>
+        <li><a href="#enable-waydroid-container">Enable Waydroid container</a></li>
         <li><a href="#apparmor-optional">AppArmor (optional)</a></li>
       </ul>
     </li>
@@ -387,7 +389,7 @@
 		
 		
 	</header>    
-	<h2 id="installing-and-configuring">Installing and configuring</h2>
+	<h2 id="install-and-configure-waydroid">Install and configure Waydroid</h2>
 <p>Waydroid is available in the <a href="https://github.com/mocaccinoOS/community-repository?tab=readme-ov-file#-community-repository">Community repository</a>. If you have enabled this repository you can install it by using this command:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -397,7 +399,7 @@
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo luet install apps/waydroid-vanilla
 </code></pre></td></tr></table>
 </div>
-</div><p>or</p>
+</div><p>or for Google Apps (GApps) support:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
@@ -406,7 +408,8 @@
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo luet install apps/waydroid-gapps
 </code></pre></td></tr></table>
 </div>
-</div><p>We need to pass some arguments to the GRUB bootloader.
+</div><h3 id="configure-grub">Configure GRUB</h3>
+<p>We need to pass some arguments to the GRUB bootloader.
 Edit /etc/default/grub with your preferred text editor (e.g., sudo nano /etc/default/grub) and find GRUB_CMDLINE_LINUX and add:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -425,7 +428,8 @@ Edit /etc/default/grub with your preferred text editor (e.g., sudo nano /etc/def
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo grub-mkconfig -o /boot/grub/grub.cfg
 </code></pre></td></tr></table>
 </div>
-</div><p>Enable and start the waydroid systemd service</p>
+</div><h3 id="enable-waydroid-container">Enable Waydroid container</h3>
+<p>Enable and start the waydroid systemd service</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
@@ -492,7 +496,7 @@ Since it is installed as a dependency of lxc, you might as well enable it.</p>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified July 15, 2025: <a href="https://github.com/MocaccinoOS/website/commit/5ec97602fd53fdbec65644efb186a61cef0af639">bump (5ec9760)</a>
+  Last modified July 15, 2025: <a href="https://github.com/MocaccinoOS/website/commit/6189e842942f073e0faf94813baf68f9dabf1e8f">bump (6189e84)</a>
 </div>
 
 </div>
