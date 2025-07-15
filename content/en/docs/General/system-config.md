@@ -21,13 +21,13 @@ Files with unmerged config files: 1
 To merge configurations interactively, run:
 
 ```bash
-mos config-update update
+$ mos config-update update
 ```
 
 To check the configuration of all the files, 1-by-1, run:
 
 ```bash
-mos config-update update -a
+$ mos config-update update -a
 ```
 
 ## Auto-merging
