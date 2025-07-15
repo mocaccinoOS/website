@@ -51,7 +51,7 @@ $ luet uninstall -y repository/mocaccino-extra repository/mocaccino-desktop repo
 And then to enable the stable repositories:
 
 ```bash
-luet install -y --nodeps repository/mocaccino-extra-stable repository/mocaccino-desktop-stable repository/mocaccino-os-commons-stable
+$ luet install -y --nodeps repository/mocaccino-extra-stable repository/mocaccino-desktop-stable repository/mocaccino-os-commons-stable
 ```
 
 The same procedure is valid as well to switch from `-stable` to development repositories. 
