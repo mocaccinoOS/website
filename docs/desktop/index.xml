@@ -1086,7 +1086,8 @@ Since it is installed as a dependency of lxc, you might as well enable it.&lt;/p
 &lt;/div&gt;&lt;p&gt;Now restart the system.&lt;/p&gt;
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://wiki.gentoo.org/wiki/Waydroid&#34;&gt;https://wiki.gentoo.org/wiki/Waydroid&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wiki.gentoo.org/wiki/Waydroid&#34;&gt;Gentoo Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://waydro.id/#gpus1&#34;&gt;Waydroid homepage&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
