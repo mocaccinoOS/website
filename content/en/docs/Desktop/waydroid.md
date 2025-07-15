@@ -45,7 +45,7 @@ For vanilla Android:
 ```bash
 $ sudo waydroid init
 ```
-For android with Gapps:
+For Android with Gapps:
 ```bash
 $ sudo waydroid init -s GAPPS
 ```
