@@ -930,7 +930,7 @@ $ docker image prune
 &lt;/div&gt;&lt;p&gt;&lt;code&gt;yip&lt;/code&gt; will make sure and keep sshd configured.&lt;/p&gt;
 &lt;p&gt;There are two stages currently supported: &lt;code&gt;reconcile&lt;/code&gt; and &lt;code&gt;boot&lt;/code&gt;. The &lt;code&gt;boot&lt;/code&gt; &lt;code&gt;yip&lt;/code&gt; stage is run at start, during runit initialization, while the &lt;code&gt;reconcile&lt;/code&gt; is called periodically. You can also run &lt;code&gt;yip-reconcile&lt;/code&gt; to trigger the execution manually.&lt;/p&gt;
 &lt;p&gt;For more information about yip, &lt;a href=&#34;https://github.com/mudler/yip&#34;&gt;check here&lt;/a&gt;. To see a sample &lt;code&gt;/etc/yip.d&lt;/code&gt; control-repo &lt;a href=&#34;https://github.com/mocaccinoOS/yipcontrol-sample&#34;&gt;check here&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;specifing-yip-files-from-boot&#34;&gt;Specifing yip files from boot&lt;/h3&gt;
+&lt;h3 id=&#34;specifying-yip-files-from-boot&#34;&gt;Specifying yip files from boot&lt;/h3&gt;
 &lt;p&gt;It is also possible to use &lt;code&gt;yip&lt;/code&gt; to automatically configure the system from boot.&lt;/p&gt;
 &lt;p&gt;Add &lt;code&gt;yip=...&lt;/code&gt; to the boot command lines to specify the &lt;code&gt;yip&lt;/code&gt; file to execute across the stages (can be a path to a local file, or either a URL)&lt;/p&gt;
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
@@ -1052,7 +1052,7 @@ After rebooting, you can log into your new MocaccinoOS system using the username
         
         
         &lt;h2 id=&#34;iso-building&#34;&gt;ISO Building&lt;/h2&gt;
-&lt;p&gt;The ISO building process is performed within dockers to keep ISOs clean and uncontaiminated by unnecessary dev files, temp files, etc.&lt;/p&gt;
+&lt;p&gt;The ISO building process is performed within dockers to keep ISOs clean and uncontaminated by unnecessary dev files, temp files, etc.&lt;/p&gt;
 &lt;h3 id=&#34;docker-installation&#34;&gt;Docker installation&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re planning on using docker as a user rather than just from root, you&amp;rsquo;ll want additional packages such as entity/docker and acct-group/docker, but they aren&amp;rsquo;t necessary for our purposes.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;root@mocaccino:~# luet install container/docker systemd-service/dockerd

@@ -1102,7 +1102,7 @@ Since it is installed as a dependency of lxc, you might as well enable it.&lt;/p
         
         
         &lt;p&gt;This documentation section tries to summarize and provide general guidelines while applying changes to MocaccinoOS Desktop.&lt;/p&gt;
-&lt;p&gt;A prior knowledge of the basics of how to build packages with &lt;em&gt;luet&lt;/em&gt; is assumed, it&amp;rsquo;s strongly adviced to follow the &lt;a href=&#34;https://luet-lab.github.io/docs/docs/getting-started/&#34;&gt;Getting started&lt;/a&gt; docs of Luet before going ahead.&lt;/p&gt;
+&lt;p&gt;A prior knowledge of the basics of how to build packages with &lt;em&gt;luet&lt;/em&gt; is assumed, it&amp;rsquo;s strongly advised to follow the &lt;a href=&#34;https://luet-lab.github.io/docs/docs/getting-started/&#34;&gt;Getting started&lt;/a&gt; docs of Luet before going ahead.&lt;/p&gt;
 
       </description>
     </item>

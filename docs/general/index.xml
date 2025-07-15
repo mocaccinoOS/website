@@ -23,7 +23,7 @@
         
         
         &lt;h2 id=&#34;iso-building&#34;&gt;ISO Building&lt;/h2&gt;
-&lt;p&gt;The ISO building process is performed within dockers to keep ISOs clean and uncontaiminated by unnecessary dev files, temp files, etc.&lt;/p&gt;
+&lt;p&gt;The ISO building process is performed within dockers to keep ISOs clean and uncontaminated by unnecessary dev files, temp files, etc.&lt;/p&gt;
 &lt;h3 id=&#34;docker-installation&#34;&gt;Docker installation&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re planning on using docker as a user rather than just from root, you&amp;rsquo;ll want additional packages such as entity/docker and acct-group/docker, but they aren&amp;rsquo;t necessary for our purposes.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;root@mocaccino:~# luet install container/docker systemd-service/dockerd
