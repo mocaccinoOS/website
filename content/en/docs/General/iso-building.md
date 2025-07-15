@@ -8,7 +8,7 @@ description: >-
 
 ## ISO Building
 
-The ISO building process is performed within dockers to keep ISOs clean and uncontaiminated by unnecessary dev files, temp files, etc.
+The ISO building process is performed within dockers to keep ISOs clean and uncontaminated by unnecessary dev files, temp files, etc.
 
 ### Docker installation
 If you're planning on using docker as a user rather than just from root, you'll want additional packages such as entity/docker and acct-group/docker, but they aren't necessary for our purposes.

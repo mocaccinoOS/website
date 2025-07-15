@@ -101,7 +101,7 @@ There are two stages currently supported: `reconcile` and `boot`. The `boot` `yi
 
 For more information about yip, [check here](https://github.com/mudler/yip). To see a sample `/etc/yip.d` control-repo [check here](https://github.com/mocaccinoOS/yipcontrol-sample).
 
-### Specifing yip files from boot
+### Specifying yip files from boot
 
 It is also possible to use `yip` to automatically configure the system from boot.
 
