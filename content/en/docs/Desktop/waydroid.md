@@ -13,7 +13,7 @@ Waydroid is available in the [Community repository](https://github.com/mocaccino
 ```bash
 $ sudo luet install apps/waydroid-vanilla
 ```
-OR
+or
 
 ```bash
 $ sudo luet install apps/waydroid-gapps
@@ -31,8 +31,6 @@ After editing this file, regenerate the grub config file:
 ```bash
 grub-mkconfig -o /boot/grub/crug.cfg
 ```
-Now restart the system.
-
 Enable and start the waydroid systemd service
 ```bash
 $ sudo systemctl enable --now waydroid-container.service
@@ -45,6 +43,7 @@ or for android with Gapps do:
 ```bash
 $ sudo waydroid init -s GAPPS
 ```
+Now restart the system.
 
 ### AppArmor (optional)
 
