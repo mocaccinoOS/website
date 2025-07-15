@@ -10,7 +10,7 @@ MocaccinoOS Desktop and Micro automatically protects `/etc` from overwriting use
 
 To show a summary of the config changes that requires merging: 
 
-```bash
+```shell
 $ mos config-update check
 Files with unmerged config files: 1
 - /etc/test/foo (2 unmerged config files)
