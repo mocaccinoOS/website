@@ -24,7 +24,7 @@ We need to pass some arguments to the GRUB bootloader.
 Edit /etc/default/grub with your preferred text editor (e.g., sudo nano /etc/default/grub) and find GRUB_CMDLINE_LINUX and add:
 
 ```bash
-binder.devices=binder,hwbinder,vndbinder
+GRUB_CMDLINE_LINUX="binder.devices=binder,hwbinder,vndbinder"
 ```
 
 After editing this file, regenerate the grub config file:
