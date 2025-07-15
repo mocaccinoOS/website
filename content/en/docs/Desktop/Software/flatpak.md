@@ -11,7 +11,7 @@ MocaccinoOS Desktop supports flatpak, and its usage is encouraged for packages l
 To install flatpak, run as root:
 
 ```bash
-$> luet install apps/flatpak
+$ sudo luet install apps/flatpak
 ```
 
 Once flatpak is installed, from your user add the flathub repo:
@@ -33,7 +33,7 @@ For a detailed documentation, we suggest as a follow-up reading the [official do
 Applications can be found in any of the added remotes using the search command. For example:
 
 ```bash
-$ flatpak search gimp
+user $> flatpak search gimp
 ```
 
 ## Running applications
@@ -41,7 +41,7 @@ $ flatpak search gimp
 After an application is installed, can be run by their id:
 
 ```bash
-$> flatpak run org.gimp.GIMP
+user $> flatpak run org.gimp.GIMP
 ```
 
 ## Updating
@@ -49,7 +49,7 @@ $> flatpak run org.gimp.GIMP
 To update all your installed applications and runtimes to the latest available version in Flatpak, run:
 
 ```bash
-$> flatpak update
+user $> flatpak update
 ```
 
 ## Accessing external paths (or storage) from Flatpak apps
@@ -60,7 +60,7 @@ You can although add paths that are accessible to a specific Flatpak app.
 For example, to expose the path `/mnt` to our `org.app.Id`:
 
 ```bash
-$>  flatpak override --user --filesystem=/mnt org.app.Id
+user $>  flatpak override --user --filesystem=/mnt org.app.Id
 ```
 
 [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal) is a GUI permissions manager which offer simple point-and-click permissions operations. 
