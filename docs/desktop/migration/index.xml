@@ -129,7 +129,7 @@ So for example if we do not need Qt we can uninstall qtcore using Entropy:&lt;/p
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;
 
-    Migration can take some time. We advice you to disable screen-locking and power savings. If your screen gets locked during upgrade you might not be able to login again while the upgrade is running.
+    Migration can take some time. We advise you to disable screen-locking and power savings. If your screen gets locked during upgrade you might not be able to login again while the upgrade is running.
 
 &lt;/div&gt;
 
@@ -138,7 +138,7 @@ So for example if we do not need Qt we can uninstall qtcore using Entropy:&lt;/p
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;
 
-    Because we need to basically download everything in addition to the current installation you need a significant ammount of free disk space. We recommend at least 30GB of free space for a basic installation.
+    Because we need to basically download everything in addition to the current installation you need a significant amount of free disk space. We recommend at least 30GB of free space for a basic installation.
 
 &lt;/div&gt;
 
