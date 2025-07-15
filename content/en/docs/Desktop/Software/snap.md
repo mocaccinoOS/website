@@ -45,7 +45,7 @@ GRUB_CMDLINE_LINUX="apparmor=1 security=apparmor"
 After editing this file, regenerate the grub config file:
 
 ```bash
-grub-mkconfig -o /boot/grub/crug.cfg
+$ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 Now restart the system.
 
