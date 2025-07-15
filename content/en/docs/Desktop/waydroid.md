@@ -39,11 +39,13 @@ Enable and start the waydroid systemd service
 ```bash
 $ sudo systemctl enable --now waydroid-container.service
 ```
-initialize for vanilla: 
+### Initialize Waydroid
+
+For vanilla Android: 
 ```bash
 $ sudo waydroid init
 ```
-or for android with Gapps do:
+For android with Gapps:
 ```bash
 $ sudo waydroid init -s GAPPS
 ```
