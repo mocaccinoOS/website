@@ -81,7 +81,6 @@ Manual partitioning – Advanced option for custom layouts.
 &lt;h2 id=&#34;installation-progress&#34;&gt;Installation Progress&lt;/h2&gt;
 &lt;p&gt;Calamares will now install MocaccinoOS to your disk. This can take a few minutes.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://github.com/user-attachments/assets/f47a6347-5424-4a2d-99c9-e2ea034807e6&#34; alt=&#34;Calamares_Installing&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Note: Near the end of the installation, the system will generate locale data. This step may take several minutes—please be patient.&lt;/p&gt;
 &lt;h2 id=&#34;installation-complete&#34;&gt;Installation Complete&lt;/h2&gt;
 &lt;p&gt;Once the process is finished, you’ll see a confirmation screen. You can choose to restart immediately or stay in the live session.
 After rebooting, you can log into your new MocaccinoOS system using the username and password you created earlier.&lt;/p&gt;
