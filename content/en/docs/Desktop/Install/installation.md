@@ -86,8 +86,6 @@ Calamares will now install MocaccinoOS to your disk. This can take a few minutes
 ![Calamares_Installing](https://github.com/user-attachments/assets/f47a6347-5424-4a2d-99c9-e2ea034807e6)
 
 
-Note: Near the end of the installation, the system will generate locale data. This step may take several minutes—please be patient.
-
 ## Installation Complete
 
 Once the process is finished, you’ll see a confirmation screen. You can choose to restart immediately or stay in the live session.
