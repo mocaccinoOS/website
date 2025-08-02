@@ -27,9 +27,9 @@
 &lt;p&gt;This is mostly an upgraded version that doesn&amp;rsquo;t introduce too many new features. Everything is compiled against a very recent Gentoo Portage tree.&lt;/p&gt;
 &lt;p&gt;The team hopes you enjoy our effort.
 With kind regards,&lt;/p&gt;
-&lt;p&gt;Ettore Di Giacinto
-Joost Ruis
-Mihai Dobrescu
+&lt;p&gt;Ettore Di Giacinto&lt;br&gt;
+Joost Ruis&lt;br&gt;
+Mihai Dobrescu&lt;br&gt;
 Jerrod Frost&lt;/p&gt;
 &lt;h3 id=&#34;changes-since-183&#34;&gt;Changes since 1.8.3:&lt;/h3&gt;
 &lt;ul&gt;
