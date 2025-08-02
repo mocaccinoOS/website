@@ -14,6 +14,57 @@
     
     
     <item>
+      <title>Blog: MocaccinoOS v1.8.4</title>
+      <link>https://www.mocaccino.org/blog/2025/08/02/mocaccinoos-v1.8.4/</link>
+      <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/blog/2025/08/02/mocaccinoos-v1.8.4/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Hello everybody!&lt;/p&gt;
+&lt;p&gt;Today we are releasing MocaccinoOS v1.8.4&lt;/p&gt;
+&lt;p&gt;This is mostly an upgraded version that doesn&amp;rsquo;t introduce too many new features. Everything is compiled against a very recent Gentoo Portage tree.&lt;/p&gt;
+&lt;p&gt;The team hopes you enjoy our effort.
+With kind regards,&lt;/p&gt;
+&lt;p&gt;Ettore Di Giacinto
+Joost Ruis
+Mihai Dobrescu
+Jerrod Frost&lt;/p&gt;
+&lt;h3 id=&#34;changes-since-183&#34;&gt;Changes since 1.8.3:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Kernel is upgraded to 6.12.41 (LTS)&lt;/li&gt;
+&lt;li&gt;Mesa version 25.1.6&lt;/li&gt;
+&lt;li&gt;Nvidia-drivers version 570.169 (available in repository)&lt;/li&gt;
+&lt;li&gt;KDE Plasma 6.3.6&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;issues-and-improvements&#34;&gt;Issues and improvements:&lt;/h3&gt;
+&lt;h4 id=&#34;calamares-language-fix&#34;&gt;Calamares Language Fix&lt;/h4&gt;
+&lt;p&gt;The Calamares installer now correctly applies your selected system language. Previously, installed systems could default to English regardless of user choice. &lt;a href=&#34;https://github.com/mocaccinoOS/os-commons/commit/1661b47a78e33b5de5c8b498a35b49f771dfa7ae&#34;&gt;https://github.com/mocaccinoOS/os-commons/commit/1661b47a78e33b5de5c8b498a35b49f771dfa7ae&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;performance-improvements&#34;&gt;Performance Improvements&lt;/h4&gt;
+&lt;p&gt;All binaries have been rebuilt using more aggressive compiler flags. These optimizations result in better performance and smaller binaries. &lt;a href=&#34;https://github.com/mocaccinoOS/desktop/commit/8ababf7fd8a2dde6b5f601500c1b8bcd5d7af122&#34;&gt;https://github.com/mocaccinoOS/desktop/commit/8ababf7fd8a2dde6b5f601500c1b8bcd5d7af122&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;improved-flatpak-sandboxing-compatibility&#34;&gt;Improved Flatpak Sandboxing Compatibility&lt;/h4&gt;
+&lt;p&gt;Enhanced sandboxing support resolves issues with Flatpak apps like Nextcloud from Flathub. &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/issues/160&#34;&gt;https://github.com/mocaccinoOS/mocaccino/issues/160&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;hdd-compatibility-enhancements&#34;&gt;HDD Compatibility Enhancements&lt;/h4&gt;
+&lt;p&gt;A new udev rule is now pre-installed to improve detection and compatibility with older mechanical hard drives. &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/commit/d21ea6abcf4a0acb917f2003aae81483767a29ff&#34;&gt;https://github.com/mocaccinoOS/mocaccino/commit/d21ea6abcf4a0acb917f2003aae81483767a29ff&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;intel-arc-battlemage-support&#34;&gt;Intel ARC Battlemage Support&lt;/h4&gt;
+&lt;p&gt;Detection code for Intel ARC GPUs has been updated to correctly identify Battlemage-series cards. &lt;a href=&#34;https://github.com/mocaccinoOS/desktop/commit/14a716acd703593c180124c023e9681dde092265&#34;&gt;https://github.com/mocaccinoOS/desktop/commit/14a716acd703593c180124c023e9681dde092265&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;We are aware that MOS images are not fully EFI complaint, certain (mostly older) systems are not booting properly with EFISTUB used in our images. At the moment we do not have a proper solution and the workaround is to change your BIOS settings to boot in legacy mode. ( &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/issues/130&#34;&gt;https://github.com/mocaccinoOS/mocaccino/issues/130&lt;/a&gt; )&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;help-us-improve-mocaccinoos&#34;&gt;Help Us Improve MocaccinoOS:&lt;/h3&gt;
+&lt;p&gt;You can extend your system with additional software using Flatpak, Docker, or the community repository.
+We welcome your feedback — whether it&amp;rsquo;s bug reports or ideas for improvement.&lt;/p&gt;
+&lt;p&gt;Explore our &lt;a href=&#34;https://www.mocaccino.org/docs/&#34;&gt;documentation&lt;/a&gt; to learn more.&lt;/p&gt;
+&lt;h3 id=&#34;support-our-work&#34;&gt;Support our work!&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mocaccino.org/docs/donate/&#34;&gt;https://www.mocaccino.org/docs/donate/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;acknowledgement&#34;&gt;Acknowledgement:&lt;/h3&gt;
+&lt;p&gt;The project heavily depends on the work done by upstream Gentoo Linux and we would like to thank them for their hard and excellent work! MocaccinoOS compiles all software available in the repositories using their own infrastructure that is powered by Kairos.&lt;/p&gt;
+&lt;h3 id=&#34;download&#34;&gt;Download&lt;/h3&gt;
+&lt;p&gt;Check out our &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/releases&#34;&gt;download page&lt;/a&gt; for all recent releases.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: MocaccinoOS v1.8.3</title>
       <link>https://www.mocaccino.org/blog/2025/07/05/mocaccinoos-v1.8.3/</link>
       <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
