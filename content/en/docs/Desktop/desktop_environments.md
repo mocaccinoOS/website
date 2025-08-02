@@ -109,7 +109,7 @@ This command installs the Hyprland desktop environment.
 
 ```bash
 
-$ sudo luet install layers/hyprland 
+$ sudo luet install layers/hyprland layers/wlroots apps/kitty
 
 ```
 
