@@ -63,5 +63,6 @@ https://www.mocaccino.org/docs/donate/
 ### Acknowledgement:
 The project heavily depends on the work done by upstream Gentoo Linux and we would like to thank them for their hard and excellent work! MocaccinoOS compiles all software available in the repositories using their own infrastructure that is powered by Kairos.
 
-MOS comes in several flavors, pick whatever suits you best.
-_(Please note that DesktopMinimal image is used for testing purposes and does not feature an installer!)_
+### Download
+
+Check out our [download page](https://github.com/mocaccinoOS/mocaccino/releases) for all recent releases.
