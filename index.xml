@@ -71,8 +71,8 @@ We welcome your feedback — whether it&amp;rsquo;s bug reports or ideas for imp
 &lt;p&gt;&lt;a href=&#34;https://www.mocaccino.org/docs/donate/&#34;&gt;https://www.mocaccino.org/docs/donate/&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;acknowledgement&#34;&gt;Acknowledgement:&lt;/h3&gt;
 &lt;p&gt;The project heavily depends on the work done by upstream Gentoo Linux and we would like to thank them for their hard and excellent work! MocaccinoOS compiles all software available in the repositories using their own infrastructure that is powered by Kairos.&lt;/p&gt;
-&lt;p&gt;MOS comes in several flavors, pick whatever suits you best.
-&lt;em&gt;(Please note that DesktopMinimal image is used for testing purposes and does not feature an installer!)&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;download&#34;&gt;Download&lt;/h3&gt;
+&lt;p&gt;Check out our &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/releases&#34;&gt;download page&lt;/a&gt; for all recent releases.&lt;/p&gt;
 
       </description>
     </item>
