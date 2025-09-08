@@ -34,18 +34,18 @@ Jerrod Frost
 
 MocaccinoOS v25.09 builds upon the entire 1.8.x series, encapsulating significant refinements without reintroducing old issues. Highlights include:
 
-- #### Performance enhancements: Across releases, binaries have been rebuilt with more aggressive compiler flags for better speed and leaner size.
+- ##### Performance enhancements: Across releases, binaries have been rebuilt with more aggressive compiler flags for better speed and leaner size.
 
-- #### Improved hardware and compatibility support:
+- ##### Improved hardware and compatibility support:
 
   - Intel Xe and ARC Battlemage detection code integrated.
   - Additional udev rules for older HDD detection.
 
-- ####  Flatpak sandboxing fixes (notably for apps like Nextcloud).
+- #####  Flatpak sandboxing fixes (notably for apps like Nextcloud).
 
-- ####  Installer updates: Calamares now correctly applies user-selected system languages during installation.
+- #####  Installer updates: Calamares now correctly applies user-selected system languages during installation.
 
-- ####  EFI status reminder: Some older UEFI systems may require BIOS legacy mode due to EFISTUB limitations (still unresolved).
+- #####  EFI status reminder: Some older UEFI systems may require BIOS legacy mode due to EFISTUB limitations (still unresolved).
 
 These enhancements are now unified in v25.09, adopting our new year.month versioning aligned with our rolling-release cycle.
 
