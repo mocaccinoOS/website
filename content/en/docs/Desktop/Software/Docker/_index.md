@@ -41,4 +41,4 @@ REPOSITORY                TAG                 IMAGE ID            CREATED       
 quay.io/mocaccino/extra   latest              ce197d5b1a7e        3 days ago          21.2MB
 
 ```
-you could also use [Whalebrew ](https://www.mocaccino.org/docs/desktop/whalebrew/) to make aliasing the containers into something more useable. 
+you could also use [Whalebrew ](/docs/desktop/software//whalebrew) to make aliasing the containers into something more useable. 
