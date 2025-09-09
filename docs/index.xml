@@ -355,7 +355,8 @@ So if you for instance want to install neovim, alacritty or gimp, you first need
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo luet install repository/mocaccino-community-stable
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;using-development-repositories-for-testing&#34;&gt;Using development repositories for testing&lt;/h2&gt;
+&lt;/div&gt;&lt;p&gt;The &lt;a href=&#34;https://github.com/mocaccinoOS/community-repository?tab=readme-ov-file#-community-repository&#34;&gt;community repository&lt;/a&gt; is maintained by the community and users can participate by requesting packages or even make a pull request to contribute.&lt;/p&gt;
+&lt;h2 id=&#34;using-development-repositories-for-testing&#34;&gt;Using development repositories for testing&lt;/h2&gt;
 &lt;p&gt;Development isos that have the &lt;code&gt;-dev&lt;/code&gt; suffix have the development repositories pre-installed. The -dev ISOs
 are intended for development and testing only, so this document outlines the steps to switch back and forth from the stable and unstable repositories.&lt;/p&gt;
 &lt;h2 id=&#34;identify-the-installed-repositories&#34;&gt;Identify the installed repositories&lt;/h2&gt;
