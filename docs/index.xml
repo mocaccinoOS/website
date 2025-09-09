@@ -343,7 +343,20 @@ luet replace &lt;span style=&#34;color:#40ffff&#34;&gt;$installed&lt;/span&gt; -
       <description>
         
         
-        &lt;p&gt;Development isos have the &lt;code&gt;-dev&lt;/code&gt; suffix. Those are coming with the development repositories pre-installed. The -dev ISOs
+        &lt;p&gt;By default MocaccinoOS ships with the mocaccino-desktop-stable repository installed. This repository has all the core layers and &lt;a href=&#34;https://www.mocaccino.org/docs/desktop/desktop_environments&#34;&gt;desktop environments&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;community-repository&#34;&gt;Community repository&lt;/h2&gt;
+&lt;p&gt;Any additional software that is compiled and packaged by the MocaccinoOS project is available in the Community-repository.
+So if you for instance want to install neovim, alacritty or gimp, you first need to install the Community-repository.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo luet install repository/mocaccino-community-stable
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;using-development-repositories-for-testing&#34;&gt;Using development repositories for testing&lt;/h2&gt;
+&lt;p&gt;Development isos that have the &lt;code&gt;-dev&lt;/code&gt; suffix have the development repositories pre-installed. The -dev ISOs
 are intended for development and testing only, so this document outlines the steps to switch back and forth from the stable and unstable repositories.&lt;/p&gt;
 &lt;h2 id=&#34;identify-the-installed-repositories&#34;&gt;Identify the installed repositories&lt;/h2&gt;
 &lt;p&gt;With &lt;code&gt;luet repo list&lt;/code&gt; you can check the repositories currently installed in the system, for example:&lt;/p&gt;
@@ -367,7 +380,7 @@ are intended for development and testing only, so this document outlines the ste
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;16
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ luet repo list       
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo luet repo list       
 mocaccino-repository-index
   MocaccinoOS Repository Index
   Revision &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; - 2021-01-02 17:47:32 +0100 CET
@@ -392,7 +405,7 @@ mocaccino-repository-index
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;
 
-    Do not mix development and stable repositories! Be sure to have installed in the system or the &lt;code&gt;stable&lt;/code&gt; or the development repositories only.
+    Do not mix development and stable repositories! Be sure to only have installed &lt;code&gt;stable&lt;/code&gt; or the development repositories.
 
 &lt;/div&gt;
 
