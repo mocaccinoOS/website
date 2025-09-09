@@ -16,6 +16,8 @@ So if you for instance want to install neovim, alacritty or gimp, you first need
 $ sudo luet install repository/mocaccino-community-stable
 ````
 
+The [community repository](https://github.com/mocaccinoOS/community-repository?tab=readme-ov-file#-community-repository) is maintained by the community and users can participate by requesting packages or even make a pull request to contribute.
+
 ## Using development repositories for testing
 
 Development isos that have the `-dev` suffix have the development repositories pre-installed. The -dev ISOs
