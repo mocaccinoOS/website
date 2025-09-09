@@ -1336,7 +1336,7 @@ Make sure you have the proper kernel/mocaccino-lts-initramfs or kernel/mocaccino
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;https://github.com/whalebrew/whalebrew&#34;&gt;&amp;ldquo;Whalebrew&lt;/a&gt; is homebrew but for docker images&amp;rdquo; that is to say it creates aliases for docker images so you could run them as regular commands&lt;/p&gt;
+        &lt;p&gt;&amp;ldquo;&lt;a href=&#34;https://github.com/whalebrew/whalebrew&#34;&gt;Whalebrew&lt;/a&gt; is homebrew but for docker images&amp;rdquo; that is to say it creates aliases for docker images so you could run them as regular commands&lt;/p&gt;
 &lt;h1 id=&#34;setup&#34;&gt;Setup&lt;/h1&gt;
 &lt;p&gt;Be sure to have &lt;a href=&#34;https://www.mocaccino.org/docs/desktop/docker&#34;&gt;docker&lt;/a&gt; installed, and the daemon running.&lt;/p&gt;
 &lt;p&gt;First install &lt;code&gt;utils/whalebrew&lt;/code&gt;:&lt;/p&gt;
