@@ -19,10 +19,10 @@ To build a system package, instead use `luet build`. The following document trie
 
 ## Requirements
 
-- Be sure to have [docker](/docs/desktop/docker) installed, and the daemon running. The document is assuming you are carrying the steps on MocaccinoOS Desktop (GNOME in the specific case). 
+- Be sure to have [docker](/docs/desktop/software/docker) installed, and the daemon running. The document is assuming you are carrying the steps on MocaccinoOS Desktop (GNOME in the specific case). 
 - At least 30G of free disk space. To reclaim the space afterwards, run `docker system prune --force --volumes --all`
 
-Follow the steps described in [this document](/docs/desktop/docker) before going ahead.
+Follow the steps described in [this document](/docs/desktop/software/docker) before going ahead.
 
 ## Create a workspace
 
