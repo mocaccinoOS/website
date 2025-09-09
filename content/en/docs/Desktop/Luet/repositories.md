@@ -9,8 +9,8 @@ By default MocaccinoOS ships with the mocaccino-desktop-stable repository instal
 
 ## Community repository
 
-Any additional software that is compiled and packaged by the MocaccinoOS project is available in the Community-repository.
-So if you for instance want to install neovim, alacritty or gimp, you first need to install the Community-repository.
+Any additional software that is compiled and packaged by the MocaccinoOS project is available in the community repository.
+So if you for instance want to install neovim, alacritty or gimp, you first need to install the community repository.
 
 ```bash
 $ sudo luet install repository/mocaccino-community-stable
