@@ -8,7 +8,7 @@ description: >-
 
 ## Install and configure Waydroid
 
-Waydroid is available in the [Community repository](https://github.com/mocaccinoOS/community-repository?tab=readme-ov-file#-community-repository). If you have enabled this repository you can install it by using this command:
+Waydroid is available in the [community repository](/docs/desktop/luet/repositories/#community-repository). If you have enabled this repository you can install it by using this command:
 
 ```bash
 $ sudo luet install apps/waydroid-vanilla
