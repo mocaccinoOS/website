@@ -5,17 +5,28 @@ weight: 1
 description: >-
      This document describes how to switch between stable and unstable repositories
 ---
+By default MocaccinoOS ships with the mocaccino-desktop-stable repository installed. This repository has all the core layers and [desktop environments](/docs/desktop/desktop_environments).
 
-Development isos have the `-dev` suffix. Those are coming with the development repositories pre-installed. The -dev ISOs
+## Community repository
+
+Any additional software that is compiled and packaged by the MocaccinoOS project is available in the Community-repository.
+So if you for instance want to install neovim, alacritty or gimp, you first need to install the Community-repository.
+
+```bash
+$ sudo luet install repository/mocaccino-community-stable
+````
+
+## Using development repositories for testing
+
+Development isos that have the `-dev` suffix have the development repositories pre-installed. The -dev ISOs
 are intended for development and testing only, so this document outlines the steps to switch back and forth from the stable and unstable repositories.
 
 ## Identify the installed repositories
 
 With `luet repo list` you can check the repositories currently installed in the system, for example:
 
-
 ```bash
-$ luet repo list       
+$ sudo luet repo list       
 mocaccino-repository-index
   MocaccinoOS Repository Index
   Revision 1 - 2021-01-02 17:47:32 +0100 CET
@@ -37,9 +48,8 @@ If the output doesn't contain repositories named with `-stable` at the end, most
 
 ## Switch repositories
 
-
 {{< alert color="warning" title="Warning" >}}
-Do not mix development and stable repositories! Be sure to have installed in the system or the `stable` or the development repositories only.
+Do not mix development and stable repositories! Be sure to only have installed `stable` or the development repositories.
 {{< /alert >}}
 
 In MocaccinoOS repositories are standard packages. To remove the development repositories, you can:
