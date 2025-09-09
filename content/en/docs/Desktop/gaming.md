@@ -73,7 +73,7 @@ This custom Proton version has several patches and bleeding edge technology that
 
 *GE stands for "GloriousEggroll" and is the nickname of Thomas Crider who works for RedHat.*
 
-Proton GE is available in the [Community repository](/docs/desktop/luet/repositories/#community-repository). If you have enabled this repository you can install it by using this command:
+Proton GE is available in the [community repository](/docs/desktop/luet/repositories/#community-repository). If you have enabled this repository you can install it by using this command:
 
 ```bash
 
@@ -91,7 +91,7 @@ Installing and playing games using the Epic games store or GOG we recommend usin
 
 An alternative platform for gamers is Lutris. 
 
-Lutris is available in the [Community repository](/docs/desktop/luet/repositories/#community-repository). If you have enabled this repository you can install it by using this command:
+Lutris is available in the [community repository](/docs/desktop/luet/repositories/#community-repository). If you have enabled this repository you can install it by using this command:
 
 ```bash
 
@@ -111,7 +111,7 @@ $ sudo luet install kernel-modules/nvidia-drivers-lts
 
 ### Mangohud
 
-Mangohud is available in the [Community repository](/docs/desktop/luet/repositories/#community-repository). If you have enabled this repository you can install it by using this command:
+Mangohud is available in the [community repository](/docs/desktop/luet/repositories/#community-repository). If you have enabled this repository you can install it by using this command:
 
 ```bash
 
