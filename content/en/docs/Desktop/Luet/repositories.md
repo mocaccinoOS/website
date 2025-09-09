@@ -3,7 +3,7 @@ title: "Repositories"
 linkTitle: "Repositories"
 weight: 1
 description: >-
-     This document describes how to switch between stable and unstable repositories
+     This document describes how to enable or switch between stable and unstable repositories
 ---
 By default MocaccinoOS ships with the mocaccino-desktop-stable repository installed. This repository has all the core layers and [desktop environments](/docs/desktop/desktop_environments).
 
