@@ -8,7 +8,7 @@ description: >-
 
 ### Steam
 
-We recommend installing Steam directly from the desktop repository. You can also use the [flatpak](/docs/desktop/flatpak) version but that could give problems because it is basically running in a sandbox.
+We recommend installing Steam directly from the desktop repository. You can also use the [flatpak](/docs/desktop/software/flatpak) version but that could give problems because it is basically running in a sandbox.
 To install Steam from the desktop repository you can issue the following installation command:
 
 ```bash
