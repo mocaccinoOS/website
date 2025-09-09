@@ -25,8 +25,8 @@
         
         &lt;p&gt;By default MocaccinoOS ships with the mocaccino-desktop-stable repository installed. This repository has all the core layers and &lt;a href=&#34;https://www.mocaccino.org/docs/desktop/desktop_environments&#34;&gt;desktop environments&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;community-repository&#34;&gt;Community repository&lt;/h2&gt;
-&lt;p&gt;Any additional software that is compiled and packaged by the MocaccinoOS project is available in the Community-repository.
-So if you for instance want to install neovim, alacritty or gimp, you first need to install the Community-repository.&lt;/p&gt;
+&lt;p&gt;Any additional software that is compiled and packaged by the MocaccinoOS project is available in the community repository.
+So if you for instance want to install neovim, alacritty or gimp, you first need to install the community repository.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
