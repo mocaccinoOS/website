@@ -124,10 +124,10 @@ mocaccino-repository-index
 &lt;p&gt;To build a system package, instead use &lt;code&gt;luet build&lt;/code&gt;. The following document tries to summarize the steps to build a package with emerge with &lt;code&gt;luet build&lt;/code&gt;, and install and track it in a MocaccinoOS Desktop system, should cover the scenario: &lt;em&gt;&amp;ldquo;hey, can I install packages with emerge?&amp;quot;&lt;/em&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Be sure to have &lt;a href=&#34;https://www.mocaccino.org/docs/desktop/docker&#34;&gt;docker&lt;/a&gt; installed, and the daemon running. The document is assuming you are carrying the steps on MocaccinoOS Desktop (GNOME in the specific case).&lt;/li&gt;
+&lt;li&gt;Be sure to have &lt;a href=&#34;https://www.mocaccino.org/docs/desktop/software/docker&#34;&gt;docker&lt;/a&gt; installed, and the daemon running. The document is assuming you are carrying the steps on MocaccinoOS Desktop (GNOME in the specific case).&lt;/li&gt;
 &lt;li&gt;At least 30G of free disk space. To reclaim the space afterwards, run &lt;code&gt;docker system prune --force --volumes --all&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Follow the steps described in &lt;a href=&#34;https://www.mocaccino.org/docs/desktop/docker&#34;&gt;this document&lt;/a&gt; before going ahead.&lt;/p&gt;
+&lt;p&gt;Follow the steps described in &lt;a href=&#34;https://www.mocaccino.org/docs/desktop/software/docker&#34;&gt;this document&lt;/a&gt; before going ahead.&lt;/p&gt;
 &lt;h2 id=&#34;create-a-workspace&#34;&gt;Create a workspace&lt;/h2&gt;
 &lt;p&gt;First of all, let&amp;rsquo;s create a workspace. The packages that we will build have to persist somewhere in your local system, the location must be accessible while performing a &lt;code&gt;luet upgrade&lt;/code&gt;. We will use &lt;code&gt;/user/system_repository&lt;/code&gt; as an example. And we will assume the commands are running as root.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;

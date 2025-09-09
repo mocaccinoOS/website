@@ -25,11 +25,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/luet/building_packages/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2025-09-09T14:27:12+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2025-09-09T14:28:32+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Building packages locally">
 <meta itemprop="description" content="How to build packages on MocaccinoOS with portage (or not)">
-<meta itemprop="dateModified" content="2025-09-09T14:27:12+02:00" />
+<meta itemprop="dateModified" content="2025-09-09T14:28:32+02:00" />
 <meta itemprop="wordCount" content="869">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Building packages locally"/>
@@ -412,10 +412,10 @@
 <p>To build a system package, instead use <code>luet build</code>. The following document tries to summarize the steps to build a package with emerge with <code>luet build</code>, and install and track it in a MocaccinoOS Desktop system, should cover the scenario: <em>&ldquo;hey, can I install packages with emerge?&quot;</em>.</p>
 <h2 id="requirements">Requirements</h2>
 <ul>
-<li>Be sure to have <a href="/docs/desktop/docker">docker</a> installed, and the daemon running. The document is assuming you are carrying the steps on MocaccinoOS Desktop (GNOME in the specific case).</li>
+<li>Be sure to have <a href="/docs/desktop/software/docker">docker</a> installed, and the daemon running. The document is assuming you are carrying the steps on MocaccinoOS Desktop (GNOME in the specific case).</li>
 <li>At least 30G of free disk space. To reclaim the space afterwards, run <code>docker system prune --force --volumes --all</code></li>
 </ul>
-<p>Follow the steps described in <a href="/docs/desktop/docker">this document</a> before going ahead.</p>
+<p>Follow the steps described in <a href="/docs/desktop/software/docker">this document</a> before going ahead.</p>
 <h2 id="create-a-workspace">Create a workspace</h2>
 <p>First of all, let&rsquo;s create a workspace. The packages that we will build have to persist somewhere in your local system, the location must be accessible while performing a <code>luet upgrade</code>. We will use <code>/user/system_repository</code> as an example. And we will assume the commands are running as root.</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -621,7 +621,7 @@ $ docker image prune
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified September 9, 2025: <a href="https://github.com/MocaccinoOS/website/commit/d014d68f8ab624f9e3bb25ca9b31f9ad4417ab52">Update whalebrew.md (d014d68)</a>
+  Last modified September 9, 2025: <a href="https://github.com/MocaccinoOS/website/commit/25747799216dc067ca85364c1fa91c006014562a">Update building_packages.md (2574779)</a>
 </div>
 
 </div>
