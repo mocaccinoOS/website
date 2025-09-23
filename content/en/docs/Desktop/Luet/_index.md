@@ -119,7 +119,7 @@ $ sudo luet search --table <regex>
 
 ```
 
-#### GUI tool
+#### Luet Package Search (GUI tool)
 
 {{< alert color="primary" title="Note" >}}
 The Luet gui tool is still under development but considered stable.
