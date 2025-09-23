@@ -119,6 +119,20 @@ $ sudo luet search --table <regex>
 
 ```
 
+#### GUI tool
+
+{{< alert color="primary" title="Note" >}}
+The Luet gui tool is still under development but considered stable.
+{{< /alert >}}
+
+If you prefer a graphical tool to perform simple tasks you can consider installing apps/luet_pm_gui
+
+```bash
+
+$ sudo luet install apps/luet_pm_gui
+
+```
+
 ## References
 
 - [Luet docs](https://luet.io/docs/concepts/overview/usage/)
