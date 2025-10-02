@@ -1,7 +1,7 @@
 ---
 title: "MocaccinoOS v25.10"
 linkTitle: "MocaccinoOS v25.10"
-date: 2025-10-03
+date: 2025-10-02
 description: >-
      MocaccinoOS v25.10 release
 ---
