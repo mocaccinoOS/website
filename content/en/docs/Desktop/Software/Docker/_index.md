@@ -1,5 +1,5 @@
 ---
-title: "Running docker"
+title: "Docker"
 linkTitle: "Docker"
 weight: 1
 description: >-
