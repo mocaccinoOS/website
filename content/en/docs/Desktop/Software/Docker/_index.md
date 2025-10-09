@@ -42,3 +42,16 @@ quay.io/mocaccino/extra   latest              ce197d5b1a7e        3 days ago    
 
 ```
 you could also use [Whalebrew ](/docs/desktop/software//whalebrew) to make aliasing the containers into something more useable. 
+
+## Docker Compose
+
+Docker Compose is a tool for defining and running multi-container Docker applications. It allows you to use a YAML file (conventionally named docker-compose.yml) to configure all of your application's services.
+
+Docker Compose is available in the [community repository](/docs/desktop/luet/repositories/#community-repository) as part of the apps/docker-tools package. If you have enabled this repository you can install it by using this command:
+
+```bash
+
+$ sudo luet install apps/docker-tools
+
+```
+
