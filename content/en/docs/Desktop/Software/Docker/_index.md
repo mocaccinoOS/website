@@ -1,7 +1,7 @@
 ---
 title: "Running docker"
 linkTitle: "Docker"
-weight: 4
+weight: 1
 description: >-
      Running Docker on Mocaccino Desktop
 ---
