@@ -229,6 +229,20 @@ $ sudo luet install apps/luet_pm_gui
     </item>
     
     <item>
+      <title>Docs: File sharing</title>
+      <link>https://www.mocaccino.org/docs/desktop/file-sharing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/file-sharing/</guid>
+      <description>
+        
+        
+        &lt;p&gt;File sharing is a critical aspect of modern computing, allowing systems to exchange files and access remote resources efficiently. In the Linux ecosystem, there are several powerful and versatile protocols, each suited for different use cases—from sharing files with Windows desktops to high-performance, native Linux networking, and secure remote access.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Software installation</title>
       <link>https://www.mocaccino.org/docs/desktop/software/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
