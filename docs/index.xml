@@ -2114,9 +2114,7 @@ $ runit-enable edgevpn
       <description>
         
         
-        &lt;h1 id=&#34;secure-file-transfer-sftp&#34;&gt;Secure File Transfer (SFTP)&lt;/h1&gt;
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;SFTP&lt;/strong&gt; (SSH File Transfer Protocol) enables secure, encrypted file transfers and remote file management using the same protocol as SSH.&lt;br&gt;
+        &lt;p&gt;&lt;strong&gt;SFTP&lt;/strong&gt; (SSH File Transfer Protocol) enables secure, encrypted file transfers and remote file management using the same protocol as SSH.&lt;br&gt;
 It is included &lt;strong&gt;by default&lt;/strong&gt; in MocaccinoOS through the built-in &lt;strong&gt;OpenSSH&lt;/strong&gt; service — no installation required.&lt;/p&gt;
 &lt;p&gt;SFTP is compatible with most file managers (such as Dolphin, Nautilus, or Thunar), command-line tools (&lt;code&gt;sftp&lt;/code&gt;, &lt;code&gt;scp&lt;/code&gt;), and third-party clients like &lt;a href=&#34;https://winscp.net&#34;&gt;WinSCP&lt;/a&gt; or FileZilla.&lt;/p&gt;
 &lt;hr&gt;
