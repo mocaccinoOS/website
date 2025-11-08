@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/file-sharing/samba/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2025-11-08T13:25:45+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2025-11-08T15:06:07+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Samba">
 <meta itemprop="description" content="Configure Samba">
-<meta itemprop="dateModified" content="2025-11-08T13:25:45+01:00" />
-<meta itemprop="wordCount" content="327">
+<meta itemprop="dateModified" content="2025-11-08T15:06:07+01:00" />
+<meta itemprop="wordCount" content="338">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Samba"/>
 <meta name="twitter:description" content="Configure Samba"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e582c1c0ab3945e41c1b8f294debf905.json"
+  data-offline-search-index-json-src="/offline-search-index.8764c7fa5eae14bc77a70e9f96c432ed.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e582c1c0ab3945e41c1b8f294debf905.json"
+  data-offline-search-index-json-src="/offline-search-index.8764c7fa5eae14bc77a70e9f96c432ed.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -326,14 +326,14 @@
 
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
-    <li><a href="#step-1-configure-the-global-settings">Step 1: Configure the Global Settings</a></li>
-    <li><a href="#step-2-define-a-share">Step 2: Define a Share</a>
+    <li><a href="#configure-the-global-settings">Configure the Global Settings</a></li>
+    <li><a href="#define-a-share">Define a Share</a>
       <ul>
         <li><a href="#key-share-options">Key Share Options:</a></li>
       </ul>
     </li>
-    <li><a href="#step-3-add-samba-users">Step 3: Add Samba Users</a></li>
-    <li><a href="#step-4-start-and-enable-the-samba-service">Step 4: Start and Enable the Samba Service</a></li>
+    <li><a href="#add-samba-users">Add Samba Users</a></li>
+    <li><a href="#start-and-enable-the-samba-service">Start and Enable the Samba Service</a></li>
   </ul>
 </nav></div>
 
@@ -401,22 +401,44 @@
 	</header>    
 	<h1 id="configuring-samba-smb-shares">Configuring Samba (SMB) Shares</h1>
 <p>Samba allows MocaccinoOS to act as a file and print server for Windows, macOS, and Linux systems using the common Server Message Block (SMB) protocol. Since the core packages are already installed, we only need to focus on configuration and user setup.</p>
-<h2 id="step-1-configure-the-global-settings">Step 1: Configure the Global Settings</h2>
+<h2 id="configure-the-global-settings">Configure the Global Settings</h2>
 <p>MocaccinoOS provides a default configuration file. You <strong>must</strong> copy this file before making any changes to create the active configuration:</p>
-<pre tabindex="0"><code>sudo cp /etc/samba/smb.conf.default /etc/samba/smb.conf
-</code></pre><p>The main Samba configuration file is now located at <code>/etc/samba/smb.conf</code>. Ensure the <code>[global]</code> section contains basic networking information. If you only need simple sharing, the defaults are usually sufficient.</p>
-<h2 id="step-2-define-a-share">Step 2: Define a Share</h2>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo cp /etc/samba/smb.conf.default /etc/samba/smb.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>The main Samba configuration file is now located at <code>/etc/samba/smb.conf</code>. Ensure the <code>[global]</code> section contains basic networking information. If you only need simple sharing, the defaults are usually sufficient.</p>
+<h2 id="define-a-share">Define a Share</h2>
 <p>To create a new shared folder, add a section to the end of your <code>/etc/samba/smb.conf</code> file. Replace <code>/mnt/storage/shared_data</code> with the actual path to your data.</p>
-<pre tabindex="0"><code>[Shared_Docs]
-  comment = Collaborative Document Sharing
-  path = /mnt/storage/shared_data
-  browsable = yes
-  guest ok = no
-  read only = no
-  create mask = 0775
-  directory mask = 0775
-  valid users = @staff, &lt;username&gt;
-</code></pre><h3 id="key-share-options">Key Share Options:</h3>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[Shared_Docs]
+  <span style="color:#40ffff">comment</span> = Collaborative Document Sharing
+  <span style="color:#40ffff">path</span> = /mnt/storage/shared_data
+  <span style="color:#40ffff">browsable</span> = yes
+  guest <span style="color:#40ffff">ok</span> = no
+  <span style="color:#24909d">read</span> <span style="color:#40ffff">only</span> = no
+  create <span style="color:#40ffff">mask</span> = <span style="color:#3677a9">0775</span>
+  directory <span style="color:#40ffff">mask</span> = <span style="color:#3677a9">0775</span>
+  valid <span style="color:#40ffff">users</span> = @staff, &lt;username&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="key-share-options">Key Share Options:</h3>
 <ul>
 <li>
 <p><strong><code>path</code></strong>: The absolute path to the directory being shared.</p>
@@ -431,23 +453,42 @@
 <p><strong><code>valid users</code></strong>: Only specified users or groups (prefixed with <code>@</code>) can connect.</p>
 </li>
 </ul>
-<h2 id="step-3-add-samba-users">Step 3: Add Samba Users</h2>
+<h2 id="add-samba-users">Add Samba Users</h2>
 <p>Samba maintains its own database of passwords, separate from the system&rsquo;s Linux passwords. Any user who needs to access the share must have an existing Linux account and be added to the Samba database.</p>
-<pre tabindex="0"><code># Replace &lt;username&gt; with the account name
-sudo smbpasswd -a &lt;username&gt;
-</code></pre><p>You will be prompted to set a new Samba password for that user.</p>
-<h2 id="step-4-start-and-enable-the-samba-service">Step 4: Start and Enable the Samba Service</h2>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># Replace &lt;username&gt; with the account name</span>
+$ sudo smbpasswd -a &lt;username&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>You will be prompted to set a new Samba password for that user.</p>
+<h2 id="start-and-enable-the-samba-service">Start and Enable the Samba Service</h2>
 <p>After configuration, you need to start the Samba service and enable it to persist across reboots.</p>
-<pre tabindex="0"><code># Enable the service to start automatically on boot
-sudo systemctl enable smb
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># Enable the service to start automatically on boot</span>
+sudo systemctl <span style="color:#24909d">enable</span> smb
 
-# Start the service immediately
+<span style="color:#999;font-style:italic"># Start the service immediately</span>
 sudo systemctl start smb
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified November 8, 2025: <a href="https://github.com/MocaccinoOS/website/commit/fcb3fbce5c1b2e0b01c1097e92299614eac9e0b1">Add samba docs (fcb3fbc)</a>
+  Last modified November 8, 2025: <a href="https://github.com/MocaccinoOS/website/commit/2d22cb1544a6782edc54e0b35dea2d6a47a736bb">Bump samba docs (2d22cb1)</a>
 </div>
 
 </div>
