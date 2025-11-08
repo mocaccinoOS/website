@@ -6,10 +6,6 @@ description: >-
      Learn how to transfer files securely with SFTP using the built-in OpenSSH service in MocaccinoOS.
 ---
 
-# Secure File Transfer (SFTP)
-
-## Overview
-
 **SFTP** (SSH File Transfer Protocol) enables secure, encrypted file transfers and remote file management using the same protocol as SSH.  
 It is included **by default** in MocaccinoOS through the built-in **OpenSSH** service — no installation required.
 
