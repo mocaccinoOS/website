@@ -1016,6 +1016,63 @@ After rebooting, you can log into your new MocaccinoOS system using the username
     </item>
     
     <item>
+      <title>Docs: Samba</title>
+      <link>https://www.mocaccino.org/docs/desktop/file-sharing/samba/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/file-sharing/samba/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;configuring-samba-smb-shares&#34;&gt;Configuring Samba (SMB) Shares&lt;/h1&gt;
+&lt;p&gt;Samba allows MocaccinoOS to act as a file and print server for Windows, macOS, and Linux systems using the common Server Message Block (SMB) protocol. Since the core packages are already installed, we only need to focus on configuration and user setup.&lt;/p&gt;
+&lt;h2 id=&#34;step-1-configure-the-global-settings&#34;&gt;Step 1: Configure the Global Settings&lt;/h2&gt;
+&lt;p&gt;MocaccinoOS provides a default configuration file. You &lt;strong&gt;must&lt;/strong&gt; copy this file before making any changes to create the active configuration:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo cp /etc/samba/smb.conf.default /etc/samba/smb.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The main Samba configuration file is now located at &lt;code&gt;/etc/samba/smb.conf&lt;/code&gt;. Ensure the &lt;code&gt;[global]&lt;/code&gt; section contains basic networking information. If you only need simple sharing, the defaults are usually sufficient.&lt;/p&gt;
+&lt;h2 id=&#34;step-2-define-a-share&#34;&gt;Step 2: Define a Share&lt;/h2&gt;
+&lt;p&gt;To create a new shared folder, add a section to the end of your &lt;code&gt;/etc/samba/smb.conf&lt;/code&gt; file. Replace &lt;code&gt;/mnt/storage/shared_data&lt;/code&gt; with the actual path to your data.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Shared_Docs]
+  comment = Collaborative Document Sharing
+  path = /mnt/storage/shared_data
+  browsable = yes
+  guest ok = no
+  read only = no
+  create mask = 0775
+  directory mask = 0775
+  valid users = @staff, &amp;lt;username&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;key-share-options&#34;&gt;Key Share Options:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;path&lt;/code&gt;&lt;/strong&gt;: The absolute path to the directory being shared.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;browsable&lt;/code&gt;&lt;/strong&gt;: Allows the share to be visible when browsing the network.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;guest ok&lt;/code&gt;&lt;/strong&gt;: If &lt;code&gt;no&lt;/code&gt;, authentication is required. If &lt;code&gt;yes&lt;/code&gt;, anyone can access it (usually discouraged).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;valid users&lt;/code&gt;&lt;/strong&gt;: Only specified users or groups (prefixed with &lt;code&gt;@&lt;/code&gt;) can connect.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;step-3-add-samba-users&#34;&gt;Step 3: Add Samba Users&lt;/h2&gt;
+&lt;p&gt;Samba maintains its own database of passwords, separate from the system&amp;rsquo;s Linux passwords. Any user who needs to access the share must have an existing Linux account and be added to the Samba database.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Replace &amp;lt;username&amp;gt; with the account name
+sudo smbpasswd -a &amp;lt;username&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You will be prompted to set a new Samba password for that user.&lt;/p&gt;
+&lt;h2 id=&#34;step-4-start-and-enable-the-samba-service&#34;&gt;Step 4: Start and Enable the Samba Service&lt;/h2&gt;
+&lt;p&gt;After configuration, you need to start the Samba service and enable it to persist across reboots.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Enable the service to start automatically on boot
+sudo systemctl enable smb
+
+# Start the service immediately
+sudo systemctl start smb
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Installation notes</title>
       <link>https://www.mocaccino.org/docs/micro/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
