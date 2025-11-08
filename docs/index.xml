@@ -1386,6 +1386,85 @@ We edit the same file as above but now we put in this config&lt;/p&gt;
     </item>
     
     <item>
+      <title>Docs: NFS</title>
+      <link>https://www.mocaccino.org/docs/desktop/file-sharing/nfs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/file-sharing/nfs/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Configuring NFS (Network File System)&lt;/p&gt;
+&lt;p&gt;Network File System (NFS) is the standard protocol for sharing files between Linux and Unix-like systems. It is generally faster and more suited for high-performance or internal network sharing than SMB.&lt;/p&gt;
+&lt;h2 id=&#34;define-exported-directories&#34;&gt;Define Exported Directories&lt;/h2&gt;
+&lt;p&gt;The list of directories that MocaccinoOS will share via NFS is controlled by the /etc/exports file. You may need to create this file if it doesn&amp;rsquo;t exist.&lt;/p&gt;
+&lt;p&gt;The syntax is: /path/to/share &lt;client&gt;(&lt;options&gt;)&lt;/p&gt;
+&lt;p&gt;Here is an example, allowing the client at IP 192.168.1.100 read/write access:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# Share the /srv/nfs/data directory&lt;/span&gt;
+/srv/nfs/data 192.168.1.100(rw,sync,no_subtree_check)
+
+&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# Share the /home/public directory to the entire subnet (less secure)&lt;/span&gt;
+/home/public 192.168.1.0/24(ro,sync,no_subtree_check)
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Key NFS Options:&lt;/p&gt;
+&lt;p&gt;rw: Allows read and write access. Use ro for read-only.&lt;/p&gt;
+&lt;p&gt;sync: Forces all writes to disk before replying. (Safer, but slightly slower).&lt;/p&gt;
+&lt;p&gt;no_subtree_check: Disables the security check that verifies the exported path. Recommended for stability.&lt;/p&gt;
+&lt;h2 id=&#34;start-and-enable-the-nfs-service&#34;&gt;Start and Enable the NFS Service&lt;/h2&gt;
+&lt;p&gt;You must start and enable the NFS server service. In MocaccinoOS (using a standard init system):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# Enable the service to start automatically on boot&lt;/span&gt;
+$ sudo systemctl &lt;span style=&#34;color:#24909d&#34;&gt;enable&lt;/span&gt; nfs-server
+
+&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# Start the service immediately&lt;/span&gt;
+$ sudo systemctl start nfs-server
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;export-the-shares&#34;&gt;Export the Shares&lt;/h2&gt;
+&lt;p&gt;If you modify /etc/exports while the service is running, you must refresh the export list without restarting the entire server:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# Reloads the export file and prints all exports&lt;/span&gt;
+$ sudo exportfs -arv
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;client-mounting-example&#34;&gt;Client Mounting (Example)&lt;/h2&gt;
+&lt;p&gt;On a Linux client machine, the share can be mounted using the mount command. Replace mocaccino-server with your server&amp;rsquo;s hostname or IP address:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo mount mocaccino-server:/srv/nfs/data /mnt/mocaccino_data
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Switching kernels</title>
       <link>https://www.mocaccino.org/docs/general/kernels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
