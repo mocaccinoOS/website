@@ -49,8 +49,6 @@ MocaccinoOS builds on the incredible work of the Gentoo Linux community. We are 
 
 ### Download:
 
-Check out our [download page](https://github.com/mocaccinoOS/mocaccino/releases) for all recent releases.
-
 #### Torrents
 
 [MocaccinoOS-KDE-0.20251101.iso](magnet:?xt=urn:btih:4beb068d0bdc0221c7f349d77ce789061d1de66f&xt=urn:btmh:122002066ffedfb74ec183265849f0cb0bc2bbe96f27818f42e4a275044d0b144ef4&dn=MocaccinoOS-KDE-0.20251101.iso&xl=2151579648&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce) ( sha256: d6aa0f75f67f15572b04f39f39ac1fdcdb97b6f69187ef75c788e01b4f5f443a )
@@ -58,3 +56,9 @@ Check out our [download page](https://github.com/mocaccinoOS/mocaccino/releases)
 [MocaccinoOS-GNOME-0.20251101.iso](magnet:?xt=urn:btih:56483f72163b9f675043705f66546d18227abc6d&xt=urn:btmh:122016e0d43c1f9b1165b24ad59ff56b8918686f1575cd0535d8f9e61d2ca64cb519&dn=MocaccinoOS-GNOME-0.20251101.iso&xl=2113929216&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce) ( sha256: 16f9712aca73f44d87a3b4fdf1f36087513d75f35b2f8e695b1babf373e342ae )
 
 [MocaccinoOS-XFCE-0.20251101.iso](magnet:?xt=urn:btih:b8a64f02906ffeb322a3d3dcb5bc14ab8797d11d&xt=urn:btmh:1220578f6e72cf3541f9a442e793bf0dde87ec2f95fbce337e018a1f9889fa92b380&dn=MocaccinoOS-XFCE-0.20251101.iso&xl=1986740224&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce) ( sha256: 3cbecb5886022f404f6a8c5197653dec20c51aa1c6e88c4464562a45135fd468 )
+
+[MocaccinoOS-MATE-0.20251101.iso](magnet:?xt=urn:btih:9ccebfb276a91f88b2c7c5eec70b56319dcfce3e&xt=urn:btmh:1220bb82923d7083102ccd74bca2784b437bb5a1ad666859c6db792bda38d4c5af81&dn=MocaccinoOS-MATE-0.20251101.iso&xl=2086912000&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce) ( sha256: 60152821d9b8e9c6df2648f57a24fcd6c5fa54d6395cd3cd818c67033ae1c970 )
+
+#### Direct download
+
+Check out our [download page](https://github.com/mocaccinoOS/mocaccino/releases) for all recent releases.
