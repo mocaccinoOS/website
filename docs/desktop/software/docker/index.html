@@ -150,7 +150,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9d34f01cb0dc65a4e55deed413796285.json"
+  data-offline-search-index-json-src="/offline-search-index.78fdbc5242cc3911cdc2b188a38c5087.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -173,7 +173,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9d34f01cb0dc65a4e55deed413796285.json"
+  data-offline-search-index-json-src="/offline-search-index.78fdbc5242cc3911cdc2b188a38c5087.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -388,7 +388,7 @@
 		
 		
 	</header>
-	<h1 id="setup">Setup</h1>
+	<h2 id="setup">Setup</h2>
 <p>First install <code>container/docker</code> and <code>systemd-service/dockerd</code>, which provides the <code>systemd</code> service:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -426,33 +426,25 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-root@mocaccino:~# docker ps -a
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@mocaccino:~# docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 root@mocaccino:~# docker images
 REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
 quay.io/mocaccino/extra   latest              ce197d5b1a7e        <span style="color:#3677a9">3</span> days ago          21.2MB
-
 </code></pre></td></tr></table>
 </div>
 </div><p>you could also use <a href="/docs/desktop/software//whalebrew">Whalebrew </a> to make aliasing the containers into something more useable.</p>
-<h2 id="docker-compose">Docker Compose</h2>
+<h3 id="docker-compose">Docker Compose</h3>
 <p>Docker Compose is a tool for defining and running multi-container Docker applications. It allows you to use a YAML file (conventionally named docker-compose.yml) to configure all of your application&rsquo;s services.</p>
 <p>Docker Compose is available in the <a href="/docs/desktop/luet/repositories/#community-repository">community repository</a> as part of the apps/docker-tools package. If you have enabled this repository you can install it by using this command:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ sudo luet install apps/docker-tools
-
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo luet install apps/docker-tools
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -481,7 +473,7 @@ $ sudo luet install apps/docker-tools
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified December 1, 2025: <a href="https://github.com/MocaccinoOS/website/commit/68e22e601a03213ba00ec8ba94ddd9258a699259">Fix some typos (68e22e6)</a>
+  Last modified December 1, 2025: <a href="https://github.com/MocaccinoOS/website/commit/dfa20344ff5b6a0a62b83948a3829ac6e82d76c5">Docker: minor corrections (dfa2034)</a>
 </div>
 
 </div>
