@@ -1033,8 +1033,7 @@ After rebooting, you can log into your new MocaccinoOS system using the username
       <description>
         
         
-        &lt;h1 id=&#34;configuring-samba-smb-shares&#34;&gt;Configuring Samba (SMB) Shares&lt;/h1&gt;
-&lt;p&gt;Samba allows MocaccinoOS to act as a file and print server for Windows, macOS, and Linux systems using the common Server Message Block (SMB) protocol. Since the core packages are already installed, we only need to focus on configuration and user setup.&lt;/p&gt;
+        &lt;p&gt;Samba allows MocaccinoOS to act as a file and print server for Windows, macOS, and Linux systems using the common Server Message Block (SMB) protocol. Since the core packages are already installed, we only need to focus on configuration and user setup.&lt;/p&gt;
 &lt;h2 id=&#34;configure-the-global-settings&#34;&gt;Configure the Global Settings&lt;/h2&gt;
 &lt;p&gt;MocaccinoOS provides a default configuration file. You &lt;strong&gt;must&lt;/strong&gt; copy this file before making any changes to create the active configuration:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
