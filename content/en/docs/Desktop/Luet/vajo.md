@@ -41,8 +41,8 @@ In this example we searched for "apps".
 - If a package isn't installed we get the option to install the package.
 - Some packages are protected. This means the user can't use Vajo to remove them. This is done to prevent users breaking their system by accident.
 - Click on details to get more details about the package.
-
-<img width="1002" height="627" alt="Vajo_details" src="https://github.com/user-attachments/assets/44b43c2b-6389-48ff-b6ea-da1173ff576d" />
+  
+<img width="1032" height="559" alt="Vajo_details" src="https://github.com/user-attachments/assets/6fee80a1-af4e-468a-b5e4-543c903bc364" />
 
 
 ### Additional functionality
