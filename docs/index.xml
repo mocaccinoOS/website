@@ -1181,6 +1181,7 @@ Clear Luet cache:    This will clear system cache. Only available if applicable.
 Quit:                Closes the program.&lt;/p&gt;
 &lt;h2 id=&#34;using-vajo-tui&#34;&gt;Using Vajo-tui&lt;/h2&gt;
 &lt;p&gt;The text-based version has excact the same functionality as the GUI version. Great advantage is that you can use this when connected to a MocaccinoOS system using a remote SSH (Secure Shell) session.&lt;/p&gt;
+&lt;img width=&#34;1390&#34; height=&#34;850&#34; alt=&#34;Vajo-tui&#34; src=&#34;https://github.com/user-attachments/assets/f7165359-7451-47e4-857a-b8a92814b015&#34; /&gt;
 
       </description>
     </item>
