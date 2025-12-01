@@ -1,12 +1,12 @@
 ---
 title: "Virt-manager"
 linkTitle: "Virt-manager"
-weight: 22
+weight: 1
 description: >-
      Installing virt-manager in Mocaccino Desktop
 ---
 
-# Setup
+## Setup
 
 Install virt-manager using Luet:
 
