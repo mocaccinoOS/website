@@ -51,11 +51,11 @@ Click on the "File" menu to get additional options.
 
 <img width="222" height="148" alt="Vajo2" src="https://github.com/user-attachments/assets/7b9384ba-9c84-4c3d-954d-06010b089cce" />
 
-Update repositories: This syncs the repositories by running "Luet repo update"
-Full system upgrade: This first syncs the repositories and directly afterwards runs "Luet upgrade"
-Check the system:    This will run "Luet oscheck" and repair itself if missing files are detected.
-Clear Luet cache:    This will clear system cache. Only available if applicable.
-Quit:                Closes the program.
+Update repositories: This syncs the repositories by running "Luet repo update"  
+Full system upgrade: This first syncs the repositories and directly afterwards runs "Luet upgrade"  
+Check the system:    This will run "Luet oscheck" and repair itself if missing files are detected.  
+Clear Luet cache:    This will clear system cache. Only available if applicable.  
+Quit:                Closes the program.  
 
 ## Using Vajo-tui
 
