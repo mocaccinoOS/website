@@ -1,0 +1,18 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MocaccinoOS – Desktop environments</title>
+    <link>https://www.mocaccino.org/docs/desktop/desktop_environments/</link>
+    <description>Recent content in Desktop environments on MocaccinoOS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 04 Feb 2024 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://www.mocaccino.org/docs/desktop/desktop_environments/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>
