@@ -3,7 +3,7 @@ title: "Wine"
 linkTitle: "Wine"
 weight: 4
 description: >-
-     MocaccinoOS and AppImage integration
+     Installing and configuring Wine in MocaccinoOS
 ---
 
 ## What is Wine
@@ -60,4 +60,3 @@ $ wine /path/to/program.exe
 ### References
 - [Wikipedia](https://en.wikipedia.org/wiki/Wine_(software))
 - [wineHG](https://www.winehq.org)
-- [Another list of AppImage apps](https://bintray.com/probono/AppImages)
