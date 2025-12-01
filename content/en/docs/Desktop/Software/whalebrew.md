@@ -6,7 +6,8 @@ description: >-
      Whalebrew on Mocaccino Desktop
 ---
 "[Whalebrew](https://github.com/whalebrew/whalebrew) is homebrew but for docker images" that is to say it creates aliases for docker images so you could run them as regular commands
-# Setup
+
+## Setup
 
 Be sure to have [docker](/docs/desktop/software/docker) installed, and the daemon running.
 
