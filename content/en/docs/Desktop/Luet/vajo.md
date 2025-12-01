@@ -60,3 +60,6 @@ Quit:                Closes the program.
 ## Using Vajo-tui
 
 The text-based version has excact the same functionality as the GUI version. Great advantage is that you can use this when connected to a MocaccinoOS system using a remote SSH (Secure Shell) session.
+
+<img width="1390" height="850" alt="Vajo-tui" src="https://github.com/user-attachments/assets/f7165359-7451-47e4-857a-b8a92814b015" />
+
