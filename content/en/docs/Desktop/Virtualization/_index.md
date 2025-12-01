@@ -1,7 +1,7 @@
 ---
 title: "Virtualization"
 linkTitle: "Virtualization"
-weight: 5
+weight: 7
 description: >-
      Using virtualization in MocaccinoOS
 ---

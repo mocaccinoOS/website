@@ -1,7 +1,7 @@
 ---
 title: "Package Management"
 linkTitle: "Package Management"
-weight: 3
+weight: 2
 date: 2019-12-14
 description: >
   Package Management using Luet package manager
