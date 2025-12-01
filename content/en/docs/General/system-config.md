@@ -1,12 +1,12 @@
 ---
-title: "System Configuration"
-linkTitle: "System Configuration"
+title: "System config files"
+linkTitle: "System config files"
 weight: 4 
 description: >-
-     Dealing with system configuration after upgrades
+     Dealing with system config files after upgrades
 ---
 
-MocaccinoOS Desktop and Micro automatically protects `/etc` from overwriting user-override changes. Although, upgrades might require to overwrite and upgrade specific default configuration. The `mos` cli embeds a `config-update` tool which is compatible with `etc-update` and `dispatch-conf`.
+MocaccinoOS Desktop and Micro automatically protect `/etc` from overwriting user-override changes. Although, upgrades might require to overwrite and upgrade specific default configuration. The `mos` cli embeds a `config-update` tool which is compatible with `etc-update` and `dispatch-conf`.
 
 To show a summary of the config changes that requires merging: 
 
