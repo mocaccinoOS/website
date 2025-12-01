@@ -216,6 +216,69 @@ $ sudo luet install apps/luet_pm_gui
     </item>
     
     <item>
+      <title>Docs: Vajo</title>
+      <link>https://www.mocaccino.org/docs/desktop/luet/vajo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/luet/vajo/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+
+    Vajo is still under development but considered stable.
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;installing-vajo&#34;&gt;Installing Vajo&lt;/h2&gt;
+&lt;p&gt;If you prefer a tool to perform simple package management tasks, you can consider installing apps/vajo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo luet install apps/vajo
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This will install vajo-gui ( a graphical GTK based version ) and vajo-tui ( a text-based ncurses version )&lt;/p&gt;
+&lt;h2 id=&#34;using-vajo-gui&#34;&gt;Using Vajo-gui&lt;/h2&gt;
+&lt;p&gt;After opening the Vajo program the main window opens.&lt;/p&gt;
+&lt;img width=&#34;1132&#34; height=&#34;759&#34; alt=&#34;Vajo1&#34; src=&#34;https://github.com/user-attachments/assets/3b4b42a4-62fd-4a1d-97f3-fb54e022e2c4&#34; /&gt;
+&lt;ol&gt;
+&lt;li&gt;Enter a search string&lt;/li&gt;
+&lt;li&gt;Status bar&lt;/li&gt;
+&lt;li&gt;Last time repositories were synced&lt;/li&gt;
+&lt;li&gt;Check this for a deeper search&lt;/li&gt;
+&lt;li&gt;Click this button to start search&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;search-results&#34;&gt;Search results&lt;/h3&gt;
+&lt;img width=&#34;1132&#34; height=&#34;759&#34; alt=&#34;Vajo_results&#34; src=&#34;https://github.com/user-attachments/assets/b89cab32-39dc-4cd7-98e0-295d848b24b6&#34; /&gt;
+&lt;p&gt;In this example we searched for &amp;ldquo;apps&amp;rdquo;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If a package is installed we get the option to remove the package.&lt;/li&gt;
+&lt;li&gt;If a package isn&amp;rsquo;t installed we get the option to install the package.&lt;/li&gt;
+&lt;li&gt;Some packages are protected. This means the user can&amp;rsquo;t use Vajo to remove them. This is done to prevent users breaking their system by accident.&lt;/li&gt;
+&lt;li&gt;Click on details to get more details about the package.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img width=&#34;1032&#34; height=&#34;559&#34; alt=&#34;Vajo_details&#34; src=&#34;https://github.com/user-attachments/assets/6fee80a1-af4e-468a-b5e4-543c903bc364&#34; /&gt;
+&lt;h3 id=&#34;additional-functionality&#34;&gt;Additional functionality&lt;/h3&gt;
+&lt;p&gt;Click on the &amp;ldquo;File&amp;rdquo; menu to get additional options.&lt;/p&gt;
+&lt;img width=&#34;222&#34; height=&#34;148&#34; alt=&#34;Vajo2&#34; src=&#34;https://github.com/user-attachments/assets/7b9384ba-9c84-4c3d-954d-06010b089cce&#34; /&gt;
+&lt;p&gt;Update repositories: This syncs the repositories by running &amp;ldquo;Luet repo update&amp;rdquo;
+Full system upgrade: This first syncs the repositories and directly afterwards runs &amp;ldquo;Luet upgrade&amp;rdquo;
+Check the system:    This will run &amp;ldquo;Luet oscheck&amp;rdquo; and repair itself if missing files are detected.
+Clear Luet cache:    This will clear system cache. Only available if applicable.
+Quit:                Closes the program.&lt;/p&gt;
+&lt;h2 id=&#34;using-vajo-tui&#34;&gt;Using Vajo-tui&lt;/h2&gt;
+&lt;p&gt;The text-based version has excact the same functionality as the GUI version. Great advantage is that you can use this when connected to a MocaccinoOS system using a remote SSH (Secure Shell) session.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Repositories</title>
       <link>https://www.mocaccino.org/docs/desktop/luet/repositories/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -311,69 +374,6 @@ mocaccino-repository-index
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;The same procedure is valid as well to switch from &lt;code&gt;-stable&lt;/code&gt; to development repositories.&lt;/p&gt;
 &lt;p&gt;The difference is that you have to remove the &lt;code&gt;-stable&lt;/code&gt; ones instead.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Vajo</title>
-      <link>https://www.mocaccino.org/docs/desktop/luet/vajo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mocaccino.org/docs/desktop/luet/vajo/</guid>
-      <description>
-        
-        
-        
-
-&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-
-    Vajo is still under development but considered stable.
-
-&lt;/div&gt;
-
-&lt;h2 id=&#34;installing-vajo&#34;&gt;Installing Vajo&lt;/h2&gt;
-&lt;p&gt;If you prefer a tool to perform simple package management tasks, you can consider installing apps/vajo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo luet install apps/vajo
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;This will install vajo-gui ( a graphical GTK based version ) and vajo-tui ( a text-based ncurses version )&lt;/p&gt;
-&lt;h2 id=&#34;using-vajo-gui&#34;&gt;Using Vajo-gui&lt;/h2&gt;
-&lt;p&gt;After opening the Vajo program the main window opens.&lt;/p&gt;
-&lt;img width=&#34;1132&#34; height=&#34;759&#34; alt=&#34;Vajo1&#34; src=&#34;https://github.com/user-attachments/assets/3b4b42a4-62fd-4a1d-97f3-fb54e022e2c4&#34; /&gt;
-&lt;ol&gt;
-&lt;li&gt;Enter a search string&lt;/li&gt;
-&lt;li&gt;Status bar&lt;/li&gt;
-&lt;li&gt;Last time repositories were synced&lt;/li&gt;
-&lt;li&gt;Check this for a deeper search&lt;/li&gt;
-&lt;li&gt;Click this button to start search&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;search-results&#34;&gt;Search results&lt;/h3&gt;
-&lt;img width=&#34;1132&#34; height=&#34;759&#34; alt=&#34;Vajo_results&#34; src=&#34;https://github.com/user-attachments/assets/b89cab32-39dc-4cd7-98e0-295d848b24b6&#34; /&gt;
-&lt;p&gt;In this example we searched for &amp;ldquo;apps&amp;rdquo;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;If a package is installed we get the option to remove the package.&lt;/li&gt;
-&lt;li&gt;If a package isn&amp;rsquo;t installed we get the option to install the package.&lt;/li&gt;
-&lt;li&gt;Some packages are protected. This means the user can&amp;rsquo;t use Vajo to remove them. This is done to prevent users breaking their system by accident.&lt;/li&gt;
-&lt;li&gt;Click on details to get more details about the package.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img width=&#34;1032&#34; height=&#34;559&#34; alt=&#34;Vajo_details&#34; src=&#34;https://github.com/user-attachments/assets/6fee80a1-af4e-468a-b5e4-543c903bc364&#34; /&gt;
-&lt;h3 id=&#34;additional-functionality&#34;&gt;Additional functionality&lt;/h3&gt;
-&lt;p&gt;Click on the &amp;ldquo;File&amp;rdquo; menu to get additional options.&lt;/p&gt;
-&lt;img width=&#34;222&#34; height=&#34;148&#34; alt=&#34;Vajo2&#34; src=&#34;https://github.com/user-attachments/assets/7b9384ba-9c84-4c3d-954d-06010b089cce&#34; /&gt;
-&lt;p&gt;Update repositories: This syncs the repositories by running &amp;ldquo;Luet repo update&amp;rdquo;
-Full system upgrade: This first syncs the repositories and directly afterwards runs &amp;ldquo;Luet upgrade&amp;rdquo;
-Check the system:    This will run &amp;ldquo;Luet oscheck&amp;rdquo; and repair itself if missing files are detected.
-Clear Luet cache:    This will clear system cache. Only available if applicable.
-Quit:                Closes the program.&lt;/p&gt;
-&lt;h2 id=&#34;using-vajo-tui&#34;&gt;Using Vajo-tui&lt;/h2&gt;
-&lt;p&gt;The text-based version has excact the same functionality as the GUI version. Great advantage is that you can use this when connected to a MocaccinoOS system using a remote SSH (Secure Shell) session.&lt;/p&gt;
 
       </description>
     </item>
