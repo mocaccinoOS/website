@@ -1,14 +1,14 @@
 ---
 title: "Gaming"
 linkTitle: "Gaming"
-weight: 22
+weight: 5
 description: >-
      Essentials you need to know.
 ---
 
 ### Steam
 
-We recommend installing Steam directly from the desktop repository. You can also use the [flatpak](/docs/desktop/software/flatpak) version but that could give problems because it is basically running in a sandbox.
+We recommend installing Steam directly from the desktop repository. You can also use the [flatpak](docs/desktop/software/flatpak) version but that could give problems because it is basically running in a sandbox.
 To install Steam from the desktop repository you can issue the following installation command:
 
 ```bash
@@ -85,7 +85,7 @@ After installation you should restart Steam. Afterwards you will have Proton GE 
 
 ### Heroic Games Launcher
 
-Installing and playing games using the Epic games store or GOG we recommend using Heroic Games Launcher. You can install this using [flatpak](/docs/desktop/flatpak).
+Installing and playing games using the Epic games store or GOG we recommend using Heroic Games Launcher. You can install this using [flatpak](docs/desktop/software/flatpak).
 
 ### Lutris
 
