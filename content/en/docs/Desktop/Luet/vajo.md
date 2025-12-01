@@ -12,10 +12,13 @@ Vajo is still under development but considered stable.
 
 ## Installing Vajo
 
-If you prefer a graphical tool to perform simple tasks you can consider installing apps/vajo
+If you prefer a tool to perform simple package management tasks, you can consider installing apps/vajo
 
 ```bash
-
 $ sudo luet install apps/vajo
-
 ```
+This will install vajo-gui ( a graphical GTK based version ) and vajo-tui ( a text-based ncurses version )
+
+## Using Vajo
+
+After opening the Vajo program there are several things we can do.
