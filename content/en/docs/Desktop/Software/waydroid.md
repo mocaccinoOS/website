@@ -3,7 +3,7 @@ title: "Waydroid"
 linkTitle: "Waydroid"
 weight: 23
 description: >-
-     Installing and configuring waydroid in Mocaccino Desktop
+     Installing and configuring waydroid in MocaccinoOS
 ---
 
 ## Install and configure Waydroid
