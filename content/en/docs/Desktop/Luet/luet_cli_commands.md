@@ -1,7 +1,7 @@
 ---
 title: "Using the command shell"
 linkTitle: "Using the command shell"
-weight: 3
+weight: 1
 date: 2019-12-14
 description: >
   Using Luet commands in the command shell
