@@ -344,7 +344,7 @@ mocaccino-repository-index
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;This will install vajo-gui ( a graphical GTK based version ) and vajo-tui ( a text-based ncurses version )&lt;/p&gt;
-&lt;h2 id=&#34;using-vajo&#34;&gt;Using Vajo&lt;/h2&gt;
+&lt;h2 id=&#34;using-vajo-gui&#34;&gt;Using Vajo-gui&lt;/h2&gt;
 &lt;p&gt;After opening the Vajo program the main window opens.&lt;/p&gt;
 &lt;img width=&#34;1132&#34; height=&#34;759&#34; alt=&#34;Vajo1&#34; src=&#34;https://github.com/user-attachments/assets/3b4b42a4-62fd-4a1d-97f3-fb54e022e2c4&#34; /&gt;
 &lt;ol&gt;
@@ -372,6 +372,8 @@ Full system upgrade: This first syncs the repositories and directly afterwards r
 Check the system:    This will run &amp;ldquo;Luet oscheck&amp;rdquo; and repair itself if missing files are detected.
 Clear Luet cache:    This will clear system cache. Only available if applicable.
 Quit:                Closes the program.&lt;/p&gt;
+&lt;h2 id=&#34;using-vajo-tui&#34;&gt;Using Vajo-tui&lt;/h2&gt;
+&lt;p&gt;The text-based version has excact the same functionality as the GUI version. Great advantage is that you can use this when connected to a MocaccinoOS system using a remote SSH (Secure Shell) session.&lt;/p&gt;
 
       </description>
     </item>
