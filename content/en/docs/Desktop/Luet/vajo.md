@@ -19,7 +19,7 @@ $ sudo luet install apps/vajo
 ```
 This will install vajo-gui ( a graphical GTK based version ) and vajo-tui ( a text-based ncurses version )
 
-## Using Vajo
+## Using Vajo-gui
 
 After opening the Vajo program the main window opens.
 
@@ -56,3 +56,7 @@ Full system upgrade: This first syncs the repositories and directly afterwards r
 Check the system:    This will run "Luet oscheck" and repair itself if missing files are detected.
 Clear Luet cache:    This will clear system cache. Only available if applicable.
 Quit:                Closes the program.
+
+## Using Vajo-tui
+
+The text-based version has excact the same functionality as the GUI version. Great advantage is that you can use this when connected to a MocaccinoOS system using a remote SSH (Secure Shell) session.
