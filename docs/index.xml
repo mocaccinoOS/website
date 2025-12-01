@@ -1646,20 +1646,19 @@ Make sure you have the proper kernel/mocaccino-lts-initramfs or kernel/mocaccino
 &lt;/div&gt;
 
 &lt;h2 id=&#34;installing-vajo&#34;&gt;Installing Vajo&lt;/h2&gt;
-&lt;p&gt;If you prefer a graphical tool to perform simple tasks you can consider installing apps/vajo&lt;/p&gt;
+&lt;p&gt;If you prefer a tool to perform simple package management tasks, you can consider installing apps/vajo&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
-&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;
-$ sudo luet install apps/vajo
-
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo luet install apps/vajo
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This will install vajo-gui ( a graphical GTK based version ) and vajo-tui ( a text-based ncurses version )&lt;/p&gt;
+&lt;h2 id=&#34;using-vajo&#34;&gt;Using Vajo&lt;/h2&gt;
+&lt;p&gt;After opening the Vajo program there are several things we can do.&lt;/p&gt;
+
       </description>
     </item>
     
