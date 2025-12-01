@@ -3,7 +3,7 @@ title: "NFS"
 linkTitle: "NFS configuration"
 weight: 3
 description: >-
-     Configure NFS
+     Configure NFS in MocaccinoOS
 ---
 
 Configuring NFS (Network File System)

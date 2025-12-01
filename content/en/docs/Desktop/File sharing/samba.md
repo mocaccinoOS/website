@@ -3,10 +3,8 @@ title: "Samba"
 linkTitle: "Samba configuration"
 weight: 2
 description: >-
-     Configure Samba
+     Configure Samba in MocaccinoOS
 ---
-
-# Configuring Samba (SMB) Shares
 
 Samba allows MocaccinoOS to act as a file and print server for Windows, macOS, and Linux systems using the common Server Message Block (SMB) protocol. Since the core packages are already installed, we only need to focus on configuration and user setup.
 
