@@ -267,10 +267,10 @@ $ sudo luet install apps/luet_pm_gui
 &lt;h3 id=&#34;additional-functionality&#34;&gt;Additional functionality&lt;/h3&gt;
 &lt;p&gt;Click on the &amp;ldquo;File&amp;rdquo; menu to get additional options.&lt;/p&gt;
 &lt;img width=&#34;222&#34; height=&#34;148&#34; alt=&#34;Vajo2&#34; src=&#34;https://github.com/user-attachments/assets/7b9384ba-9c84-4c3d-954d-06010b089cce&#34; /&gt;
-&lt;p&gt;Update repositories: This syncs the repositories by running &amp;ldquo;Luet repo update&amp;rdquo;
-Full system upgrade: This first syncs the repositories and directly afterwards runs &amp;ldquo;Luet upgrade&amp;rdquo;
-Check the system:    This will run &amp;ldquo;Luet oscheck&amp;rdquo; and repair itself if missing files are detected.
-Clear Luet cache:    This will clear system cache. Only available if applicable.
+&lt;p&gt;Update repositories: This syncs the repositories by running &amp;ldquo;Luet repo update&amp;rdquo;&lt;br&gt;
+Full system upgrade: This first syncs the repositories and directly afterwards runs &amp;ldquo;Luet upgrade&amp;rdquo;&lt;br&gt;
+Check the system:    This will run &amp;ldquo;Luet oscheck&amp;rdquo; and repair itself if missing files are detected.&lt;br&gt;
+Clear Luet cache:    This will clear system cache. Only available if applicable.&lt;br&gt;
 Quit:                Closes the program.&lt;/p&gt;
 &lt;h2 id=&#34;using-vajo-tui&#34;&gt;Using Vajo-tui&lt;/h2&gt;
 &lt;p&gt;The text-based version has excact the same functionality as the GUI version. Great advantage is that you can use this when connected to a MocaccinoOS system using a remote SSH (Secure Shell) session.&lt;/p&gt;
