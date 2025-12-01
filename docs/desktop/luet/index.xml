@@ -345,7 +345,35 @@ mocaccino-repository-index
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;This will install vajo-gui ( a graphical GTK based version ) and vajo-tui ( a text-based ncurses version )&lt;/p&gt;
 &lt;h2 id=&#34;using-vajo&#34;&gt;Using Vajo&lt;/h2&gt;
-&lt;p&gt;After opening the Vajo program there are several things we can do.&lt;/p&gt;
+&lt;p&gt;After opening the Vajo program the main window opens.&lt;/p&gt;
+&lt;img width=&#34;1132&#34; height=&#34;759&#34; alt=&#34;Vajo1&#34; src=&#34;https://github.com/user-attachments/assets/3b4b42a4-62fd-4a1d-97f3-fb54e022e2c4&#34; /&gt;
+&lt;ol&gt;
+&lt;li&gt;Enter a search string&lt;/li&gt;
+&lt;li&gt;Status bar&lt;/li&gt;
+&lt;li&gt;Last time repositories were synced&lt;/li&gt;
+&lt;li&gt;Check this for a deeper search&lt;/li&gt;
+&lt;li&gt;Click this button to start search&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;search-results&#34;&gt;Search results&lt;/h3&gt;
+&lt;img width=&#34;1132&#34; height=&#34;759&#34; alt=&#34;Vajo_results&#34; src=&#34;https://github.com/user-attachments/assets/b89cab32-39dc-4cd7-98e0-295d848b24b6&#34; /&gt;
+&lt;p&gt;In this example we searched for &amp;ldquo;apps&amp;rdquo;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If a package is installed we get the option to remove the package.&lt;/li&gt;
+&lt;li&gt;If a package isn&amp;rsquo;t installed we get the option to install the package.&lt;/li&gt;
+&lt;li&gt;Some packages are protected. This means the user can&amp;rsquo;t use Vajo to remove them. This is done to prevent users breaking their system by accident.&lt;/li&gt;
+&lt;li&gt;Click on details to get more details about the package.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img width=&#34;1002&#34; height=&#34;627&#34; alt=&#34;Vajo_details&#34; src=&#34;https://github.com/user-attachments/assets/44b43c2b-6389-48ff-b6ea-da1173ff576d&#34; /&gt;
+&lt;h3 id=&#34;additional-functionality&#34;&gt;Additional functionality&lt;/h3&gt;
+&lt;img width=&#34;1000&#34; height=&#34;626&#34; alt=&#34;Vajo2&#34; src=&#34;https://github.com/user-attachments/assets/ddf3dea4-8444-4d22-b8c3-d3586e4eef67&#34; /&gt;
+&lt;ol&gt;
+&lt;li&gt;Update repositories: This syncs the repositories by running &amp;ldquo;Luet repo update&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Full system upgrade: This first syncs the repositories and directly afterwards runs &amp;ldquo;Luet upgrade&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Check the system:    This will run &amp;ldquo;Luet oscheck&amp;rdquo; and repair itself if missing files are detected.&lt;/li&gt;
+&lt;li&gt;Clear Luet cache:    This will clear system cache. Only available if applicable.&lt;/li&gt;
+&lt;li&gt;Quit:                Closes the program.&lt;/li&gt;
+&lt;li&gt;Toggle output log:   Use this to show any processes running.&lt;/li&gt;
+&lt;/ol&gt;
 
       </description>
     </item>

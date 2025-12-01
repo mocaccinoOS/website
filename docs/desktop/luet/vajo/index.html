@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/luet/vajo/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2025-12-01T13:31:20+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2025-12-01T13:58:13+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Vajo">
 <meta itemprop="description" content="Using Vajo. A GUI/TUI for Luet.">
-<meta itemprop="dateModified" content="2025-12-01T13:31:20+01:00" />
-<meta itemprop="wordCount" content="66">
+<meta itemprop="dateModified" content="2025-12-01T13:58:13+01:00" />
+<meta itemprop="wordCount" content="225">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vajo"/>
 <meta name="twitter:description" content="Using Vajo. A GUI/TUI for Luet."/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89b9aa44b196ab24b9b26299f8f02fe4.json"
+  data-offline-search-index-json-src="/offline-search-index.72f521f6975abe64c57cd831b678eb86.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89b9aa44b196ab24b9b26299f8f02fe4.json"
+  data-offline-search-index-json-src="/offline-search-index.72f521f6975abe64c57cd831b678eb86.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -339,6 +339,18 @@
             
 
 
+<div class="td-toc"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#installing-vajo">Installing Vajo</a></li>
+    <li><a href="#using-vajo">Using Vajo</a>
+      <ul>
+        <li><a href="#search-results">Search results</a></li>
+        <li><a href="#additional-functionality">Additional functionality</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+
 
 
             
@@ -422,12 +434,40 @@
 </div>
 </div><p>This will install vajo-gui ( a graphical GTK based version ) and vajo-tui ( a text-based ncurses version )</p>
 <h2 id="using-vajo">Using Vajo</h2>
-<p>After opening the Vajo program there are several things we can do.</p>
+<p>After opening the Vajo program the main window opens.</p>
+<img width="1132" height="759" alt="Vajo1" src="https://github.com/user-attachments/assets/3b4b42a4-62fd-4a1d-97f3-fb54e022e2c4" />
+<ol>
+<li>Enter a search string</li>
+<li>Status bar</li>
+<li>Last time repositories were synced</li>
+<li>Check this for a deeper search</li>
+<li>Click this button to start search</li>
+</ol>
+<h3 id="search-results">Search results</h3>
+<img width="1132" height="759" alt="Vajo_results" src="https://github.com/user-attachments/assets/b89cab32-39dc-4cd7-98e0-295d848b24b6" />
+<p>In this example we searched for &ldquo;apps&rdquo;.</p>
+<ul>
+<li>If a package is installed we get the option to remove the package.</li>
+<li>If a package isn&rsquo;t installed we get the option to install the package.</li>
+<li>Some packages are protected. This means the user can&rsquo;t use Vajo to remove them. This is done to prevent users breaking their system by accident.</li>
+<li>Click on details to get more details about the package.</li>
+</ul>
+<img width="1002" height="627" alt="Vajo_details" src="https://github.com/user-attachments/assets/44b43c2b-6389-48ff-b6ea-da1173ff576d" />
+<h3 id="additional-functionality">Additional functionality</h3>
+<img width="1000" height="626" alt="Vajo2" src="https://github.com/user-attachments/assets/ddf3dea4-8444-4d22-b8c3-d3586e4eef67" />
+<ol>
+<li>Update repositories: This syncs the repositories by running &ldquo;Luet repo update&rdquo;</li>
+<li>Full system upgrade: This first syncs the repositories and directly afterwards runs &ldquo;Luet upgrade&rdquo;</li>
+<li>Check the system:    This will run &ldquo;Luet oscheck&rdquo; and repair itself if missing files are detected.</li>
+<li>Clear Luet cache:    This will clear system cache. Only available if applicable.</li>
+<li>Quit:                Closes the program.</li>
+<li>Toggle output log:   Use this to show any processes running.</li>
+</ol>
 
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified December 1, 2025: <a href="https://github.com/MocaccinoOS/website/commit/96950ea90aab9153c75fb71fd783272682883d15">Luet: add Vajo (96950ea)</a>
+  Last modified December 1, 2025: <a href="https://github.com/MocaccinoOS/website/commit/72920a04619dd29739c79197b3def9e02f314800">Update vajo.md (72920a0)</a>
 </div>
 
 </div>
