@@ -2456,7 +2456,7 @@ Since &lt;strong&gt;OpenSSH&lt;/strong&gt; is already installed and configured b
     </item>
     
     <item>
-      <title>Docs: System Configuration</title>
+      <title>Docs: System config files</title>
       <link>https://www.mocaccino.org/docs/general/system-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -2464,7 +2464,7 @@ Since &lt;strong&gt;OpenSSH&lt;/strong&gt; is already installed and configured b
       <description>
         
         
-        &lt;p&gt;MocaccinoOS Desktop and Micro automatically protects &lt;code&gt;/etc&lt;/code&gt; from overwriting user-override changes. Although, upgrades might require to overwrite and upgrade specific default configuration. The &lt;code&gt;mos&lt;/code&gt; cli embeds a &lt;code&gt;config-update&lt;/code&gt; tool which is compatible with &lt;code&gt;etc-update&lt;/code&gt; and &lt;code&gt;dispatch-conf&lt;/code&gt;.&lt;/p&gt;
+        &lt;p&gt;MocaccinoOS Desktop and Micro automatically protect &lt;code&gt;/etc&lt;/code&gt; from overwriting user-override changes. Although, upgrades might require to overwrite and upgrade specific default configuration. The &lt;code&gt;mos&lt;/code&gt; cli embeds a &lt;code&gt;config-update&lt;/code&gt; tool which is compatible with &lt;code&gt;etc-update&lt;/code&gt; and &lt;code&gt;dispatch-conf&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;To show a summary of the config changes that requires merging:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
