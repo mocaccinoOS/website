@@ -1,7 +1,7 @@
 ---
 title: "Repositories"
 linkTitle: "Repositories"
-weight: 2
+weight: 3
 description: >-
      This document describes how to enable or switch between stable and unstable repositories
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Vajo"
 linkTitle: "Vajo"
-weight: 3
+weight: 2
 description: >-
      Using Vajo. A GUI/TUI for Luet.
 ---
