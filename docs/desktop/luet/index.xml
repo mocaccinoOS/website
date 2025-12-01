@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MocaccinoOS – Luet Package manager</title>
+    <title>MocaccinoOS – Package Management</title>
     <link>https://www.mocaccino.org/docs/desktop/luet/</link>
-    <description>Recent content in Luet Package manager on MocaccinoOS</description>
+    <description>Recent content in Package Management on MocaccinoOS</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 14 Dec 2019 00:00:00 +0000</lastBuildDate>
     

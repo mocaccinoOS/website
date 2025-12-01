@@ -27,7 +27,7 @@
     </item>
     
     <item>
-      <title>Docs: Luet Package manager</title>
+      <title>Docs: Package Management</title>
       <link>https://www.mocaccino.org/docs/desktop/luet/</link>
       <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
       
@@ -35,7 +35,8 @@
       <description>
         
         
-        
+        &lt;p&gt;MocaccinoOS uses Luet as a package manager. Learn how to work with Luet in the command shell or by using Vajo the GUI/TUI tool.&lt;/p&gt;
+
       </description>
     </item>
     
