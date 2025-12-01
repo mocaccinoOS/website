@@ -301,20 +301,6 @@ $ sudo systemctl &lt;span style=&#34;color:#24909d&#34;&gt;enable&lt;/span&gt; s
     </item>
     
     <item>
-      <title>Docs: File sharing</title>
-      <link>https://www.mocaccino.org/docs/desktop/file-sharing/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mocaccino.org/docs/desktop/file-sharing/</guid>
-      <description>
-        
-        
-        &lt;p&gt;File sharing is a critical aspect of modern computing, allowing systems to exchange files and access remote resources efficiently. In the Linux ecosystem, there are several powerful and versatile protocols, each suited for different use cases—from sharing files with Windows desktops to high-performance, native Linux networking, and secure remote access.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Development guidelines</title>
       <link>https://www.mocaccino.org/docs/desktop/development/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -487,6 +473,20 @@ $ sudo luet install apps/mangohud
 &lt;li&gt;&lt;a href=&#34;https://wiki.archlinux.org/title/Gamemode#Run_Steam_with_gamemode&#34;&gt;https://wiki.archlinux.org/title/Gamemode#Run_Steam_with_gamemode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1787799592&#34;&gt;https://steamcommunity.com/sharedfiles/filedetails/?id=1787799592&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: File sharing</title>
+      <link>https://www.mocaccino.org/docs/desktop/file-sharing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/file-sharing/</guid>
+      <description>
+        
+        
+        &lt;p&gt;File sharing is a critical aspect of modern computing, allowing systems to exchange files and access remote resources efficiently. In the Linux ecosystem, there are several powerful and versatile protocols, each suited for different use cases—from sharing files with Windows desktops to high-performance, native Linux networking, and secure remote access.&lt;/p&gt;
 
       </description>
     </item>
