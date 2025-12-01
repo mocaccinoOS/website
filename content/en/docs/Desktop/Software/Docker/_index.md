@@ -3,7 +3,7 @@ title: "Docker"
 linkTitle: "Docker"
 weight: 1
 description: >-
-     Running Docker on Mocaccino Desktop
+     Running Docker on MocaccinoOS
 ---
 
 ## Setup
