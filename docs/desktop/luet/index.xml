@@ -365,15 +365,13 @@ mocaccino-repository-index
 &lt;/ul&gt;
 &lt;img width=&#34;1032&#34; height=&#34;559&#34; alt=&#34;Vajo_details&#34; src=&#34;https://github.com/user-attachments/assets/6fee80a1-af4e-468a-b5e4-543c903bc364&#34; /&gt;
 &lt;h3 id=&#34;additional-functionality&#34;&gt;Additional functionality&lt;/h3&gt;
-&lt;img width=&#34;1000&#34; height=&#34;626&#34; alt=&#34;Vajo2&#34; src=&#34;https://github.com/user-attachments/assets/ddf3dea4-8444-4d22-b8c3-d3586e4eef67&#34; /&gt;
-&lt;ol&gt;
-&lt;li&gt;Update repositories: This syncs the repositories by running &amp;ldquo;Luet repo update&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Full system upgrade: This first syncs the repositories and directly afterwards runs &amp;ldquo;Luet upgrade&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Check the system:    This will run &amp;ldquo;Luet oscheck&amp;rdquo; and repair itself if missing files are detected.&lt;/li&gt;
-&lt;li&gt;Clear Luet cache:    This will clear system cache. Only available if applicable.&lt;/li&gt;
-&lt;li&gt;Quit:                Closes the program.&lt;/li&gt;
-&lt;li&gt;Toggle output log:   Use this to show any processes running.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Click on the &amp;ldquo;File&amp;rdquo; menu to get additional options.&lt;/p&gt;
+&lt;img width=&#34;222&#34; height=&#34;148&#34; alt=&#34;Vajo2&#34; src=&#34;https://github.com/user-attachments/assets/7b9384ba-9c84-4c3d-954d-06010b089cce&#34; /&gt;
+&lt;p&gt;Update repositories: This syncs the repositories by running &amp;ldquo;Luet repo update&amp;rdquo;
+Full system upgrade: This first syncs the repositories and directly afterwards runs &amp;ldquo;Luet upgrade&amp;rdquo;
+Check the system:    This will run &amp;ldquo;Luet oscheck&amp;rdquo; and repair itself if missing files are detected.
+Clear Luet cache:    This will clear system cache. Only available if applicable.
+Quit:                Closes the program.&lt;/p&gt;
 
       </description>
     </item>
