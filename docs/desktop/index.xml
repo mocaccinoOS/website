@@ -315,6 +315,21 @@ $ sudo systemctl &lt;span style=&#34;color:#24909d&#34;&gt;enable&lt;/span&gt; s
     </item>
     
     <item>
+      <title>Docs: Development guidelines</title>
+      <link>https://www.mocaccino.org/docs/desktop/development/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/development/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This documentation section tries to summarize and provide general guidelines while applying changes to MocaccinoOS Desktop.&lt;/p&gt;
+&lt;p&gt;A prior knowledge of the basics of how to build packages with &lt;em&gt;luet&lt;/em&gt; is assumed, it&amp;rsquo;s strongly advised to follow the &lt;a href=&#34;https://luet-lab.github.io/docs/docs/getting-started/&#34;&gt;Getting started&lt;/a&gt; docs of Luet before going ahead.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Virtualization</title>
       <link>https://www.mocaccino.org/docs/desktop/virtualization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -692,21 +707,6 @@ $ sudo luet install apps/mangohud
 &lt;li&gt;&lt;a href=&#34;https://wiki.archlinux.org/title/Gamemode#Run_Steam_with_gamemode&#34;&gt;https://wiki.archlinux.org/title/Gamemode#Run_Steam_with_gamemode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://steamcommunity.com/sharedfiles/filedetails/?id=1787799592&#34;&gt;https://steamcommunity.com/sharedfiles/filedetails/?id=1787799592&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Development guidelines</title>
-      <link>https://www.mocaccino.org/docs/desktop/development/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mocaccino.org/docs/desktop/development/</guid>
-      <description>
-        
-        
-        &lt;p&gt;This documentation section tries to summarize and provide general guidelines while applying changes to MocaccinoOS Desktop.&lt;/p&gt;
-&lt;p&gt;A prior knowledge of the basics of how to build packages with &lt;em&gt;luet&lt;/em&gt; is assumed, it&amp;rsquo;s strongly advised to follow the &lt;a href=&#34;https://luet-lab.github.io/docs/docs/getting-started/&#34;&gt;Getting started&lt;/a&gt; docs of Luet before going ahead.&lt;/p&gt;
 
       </description>
     </item>
