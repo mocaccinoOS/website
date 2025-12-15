@@ -14,6 +14,56 @@
     
     
     <item>
+      <title>Blog: MocaccinoOS v25.12</title>
+      <link>https://www.mocaccino.org/blog/2025/12/15/mocaccinoos-v25.12/</link>
+      <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/blog/2025/12/15/mocaccinoos-v25.12/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Hello everybody!&lt;/p&gt;
+&lt;p&gt;We’re excited to announce the release of MocaccinoOS v25.12.&lt;/p&gt;
+&lt;p&gt;We hope you enjoy this release and the improvements it brings.&lt;/p&gt;
+&lt;p&gt;With kind regards,&lt;/p&gt;
+&lt;p&gt;Ettore Di Giacinto&lt;br&gt;
+Joost Ruis&lt;br&gt;
+Mihai Dobrescu&lt;br&gt;
+Jerrod Frost&lt;/p&gt;
+&lt;h3 id=&#34;changes-since-2511&#34;&gt;Changes since 25.11:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Kernel is upgraded to 6.12.60 (LTS)&lt;/li&gt;
+&lt;li&gt;Moved to GCC-15&lt;/li&gt;
+&lt;li&gt;Cosmic Desktop environment 1.0 is available from our repositories&lt;/li&gt;
+&lt;li&gt;Mesa version 25.3.1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;issues-and-improvements&#34;&gt;Issues and improvements:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;More improvements on the GUI and TUI tools, called Vajo, to simplify system management and provide a better experience for both desktop and terminal users. Stay tuned for updates in the next release!&lt;/li&gt;
+&lt;li&gt;Updated documentation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;help-us-improve-mocaccinoos&#34;&gt;Help Us Improve MocaccinoOS:&lt;/h3&gt;
+&lt;p&gt;You can extend your system with additional software using Flatpak, Docker, or the community repository.
+We welcome your feedback — whether it&amp;rsquo;s bug reports or ideas for improvement.&lt;/p&gt;
+&lt;p&gt;Explore our &lt;a href=&#34;https://www.mocaccino.org/docs/&#34;&gt;documentation&lt;/a&gt; to learn more.&lt;/p&gt;
+&lt;h3 id=&#34;support-our-work&#34;&gt;Support our work!&lt;/h3&gt;
+&lt;p&gt;If you’d like to help sustain development, please consider donating:
+&lt;a href=&#34;https://www.mocaccino.org/docs/donate/&#34;&gt;https://www.mocaccino.org/docs/donate/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;acknowledgement&#34;&gt;Acknowledgement:&lt;/h3&gt;
+&lt;p&gt;MocaccinoOS builds on the incredible work of the Gentoo Linux community. We are grateful for their efforts, and all packages are compiled on our own infrastructure powered by Kairos&lt;/p&gt;
+&lt;h3 id=&#34;download&#34;&gt;Download:&lt;/h3&gt;
+&lt;h4 id=&#34;torrents&#34;&gt;Torrents&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;magnet:?xt=urn:btih:05d6d2f84e1aa6cfcdfc99749bf390c962a4f6b4&amp;amp;xt=urn:btmh:12203286874492d0f7e547a58b2c6023247f0777d66c7e8d73579008e1cb9c5a410c&amp;amp;dn=MocaccinoOS-KDE-0.20251215.iso&amp;amp;xl=2143289344&amp;amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&amp;amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&amp;amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&amp;amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&#34;&gt;MocaccinoOS-KDE-0.20251215.iso&lt;/a&gt; ( sha256: f7e7b87907ddf8ec86fa43e0023c8d1e555f7208c1d7b95dfa6022a8258e25e3 )&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;magnet:?xt=urn:btih:de607635ffd31b45b0f119a0c10d2c3aa32cee1d&amp;amp;xt=urn:btmh:122010caef1ec0a8885a2682fcb9dc6c0df804f71d0f67ed0491e710bcee50014abb&amp;amp;dn=MocaccinoOS-GNOME-0.20251215.iso&amp;amp;xl=2126544896&amp;amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&amp;amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&amp;amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&#34;&gt;MocaccinoOS-GNOME-0.20251215.iso&lt;/a&gt; ( sha256: 7f5ccbbe9adf0b51a556eef7a2849fee6ed3a10dfd03a3cc2b775fd3c4a04482 )&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;magnet:?xt=urn:btih:7135ef1b19b54139b68701339fff01d77b6ccbe2&amp;amp;xt=urn:btmh:1220108637738aa5f1fa967f9ae910283e46c2caab2f7c1e4ee8083fe3654224e0f6&amp;amp;dn=MocaccinoOS-XFCE-0.20251215.iso&amp;amp;xl=1999503360&amp;amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&amp;amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&amp;amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&#34;&gt;MocaccinoOS-XFCE-0.20251215.iso&lt;/a&gt; ( sha256: 509c07e2c6ea9bcaa832df422b2e7d72c1a2a4357cbe46197a606b235d9dd708 )&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;magnet:?xt=urn:btih:13152e2767413bdcee8541ec1073f6f8f06a9ad4&amp;amp;xt=urn:btmh:12205b5aab790f4a8ab59222f6194996d3badeabab12f095cecc2b0221b3599da6c8&amp;amp;dn=MocaccinoOS-MATE-0.20251215.iso&amp;amp;xl=2099478528&amp;amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&amp;amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;amp;tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&amp;amp;tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&amp;amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&#34;&gt;MocaccinoOS-MATE-0.20251215.iso&lt;/a&gt; ( sha256: 110c6d52e39b9c81fe5c39812f2fd81624843ea445ae41e78c140183862666a1 )&lt;/p&gt;
+&lt;h4 id=&#34;direct-download&#34;&gt;Direct download&lt;/h4&gt;
+&lt;p&gt;Check out our &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/releases&#34;&gt;download page&lt;/a&gt; for all recent releases.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: MocaccinoOS v25.11</title>
       <link>https://www.mocaccino.org/blog/2025/11/01/mocaccinoos-v25.11/</link>
       <pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate>
