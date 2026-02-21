@@ -85,10 +85,12 @@ $ sudo luet install layers/trinity
 ```
 ## Hyprland
 
+Hyprland is available in the [community repository](/docs/desktop/luet/repositories/#community-repository). 
+
 This command installs the Hyprland desktop environment.
 
 ```bash
-$ sudo luet install layers/hyprland layers/wlroots apps/kitty
+$ sudo luet install layers/hyprland apps/kitty
 ```
 
 ## Fluxbox
