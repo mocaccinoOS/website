@@ -645,6 +645,31 @@ Instead, create &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt;.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Docs: Internationalization</title>
+      <link>https://www.mocaccino.org/docs/desktop/internationalization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/internationalization/</guid>
+      <description>
+        
+        
+        &lt;p&gt;MocaccinoOS provides optional internationalization features through modular layers.
+This includes input methods, language data, and fonts for non-Latin scripts.&lt;/p&gt;
+&lt;p&gt;These components are not installed by default to keep the base system minimal,
+but can be added at any time.&lt;/p&gt;
+&lt;h2 id=&#34;available-features&#34;&gt;Available features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Input methods (Chinese, Japanese, Korean, etc.) → see &lt;a href=&#34;input_method/&#34;&gt;Input Method&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fonts for additional scripts (CJK, emoji, etc.)&lt;/li&gt;
+&lt;li&gt;Locale and language data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All internationalization layers follow the MocaccinoOS design principle of
+including &lt;strong&gt;runtime components only&lt;/strong&gt;, keeping the system lightweight.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Migration</title>
       <link>https://www.mocaccino.org/docs/desktop/migration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
