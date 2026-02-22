@@ -2695,10 +2695,10 @@ You can start it afterwards with &lt;code&gt;runit-start wg2&lt;/code&gt;&lt;/p&
     
     <item>
       <title>Docs: Input Method (Fcitx)</title>
-      <link>https://www.mocaccino.org/docs/desktop/internationalization/input_method/</link>
+      <link>https://www.mocaccino.org/docs/desktop/internationalization/input_method/fcitx/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mocaccino.org/docs/desktop/internationalization/input_method/</guid>
+      <guid>https://www.mocaccino.org/docs/desktop/internationalization/input_method/fcitx/</guid>
       <description>
         
         
@@ -3022,6 +3022,71 @@ Duplicate found &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&l
     </item>
     
     <item>
+      <title>Docs: Input Method (IBus)</title>
+      <link>https://www.mocaccino.org/docs/desktop/internationalization/input_method/ibus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/internationalization/input_method/ibus/</guid>
+      <description>
+        
+        
+        &lt;p&gt;MocaccinoOS provides the IBus input method framework as an alternative to Fcitx.&lt;/p&gt;
+&lt;p&gt;IBus is commonly used for Asian language input and integrates well with
+GTK applications and GNOME-based environments.&lt;/p&gt;
+&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;luet install layers/ibus
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This installs:&lt;/p&gt;
+&lt;p&gt;IBus framework, Hangul input, Pinyin input and Table-based input methods&lt;/p&gt;
+&lt;h2 id=&#34;enable-in-kde-plasma&#34;&gt;Enable in KDE Plasma&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Open &lt;strong&gt;System Settings → Input Devices → Virtual Keyboard&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Select &lt;strong&gt;IBus&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Log out and log back in&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;configure-input-methods&#34;&gt;Configure input methods&lt;/h2&gt;
+&lt;p&gt;Run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;ibus-setup
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Add the desired input method (for example: Hangul, Pinyin, Table).&lt;/p&gt;
+&lt;p&gt;Environment variables (non-Plasma or X11)&lt;/p&gt;
+&lt;p&gt;If needed, ensure these variables are set:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#24909d&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;GTK_IM_MODULE&lt;/span&gt;=ibus
+&lt;span style=&#34;color:#24909d&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;QT_IM_MODULE&lt;/span&gt;=ibus
+&lt;span style=&#34;color:#24909d&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;XMODIFIERS&lt;/span&gt;=@im=ibus
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;notes&#34;&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Works in both X11 and Wayland sessions&lt;/li&gt;
+&lt;li&gt;GTK applications have native integration&lt;/li&gt;
+&lt;li&gt;Qt supported via ibus modules&lt;/li&gt;
+&lt;li&gt;The layer contains runtime components only (consistent with MocaccinoOS design)&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Performance Optimizations</title>
       <link>https://www.mocaccino.org/docs/desktop/performance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -3224,6 +3289,57 @@ Instead, create &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Spell Checking Dictionaries</title>
+      <link>https://www.mocaccino.org/docs/desktop/internationalization/spellcheck/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/internationalization/spellcheck/</guid>
+      <description>
+        
+        
+        &lt;p&gt;MocaccinoOS provides multilingual spell-checking dictionaries via the
+&lt;code&gt;myspell-dicts&lt;/code&gt; package group.&lt;/p&gt;
+&lt;p&gt;These dictionaries are used by applications such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LibreOffice&lt;/li&gt;
+&lt;li&gt;Firefox and Chromium&lt;/li&gt;
+&lt;li&gt;Text editors (Kate, KWrite, etc.)&lt;/li&gt;
+&lt;li&gt;Other GTK and Qt applications with spell checking&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;install-all-dictionaries&#34;&gt;Install all dictionaries&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;luet install app/myspel-dicts
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This installs MySpell dictionaries for many languages, including:&lt;/p&gt;
+&lt;p&gt;Afrikaans, Bulgarian, Catalan, Czech, Danish, German, Greek, English,
+Esperanto, Spanish, Estonian, French, Irish, Galician, Hebrew, Croatian,
+Hungarian, Icelandic, Italian, Kazakh, Khmer, Lithuanian, Latvian,
+Macedonian, Malay, Norwegian (Bokmål/Nynorsk), Dutch, Polish,
+Portuguese (EU/BR), Romanian, Russian, Slovak, Slovenian, Swedish, Ukrainian.&lt;/p&gt;
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;After installation, supported applications automatically detect available
+dictionaries.&lt;/p&gt;
+&lt;p&gt;In most applications you can select the language via:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tools → Spell Checking Language&lt;/strong&gt;&lt;br&gt;
+or&lt;br&gt;
+&lt;strong&gt;Right-click → Language&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;notes&#34;&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Dictionaries are provided system-wide&lt;/li&gt;
+&lt;li&gt;No configuration is required&lt;/li&gt;
+&lt;li&gt;Multiple languages can be installed simultaneously&lt;/li&gt;
+&lt;li&gt;The package group contains runtime data only (no development files)&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>
