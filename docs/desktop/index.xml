@@ -659,7 +659,7 @@ This includes input methods, language data, and fonts for non-Latin scripts.&lt;
 but can be added at any time.&lt;/p&gt;
 &lt;h2 id=&#34;available-features&#34;&gt;Available features&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Input methods (Chinese, Japanese, Korean, etc.) → see &lt;a href=&#34;input_method/&#34;&gt;Input Method&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Input methods (Chinese, Japanese, Korean, etc.) → see &lt;a href=&#34;fcitx/&#34;&gt;Fcitx&lt;/a&gt; or &lt;a href=&#34;ibus/&#34;&gt;IBus&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Fonts for additional scripts (CJK, emoji, etc.)&lt;/li&gt;
 &lt;li&gt;Locale and language data&lt;/li&gt;
 &lt;/ul&gt;
