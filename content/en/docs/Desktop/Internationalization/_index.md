@@ -11,7 +11,7 @@ but can be added at any time.
 
 ## Available features
 
-- Input methods (Chinese, Japanese, Korean, etc.) → see [Input Method](input_method/)
+- Input methods (Chinese, Japanese, Korean, etc.) → see [Fcitx](fcitx/) or [IBus](ibus/)
 - Fonts for additional scripts (CJK, emoji, etc.)
 - Locale and language data
 
