@@ -27,33 +27,6 @@
     </item>
     
     <item>
-      <title>Docs: Package Management</title>
-      <link>https://www.mocaccino.org/docs/desktop/luet/</link>
-      <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mocaccino.org/docs/desktop/luet/</guid>
-      <description>
-        
-        
-        &lt;p&gt;MocaccinoOS uses Luet as a package manager. Learn how to work with Luet in the command shell or by using Vajo the GUI/TUI tool.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Software installation</title>
-      <link>https://www.mocaccino.org/docs/desktop/software/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mocaccino.org/docs/desktop/software/</guid>
-      <description>
-        
-        
-        
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Desktop environments</title>
       <link>https://www.mocaccino.org/docs/desktop/desktop_environments/</link>
       <pubDate>Sun, 04 Feb 2024 00:00:00 +0000</pubDate>
@@ -234,6 +207,33 @@ If you prefer to use GDM as your login manager run this command:&lt;/p&gt;
     </item>
     
     <item>
+      <title>Docs: Package Management</title>
+      <link>https://www.mocaccino.org/docs/desktop/luet/</link>
+      <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/luet/</guid>
+      <description>
+        
+        
+        &lt;p&gt;MocaccinoOS uses Luet as a package manager. Learn how to work with Luet in the command shell or by using Vajo the GUI/TUI tool.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Software installation</title>
+      <link>https://www.mocaccino.org/docs/desktop/software/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/software/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Gaming</title>
       <link>https://www.mocaccino.org/docs/desktop/gaming/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -396,6 +396,207 @@ $ sudo luet install apps/mangohud
     </item>
     
     <item>
+      <title>Docs: Printing</title>
+      <link>https://www.mocaccino.org/docs/desktop/printing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/printing/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;printing&#34;&gt;Printing&lt;/h1&gt;
+&lt;p&gt;Set up and manage printers on MocaccinoOS using CUPS.&lt;/p&gt;
+&lt;p&gt;CUPS (Common Unix Printing System) is pre-installed on MocaccinoOS, so you can start adding printers right away without any additional setup.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;adding-a-printer-via-the-cups-web-interface&#34;&gt;Adding a Printer via the CUPS Web Interface&lt;/h2&gt;
+&lt;p&gt;CUPS includes a built-in web interface for managing printers.&lt;/p&gt;
+&lt;h3 id=&#34;open-the-cups-web-ui&#34;&gt;Open the CUPS Web UI&lt;/h3&gt;
+&lt;p&gt;Open your browser and navigate to:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http://localhost:631
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;add-a-new-printer&#34;&gt;Add a New Printer&lt;/h3&gt;
+&lt;p&gt;Go to &lt;strong&gt;Administration&lt;/strong&gt; → &lt;strong&gt;Add Printer&lt;/strong&gt;. You may be prompted to authenticate — use your system username and password (your account must have administrator privileges).&lt;/p&gt;
+&lt;p&gt;CUPS will scan for available devices. Select your printer from the list, or choose the appropriate connection type manually if it is not detected automatically.&lt;/p&gt;
+&lt;h3 id=&#34;configure-the-printer&#34;&gt;Configure the Printer&lt;/h3&gt;
+&lt;p&gt;Fill in the printer details:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;: a short identifier with no spaces (e.g. &lt;code&gt;HP_OfficeJet&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Description&lt;/strong&gt;: a human-friendly label (e.g. &lt;code&gt;HP OfficeJet Pro 9015&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Location&lt;/strong&gt;: optional, useful in shared environments (e.g. &lt;code&gt;Office Room 2&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Click &lt;strong&gt;Continue&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;select-a-driver&#34;&gt;Select a Driver&lt;/h3&gt;
+&lt;p&gt;CUPS will suggest a driver based on the detected printer model. Accept the suggestion or browse the list to find the closest match. If your manufacturer provides a PPD file, you can upload it at this step for more accurate support.&lt;/p&gt;
+&lt;p&gt;Click &lt;strong&gt;Add Printer&lt;/strong&gt; to confirm.&lt;/p&gt;
+&lt;h3 id=&#34;set-default-options&#34;&gt;Set Default Options&lt;/h3&gt;
+&lt;p&gt;Configure default printing options such as paper size, print quality, and duplex (double-sided) printing, then click &lt;strong&gt;Set Default Options&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Your printer is now ready to use.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;network--shared-printers&#34;&gt;Network &amp;amp; Shared Printers&lt;/h2&gt;
+&lt;p&gt;MocaccinoOS supports printers connected directly to your network or shared by another computer.&lt;/p&gt;
+&lt;h3 id=&#34;network-printer-ipp--airprint&#34;&gt;Network Printer (IPP / AirPrint)&lt;/h3&gt;
+&lt;p&gt;Most modern network printers support &lt;strong&gt;IPP&lt;/strong&gt; (Internet Printing Protocol). To add one:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open the CUPS Web UI at &lt;code&gt;http://localhost:631&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Go to &lt;strong&gt;Administration&lt;/strong&gt; → &lt;strong&gt;Add Printer&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Select &lt;strong&gt;Internet Printing Protocol (IPP)&lt;/strong&gt; as the connection type.&lt;/li&gt;
+&lt;li&gt;Enter the printer URI in the &lt;strong&gt;Connection&lt;/strong&gt; field:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ipp://&amp;lt;printer-ip-address&amp;gt;/ipp/print
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Complete the name, description, and driver selection as described above.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;printer-shared-by-another-linux-machine-cups-to-cups&#34;&gt;Printer Shared by Another Linux Machine (CUPS-to-CUPS)&lt;/h3&gt;
+&lt;p&gt;If a printer is shared by another machine running CUPS on your network, it may be discovered automatically. Check under &lt;strong&gt;Discovered Network Printers&lt;/strong&gt; when adding a new printer.&lt;/p&gt;
+&lt;p&gt;If it does not appear, add it manually using:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ipp://&amp;lt;host-ip&amp;gt;:631/printers/&amp;lt;printer-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;printer-shared-by-a-windows-machine-samba--smb&#34;&gt;Printer Shared by a Windows Machine (Samba / SMB)&lt;/h3&gt;
+&lt;p&gt;To connect to a printer shared by a Windows PC:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Select &lt;strong&gt;Windows Printer via SAMBA&lt;/strong&gt; as the connection type.&lt;/li&gt;
+&lt;li&gt;Enter the SMB URI:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;smb://&amp;lt;host-ip&amp;gt;/&amp;lt;printer-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;If the shared printer requires authentication, enter the Windows username and password when prompted.&lt;/li&gt;
+&lt;li&gt;Complete driver selection and configuration as usual.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;managing-printers&#34;&gt;Managing Printers&lt;/h2&gt;
+&lt;p&gt;You can manage all installed printers from &lt;code&gt;http://localhost:631&lt;/code&gt; under the &lt;strong&gt;Printers&lt;/strong&gt; tab. From there you can pause or resume a printer, set a default printer, view and cancel print jobs, modify printer options, or remove a printer.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;printing-on-kde-plasma&#34;&gt;Printing on KDE Plasma&lt;/h2&gt;
+&lt;p&gt;KDE Plasma integrates with CUPS through the &lt;strong&gt;Print Manager&lt;/strong&gt; tool, available in System Settings.&lt;/p&gt;
+&lt;p&gt;Open &lt;strong&gt;System Settings&lt;/strong&gt; → &lt;strong&gt;Printers&lt;/strong&gt;. You may be prompted to authenticate with your administrator password.&lt;/p&gt;
+&lt;p&gt;Click &lt;strong&gt;Add Printer&lt;/strong&gt;. Plasma will scan for available printers on your system and network. Select your printer from the list and click &lt;strong&gt;Next&lt;/strong&gt;. Plasma will suggest a driver — accept it or browse the list to find a better match. Give the printer a name and description, then click &lt;strong&gt;Finish&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;To manage existing printers, print jobs, or set a default printer, return to &lt;strong&gt;System Settings&lt;/strong&gt; → &lt;strong&gt;Printers&lt;/strong&gt; at any time.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;printing-on-gnome&#34;&gt;Printing on GNOME&lt;/h2&gt;
+&lt;p&gt;GNOME handles printer setup directly from the &lt;strong&gt;Settings&lt;/strong&gt; application.&lt;/p&gt;
+&lt;p&gt;Open the &lt;strong&gt;Activities&lt;/strong&gt; overview and search for &lt;strong&gt;Printers&lt;/strong&gt;, or go to &lt;strong&gt;Settings&lt;/strong&gt; → &lt;strong&gt;Printers&lt;/strong&gt;. Click &lt;strong&gt;Unlock&lt;/strong&gt; in the top-right corner and authenticate with your administrator password.&lt;/p&gt;
+&lt;p&gt;Click the &lt;strong&gt;+&lt;/strong&gt; button to add a printer. GNOME will display a list of detected printers — select yours and click &lt;strong&gt;Add&lt;/strong&gt;. USB printers are often detected and added automatically as soon as they are connected.&lt;/p&gt;
+&lt;p&gt;To configure an existing printer, click the &lt;strong&gt;settings (⚙)&lt;/strong&gt; button next to it. From there you can modify printer options, set it as the default, view active jobs, or remove it.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Network configuration</title>
+      <link>https://www.mocaccino.org/docs/desktop/network/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/network/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;network-configuration&#34;&gt;Network configuration&lt;/h1&gt;
+&lt;p&gt;MocaccinoOS uses &lt;strong&gt;Network Manager&lt;/strong&gt; by default. If you prefer a more lightweight setup, you can switch to &lt;strong&gt;systemd-networkd&lt;/strong&gt; instead.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;network-manager&#34;&gt;Network Manager&lt;/h2&gt;
+&lt;p&gt;Network Manager is installed as part of the desktop layer and manages your connection automatically via DHCP out of the box. No additional configuration is needed for most users.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;systemd-networkd&#34;&gt;systemd-networkd&lt;/h2&gt;
+&lt;p&gt;If you prefer to use systemd-networkd instead of Network Manager, follow the steps below.&lt;/p&gt;
+&lt;h3 id=&#34;1-switch-services&#34;&gt;1. Switch services&lt;/h3&gt;
+&lt;p&gt;Disable Network Manager and enable systemd-networkd:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;systemctl stop NetworkManager
+systemctl disable NetworkManager
+systemctl &lt;span style=&#34;color:#24909d&#34;&gt;enable&lt;/span&gt; --now systemd-networkd
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Then enable systemd-resolved for DNS resolution:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;systemctl &lt;span style=&#34;color:#24909d&#34;&gt;enable&lt;/span&gt; --now systemd-resolved
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;2-find-your-interface-name&#34;&gt;2. Find your interface name&lt;/h3&gt;
+&lt;p&gt;Run &lt;code&gt;networkctl&lt;/code&gt; to list available network interfaces:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;networkctl
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Example output:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;IDX LINK        TYPE     OPERATIONAL SETUP
+  1 lo          loopback carrier     unmanaged
+  2 enp3s0      ether    routable    configured
+  3 enp2s0      ether    off         unmanaged
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note the name of the interface you want to configure (e.g. &lt;code&gt;enp3s0&lt;/code&gt;).&lt;/p&gt;
+&lt;h3 id=&#34;3-configure-your-interface&#34;&gt;3. Configure your interface&lt;/h3&gt;
+&lt;p&gt;Create a configuration file for your interface:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;nano /etc/systemd/network/00-enp3s0.network
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Static IP:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;6
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;[Match]&lt;/span&gt;
+&lt;span style=&#34;color:#bbb&#34;&gt;Name&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;enp3s0&lt;/span&gt;
+
+&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;[Network]&lt;/span&gt;
+&lt;span style=&#34;color:#bbb&#34;&gt;Address&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;192.168.1.50/24&lt;/span&gt;
+&lt;span style=&#34;color:#bbb&#34;&gt;Gateway&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;192.168.1.1&lt;/span&gt;
+&lt;span style=&#34;color:#bbb&#34;&gt;DNS&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;192.168.1.1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;DHCP:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;[Match]&lt;/span&gt;
+&lt;span style=&#34;color:#bbb&#34;&gt;Name&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;enp3s0&lt;/span&gt;
+
+&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;[Network]&lt;/span&gt;
+&lt;span style=&#34;color:#bbb&#34;&gt;DHCP&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;yes&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;After saving the file, restart the service to apply your changes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;systemctl restart systemd-networkd
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: File sharing</title>
       <link>https://www.mocaccino.org/docs/desktop/file-sharing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -410,6 +611,31 @@ $ sudo luet install apps/mangohud
     </item>
     
     <item>
+      <title>Docs: Internationalization</title>
+      <link>https://www.mocaccino.org/docs/desktop/internationalization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/internationalization/</guid>
+      <description>
+        
+        
+        &lt;p&gt;MocaccinoOS provides optional internationalization features through modular layers.
+This includes input methods, language data, and fonts for non-Latin scripts.&lt;/p&gt;
+&lt;p&gt;These components are not installed by default to keep the base system minimal,
+but can be added at any time.&lt;/p&gt;
+&lt;h2 id=&#34;available-features&#34;&gt;Available features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Input methods (Chinese, Japanese, Korean, etc.)&lt;/li&gt;
+&lt;li&gt;Fonts for additional scripts (CJK, emoji, etc.)&lt;/li&gt;
+&lt;li&gt;Locale and language data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All internationalization layers follow the MocaccinoOS design principle of
+including &lt;strong&gt;runtime components only&lt;/strong&gt;, keeping the system lightweight.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Virtualization</title>
       <link>https://www.mocaccino.org/docs/desktop/virtualization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -419,21 +645,6 @@ $ sudo luet install apps/mangohud
         
         
         
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Development guidelines</title>
-      <link>https://www.mocaccino.org/docs/desktop/development/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mocaccino.org/docs/desktop/development/</guid>
-      <description>
-        
-        
-        &lt;p&gt;This documentation section tries to summarize and provide general guidelines while applying changes to MocaccinoOS Desktop.&lt;/p&gt;
-&lt;p&gt;A prior knowledge of the basics of how to build packages with &lt;em&gt;luet&lt;/em&gt; is assumed, it&amp;rsquo;s strongly advised to follow the &lt;a href=&#34;https://luet-lab.github.io/docs/docs/getting-started/&#34;&gt;Getting started&lt;/a&gt; docs of Luet before going ahead.&lt;/p&gt;
-
       </description>
     </item>
     
@@ -645,110 +856,16 @@ Instead, create &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt;.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Docs: Internationalization</title>
-      <link>https://www.mocaccino.org/docs/desktop/internationalization/</link>
+      <title>Docs: Development guidelines</title>
+      <link>https://www.mocaccino.org/docs/desktop/development/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mocaccino.org/docs/desktop/internationalization/</guid>
+      <guid>https://www.mocaccino.org/docs/desktop/development/</guid>
       <description>
         
         
-        &lt;p&gt;MocaccinoOS provides optional internationalization features through modular layers.
-This includes input methods, language data, and fonts for non-Latin scripts.&lt;/p&gt;
-&lt;p&gt;These components are not installed by default to keep the base system minimal,
-but can be added at any time.&lt;/p&gt;
-&lt;h2 id=&#34;available-features&#34;&gt;Available features&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Input methods (Chinese, Japanese, Korean, etc.)&lt;/li&gt;
-&lt;li&gt;Fonts for additional scripts (CJK, emoji, etc.)&lt;/li&gt;
-&lt;li&gt;Locale and language data&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;All internationalization layers follow the MocaccinoOS design principle of
-including &lt;strong&gt;runtime components only&lt;/strong&gt;, keeping the system lightweight.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Printing</title>
-      <link>https://www.mocaccino.org/docs/desktop/printing/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mocaccino.org/docs/desktop/printing/</guid>
-      <description>
-        
-        
-        &lt;h1 id=&#34;printing&#34;&gt;Printing&lt;/h1&gt;
-&lt;p&gt;Set up and manage printers on MocaccinoOS using CUPS.&lt;/p&gt;
-&lt;p&gt;CUPS (Common Unix Printing System) is pre-installed on MocaccinoOS, so you can start adding printers right away without any additional setup.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;adding-a-printer-via-the-cups-web-interface&#34;&gt;Adding a Printer via the CUPS Web Interface&lt;/h2&gt;
-&lt;p&gt;CUPS includes a built-in web interface for managing printers.&lt;/p&gt;
-&lt;h3 id=&#34;open-the-cups-web-ui&#34;&gt;Open the CUPS Web UI&lt;/h3&gt;
-&lt;p&gt;Open your browser and navigate to:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http://localhost:631
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;add-a-new-printer&#34;&gt;Add a New Printer&lt;/h3&gt;
-&lt;p&gt;Go to &lt;strong&gt;Administration&lt;/strong&gt; → &lt;strong&gt;Add Printer&lt;/strong&gt;. You may be prompted to authenticate — use your system username and password (your account must have administrator privileges).&lt;/p&gt;
-&lt;p&gt;CUPS will scan for available devices. Select your printer from the list, or choose the appropriate connection type manually if it is not detected automatically.&lt;/p&gt;
-&lt;h3 id=&#34;configure-the-printer&#34;&gt;Configure the Printer&lt;/h3&gt;
-&lt;p&gt;Fill in the printer details:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;: a short identifier with no spaces (e.g. &lt;code&gt;HP_OfficeJet&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Description&lt;/strong&gt;: a human-friendly label (e.g. &lt;code&gt;HP OfficeJet Pro 9015&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Location&lt;/strong&gt;: optional, useful in shared environments (e.g. &lt;code&gt;Office Room 2&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Click &lt;strong&gt;Continue&lt;/strong&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;select-a-driver&#34;&gt;Select a Driver&lt;/h3&gt;
-&lt;p&gt;CUPS will suggest a driver based on the detected printer model. Accept the suggestion or browse the list to find the closest match. If your manufacturer provides a PPD file, you can upload it at this step for more accurate support.&lt;/p&gt;
-&lt;p&gt;Click &lt;strong&gt;Add Printer&lt;/strong&gt; to confirm.&lt;/p&gt;
-&lt;h3 id=&#34;set-default-options&#34;&gt;Set Default Options&lt;/h3&gt;
-&lt;p&gt;Configure default printing options such as paper size, print quality, and duplex (double-sided) printing, then click &lt;strong&gt;Set Default Options&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Your printer is now ready to use.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;network--shared-printers&#34;&gt;Network &amp;amp; Shared Printers&lt;/h2&gt;
-&lt;p&gt;MocaccinoOS supports printers connected directly to your network or shared by another computer.&lt;/p&gt;
-&lt;h3 id=&#34;network-printer-ipp--airprint&#34;&gt;Network Printer (IPP / AirPrint)&lt;/h3&gt;
-&lt;p&gt;Most modern network printers support &lt;strong&gt;IPP&lt;/strong&gt; (Internet Printing Protocol). To add one:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Open the CUPS Web UI at &lt;code&gt;http://localhost:631&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Go to &lt;strong&gt;Administration&lt;/strong&gt; → &lt;strong&gt;Add Printer&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Select &lt;strong&gt;Internet Printing Protocol (IPP)&lt;/strong&gt; as the connection type.&lt;/li&gt;
-&lt;li&gt;Enter the printer URI in the &lt;strong&gt;Connection&lt;/strong&gt; field:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ipp://&amp;lt;printer-ip-address&amp;gt;/ipp/print
-&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;Complete the name, description, and driver selection as described above.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;printer-shared-by-another-linux-machine-cups-to-cups&#34;&gt;Printer Shared by Another Linux Machine (CUPS-to-CUPS)&lt;/h3&gt;
-&lt;p&gt;If a printer is shared by another machine running CUPS on your network, it may be discovered automatically. Check under &lt;strong&gt;Discovered Network Printers&lt;/strong&gt; when adding a new printer.&lt;/p&gt;
-&lt;p&gt;If it does not appear, add it manually using:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ipp://&amp;lt;host-ip&amp;gt;:631/printers/&amp;lt;printer-name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;printer-shared-by-a-windows-machine-samba--smb&#34;&gt;Printer Shared by a Windows Machine (Samba / SMB)&lt;/h3&gt;
-&lt;p&gt;To connect to a printer shared by a Windows PC:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Select &lt;strong&gt;Windows Printer via SAMBA&lt;/strong&gt; as the connection type.&lt;/li&gt;
-&lt;li&gt;Enter the SMB URI:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;smb://&amp;lt;host-ip&amp;gt;/&amp;lt;printer-name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;If the shared printer requires authentication, enter the Windows username and password when prompted.&lt;/li&gt;
-&lt;li&gt;Complete driver selection and configuration as usual.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;managing-printers&#34;&gt;Managing Printers&lt;/h2&gt;
-&lt;p&gt;You can manage all installed printers from &lt;code&gt;http://localhost:631&lt;/code&gt; under the &lt;strong&gt;Printers&lt;/strong&gt; tab. From there you can pause or resume a printer, set a default printer, view and cancel print jobs, modify printer options, or remove a printer.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;printing-on-kde-plasma&#34;&gt;Printing on KDE Plasma&lt;/h2&gt;
-&lt;p&gt;KDE Plasma integrates with CUPS through the &lt;strong&gt;Print Manager&lt;/strong&gt; tool, available in System Settings.&lt;/p&gt;
-&lt;p&gt;Open &lt;strong&gt;System Settings&lt;/strong&gt; → &lt;strong&gt;Printers&lt;/strong&gt;. You may be prompted to authenticate with your administrator password.&lt;/p&gt;
-&lt;p&gt;Click &lt;strong&gt;Add Printer&lt;/strong&gt;. Plasma will scan for available printers on your system and network. Select your printer from the list and click &lt;strong&gt;Next&lt;/strong&gt;. Plasma will suggest a driver — accept it or browse the list to find a better match. Give the printer a name and description, then click &lt;strong&gt;Finish&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;To manage existing printers, print jobs, or set a default printer, return to &lt;strong&gt;System Settings&lt;/strong&gt; → &lt;strong&gt;Printers&lt;/strong&gt; at any time.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;printing-on-gnome&#34;&gt;Printing on GNOME&lt;/h2&gt;
-&lt;p&gt;GNOME handles printer setup directly from the &lt;strong&gt;Settings&lt;/strong&gt; application.&lt;/p&gt;
-&lt;p&gt;Open the &lt;strong&gt;Activities&lt;/strong&gt; overview and search for &lt;strong&gt;Printers&lt;/strong&gt;, or go to &lt;strong&gt;Settings&lt;/strong&gt; → &lt;strong&gt;Printers&lt;/strong&gt;. Click &lt;strong&gt;Unlock&lt;/strong&gt; in the top-right corner and authenticate with your administrator password.&lt;/p&gt;
-&lt;p&gt;Click the &lt;strong&gt;+&lt;/strong&gt; button to add a printer. GNOME will display a list of detected printers — select yours and click &lt;strong&gt;Add&lt;/strong&gt;. USB printers are often detected and added automatically as soon as they are connected.&lt;/p&gt;
-&lt;p&gt;To configure an existing printer, click the &lt;strong&gt;settings (⚙)&lt;/strong&gt; button next to it. From there you can modify printer options, set it as the default, view active jobs, or remove it.&lt;/p&gt;
+        &lt;p&gt;This documentation section tries to summarize and provide general guidelines while applying changes to MocaccinoOS Desktop.&lt;/p&gt;
+&lt;p&gt;A prior knowledge of the basics of how to build packages with &lt;em&gt;luet&lt;/em&gt; is assumed, it&amp;rsquo;s strongly advised to follow the &lt;a href=&#34;https://luet-lab.github.io/docs/docs/getting-started/&#34;&gt;Getting started&lt;/a&gt; docs of Luet before going ahead.&lt;/p&gt;
 
       </description>
     </item>

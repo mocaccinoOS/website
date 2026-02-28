@@ -109,7 +109,7 @@ $ sudo luet install repository/mocaccino-desktop-stable
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;
 
-    Mocaccino and Luet are under active development and should not be considered &amp;ldquo;production ready&amp;rdquo; at this time. The following steps should only be carried out on test systems. Do make sure you have any important data backed up before starting a migration.
+    The following steps should only be carried out on test systems. Do make sure you have any important data backed up before starting a migration.
 
 &lt;/div&gt;
 
