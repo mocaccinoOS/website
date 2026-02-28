@@ -1,6 +1,6 @@
 ---
 title: Internationalization
-weight: 60
+weight: 90
 ---
 
 MocaccinoOS provides optional internationalization features through modular layers.

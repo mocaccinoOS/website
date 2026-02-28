@@ -1,7 +1,7 @@
 ---
 title: "Printing"
 linkTitle: "Printing"
-weight: 100
+weight: 60
 description: >-
   Set up and manage printers on MocaccinoOS using CUPS.
 ---

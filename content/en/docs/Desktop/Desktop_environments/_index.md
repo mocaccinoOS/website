@@ -1,7 +1,7 @@
 ---
 title: "Desktop environments"
 linkTitle: "Desktop environments"
-weight: 4
+weight: 20
 date: 2024-02-04
 description: >
   MocaccinoOS supports several popular desktop environments.

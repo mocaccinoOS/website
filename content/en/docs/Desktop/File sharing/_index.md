@@ -1,7 +1,7 @@
 ---
 title: "File sharing"
 linkTitle: "File sharing"
-weight: 6
+weight: 80
 description: >-
      Explore the various secure and fast ways to share documents and media using the built-in tools of MocaccinoOS Desktop.
 ---

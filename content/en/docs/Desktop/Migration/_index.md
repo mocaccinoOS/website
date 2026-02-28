@@ -1,7 +1,7 @@
 ---
 title: "Migration"
 linkTitle: "Migration"
-weight: 101
+weight: 130
 description: >-
      Migrating existing systems to MocaccinoOS Desktop
 ---

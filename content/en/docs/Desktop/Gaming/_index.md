@@ -1,7 +1,7 @@
 ---
 title: "Gaming"
 linkTitle: "Gaming"
-weight: 5
+weight: 50
 description: >-
      Essentials you need to know.
 ---

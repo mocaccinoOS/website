@@ -1,7 +1,7 @@
 ---
 title: "Performance Optimizations"
 linkTitle: "Performance"
-weight: 20
+weight: 110
 description: >-
     Optimizing MocaccinoOS for enhanced performance.
 ---

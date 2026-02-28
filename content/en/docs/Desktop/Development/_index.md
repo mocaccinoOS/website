@@ -1,7 +1,7 @@
 ---
 title: "Development guidelines"
 linkTitle: "Development guidelines"
-weight: 8
+weight: 120
 description: >-
      Guidelines on how to develop MocaccinoOS
 ---

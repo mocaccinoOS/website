@@ -7,7 +7,7 @@ description: >-
 ---
 
 {{< alert color="warning" title="Warning" >}}
-Mocaccino and Luet are under active development and should not be considered "production ready" at this time. The following steps should only be carried out on test systems. Do make sure you have any important data backed up before starting a migration.
+The following steps should only be carried out on test systems. Do make sure you have any important data backed up before starting a migration.
 {{< /alert >}}
 
 ### Prepare your system
