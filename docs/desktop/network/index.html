@@ -20,16 +20,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Network configuration | MocaccinoOS</title>
-<meta name="description" content="Configure your network on MocaccinoOS.">
+<meta name="description" content="Configure networking on MocaccinoOS using Network Manager or systemd-networkd.">
 <meta property="og:title" content="Network configuration" />
-<meta property="og:description" content="Configure your network on MocaccinoOS." />
+<meta property="og:description" content="Configure networking on MocaccinoOS using Network Manager or systemd-networkd." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/network/" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Network configuration">
-<meta itemprop="description" content="Configure your network on MocaccinoOS."><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="Configure networking on MocaccinoOS using Network Manager or systemd-networkd."><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Network configuration"/>
-<meta name="twitter:description" content="Configure your network on MocaccinoOS."/>
+<meta name="twitter:description" content="Configure networking on MocaccinoOS using Network Manager or systemd-networkd."/>
 
 
 
@@ -150,7 +150,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.fa068a66c95f95a1d5646728c9d2655d.json"
+  data-offline-search-index-json-src="/offline-search-index.45993342febfd9951ae38862c283c90e.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -173,7 +173,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.fa068a66c95f95a1d5646728c9d2655d.json"
+  data-offline-search-index-json-src="/offline-search-index.45993342febfd9951ae38862c283c90e.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -350,7 +350,15 @@
 
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
-    <li><a href="#network-manager">Network Manager</a></li>
+    <li><a href="#network-manager">Network Manager</a>
+      <ul>
+        <li><a href="#checking-status">Checking status</a></li>
+        <li><a href="#wi-fi">Wi-Fi</a></li>
+        <li><a href="#wired-ethernet">Wired (Ethernet)</a></li>
+        <li><a href="#static-ip">Static IP</a></li>
+        <li><a href="#nmtui">nmtui</a></li>
+      </ul>
+    </li>
     <li><a href="#systemd-networkd">systemd-networkd</a>
       <ul>
         <li><a href="#1-switch-services">1. Switch services</a></li>
@@ -404,7 +412,7 @@
             
 <div class="td-content">
 	<h1>Network configuration</h1>
-  <div class="lead">Configure your network on MocaccinoOS.</div>
+  <div class="lead">Configure networking on MocaccinoOS using Network Manager or systemd-networkd.</div>
 	<header class="article-meta">
 		
 		
@@ -421,10 +429,135 @@
 		
 	</header>
 	<h1 id="network-configuration">Network configuration</h1>
-<p>MocaccinoOS uses <strong>Network Manager</strong> by default. If you prefer a more lightweight setup, you can switch to <strong>systemd-networkd</strong> instead.</p>
+<p>MocaccinoOS uses <strong>Network Manager</strong> to manage network connections by default. It handles wired and wireless connections automatically and can be controlled via the <code>nmcli</code> command line tool, a graphical applet in your desktop environment, or the <code>nmtui</code> text interface.</p>
+<p>For users who prefer a more minimal setup, <strong>systemd-networkd</strong> is also available as an alternative.</p>
 <hr>
 <h2 id="network-manager">Network Manager</h2>
-<p>Network Manager is installed as part of the desktop layer and manages your connection automatically via DHCP out of the box. No additional configuration is needed for most users.</p>
+<h3 id="checking-status">Checking status</h3>
+<p>To verify Network Manager is running and connected:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmcli general status
+</code></pre></td></tr></table>
+</div>
+</div><p>To list all network interfaces and their state:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmcli device status
+</code></pre></td></tr></table>
+</div>
+</div><p>To list all configured connection profiles:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmcli connection show
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h3 id="wi-fi">Wi-Fi</h3>
+<p>Scan for available networks:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmcli device wifi list
+</code></pre></td></tr></table>
+</div>
+</div><p>Connect to a network:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmcli device wifi connect &lt;SSID&gt; password &lt;password&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>Disconnect from Wi-Fi:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmcli device disconnect &lt;interface&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>To enable or disable Wi-Fi:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmcli radio wifi on
+nmcli radio wifi off
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h3 id="wired-ethernet">Wired (Ethernet)</h3>
+<p>Wired connections are configured automatically via DHCP when a cable is plugged in. If you need to set a static IP address on a connection, see the <a href="#static-ip">Static IP</a> section below.</p>
+<p>To bring a wired connection up or down manually:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmcli connection up &lt;connection-name&gt;
+nmcli connection down &lt;connection-name&gt;
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h3 id="static-ip">Static IP</h3>
+<p>To assign a static IP address to an existing connection:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmcli connection modify &lt;connection-name&gt; ipv4.method manual ipv4.addresses 192.168.1.50/24 ipv4.gateway 192.168.1.1 ipv4.dns 192.168.1.1
+</code></pre></td></tr></table>
+</div>
+</div><p>Then bring the connection back up to apply the changes:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmcli connection up &lt;connection-name&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>To revert back to DHCP:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmcli connection modify &lt;connection-name&gt; ipv4.method auto
+nmcli connection up &lt;connection-name&gt;
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h3 id="nmtui">nmtui</h3>
+<p>If you prefer a simple text-based interface over the command line, Network Manager includes <code>nmtui</code>. Launch it with:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmtui
+</code></pre></td></tr></table>
+</div>
+</div><p>This opens a menu-driven interface where you can add, edit, and activate connections without needing to remember <code>nmcli</code> syntax.</p>
 <hr>
 <h2 id="systemd-networkd">systemd-networkd</h2>
 <p>If you prefer to use systemd-networkd instead of Network Manager, follow the steps below.</p>
@@ -462,10 +595,10 @@ systemctl <span style="color:#24909d">enable</span> --now systemd-networkd
 </code></pre></td></tr></table>
 </div>
 </div><p>Example output:</p>
-<pre tabindex="0"><code>IDX LINK        TYPE     OPERATIONAL SETUP
-  1 lo          loopback carrier     unmanaged
-  2 enp3s0      ether    routable    configured
-  3 enp2s0      ether    off         unmanaged
+<pre tabindex="0"><code>IDX LINK    TYPE     OPERATIONAL SETUP
+  1 lo      loopback carrier     unmanaged
+  2 enp3s0  ether    routable    configured
+  3 enp2s0  ether    off         unmanaged
 </code></pre><p>Note the name of the interface you want to configure (e.g. <code>enp3s0</code>).</p>
 <h3 id="3-configure-your-interface">3. Configure your interface</h3>
 <p>Create a configuration file for your interface:</p>
@@ -540,7 +673,7 @@ systemctl <span style="color:#24909d">enable</span> --now systemd-networkd
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified February 28, 2026: <a href="https://github.com/MocaccinoOS/website/commit/ae9436a8b3460544b518dd62e04bcef792cd6633">add Network (ae9436a)</a>
+  Last modified February 28, 2026: <a href="https://github.com/MocaccinoOS/website/commit/aaf9db890d47d3ee98174b4cd15e53d456ca173a">update network page (aaf9db8)</a>
 </div>
 
 </div>
