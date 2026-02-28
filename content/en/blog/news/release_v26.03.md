@@ -1,7 +1,7 @@
 ---
 title: "MocaccinoOS v26.03"
 linkTitle: "MocaccinoOS v26.03"
-date: 2026-03-01
+date: 2026-02-28
 description: >-
      MocaccinoOS v26.03 release
 ---
