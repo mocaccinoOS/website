@@ -4,6 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="generator" content="Hugo 0.89.4" />
+<link rel="alternate" type="application/rss&#43;xml" href="https://www.mocaccino.org/docs/desktop/printing/index.xml">
 <meta name="robots" content="index, follow">
 
 
@@ -18,22 +19,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Samba | MocaccinoOS</title>
-<meta name="description" content="Configure Samba in MocaccinoOS">
-<meta property="og:title" content="Samba" />
-<meta property="og:description" content="Configure Samba in MocaccinoOS" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.mocaccino.org/docs/desktop/file-sharing/samba/" /><meta property="article:section" content="docs" />
+<title>Printing | MocaccinoOS</title>
+<meta name="description" content="Set up and manage printers on MocaccinoOS using CUPS.">
+<meta property="og:title" content="Printing" />
+<meta property="og:description" content="Set up and manage printers on MocaccinoOS using CUPS." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mocaccino.org/docs/desktop/printing/" /><meta property="og:site_name" content="MocaccinoOS" />
 
-<meta property="article:modified_time" content="2026-02-28T12:12:28+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
-
-<meta itemprop="name" content="Samba">
-<meta itemprop="description" content="Configure Samba in MocaccinoOS">
-<meta itemprop="dateModified" content="2026-02-28T12:12:28+01:00" />
-<meta itemprop="wordCount" content="334">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Samba"/>
-<meta name="twitter:description" content="Configure Samba in MocaccinoOS"/>
+<meta itemprop="name" content="Printing">
+<meta itemprop="description" content="Set up and manage printers on MocaccinoOS using CUPS."><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Printing"/>
+<meta name="twitter:description" content="Set up and manage printers on MocaccinoOS using CUPS."/>
 
 
 
@@ -52,7 +48,7 @@
 <link rel="stylesheet" href="/termynal.css">
 <script src="/termynal.js"></script>
   </head>
-  <body class="td-page">
+  <body class="td-section">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -245,11 +241,11 @@
   <a href="/docs/desktop/desktop_environments/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdesktopdesktop_environments"><span class="">Desktop environments</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopgaming-li">
   <a href="/docs/desktop/gaming/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdesktopgaming"><span class="">Gaming</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdesktopfile-sharing-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdesktopfile-sharing-li">
   <a href="/docs/desktop/file-sharing/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdesktopfile-sharing"><span class="">File sharing</span></a>
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsdesktopfile-sharingsamba-li">
-  <a href="/docs/desktop/file-sharing/samba/" title="Samba" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-docsdesktopfile-sharingsamba"><span class="td-sidebar-nav-active-item">Samba configuration</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopfile-sharingsamba-li">
+  <a href="/docs/desktop/file-sharing/samba/" title="Samba" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopfile-sharingsamba"><span class="">Samba configuration</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopfile-sharingnfs-li">
   <a href="/docs/desktop/file-sharing/nfs/" title="NFS" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopfile-sharingnfs"><span class="">NFS configuration</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopfile-sharingsftp-li">
@@ -283,8 +279,8 @@
   <a href="/docs/desktop/internationalization/spellcheck/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopinternationalizationspellcheck"><span class="">Spell Checking Dictionaries</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopprinting-li">
-  <a href="/docs/desktop/printing/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdesktopprinting"><span class="">Printing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsdesktopprinting-li">
+  <a href="/docs/desktop/printing/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id="m-docsdesktopprinting"><span class="td-sidebar-nav-active-item">Printing</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdesktopmigration-li">
   <a href="/docs/desktop/migration/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdesktopmigration"><span class="">Migration</span></a>
   <ul class="ul-3 foldable">
@@ -341,10 +337,10 @@
           <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
             
 <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-<a href="https://github.com/MocaccinoOS/website/tree/master/content/en/docs/Desktop/File%20sharing/samba.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa fa-file-alt fa-fw"></i> View page source</a>
-  <a href="https://github.com/MocaccinoOS/website/edit/master/content/en/docs/Desktop/File%20sharing/samba.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-  <a href="https://github.com/MocaccinoOS/website/new/master/content/en/docs/Desktop/File%20sharing/samba.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-  <a href="https://github.com/MocaccinoOS/website/issues/new?title=Samba" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/MocaccinoOS/website/tree/master/content/en/docs/Desktop/Printing/_index.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+  <a href="https://github.com/MocaccinoOS/website/edit/master/content/en/docs/Desktop/Printing/_index.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+  <a href="https://github.com/MocaccinoOS/website/new/master/content/en/docs/Desktop/Printing/_index.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+  <a href="https://github.com/MocaccinoOS/website/issues/new?title=Printing" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
   <a href="https://github.com/MocaccinoOS/issues/new" class="td-page-meta--project-issue" target="_blank" rel="noopener"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
   
 </div>
@@ -354,14 +350,25 @@
 
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
-    <li><a href="#configure-the-global-settings">Configure the Global Settings</a></li>
-    <li><a href="#define-a-share">Define a Share</a>
+    <li><a href="#adding-a-printer-via-the-cups-web-interface">Adding a Printer via the CUPS Web Interface</a>
       <ul>
-        <li><a href="#key-share-options">Key Share Options:</a></li>
+        <li><a href="#open-the-cups-web-ui">Open the CUPS Web UI</a></li>
+        <li><a href="#add-a-new-printer">Add a New Printer</a></li>
+        <li><a href="#configure-the-printer">Configure the Printer</a></li>
+        <li><a href="#select-a-driver">Select a Driver</a></li>
+        <li><a href="#set-default-options">Set Default Options</a></li>
       </ul>
     </li>
-    <li><a href="#add-samba-users">Add Samba Users</a></li>
-    <li><a href="#start-and-enable-the-samba-service">Start and Enable the Samba Service</a></li>
+    <li><a href="#network--shared-printers">Network &amp; Shared Printers</a>
+      <ul>
+        <li><a href="#network-printer-ipp--airprint">Network Printer (IPP / AirPrint)</a></li>
+        <li><a href="#printer-shared-by-another-linux-machine-cups-to-cups">Printer Shared by Another Linux Machine (CUPS-to-CUPS)</a></li>
+        <li><a href="#printer-shared-by-a-windows-machine-samba--smb">Printer Shared by a Windows Machine (Samba / SMB)</a></li>
+      </ul>
+    </li>
+    <li><a href="#managing-printers">Managing Printers</a></li>
+    <li><a href="#printing-on-kde-plasma">Printing on KDE Plasma</a></li>
+    <li><a href="#printing-on-gnome">Printing on GNOME</a></li>
   </ul>
 </nav></div>
 
@@ -400,18 +407,15 @@
   <li class="breadcrumb-item">
     <a href="https://www.mocaccino.org/docs/desktop/">Mocaccino Desktop</a>
   </li>
-  <li class="breadcrumb-item">
-    <a href="https://www.mocaccino.org/docs/desktop/file-sharing/">File sharing</a>
-  </li>
   <li class="breadcrumb-item active" aria-current="page">
-    <a href="https://www.mocaccino.org/docs/desktop/file-sharing/samba/">Samba configuration</a>
+    <a href="https://www.mocaccino.org/docs/desktop/printing/">Printing</a>
   </li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>Samba</h1>
-	<div class="lead">Configure Samba in MocaccinoOS</div>
+	<h1>Printing</h1>
+  <div class="lead">Set up and manage printers on MocaccinoOS using CUPS.</div>
 	<header class="article-meta">
 		
 		
@@ -426,92 +430,91 @@
 			
 		
 		
-	</header>    
-	<p>Samba allows MocaccinoOS to act as a file and print server for Windows, macOS, and Linux systems using the common Server Message Block (SMB) protocol. Since the core packages are already installed, we only need to focus on configuration and user setup.</p>
-<h2 id="configure-the-global-settings">Configure the Global Settings</h2>
-<p>MocaccinoOS provides a default configuration file. You <strong>must</strong> copy this file before making any changes to create the active configuration:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo cp /etc/samba/smb.conf.default /etc/samba/smb.conf
-</code></pre></td></tr></table>
-</div>
-</div><p>The main Samba configuration file is now located at <code>/etc/samba/smb.conf</code>. Ensure the <code>[global]</code> section contains basic networking information. If you only need simple sharing, the defaults are usually sufficient.</p>
-<h2 id="define-a-share">Define a Share</h2>
-<p>To create a new shared folder, add a section to the end of your <code>/etc/samba/smb.conf</code> file. Replace <code>/mnt/storage/shared_data</code> with the actual path to your data.</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">9
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">[Shared_Docs]
-  <span style="color:#40ffff">comment</span> = Collaborative Document Sharing
-  <span style="color:#40ffff">path</span> = /mnt/storage/shared_data
-  <span style="color:#40ffff">browsable</span> = yes
-  guest <span style="color:#40ffff">ok</span> = no
-  <span style="color:#24909d">read</span> <span style="color:#40ffff">only</span> = no
-  create <span style="color:#40ffff">mask</span> = <span style="color:#3677a9">0775</span>
-  directory <span style="color:#40ffff">mask</span> = <span style="color:#3677a9">0775</span>
-  valid <span style="color:#40ffff">users</span> = @staff, &lt;username&gt;
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="key-share-options">Key Share Options:</h3>
+	</header>
+	<h1 id="printing">Printing</h1>
+<p>Set up and manage printers on MocaccinoOS using CUPS.</p>
+<p>CUPS (Common Unix Printing System) is pre-installed on MocaccinoOS, so you can start adding printers right away without any additional setup.</p>
+<hr>
+<h2 id="adding-a-printer-via-the-cups-web-interface">Adding a Printer via the CUPS Web Interface</h2>
+<p>CUPS includes a built-in web interface for managing printers.</p>
+<h3 id="open-the-cups-web-ui">Open the CUPS Web UI</h3>
+<p>Open your browser and navigate to:</p>
+<pre tabindex="0"><code>http://localhost:631
+</code></pre><h3 id="add-a-new-printer">Add a New Printer</h3>
+<p>Go to <strong>Administration</strong> → <strong>Add Printer</strong>. You may be prompted to authenticate — use your system username and password (your account must have administrator privileges).</p>
+<p>CUPS will scan for available devices. Select your printer from the list, or choose the appropriate connection type manually if it is not detected automatically.</p>
+<h3 id="configure-the-printer">Configure the Printer</h3>
+<p>Fill in the printer details:</p>
 <ul>
-<li>
-<p><strong><code>path</code></strong>: The absolute path to the directory being shared.</p>
-</li>
-<li>
-<p><strong><code>browsable</code></strong>: Allows the share to be visible when browsing the network.</p>
-</li>
-<li>
-<p><strong><code>guest ok</code></strong>: If <code>no</code>, authentication is required. If <code>yes</code>, anyone can access it (usually discouraged).</p>
-</li>
-<li>
-<p><strong><code>valid users</code></strong>: Only specified users or groups (prefixed with <code>@</code>) can connect.</p>
-</li>
+<li><strong>Name</strong>: a short identifier with no spaces (e.g. <code>HP_OfficeJet</code>)</li>
+<li><strong>Description</strong>: a human-friendly label (e.g. <code>HP OfficeJet Pro 9015</code>)</li>
+<li><strong>Location</strong>: optional, useful in shared environments (e.g. <code>Office Room 2</code>)</li>
 </ul>
-<h2 id="add-samba-users">Add Samba Users</h2>
-<p>Samba maintains its own database of passwords, separate from the system&rsquo;s Linux passwords. Any user who needs to access the share must have an existing Linux account and be added to the Samba database.</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># Replace &lt;username&gt; with the account name</span>
-$ sudo smbpasswd -a &lt;username&gt;
-</code></pre></td></tr></table>
-</div>
-</div><p>You will be prompted to set a new Samba password for that user.</p>
-<h2 id="start-and-enable-the-samba-service">Start and Enable the Samba Service</h2>
-<p>After configuration, you need to start the Samba service and enable it to persist across reboots.</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># Enable the service to start automatically on boot</span>
-sudo systemctl <span style="color:#24909d">enable</span> smb
+<p>Click <strong>Continue</strong>.</p>
+<h3 id="select-a-driver">Select a Driver</h3>
+<p>CUPS will suggest a driver based on the detected printer model. Accept the suggestion or browse the list to find the closest match. If your manufacturer provides a PPD file, you can upload it at this step for more accurate support.</p>
+<p>Click <strong>Add Printer</strong> to confirm.</p>
+<h3 id="set-default-options">Set Default Options</h3>
+<p>Configure default printing options such as paper size, print quality, and duplex (double-sided) printing, then click <strong>Set Default Options</strong>.</p>
+<p>Your printer is now ready to use.</p>
+<hr>
+<h2 id="network--shared-printers">Network &amp; Shared Printers</h2>
+<p>MocaccinoOS supports printers connected directly to your network or shared by another computer.</p>
+<h3 id="network-printer-ipp--airprint">Network Printer (IPP / AirPrint)</h3>
+<p>Most modern network printers support <strong>IPP</strong> (Internet Printing Protocol). To add one:</p>
+<ol>
+<li>Open the CUPS Web UI at <code>http://localhost:631</code>.</li>
+<li>Go to <strong>Administration</strong> → <strong>Add Printer</strong>.</li>
+<li>Select <strong>Internet Printing Protocol (IPP)</strong> as the connection type.</li>
+<li>Enter the printer URI in the <strong>Connection</strong> field:</li>
+</ol>
+<pre tabindex="0"><code>ipp://&lt;printer-ip-address&gt;/ipp/print
+</code></pre><ol start="5">
+<li>Complete the name, description, and driver selection as described above.</li>
+</ol>
+<h3 id="printer-shared-by-another-linux-machine-cups-to-cups">Printer Shared by Another Linux Machine (CUPS-to-CUPS)</h3>
+<p>If a printer is shared by another machine running CUPS on your network, it may be discovered automatically. Check under <strong>Discovered Network Printers</strong> when adding a new printer.</p>
+<p>If it does not appear, add it manually using:</p>
+<pre tabindex="0"><code>ipp://&lt;host-ip&gt;:631/printers/&lt;printer-name&gt;
+</code></pre><h3 id="printer-shared-by-a-windows-machine-samba--smb">Printer Shared by a Windows Machine (Samba / SMB)</h3>
+<p>To connect to a printer shared by a Windows PC:</p>
+<ol>
+<li>Select <strong>Windows Printer via SAMBA</strong> as the connection type.</li>
+<li>Enter the SMB URI:</li>
+</ol>
+<pre tabindex="0"><code>smb://&lt;host-ip&gt;/&lt;printer-name&gt;
+</code></pre><ol start="3">
+<li>If the shared printer requires authentication, enter the Windows username and password when prompted.</li>
+<li>Complete driver selection and configuration as usual.</li>
+</ol>
+<hr>
+<h2 id="managing-printers">Managing Printers</h2>
+<p>You can manage all installed printers from <code>http://localhost:631</code> under the <strong>Printers</strong> tab. From there you can pause or resume a printer, set a default printer, view and cancel print jobs, modify printer options, or remove a printer.</p>
+<hr>
+<h2 id="printing-on-kde-plasma">Printing on KDE Plasma</h2>
+<p>KDE Plasma integrates with CUPS through the <strong>Print Manager</strong> tool, available in System Settings.</p>
+<p>Open <strong>System Settings</strong> → <strong>Printers</strong>. You may be prompted to authenticate with your administrator password.</p>
+<p>Click <strong>Add Printer</strong>. Plasma will scan for available printers on your system and network. Select your printer from the list and click <strong>Next</strong>. Plasma will suggest a driver — accept it or browse the list to find a better match. Give the printer a name and description, then click <strong>Finish</strong>.</p>
+<p>To manage existing printers, print jobs, or set a default printer, return to <strong>System Settings</strong> → <strong>Printers</strong> at any time.</p>
+<hr>
+<h2 id="printing-on-gnome">Printing on GNOME</h2>
+<p>GNOME handles printer setup directly from the <strong>Settings</strong> application.</p>
+<p>Open the <strong>Activities</strong> overview and search for <strong>Printers</strong>, or go to <strong>Settings</strong> → <strong>Printers</strong>. Click <strong>Unlock</strong> in the top-right corner and authenticate with your administrator password.</p>
+<p>Click the <strong>+</strong> button to add a printer. GNOME will display a list of detected printers — select yours and click <strong>Add</strong>. USB printers are often detected and added automatically as soon as they are connected.</p>
+<p>To configure an existing printer, click the <strong>settings (⚙)</strong> button next to it. From there you can modify printer options, set it as the default, view active jobs, or remove it.</p>
 
-<span style="color:#999;font-style:italic"># Start the service immediately</span>
-sudo systemctl start smb
-</code></pre></td></tr></table>
+        <div class="section-index">
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </div>
-</div>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
@@ -519,7 +522,6 @@ sudo systemctl start smb
 </div>
 
 </div>
-
 
           </main>
         </div>

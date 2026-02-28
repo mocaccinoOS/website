@@ -670,6 +670,90 @@ including &lt;strong&gt;runtime components only&lt;/strong&gt;, keeping the syst
     </item>
     
     <item>
+      <title>Docs: Printing</title>
+      <link>https://www.mocaccino.org/docs/desktop/printing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/printing/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;printing&#34;&gt;Printing&lt;/h1&gt;
+&lt;p&gt;Set up and manage printers on MocaccinoOS using CUPS.&lt;/p&gt;
+&lt;p&gt;CUPS (Common Unix Printing System) is pre-installed on MocaccinoOS, so you can start adding printers right away without any additional setup.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;adding-a-printer-via-the-cups-web-interface&#34;&gt;Adding a Printer via the CUPS Web Interface&lt;/h2&gt;
+&lt;p&gt;CUPS includes a built-in web interface for managing printers.&lt;/p&gt;
+&lt;h3 id=&#34;open-the-cups-web-ui&#34;&gt;Open the CUPS Web UI&lt;/h3&gt;
+&lt;p&gt;Open your browser and navigate to:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http://localhost:631
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;add-a-new-printer&#34;&gt;Add a New Printer&lt;/h3&gt;
+&lt;p&gt;Go to &lt;strong&gt;Administration&lt;/strong&gt; → &lt;strong&gt;Add Printer&lt;/strong&gt;. You may be prompted to authenticate — use your system username and password (your account must have administrator privileges).&lt;/p&gt;
+&lt;p&gt;CUPS will scan for available devices. Select your printer from the list, or choose the appropriate connection type manually if it is not detected automatically.&lt;/p&gt;
+&lt;h3 id=&#34;configure-the-printer&#34;&gt;Configure the Printer&lt;/h3&gt;
+&lt;p&gt;Fill in the printer details:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;: a short identifier with no spaces (e.g. &lt;code&gt;HP_OfficeJet&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Description&lt;/strong&gt;: a human-friendly label (e.g. &lt;code&gt;HP OfficeJet Pro 9015&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Location&lt;/strong&gt;: optional, useful in shared environments (e.g. &lt;code&gt;Office Room 2&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Click &lt;strong&gt;Continue&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;select-a-driver&#34;&gt;Select a Driver&lt;/h3&gt;
+&lt;p&gt;CUPS will suggest a driver based on the detected printer model. Accept the suggestion or browse the list to find the closest match. If your manufacturer provides a PPD file, you can upload it at this step for more accurate support.&lt;/p&gt;
+&lt;p&gt;Click &lt;strong&gt;Add Printer&lt;/strong&gt; to confirm.&lt;/p&gt;
+&lt;h3 id=&#34;set-default-options&#34;&gt;Set Default Options&lt;/h3&gt;
+&lt;p&gt;Configure default printing options such as paper size, print quality, and duplex (double-sided) printing, then click &lt;strong&gt;Set Default Options&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Your printer is now ready to use.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;network--shared-printers&#34;&gt;Network &amp;amp; Shared Printers&lt;/h2&gt;
+&lt;p&gt;MocaccinoOS supports printers connected directly to your network or shared by another computer.&lt;/p&gt;
+&lt;h3 id=&#34;network-printer-ipp--airprint&#34;&gt;Network Printer (IPP / AirPrint)&lt;/h3&gt;
+&lt;p&gt;Most modern network printers support &lt;strong&gt;IPP&lt;/strong&gt; (Internet Printing Protocol). To add one:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open the CUPS Web UI at &lt;code&gt;http://localhost:631&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Go to &lt;strong&gt;Administration&lt;/strong&gt; → &lt;strong&gt;Add Printer&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Select &lt;strong&gt;Internet Printing Protocol (IPP)&lt;/strong&gt; as the connection type.&lt;/li&gt;
+&lt;li&gt;Enter the printer URI in the &lt;strong&gt;Connection&lt;/strong&gt; field:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ipp://&amp;lt;printer-ip-address&amp;gt;/ipp/print
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Complete the name, description, and driver selection as described above.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;printer-shared-by-another-linux-machine-cups-to-cups&#34;&gt;Printer Shared by Another Linux Machine (CUPS-to-CUPS)&lt;/h3&gt;
+&lt;p&gt;If a printer is shared by another machine running CUPS on your network, it may be discovered automatically. Check under &lt;strong&gt;Discovered Network Printers&lt;/strong&gt; when adding a new printer.&lt;/p&gt;
+&lt;p&gt;If it does not appear, add it manually using:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ipp://&amp;lt;host-ip&amp;gt;:631/printers/&amp;lt;printer-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;printer-shared-by-a-windows-machine-samba--smb&#34;&gt;Printer Shared by a Windows Machine (Samba / SMB)&lt;/h3&gt;
+&lt;p&gt;To connect to a printer shared by a Windows PC:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Select &lt;strong&gt;Windows Printer via SAMBA&lt;/strong&gt; as the connection type.&lt;/li&gt;
+&lt;li&gt;Enter the SMB URI:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;smb://&amp;lt;host-ip&amp;gt;/&amp;lt;printer-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;If the shared printer requires authentication, enter the Windows username and password when prompted.&lt;/li&gt;
+&lt;li&gt;Complete driver selection and configuration as usual.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;managing-printers&#34;&gt;Managing Printers&lt;/h2&gt;
+&lt;p&gt;You can manage all installed printers from &lt;code&gt;http://localhost:631&lt;/code&gt; under the &lt;strong&gt;Printers&lt;/strong&gt; tab. From there you can pause or resume a printer, set a default printer, view and cancel print jobs, modify printer options, or remove a printer.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;printing-on-kde-plasma&#34;&gt;Printing on KDE Plasma&lt;/h2&gt;
+&lt;p&gt;KDE Plasma integrates with CUPS through the &lt;strong&gt;Print Manager&lt;/strong&gt; tool, available in System Settings.&lt;/p&gt;
+&lt;p&gt;Open &lt;strong&gt;System Settings&lt;/strong&gt; → &lt;strong&gt;Printers&lt;/strong&gt;. You may be prompted to authenticate with your administrator password.&lt;/p&gt;
+&lt;p&gt;Click &lt;strong&gt;Add Printer&lt;/strong&gt;. Plasma will scan for available printers on your system and network. Select your printer from the list and click &lt;strong&gt;Next&lt;/strong&gt;. Plasma will suggest a driver — accept it or browse the list to find a better match. Give the printer a name and description, then click &lt;strong&gt;Finish&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;To manage existing printers, print jobs, or set a default printer, return to &lt;strong&gt;System Settings&lt;/strong&gt; → &lt;strong&gt;Printers&lt;/strong&gt; at any time.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;printing-on-gnome&#34;&gt;Printing on GNOME&lt;/h2&gt;
+&lt;p&gt;GNOME handles printer setup directly from the &lt;strong&gt;Settings&lt;/strong&gt; application.&lt;/p&gt;
+&lt;p&gt;Open the &lt;strong&gt;Activities&lt;/strong&gt; overview and search for &lt;strong&gt;Printers&lt;/strong&gt;, or go to &lt;strong&gt;Settings&lt;/strong&gt; → &lt;strong&gt;Printers&lt;/strong&gt;. Click &lt;strong&gt;Unlock&lt;/strong&gt; in the top-right corner and authenticate with your administrator password.&lt;/p&gt;
+&lt;p&gt;Click the &lt;strong&gt;+&lt;/strong&gt; button to add a printer. GNOME will display a list of detected printers — select yours and click &lt;strong&gt;Add&lt;/strong&gt;. USB printers are often detected and added automatically as soon as they are connected.&lt;/p&gt;
+&lt;p&gt;To configure an existing printer, click the &lt;strong&gt;settings (⚙)&lt;/strong&gt; button next to it. From there you can modify printer options, set it as the default, view active jobs, or remove it.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Migration</title>
       <link>https://www.mocaccino.org/docs/desktop/migration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
