@@ -2,7 +2,6 @@
 title: Input Methods (Fcitx & IBus)
 weight: 80
 ---
-# Input Methods (Fcitx & IBus)
 
 MocaccinoOS supports complex text input for Chinese, Japanese, Korean, and other
 languages via the unified `layers/input` layer, which bundles both the **Fcitx** and
