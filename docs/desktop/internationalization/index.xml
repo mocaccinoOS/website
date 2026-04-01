@@ -73,8 +73,7 @@ or&lt;br&gt;
       <description>
         
         
-        &lt;h1 id=&#34;input-methods-fcitx--ibus&#34;&gt;Input Methods (Fcitx &amp;amp; IBus)&lt;/h1&gt;
-&lt;p&gt;MocaccinoOS supports complex text input for Chinese, Japanese, Korean, and other
+        &lt;p&gt;MocaccinoOS supports complex text input for Chinese, Japanese, Korean, and other
 languages via the unified &lt;code&gt;layers/input&lt;/code&gt; layer, which bundles both the &lt;strong&gt;Fcitx&lt;/strong&gt; and
 &lt;strong&gt;IBus&lt;/strong&gt; input method frameworks along with their engines and integration modules.&lt;/p&gt;
 &lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
