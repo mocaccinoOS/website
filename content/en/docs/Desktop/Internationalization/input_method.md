@@ -76,3 +76,6 @@ Log out and back in after making changes.
 - OpenCC enables Simplified/Traditional Chinese conversion (Fcitx)
 - The layer contains runtime components only, consistent with MocaccinoOS design
 - `layers/input` requires `layers/kde-common` as a dependency
+
+## References
+- https://wiki.gentoo.org/wiki/Fcitx
