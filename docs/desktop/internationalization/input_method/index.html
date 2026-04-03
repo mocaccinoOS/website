@@ -23,27 +23,24 @@
 languages via the unified layers/input layer, which bundles both the …">
 <meta property="og:title" content="Input Methods (Fcitx &amp; IBus)" />
 <meta property="og:description" content="MocaccinoOS supports complex text input for Chinese, Japanese, Korean, and other languages via the unified layers/input layer, which bundles both the Fcitx and IBus input method frameworks along with their engines and integration modules.
-Install 1  luet install layers/input   This single layer installs both frameworks and all their engines:
-Fcitx:
- Fcitx5 core and configuration tool Chinese input engines and tables (fcitx-chinese-addons, fcitx-table-extra) Anthy engine for Japanese input GTK and Qt integration modules libime and OpenCC support (Simplified/Traditional Chinese conversion)  IBus:" />
+Install 1  luet install layers/input   This single layer installs both frameworks and all their engines: Fcitx:
+ Fcitx5 core and configuration tool Chinese input engines and tables (fcitx-chinese-addons, fcitx-table-extra) Anthy engine for Japanese input GTK and Qt integration modules libime and OpenCC support (Simplified/Traditional Chinese conversion) IBus: IBus framework Hangul input (ibus-hangul, libhangul) Pinyin input (ibus-pinyin) Anthy engine for Japanese input (ibus-anthy) Table-based input methods (ibus-table, ibus-table-chinese, ibus-table-others) Both frameworks share the same underlying libraries (xcb-imdkit, opencc, marisa, libime)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/internationalization/input_method/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2026-04-01T20:42:26+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2026-04-03T12:15:45+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Input Methods (Fcitx &amp; IBus)">
 <meta itemprop="description" content="MocaccinoOS supports complex text input for Chinese, Japanese, Korean, and other languages via the unified layers/input layer, which bundles both the Fcitx and IBus input method frameworks along with their engines and integration modules.
-Install 1  luet install layers/input   This single layer installs both frameworks and all their engines:
-Fcitx:
- Fcitx5 core and configuration tool Chinese input engines and tables (fcitx-chinese-addons, fcitx-table-extra) Anthy engine for Japanese input GTK and Qt integration modules libime and OpenCC support (Simplified/Traditional Chinese conversion)  IBus:">
-<meta itemprop="dateModified" content="2026-04-01T20:42:26+02:00" />
-<meta itemprop="wordCount" content="316">
+Install 1  luet install layers/input   This single layer installs both frameworks and all their engines: Fcitx:
+ Fcitx5 core and configuration tool Chinese input engines and tables (fcitx-chinese-addons, fcitx-table-extra) Anthy engine for Japanese input GTK and Qt integration modules libime and OpenCC support (Simplified/Traditional Chinese conversion) IBus: IBus framework Hangul input (ibus-hangul, libhangul) Pinyin input (ibus-pinyin) Anthy engine for Japanese input (ibus-anthy) Table-based input methods (ibus-table, ibus-table-chinese, ibus-table-others) Both frameworks share the same underlying libraries (xcb-imdkit, opencc, marisa, libime).">
+<meta itemprop="dateModified" content="2026-04-03T12:15:45+02:00" />
+<meta itemprop="wordCount" content="348">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Input Methods (Fcitx &amp; IBus)"/>
 <meta name="twitter:description" content="MocaccinoOS supports complex text input for Chinese, Japanese, Korean, and other languages via the unified layers/input layer, which bundles both the Fcitx and IBus input method frameworks along with their engines and integration modules.
-Install 1  luet install layers/input   This single layer installs both frameworks and all their engines:
-Fcitx:
- Fcitx5 core and configuration tool Chinese input engines and tables (fcitx-chinese-addons, fcitx-table-extra) Anthy engine for Japanese input GTK and Qt integration modules libime and OpenCC support (Simplified/Traditional Chinese conversion)  IBus:"/>
+Install 1  luet install layers/input   This single layer installs both frameworks and all their engines: Fcitx:
+ Fcitx5 core and configuration tool Chinese input engines and tables (fcitx-chinese-addons, fcitx-table-extra) Anthy engine for Japanese input GTK and Qt integration modules libime and OpenCC support (Simplified/Traditional Chinese conversion) IBus: IBus framework Hangul input (ibus-hangul, libhangul) Pinyin input (ibus-pinyin) Anthy engine for Japanese input (ibus-anthy) Table-based input methods (ibus-table, ibus-table-chinese, ibus-table-others) Both frameworks share the same underlying libraries (xcb-imdkit, opencc, marisa, libime)."/>
 
 
 
@@ -164,7 +161,7 @@ Fcitx:
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.55ef50876061fa4c787a360ab0f9f152.json"
+  data-offline-search-index-json-src="/offline-search-index.0778acdf9d5546b4ab423c250eca82c3.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -187,7 +184,7 @@ Fcitx:
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.55ef50876061fa4c787a360ab0f9f152.json"
+  data-offline-search-index-json-src="/offline-search-index.0778acdf9d5546b4ab423c250eca82c3.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -364,17 +361,21 @@ Fcitx:
   <ul>
     <li><a href="#install">Install</a></li>
     <li><a href="#choosing-a-framework">Choosing a Framework</a></li>
+    <li><a href="#at-a-time-in-your-desktop-settings">Both Fcitx and IBus are installed by the same layer. You only need to activate one
+at a time in your desktop settings.</a></li>
     <li><a href="#enabling-in-kde-plasma">Enabling in KDE Plasma</a></li>
     <li><a href="#configuring-fcitx">Configuring Fcitx</a>
       <ul>
         <li><a href="#environment-variables-non-plasma-or-x11">Environment variables (non-Plasma or X11)</a></li>
       </ul>
     </li>
+    <li><a href="#log-out-and-back-in-after-making-changes">Log out and back in after making changes.</a></li>
     <li><a href="#configuring-ibus">Configuring IBus</a>
       <ul>
         <li><a href="#environment-variables-non-plasma-or-x11-1">Environment variables (non-Plasma or X11)</a></li>
       </ul>
     </li>
+    <li><a href="#log-out-and-back-in-after-making-changes-1">Log out and back in after making changes.</a></li>
     <li><a href="#notes">Notes</a></li>
   </ul>
 </nav></div>
@@ -453,28 +454,24 @@ languages via the unified <code>layers/input</code> layer, which bundles both th
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">luet install layers/input
 </code></pre></td></tr></table>
 </div>
-</div><p>This single layer installs both frameworks and all their engines:</p>
-<p><strong>Fcitx:</strong></p>
+</div><p>This single layer installs both frameworks and all their engines:
+<strong>Fcitx:</strong></p>
 <ul>
 <li>Fcitx5 core and configuration tool</li>
 <li>Chinese input engines and tables (<code>fcitx-chinese-addons</code>, <code>fcitx-table-extra</code>)</li>
 <li>Anthy engine for Japanese input</li>
 <li>GTK and Qt integration modules</li>
-<li>libime and OpenCC support (Simplified/Traditional Chinese conversion)</li>
-</ul>
-<p><strong>IBus:</strong></p>
-<ul>
+<li>libime and OpenCC support (Simplified/Traditional Chinese conversion)
+<strong>IBus:</strong></li>
 <li>IBus framework</li>
 <li>Hangul input (<code>ibus-hangul</code>, <code>libhangul</code>)</li>
 <li>Pinyin input (<code>ibus-pinyin</code>)</li>
 <li>Anthy engine for Japanese input (<code>ibus-anthy</code>)</li>
-<li>Table-based input methods (<code>ibus-table</code>, <code>ibus-table-chinese</code>, <code>ibus-table-others</code>)</li>
+<li>Table-based input methods (<code>ibus-table</code>, <code>ibus-table-chinese</code>, <code>ibus-table-others</code>)
+Both frameworks share the same underlying libraries (<code>xcb-imdkit</code>, <code>opencc</code>, <code>marisa</code>, <code>libime</code>).</li>
 </ul>
-<p>Both frameworks share the same underlying libraries (<code>xcb-imdkit</code>, <code>opencc</code>, <code>marisa</code>, <code>libime</code>).</p>
 <hr>
 <h2 id="choosing-a-framework">Choosing a Framework</h2>
-<p>Both Fcitx and IBus are installed by the same layer. You only need to activate one
-at a time in your desktop settings.</p>
 <table>
 <thead>
 <tr>
@@ -511,14 +508,15 @@ at a time in your desktop settings.</p>
 </tr>
 </tbody>
 </table>
-<hr>
+<h2 id="at-a-time-in-your-desktop-settings">Both Fcitx and IBus are installed by the same layer. You only need to activate one
+at a time in your desktop settings.</h2>
 <h2 id="enabling-in-kde-plasma">Enabling in KDE Plasma</h2>
 <ol>
 <li>Open <strong>System Settings → Input Devices → Virtual Keyboard</strong></li>
 <li>Select <strong>Fcitx</strong> or <strong>IBus</strong></li>
-<li>Log out and log back in</li>
+<li>Log out and log back in
+On Plasma Wayland sessions, Fcitx is usually detected automatically after installation.</li>
 </ol>
-<p>On Plasma Wayland sessions, Fcitx is usually detected automatically after installation.</p>
 <hr>
 <h2 id="configuring-fcitx">Configuring Fcitx</h2>
 <p>Run the Fcitx configuration tool to add input methods (e.g. Pinyin, Anthy, Hangul, Table):</p>
@@ -531,7 +529,8 @@ at a time in your desktop settings.</p>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="environment-variables-non-plasma-or-x11">Environment variables (non-Plasma or X11)</h3>
-<p>If needed, ensure these variables are set in your session:</p>
+<p>When using a login manager such as LightDM to start the X server, add the following
+to <code>~/.xprofile</code>:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
@@ -539,12 +538,12 @@ at a time in your desktop settings.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#24909d">export</span> <span style="color:#40ffff">GTK_IM_MODULE</span>=fcitx
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#24909d">export</span> <span style="color:#40ffff">XMODIFIERS</span>=<span style="color:#ed9d13">&#34;@im=fcitx&#34;</span>
+<span style="color:#24909d">export</span> <span style="color:#40ffff">GTK_IM_MODULE</span>=fcitx
 <span style="color:#24909d">export</span> <span style="color:#40ffff">QT_IM_MODULE</span>=fcitx
-<span style="color:#24909d">export</span> <span style="color:#40ffff">XMODIFIERS</span>=@im=fcitx
 </code></pre></td></tr></table>
 </div>
-</div><hr>
+</div><h2 id="log-out-and-back-in-after-making-changes">Log out and back in after making changes.</h2>
 <h2 id="configuring-ibus">Configuring IBus</h2>
 <p>Run the IBus setup tool to add input methods (e.g. Hangul, Pinyin, Table):</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -556,7 +555,8 @@ at a time in your desktop settings.</p>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="environment-variables-non-plasma-or-x11-1">Environment variables (non-Plasma or X11)</h3>
-<p>If needed, ensure these variables are set in your session:</p>
+<p>When using a login manager such as LightDM to start the X server, add the following
+to <code>~/.xprofile</code>:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
@@ -564,12 +564,12 @@ at a time in your desktop settings.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#24909d">export</span> <span style="color:#40ffff">GTK_IM_MODULE</span>=ibus
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#24909d">export</span> <span style="color:#40ffff">XMODIFIERS</span>=<span style="color:#ed9d13">&#34;@im=ibus&#34;</span>
+<span style="color:#24909d">export</span> <span style="color:#40ffff">GTK_IM_MODULE</span>=ibus
 <span style="color:#24909d">export</span> <span style="color:#40ffff">QT_IM_MODULE</span>=ibus
-<span style="color:#24909d">export</span> <span style="color:#40ffff">XMODIFIERS</span>=@im=ibus
 </code></pre></td></tr></table>
 </div>
-</div><hr>
+</div><h2 id="log-out-and-back-in-after-making-changes-1">Log out and back in after making changes.</h2>
 <h2 id="notes">Notes</h2>
 <ul>
 <li>Both frameworks work in X11 and Wayland sessions</li>
@@ -581,7 +581,7 @@ at a time in your desktop settings.</p>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified April 1, 2026: <a href="https://github.com/MocaccinoOS/website/commit/4388f0aa5d5df9d0a0360c151b92bb9c034f3000">Update input documentation (4388f0a)</a>
+  Last modified April 3, 2026: <a href="https://github.com/MocaccinoOS/website/commit/1bbcfb08a682851510406a6421a5cb558b5e19d2">Update input_method (1bbcfb0)</a>
 </div>
 
 </div>

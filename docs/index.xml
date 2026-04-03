@@ -3010,28 +3010,24 @@ languages via the unified &lt;code&gt;layers/input&lt;/code&gt; layer, which bun
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;luet install layers/input
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;This single layer installs both frameworks and all their engines:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Fcitx:&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;This single layer installs both frameworks and all their engines:
+&lt;strong&gt;Fcitx:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Fcitx5 core and configuration tool&lt;/li&gt;
 &lt;li&gt;Chinese input engines and tables (&lt;code&gt;fcitx-chinese-addons&lt;/code&gt;, &lt;code&gt;fcitx-table-extra&lt;/code&gt;)&lt;/li&gt;
 &lt;li&gt;Anthy engine for Japanese input&lt;/li&gt;
 &lt;li&gt;GTK and Qt integration modules&lt;/li&gt;
-&lt;li&gt;libime and OpenCC support (Simplified/Traditional Chinese conversion)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;IBus:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
+&lt;li&gt;libime and OpenCC support (Simplified/Traditional Chinese conversion)
+&lt;strong&gt;IBus:&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;IBus framework&lt;/li&gt;
 &lt;li&gt;Hangul input (&lt;code&gt;ibus-hangul&lt;/code&gt;, &lt;code&gt;libhangul&lt;/code&gt;)&lt;/li&gt;
 &lt;li&gt;Pinyin input (&lt;code&gt;ibus-pinyin&lt;/code&gt;)&lt;/li&gt;
 &lt;li&gt;Anthy engine for Japanese input (&lt;code&gt;ibus-anthy&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Table-based input methods (&lt;code&gt;ibus-table&lt;/code&gt;, &lt;code&gt;ibus-table-chinese&lt;/code&gt;, &lt;code&gt;ibus-table-others&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Table-based input methods (&lt;code&gt;ibus-table&lt;/code&gt;, &lt;code&gt;ibus-table-chinese&lt;/code&gt;, &lt;code&gt;ibus-table-others&lt;/code&gt;)
+Both frameworks share the same underlying libraries (&lt;code&gt;xcb-imdkit&lt;/code&gt;, &lt;code&gt;opencc&lt;/code&gt;, &lt;code&gt;marisa&lt;/code&gt;, &lt;code&gt;libime&lt;/code&gt;).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Both frameworks share the same underlying libraries (&lt;code&gt;xcb-imdkit&lt;/code&gt;, &lt;code&gt;opencc&lt;/code&gt;, &lt;code&gt;marisa&lt;/code&gt;, &lt;code&gt;libime&lt;/code&gt;).&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;choosing-a-framework&#34;&gt;Choosing a Framework&lt;/h2&gt;
-&lt;p&gt;Both Fcitx and IBus are installed by the same layer. You only need to activate one
-at a time in your desktop settings.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -3068,14 +3064,15 @@ at a time in your desktop settings.&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;hr&gt;
+&lt;h2 id=&#34;at-a-time-in-your-desktop-settings&#34;&gt;Both Fcitx and IBus are installed by the same layer. You only need to activate one
+at a time in your desktop settings.&lt;/h2&gt;
 &lt;h2 id=&#34;enabling-in-kde-plasma&#34;&gt;Enabling in KDE Plasma&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Open &lt;strong&gt;System Settings → Input Devices → Virtual Keyboard&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Select &lt;strong&gt;Fcitx&lt;/strong&gt; or &lt;strong&gt;IBus&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Log out and log back in&lt;/li&gt;
+&lt;li&gt;Log out and log back in
+On Plasma Wayland sessions, Fcitx is usually detected automatically after installation.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;On Plasma Wayland sessions, Fcitx is usually detected automatically after installation.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;configuring-fcitx&#34;&gt;Configuring Fcitx&lt;/h2&gt;
 &lt;p&gt;Run the Fcitx configuration tool to add input methods (e.g. Pinyin, Anthy, Hangul, Table):&lt;/p&gt;
@@ -3088,7 +3085,8 @@ at a time in your desktop settings.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;environment-variables-non-plasma-or-x11&#34;&gt;Environment variables (non-Plasma or X11)&lt;/h3&gt;
-&lt;p&gt;If needed, ensure these variables are set in your session:&lt;/p&gt;
+&lt;p&gt;When using a login manager such as LightDM to start the X server, add the following
+to &lt;code&gt;~/.xprofile&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
@@ -3096,12 +3094,12 @@ at a time in your desktop settings.&lt;/p&gt;
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#24909d&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;GTK_IM_MODULE&lt;/span&gt;=fcitx
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#24909d&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;XMODIFIERS&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;@im=fcitx&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#24909d&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;GTK_IM_MODULE&lt;/span&gt;=fcitx
 &lt;span style=&#34;color:#24909d&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;QT_IM_MODULE&lt;/span&gt;=fcitx
-&lt;span style=&#34;color:#24909d&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;XMODIFIERS&lt;/span&gt;=@im=fcitx
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;hr&gt;
+&lt;/div&gt;&lt;h2 id=&#34;log-out-and-back-in-after-making-changes&#34;&gt;Log out and back in after making changes.&lt;/h2&gt;
 &lt;h2 id=&#34;configuring-ibus&#34;&gt;Configuring IBus&lt;/h2&gt;
 &lt;p&gt;Run the IBus setup tool to add input methods (e.g. Hangul, Pinyin, Table):&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
@@ -3113,7 +3111,8 @@ at a time in your desktop settings.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;environment-variables-non-plasma-or-x11-1&#34;&gt;Environment variables (non-Plasma or X11)&lt;/h3&gt;
-&lt;p&gt;If needed, ensure these variables are set in your session:&lt;/p&gt;
+&lt;p&gt;When using a login manager such as LightDM to start the X server, add the following
+to &lt;code&gt;~/.xprofile&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
@@ -3121,12 +3120,12 @@ at a time in your desktop settings.&lt;/p&gt;
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#24909d&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;GTK_IM_MODULE&lt;/span&gt;=ibus
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#24909d&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;XMODIFIERS&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;@im=ibus&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#24909d&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;GTK_IM_MODULE&lt;/span&gt;=ibus
 &lt;span style=&#34;color:#24909d&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;QT_IM_MODULE&lt;/span&gt;=ibus
-&lt;span style=&#34;color:#24909d&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;XMODIFIERS&lt;/span&gt;=@im=ibus
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;hr&gt;
+&lt;/div&gt;&lt;h2 id=&#34;log-out-and-back-in-after-making-changes-1&#34;&gt;Log out and back in after making changes.&lt;/h2&gt;
 &lt;h2 id=&#34;notes&#34;&gt;Notes&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Both frameworks work in X11 and Wayland sessions&lt;/li&gt;
