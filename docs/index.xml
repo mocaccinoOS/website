@@ -3133,6 +3133,10 @@ to &lt;code&gt;~/.xprofile&lt;/code&gt;:&lt;/p&gt;
 &lt;li&gt;The layer contains runtime components only, consistent with MocaccinoOS design&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;layers/input&lt;/code&gt; requires &lt;code&gt;layers/kde-common&lt;/code&gt; as a dependency&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://wiki.gentoo.org/wiki/Fcitx&#34;&gt;https://wiki.gentoo.org/wiki/Fcitx&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>
