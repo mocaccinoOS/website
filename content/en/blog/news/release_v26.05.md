@@ -8,7 +8,7 @@ description: >-
 
 Hello everybody!
 
-We’re excited to announce the release of MocaccinoOS v26.04.
+We’re excited to announce the release of MocaccinoOS v26.05.
 
 We hope you enjoy this release and the improvements it brings.
 
