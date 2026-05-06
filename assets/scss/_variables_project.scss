@@ -32,3 +32,21 @@ section a {
 .td-box--dark a {
     color: #D3FFF3 !important;
 }
+
+.td-cover-block {
+  position: relative;
+}
+
+.td-cover-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); // adjust strength here
+  z-index: 1;
+}
+
+.td-cover-block > .container,
+.td-cover-block > .container-fluid {
+  position: relative;
+  z-index: 2;
+}
