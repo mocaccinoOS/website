@@ -55,3 +55,8 @@ section a {
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(6px);
 }
+
+.td-navbar:not(.navbar-bg-onscroll) .nav-link,
+.td-navbar:not(.navbar-bg-onscroll) .navbar-brand {
+  color: #fff !important;
+}
