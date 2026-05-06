@@ -50,3 +50,8 @@ section a {
   position: relative;
   z-index: 2;
 }
+
+.td-navbar:not(.navbar-bg-onscroll) {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+}
