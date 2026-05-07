@@ -195,7 +195,7 @@ enable = false
 [[params.links.user]]
         name = "SourceForge"
         url = "https://sourceforge.net/projects/mocaccino/"
-        icon = "fab fa-sourceforge"
+        icon = "fas fa-cloud-download-alt"
         desc = "Follow our project on SourceForge!"
 	
 #[[params.links.developer]]
