@@ -58,7 +58,7 @@ section a {
 }
 
 /* Homepage-only white navbar text */
-.home .td-navbar:not(.navbar-bg-onscroll) .nav-link,
+.home .td-navbar:not(.navbar-bg-onscroll) .navbar-nav .nav-link,
 .home .td-navbar:not(.navbar-bg-onscroll) .navbar-brand {
   color: #fff !important;
 }
