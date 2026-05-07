@@ -41,7 +41,7 @@ section a {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); // adjust strength here
+  background: rgba(0, 0, 0, 0.45);
   z-index: 1;
 }
 
@@ -51,12 +51,14 @@ section a {
   z-index: 2;
 }
 
-.td-navbar:not(.navbar-bg-onscroll) {
+/* Homepage-only transparent navbar */
+.home .td-navbar:not(.navbar-bg-onscroll) {
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(6px);
 }
 
-.td-navbar:not(.navbar-bg-onscroll) .nav-link,
-.td-navbar:not(.navbar-bg-onscroll) .navbar-brand {
+/* Homepage-only white navbar text */
+.home .td-navbar:not(.navbar-bg-onscroll) .nav-link,
+.home .td-navbar:not(.navbar-bg-onscroll) .navbar-brand {
   color: #fff !important;
 }
