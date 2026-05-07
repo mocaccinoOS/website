@@ -191,6 +191,12 @@ enable = false
         url = "https://matrix.to/#/#mocaccinoOS:matrix.org"
         icon = "fas fa-comments"
         desc = "Chat with other project users"
+
+[[params.links.user]]
+        name = "SourceForge"
+        url = "https://sourceforge.net/projects/mocaccino/"
+        icon = "fab fa-sourceforge"
+        desc = "Follow our project on SourceForge!"
 	
 #[[params.links.developer]]
 #	name = "Slack"
