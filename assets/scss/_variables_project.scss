@@ -22,7 +22,7 @@ $google_font_family: "Alata:300,300i,400,400i,700,700i";
 }
 
 section a {
-  //  color: #D3FFF3 !important;
+  // color: #D3FFF3 !important;
 }
 
 .td-sidebar {
@@ -33,6 +33,9 @@ section a {
     color: #D3FFF3 !important;
 }
 
+
+/* Hero overlay */
+
 .td-cover-block {
   position: relative;
 }
@@ -41,7 +44,7 @@ section a {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); // adjust strength here
+  background: rgba(0, 0, 0, 0.45);
   z-index: 1;
 }
 
@@ -51,6 +54,9 @@ section a {
   z-index: 2;
 }
 
+
+/* Homepage navbar (transparent/dark) */
+
 .td-navbar:not(.navbar-bg-onscroll) {
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(6px);
@@ -58,5 +64,18 @@ section a {
 
 .td-navbar:not(.navbar-bg-onscroll) .nav-link,
 .td-navbar:not(.navbar-bg-onscroll) .navbar-brand {
+  color: #fff !important;
+}
+
+
+/* Non-home pages: always use blue navbar */
+
+body:not(.td-home) .td-navbar:not(.navbar-bg-onscroll) {
+  background: $primary !important;
+  backdrop-filter: none;
+}
+
+body:not(.td-home) .td-navbar:not(.navbar-bg-onscroll) .nav-link,
+body:not(.td-home) .td-navbar:not(.navbar-bg-onscroll) .navbar-brand {
   color: #fff !important;
 }
