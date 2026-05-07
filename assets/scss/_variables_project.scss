@@ -41,7 +41,7 @@ section a {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.45); // adjust strength here
   z-index: 1;
 }
 
@@ -51,14 +51,12 @@ section a {
   z-index: 2;
 }
 
-/* Homepage-only transparent navbar */
-.home .td-navbar:not(.navbar-bg-onscroll) {
+.td-navbar:not(.navbar-bg-onscroll) {
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(6px);
 }
 
-/* Homepage-only white navbar text */
-.home .td-navbar:not(.navbar-bg-onscroll) .nav-link,
-.home .td-navbar:not(.navbar-bg-onscroll) .navbar-brand {
+.td-navbar:not(.navbar-bg-onscroll) .nav-link,
+.td-navbar:not(.navbar-bg-onscroll) .navbar-brand {
   color: #fff !important;
 }
