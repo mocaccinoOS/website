@@ -161,6 +161,12 @@ enable = false
 	url = "https://discord.gg/4nrpXkS"
 	icon = "fab fa-discord"
     	desc = "Join us on Discord!"
+
+[[params.links.user]]
+    name = "IRC chat"
+    url = "https://web.libera.chat/#mocaccinoos"
+    icon = "fas fa-hashtag"
+    desc = "Chat with other project users on IRC"
      
 [[params.links.user]]
         name = "Signal"
@@ -186,11 +192,11 @@ enable = false
         icon = "fas fa-comments"
         desc = "Chat with other project users"
 	
-[[params.links.developer]]
-	name = "Slack"
-	url = "https://join.slack.com/t/luet/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY"
-	icon = "fab fa-slack"
-        desc = "Join the development channel on slack"
+#[[params.links.developer]]
+#	name = "Slack"
+#	url = "https://join.slack.com/t/luet/shared_invite/enQtOTQxMjcyNDQ0MDUxLWQ5ODVlNTI1MTYzNDRkYzkyYmM1YWE5YjM0NTliNDEzNmQwMTkxNDRhNDIzM2Y5NDBlOTZjZTYxYWQyNDE4YzY"
+#	icon = "fab fa-slack"
+#        desc = "Join the development channel on slack"
 
 [[menu.main]]
     name = "Packages"
