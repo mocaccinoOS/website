@@ -6,7 +6,7 @@ description: >-
      Get MocaccinoOS Desktop iso images!
 ---
 
-Official releases can be downloaded from [Github repository](https://github.com/mocaccinoOS/mocaccino/releases)
+Official releases can be downloaded from [SourceForge](https://sourceforge.net/projects/mocaccino/files/)
 
 ## Login
 
