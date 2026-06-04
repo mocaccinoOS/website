@@ -123,11 +123,11 @@ $ sudo luet search --table <regex>
 The Luet gui tool is still under development but considered stable.
 {{< /alert >}}
 
-If you prefer a graphical tool to perform simple tasks you can consider installing apps/luet_pm_gui
+If you prefer a graphical tool to perform simple tasks you can consider installing [Vajo](/docs/desktop/luet/vajo/)
 
 ```bash
 
-$ sudo luet install apps/luet_pm_gui
+$ sudo luet install apps/vajo
 
 ```
 
