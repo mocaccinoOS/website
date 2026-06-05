@@ -8,12 +8,12 @@ description: >-
 
 ## Switching kernels
 
-MocaccinoOS images are shipping the latest LTS available Kernel version by default. It is possible to switch kernels by running `mos kernel-switcher`. 
+MocaccinoOS images are shipping the latest available LTS kernel version by default. It is possible to switch kernels by running `mos kernel-switcher`. 
 
 ### List available kernels
 
 ```bash
-$ mos kernel-switcher list
+$ sudo mos kernel-switcher list
 ```
 
 ### Switch to the stable kernel
@@ -21,7 +21,7 @@ $ mos kernel-switcher list
 To switch to the stable kernel, that gets updated more frequently:
 
 ```bash
-$ mos kernel-switcher switch kernel/mocaccino-full
+$ sudo mos kernel-switcher switch kernel/mocaccino-full
 ```
 
 ### Switch to the LTS kernel
@@ -29,7 +29,7 @@ $ mos kernel-switcher switch kernel/mocaccino-full
 To switch to the LTS kernel run:
 
 ```bash
-$ mos kernel-switcher switch kernel/mocaccino-lts-full
+$ sudo mos kernel-switcher switch kernel/mocaccino-lts-full
 ```
 
 {{< alert color="warning" title="Warning" >}}
