@@ -3,7 +3,7 @@ title: "Switching kernels"
 linkTitle: "Switching kernels"
 weight: 3
 description: >-
-     Switching between LTS and mainline kernels
+     Switching between the LTS and stable kernel
 ---
 
 ## Switching kernels
@@ -16,17 +16,17 @@ MocaccinoOS images are shipping the latest LTS available Kernel version by defau
 $ mos kernel-switcher list
 ```
 
-### Switch to main kernels
+### Switch to the stable kernel
 
-To switch to main kernels, that gets updated more frequently:
+To switch to the stable kernel, that gets updated more frequently:
 
 ```bash
 $ mos kernel-switcher switch kernel/mocaccino-full
 ```
 
-### Switch to LTS kernels
+### Switch to the LTS kernel
 
-To switch to LTS kernels, run:
+To switch to the LTS kernel run:
 
 ```bash
 $ mos kernel-switcher switch kernel/mocaccino-lts-full
