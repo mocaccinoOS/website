@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/general/kernels/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2026-06-05T22:23:21+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2026-06-05T22:29:26+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Switching kernels">
 <meta itemprop="description" content="Switching between the LTS and stable kernel">
-<meta itemprop="dateModified" content="2026-06-05T22:23:21+02:00" />
-<meta itemprop="wordCount" content="108">
+<meta itemprop="dateModified" content="2026-06-05T22:29:26+02:00" />
+<meta itemprop="wordCount" content="111">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Switching kernels"/>
 <meta name="twitter:description" content="Switching between the LTS and stable kernel"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.60a4fa4d6cd796e6c97fb116c3c061f5.json"
+  data-offline-search-index-json-src="/offline-search-index.85b60a7587ca4ac134d66d98c3b7b228.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.60a4fa4d6cd796e6c97fb116c3c061f5.json"
+  data-offline-search-index-json-src="/offline-search-index.85b60a7587ca4ac134d66d98c3b7b228.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -422,14 +422,14 @@
 		
 	</header>    
 	<h2 id="switching-kernels">Switching kernels</h2>
-<p>MocaccinoOS images are shipping the latest LTS available Kernel version by default. It is possible to switch kernels by running <code>mos kernel-switcher</code>.</p>
+<p>MocaccinoOS images are shipping the latest available LTS kernel version by default. It is possible to switch kernels by running <code>mos kernel-switcher</code>.</p>
 <h3 id="list-available-kernels">List available kernels</h3>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mos kernel-switcher list
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo mos kernel-switcher list
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="switch-to-the-stable-kernel">Switch to the stable kernel</h3>
@@ -439,7 +439,7 @@
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mos kernel-switcher switch kernel/mocaccino-full
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo mos kernel-switcher switch kernel/mocaccino-full
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="switch-to-the-lts-kernel">Switch to the LTS kernel</h3>
@@ -449,7 +449,7 @@
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mos kernel-switcher switch kernel/mocaccino-lts-full
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo mos kernel-switcher switch kernel/mocaccino-lts-full
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -466,7 +466,7 @@ Make sure you have the proper kernel/mocaccino-lts-initramfs or kernel/mocaccino
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified June 5, 2026: <a href="https://github.com/MocaccinoOS/website/commit/9288e34e5308f1aa505c1ddd030fadbedc827baf">Update kernel docs (9288e34)</a>
+  Last modified June 5, 2026: <a href="https://github.com/MocaccinoOS/website/commit/a346286ba257d09f9cfbc7f3c0076f655a649135">Update kernel docs (a346286)</a>
 </div>
 
 </div>
