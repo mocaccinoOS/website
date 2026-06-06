@@ -18,22 +18,22 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Secure File Transfer (SFTP) | MocaccinoOS</title>
-<meta name="description" content="Learn how to transfer files securely with SFTP using the built-in OpenSSH service in MocaccinoOS">
-<meta property="og:title" content="Secure File Transfer (SFTP)" />
-<meta property="og:description" content="Learn how to transfer files securely with SFTP using the built-in OpenSSH service in MocaccinoOS" />
+<title>Preparing Boot Media | MocaccinoOS</title>
+<meta name="description" content="How to write MocaccinoOS to a USB stick, DVD, or boot it directly from your hard drive">
+<meta property="og:title" content="Preparing Boot Media" />
+<meta property="og:description" content="How to write MocaccinoOS to a USB stick, DVD, or boot it directly from your hard drive" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.mocaccino.org/docs/desktop/file-sharing/sftp/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://www.mocaccino.org/docs/desktop/install/prepare/" /><meta property="article:section" content="docs" />
 
 <meta property="article:modified_time" content="2026-06-06T19:45:13+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
-<meta itemprop="name" content="Secure File Transfer (SFTP)">
-<meta itemprop="description" content="Learn how to transfer files securely with SFTP using the built-in OpenSSH service in MocaccinoOS">
+<meta itemprop="name" content="Preparing Boot Media">
+<meta itemprop="description" content="How to write MocaccinoOS to a USB stick, DVD, or boot it directly from your hard drive">
 <meta itemprop="dateModified" content="2026-06-06T19:45:13+02:00" />
-<meta itemprop="wordCount" content="366">
+<meta itemprop="wordCount" content="554">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Secure File Transfer (SFTP)"/>
-<meta name="twitter:description" content="Learn how to transfer files securely with SFTP using the built-in OpenSSH service in MocaccinoOS"/>
+<meta name="twitter:title" content="Preparing Boot Media"/>
+<meta name="twitter:description" content="How to write MocaccinoOS to a USB stick, DVD, or boot it directly from your hard drive"/>
 
 
 
@@ -195,13 +195,13 @@
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdesktop-li">
   <a href="/docs/desktop/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdesktop"><span class="">Mocaccino Desktop</span></a>
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdesktopinstall-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdesktopinstall-li">
   <a href="/docs/desktop/install/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdesktopinstall"><span class="">Download and install</span></a>
   <ul class="ul-3 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopinstalldownload-li">
   <a href="/docs/desktop/install/download/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopinstalldownload"><span class="">Download</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopinstallprepare-li">
-  <a href="/docs/desktop/install/prepare/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopinstallprepare"><span class="">Preparing Boot Media</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsdesktopinstallprepare-li">
+  <a href="/docs/desktop/install/prepare/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-docsdesktopinstallprepare"><span class="td-sidebar-nav-active-item">Preparing Boot Media</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopinstallinstallation-li">
   <a href="/docs/desktop/install/installation/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopinstallinstallation"><span class="">Installation</span></a>
 </li>
@@ -251,15 +251,15 @@
   <a href="/docs/desktop/printing/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdesktopprinting"><span class="">Printing</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopnetwork-li">
   <a href="/docs/desktop/network/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdesktopnetwork"><span class="">Network configuration</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsdesktopfile-sharing-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdesktopfile-sharing-li">
   <a href="/docs/desktop/file-sharing/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdesktopfile-sharing"><span class="">File sharing</span></a>
   <ul class="ul-3 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopfile-sharingsamba-li">
   <a href="/docs/desktop/file-sharing/samba/" title="Samba" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopfile-sharingsamba"><span class="">Samba configuration</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopfile-sharingnfs-li">
   <a href="/docs/desktop/file-sharing/nfs/" title="NFS" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopfile-sharingnfs"><span class="">NFS configuration</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsdesktopfile-sharingsftp-li">
-  <a href="/docs/desktop/file-sharing/sftp/" title="Secure File Transfer (SFTP)" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-docsdesktopfile-sharingsftp"><span class="td-sidebar-nav-active-item">SFTP configuration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsdesktopfile-sharingsftp-li">
+  <a href="/docs/desktop/file-sharing/sftp/" title="Secure File Transfer (SFTP)" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdesktopfile-sharingsftp"><span class="">SFTP configuration</span></a>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsdesktopinternationalization-li">
@@ -341,10 +341,10 @@
           <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
             
 <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-<a href="https://github.com/MocaccinoOS/website/tree/master/content/en/docs/Desktop/File%20sharing/sftp.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa fa-file-alt fa-fw"></i> View page source</a>
-  <a href="https://github.com/MocaccinoOS/website/edit/master/content/en/docs/Desktop/File%20sharing/sftp.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-  <a href="https://github.com/MocaccinoOS/website/new/master/content/en/docs/Desktop/File%20sharing/sftp.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-  <a href="https://github.com/MocaccinoOS/website/issues/new?title=Secure%20File%20Transfer%20%28SFTP%29" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/MocaccinoOS/website/tree/master/content/en/docs/Desktop/Install/prepare.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+  <a href="https://github.com/MocaccinoOS/website/edit/master/content/en/docs/Desktop/Install/prepare.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+  <a href="https://github.com/MocaccinoOS/website/new/master/content/en/docs/Desktop/Install/prepare.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+  <a href="https://github.com/MocaccinoOS/website/issues/new?title=Preparing%20Boot%20Media" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
   <a href="https://github.com/MocaccinoOS/issues/new" class="td-page-meta--project-issue" target="_blank" rel="noopener"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
   
 </div>
@@ -354,22 +354,22 @@
 
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
-    <li><a href="#connecting-to-your-mocaccinoos-system">Connecting to Your MocaccinoOS System</a>
+    <li><a href="#option-1-usb-stick-recommended">Option 1: USB Stick (Recommended)</a>
       <ul>
-        <li><a href="#command-line">Command Line</a></li>
-        <li><a href="#graphical-file-manager">Graphical File Manager</a></li>
-        <li><a href="#windows-client">Windows Client</a></li>
+        <li><a href="#using-etcher-beginner-friendly">Using Etcher (Beginner-friendly)</a></li>
+        <li><a href="#using-ventoy-multiboot">Using Ventoy (Multiboot)</a></li>
+        <li><a href="#using-dd-linux-command-line">Using <code>dd</code> (Linux command line)</a></li>
       </ul>
     </li>
-    <li><a href="#checking-service-status">Checking Service Status</a></li>
-    <li><a href="#security-recommendations">Security Recommendations</a>
+    <li><a href="#option-2-dvd">Option 2: DVD</a></li>
+    <li><a href="#option-3-boot-from-iso-file-on-hard-drive-advanced">Option 3: Boot from ISO file on Hard Drive (Advanced)</a>
       <ul>
-        <li><a href="#use-ssh-keys-instead-of-passwords">Use SSH Keys Instead of Passwords</a></li>
-        <li><a href="#restrict-sftp-only-accounts-optional">Restrict SFTP-Only Accounts (Optional)</a></li>
+        <li><a href="#preparing-the-iso-file">Preparing the ISO file</a></li>
+        <li><a href="#adding-a-grub-menu-entry">Adding a GRUB menu entry</a></li>
+        <li><a href="#manual-boot-from-the-grub-console">Manual boot from the GRUB console</a></li>
+        <li><a href="#requirements">Requirements</a></li>
       </ul>
     </li>
-    <li><a href="#useful-tips">Useful Tips</a></li>
-    <li><a href="#summary">Summary</a></li>
   </ul>
 </nav></div>
 
@@ -409,17 +409,17 @@
     <a href="https://www.mocaccino.org/docs/desktop/">Mocaccino Desktop</a>
   </li>
   <li class="breadcrumb-item">
-    <a href="https://www.mocaccino.org/docs/desktop/file-sharing/">File sharing</a>
+    <a href="https://www.mocaccino.org/docs/desktop/install/">Download and install</a>
   </li>
   <li class="breadcrumb-item active" aria-current="page">
-    <a href="https://www.mocaccino.org/docs/desktop/file-sharing/sftp/">SFTP configuration</a>
+    <a href="https://www.mocaccino.org/docs/desktop/install/prepare/">Preparing Boot Media</a>
   </li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>Secure File Transfer (SFTP)</h1>
-	<div class="lead">Learn how to transfer files securely with SFTP using the built-in OpenSSH service in MocaccinoOS</div>
+	<h1>Preparing Boot Media</h1>
+	<div class="lead">How to write MocaccinoOS to a USB stick, DVD, or boot it directly from your hard drive</div>
 	<header class="article-meta">
 		
 		
@@ -435,170 +435,119 @@
 		
 		
 	</header>    
-	<p><strong>SFTP</strong> (SSH File Transfer Protocol) enables secure, encrypted file transfers and remote file management using the same protocol as SSH.<br>
-It is included <strong>by default</strong> in MocaccinoOS through the built-in <strong>OpenSSH</strong> service — no installation required.</p>
-<p>SFTP is compatible with most file managers (such as Dolphin, Nautilus, or Thunar), command-line tools (<code>sftp</code>, <code>scp</code>), and third-party clients like <a href="https://winscp.net">WinSCP</a> or FileZilla.</p>
-<hr>
-<h2 id="connecting-to-your-mocaccinoos-system">Connecting to Your MocaccinoOS System</h2>
-<p>You can connect to your MocaccinoOS system from another machine using SFTP in several ways:</p>
-<h3 id="command-line">Command Line</h3>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sftp username@hostname
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="graphical-file-manager">Graphical File Manager</h3>
-<p>In your file manager’s address bar:</p>
-<pre tabindex="0"><code>sftp://username@hostname
-</code></pre><h3 id="windows-client">Windows Client</h3>
-<p>Use a graphical SFTP client like <a href="https://winscp.net">WinSCP</a>, or use PowerShell’s built-in support:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">sftp username<span style="color:#40ffff">@hostname</span>
-</code></pre></td></tr></table>
-</div>
-</div><hr>
-<h2 id="checking-service-status">Checking Service Status</h2>
-<p>To verify that the SSH (and SFTP) service is active:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl status sshd
-</code></pre></td></tr></table>
-</div>
-</div><p>If it’s not running, enable it to start automatically at boot:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl <span style="color:#24909d">enable</span> --now sshd
-</code></pre></td></tr></table>
-</div>
-</div><hr>
-<h2 id="security-recommendations">Security Recommendations</h2>
-<p>SFTP uses the same authentication and encryption as SSH.<br>
-For stronger security, consider the following optional steps:</p>
-<blockquote>
-<p>💡 <strong>Tip:</strong> These adjustments apply system-wide. Edit <code>/etc/ssh/sshd_config</code> carefully and restart the SSH service afterward.</p>
-</blockquote>
-<h3 id="use-ssh-keys-instead-of-passwords">Use SSH Keys Instead of Passwords</h3>
+	<p>Once you have downloaded a MocaccinoOS ISO, you need to make it bootable. This page covers three methods: USB stick (recommended), DVD, and booting directly from an ISO file on your hard drive using GRUB.</p>
+<h2 id="option-1-usb-stick-recommended">Option 1: USB Stick (Recommended)</h2>
+<p>This is the simplest and most reliable method for most users.</p>
+<h3 id="using-etcher-beginner-friendly">Using Etcher (Beginner-friendly)</h3>
+<p><a href="https://etcher.balena.io">balenaEtcher</a> is a free, cross-platform tool that works on Linux, Windows, and macOS.</p>
 <ol>
-<li>
-<p>Generate a key on your client system:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen
-ssh-copy-id username@hostname
-</code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p>Disable password authentication in <code>/etc/ssh/sshd_config</code>:</p>
-<pre tabindex="0"><code>PasswordAuthentication no
-</code></pre></li>
-<li>
-<p>Apply the change:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl restart sshd
-</code></pre></td></tr></table>
-</div>
-</div></li>
+<li>Download and install balenaEtcher.</li>
+<li>Click <strong>Flash from file</strong> and select the MocaccinoOS ISO.</li>
+<li>Click <strong>Select target</strong> and choose your USB stick.</li>
+<li>Click <strong>Flash</strong> and wait for the process to complete.</li>
 </ol>
-<hr>
-<h3 id="restrict-sftp-only-accounts-optional">Restrict SFTP-Only Accounts (Optional)</h3>
-<p>To create accounts limited to SFTP (no shell access), append this block to <code>/etc/ssh/sshd_config</code>:</p>
+<h3 id="using-ventoy-multiboot">Using Ventoy (Multiboot)</h3>
+<p><a href="https://www.ventoy.net">Ventoy</a> lets you store multiple ISOs on a single USB stick and boot any of them from a menu.</p>
+<ol>
+<li>Install Ventoy to your USB stick using the Ventoy installer.</li>
+<li>Copy the MocaccinoOS ISO to the USB stick — no further steps needed.</li>
+<li>Boot from the USB and select MocaccinoOS from the Ventoy menu.</li>
+</ol>
+<h3 id="using-dd-linux-command-line">Using <code>dd</code> (Linux command line)</h3>
+<p>Replace <code>/dev/sdX</code> with your USB device (check with <code>lsblk</code> first — <strong>do not</strong> select your hard drive):</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Match Group sftpusers
-     ChrootDirectory %h
-     ForceCommand internal-sftp
-     AllowTcpForwarding no
-     X11Forwarding no
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dd <span style="color:#6ab825;font-weight:bold">if</span>=MocaccinoOS-COSMIC-0.20260605.iso <span style="color:#40ffff">of</span>=/dev/sdX <span style="color:#40ffff">bs</span>=4M <span style="color:#40ffff">status</span>=progress <span style="color:#40ffff">oflag</span>=sync
 </code></pre></td></tr></table>
 </div>
-</div><p>Then configure the user environment:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo groupadd sftpusers
-sudo usermod -aG sftpusers username
-sudo chmod <span style="color:#3677a9">755</span> /home/username
-</code></pre></td></tr></table>
-</div>
-</div><blockquote>
-<p><strong>Note:</strong> Users confined via <code>ChrootDirectory</code> cannot access directories outside their home folder.</p>
-</blockquote>
-<hr>
-<h2 id="useful-tips">Useful Tips</h2>
+</div><hr>
+<h2 id="option-2-dvd">Option 2: DVD</h2>
+<p>Burn the ISO to a blank DVD using your preferred tool:</p>
 <ul>
-<li>
-<p>Connect to a non-standard SSH port:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sftp -P <span style="color:#3677a9">2222</span> username@hostname
-</code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p>Enable compression for faster transfers:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sftp -C username@hostname
-</code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p>Copy entire directories recursively:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scp -r folder username@hostname:/path/to/destination
-</code></pre></td></tr></table>
-</div>
-</div></li>
+<li><strong>Linux:</strong> <code>growisofs -dvd-compat -Z /dev/dvd=MocaccinoOS.iso</code></li>
+<li><strong>Windows:</strong> Right-click the ISO and choose <strong>Burn disc image</strong>.</li>
+<li><strong>macOS:</strong> Use Disk Utility → <strong>Burn</strong>.</li>
 </ul>
 <hr>
-<h2 id="summary">Summary</h2>
-<p>SFTP offers a secure, encrypted, and easy-to-use way to transfer files to and from your MocaccinoOS system.<br>
-Since <strong>OpenSSH</strong> is already installed and configured by default, SFTP works immediately — no additional setup or packages are required.</p>
-<p>Use it for quick file transfers, remote editing, or as a secure alternative to traditional FTP or Samba.</p>
-<hr>
+<h2 id="option-3-boot-from-iso-file-on-hard-drive-advanced">Option 3: Boot from ISO file on Hard Drive (Advanced)</h2>
+<p>If you already have a Linux system with GRUB installed, you can boot MocaccinoOS directly from an ISO file stored on your hard drive — no USB stick or DVD required. This is useful for testing or multiboot setups.</p>
+<blockquote>
+<p><strong>Note:</strong> This method only works with MocaccinoOS ISOs. It cannot be used with ISOs from other distributions.</p>
+</blockquote>
+<h3 id="preparing-the-iso-file">Preparing the ISO file</h3>
+<p>Copy the MocaccinoOS ISO to a location on your hard drive, for example:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo mkdir -p /boot/iso
+sudo cp MocaccinoOS-COSMIC-0.20260605.iso /boot/iso/
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="adding-a-grub-menu-entry">Adding a GRUB menu entry</h3>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">Note</h4>
+
+    This feature is only available on release images &gt; 26.06
+
+</div>
+
+<p>Add the following to <code>/etc/grub.d/40_custom</code>, adjusting the <code>isofile</code> path to match your ISO:</p>
+<pre tabindex="0"><code class="language-grub" data-lang="grub">menuentry &quot;MocaccinoOS Live (ISO Loopback)&quot; {
+    set isofile=&quot;/boot/iso/MocaccinoOS-COSMIC-0.20260605.iso&quot;
+    search --no-floppy --file --set=root $isofile
+    loopback loop $isofile
+    linux (loop)/boot/kernel.xz iso-scan/filename=$isofile rootdelay=5 quiet
+    initrd (loop)/boot/rootfs.xz
+}
+</code></pre><p><strong>Parameter details:</strong></p>
+<ul>
+<li><strong><code>isofile</code></strong>: The path to the ISO file, relative to the root of the partition it resides on.</li>
+<li><strong><code>iso-scan/filename</code></strong>: Tells the MocaccinoOS initramfs which ISO file to find and mount.</li>
+<li><strong><code>rootdelay=5</code></strong>: Recommended — gives the kernel time to initialize storage devices before scanning.</li>
+</ul>
+<p>Then regenerate your GRUB configuration:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre></td></tr></table>
+</div>
+</div><p>Reboot and select <strong>MocaccinoOS Live (ISO Loopback)</strong> from the GRUB menu.</p>
+<h3 id="manual-boot-from-the-grub-console">Manual boot from the GRUB console</h3>
+<p>If you are at the GRUB command line, you can boot manually:</p>
+<ol>
+<li><strong>Find and set root to the partition containing the ISO:</strong>
+<code>grub&gt; search --no-floppy --file --set=root /boot/iso/MocaccinoOS.iso</code></li>
+<li><strong>Loop-mount the ISO:</strong>
+<code>grub&gt; loopback loop /boot/iso/MocaccinoOS.iso</code></li>
+<li><strong>Load the kernel:</strong>
+<code>grub&gt; linux (loop)/boot/kernel.xz iso-scan/filename=/boot/iso/MocaccinoOS.iso rootdelay=5</code></li>
+<li><strong>Load the initramfs:</strong>
+<code>grub&gt; initrd (loop)/boot/rootfs.xz</code>
+<blockquote>
+<p>Note: <code>rootfs.xz</code> is the MocaccinoOS live initramfs, despite the name.</p>
+</blockquote>
+</li>
+<li><strong>Boot:</strong>
+<code>grub&gt; boot</code></li>
+</ol>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>The ISO must be a MocaccinoOS ISO. ISOs from other distributions will not work with this method.</li>
+<li>The ISO must be stored on a filesystem supported by the initramfs (ext2/4, FAT32, NTFS).</li>
+<li>An existing GRUB2 installation is required.</li>
+<li>The path to the ISO must be the absolute path from the root of the partition it resides on.</li>
+</ul>
 
 	
 	

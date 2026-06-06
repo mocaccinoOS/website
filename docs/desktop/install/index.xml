@@ -31,6 +31,132 @@ Default username and password is &lt;em&gt;mocaccino&lt;/em&gt;&lt;/p&gt;
     </item>
     
     <item>
+      <title>Docs: Preparing Boot Media</title>
+      <link>https://www.mocaccino.org/docs/desktop/install/prepare/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/docs/desktop/install/prepare/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Once you have downloaded a MocaccinoOS ISO, you need to make it bootable. This page covers three methods: USB stick (recommended), DVD, and booting directly from an ISO file on your hard drive using GRUB.&lt;/p&gt;
+&lt;h2 id=&#34;option-1-usb-stick-recommended&#34;&gt;Option 1: USB Stick (Recommended)&lt;/h2&gt;
+&lt;p&gt;This is the simplest and most reliable method for most users.&lt;/p&gt;
+&lt;h3 id=&#34;using-etcher-beginner-friendly&#34;&gt;Using Etcher (Beginner-friendly)&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://etcher.balena.io&#34;&gt;balenaEtcher&lt;/a&gt; is a free, cross-platform tool that works on Linux, Windows, and macOS.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download and install balenaEtcher.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Flash from file&lt;/strong&gt; and select the MocaccinoOS ISO.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Select target&lt;/strong&gt; and choose your USB stick.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Flash&lt;/strong&gt; and wait for the process to complete.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;using-ventoy-multiboot&#34;&gt;Using Ventoy (Multiboot)&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ventoy.net&#34;&gt;Ventoy&lt;/a&gt; lets you store multiple ISOs on a single USB stick and boot any of them from a menu.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install Ventoy to your USB stick using the Ventoy installer.&lt;/li&gt;
+&lt;li&gt;Copy the MocaccinoOS ISO to the USB stick — no further steps needed.&lt;/li&gt;
+&lt;li&gt;Boot from the USB and select MocaccinoOS from the Ventoy menu.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;using-dd-linux-command-line&#34;&gt;Using &lt;code&gt;dd&lt;/code&gt; (Linux command line)&lt;/h3&gt;
+&lt;p&gt;Replace &lt;code&gt;/dev/sdX&lt;/code&gt; with your USB device (check with &lt;code&gt;lsblk&lt;/code&gt; first — &lt;strong&gt;do not&lt;/strong&gt; select your hard drive):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo dd &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt;=MocaccinoOS-COSMIC-0.20260605.iso &lt;span style=&#34;color:#40ffff&#34;&gt;of&lt;/span&gt;=/dev/sdX &lt;span style=&#34;color:#40ffff&#34;&gt;bs&lt;/span&gt;=4M &lt;span style=&#34;color:#40ffff&#34;&gt;status&lt;/span&gt;=progress &lt;span style=&#34;color:#40ffff&#34;&gt;oflag&lt;/span&gt;=sync
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;option-2-dvd&#34;&gt;Option 2: DVD&lt;/h2&gt;
+&lt;p&gt;Burn the ISO to a blank DVD using your preferred tool:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Linux:&lt;/strong&gt; &lt;code&gt;growisofs -dvd-compat -Z /dev/dvd=MocaccinoOS.iso&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windows:&lt;/strong&gt; Right-click the ISO and choose &lt;strong&gt;Burn disc image&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;macOS:&lt;/strong&gt; Use Disk Utility → &lt;strong&gt;Burn&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;option-3-boot-from-iso-file-on-hard-drive-advanced&#34;&gt;Option 3: Boot from ISO file on Hard Drive (Advanced)&lt;/h2&gt;
+&lt;p&gt;If you already have a Linux system with GRUB installed, you can boot MocaccinoOS directly from an ISO file stored on your hard drive — no USB stick or DVD required. This is useful for testing or multiboot setups.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This method only works with MocaccinoOS ISOs. It cannot be used with ISOs from other distributions.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;preparing-the-iso-file&#34;&gt;Preparing the ISO file&lt;/h3&gt;
+&lt;p&gt;Copy the MocaccinoOS ISO to a location on your hard drive, for example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo mkdir -p /boot/iso
+sudo cp MocaccinoOS-COSMIC-0.20260605.iso /boot/iso/
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;adding-a-grub-menu-entry&#34;&gt;Adding a GRUB menu entry&lt;/h3&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+
+    This feature is only available on release images &amp;gt; 26.06
+
+&lt;/div&gt;
+
+&lt;p&gt;Add the following to &lt;code&gt;/etc/grub.d/40_custom&lt;/code&gt;, adjusting the &lt;code&gt;isofile&lt;/code&gt; path to match your ISO:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-grub&#34; data-lang=&#34;grub&#34;&gt;menuentry &amp;quot;MocaccinoOS Live (ISO Loopback)&amp;quot; {
+    set isofile=&amp;quot;/boot/iso/MocaccinoOS-COSMIC-0.20260605.iso&amp;quot;
+    search --no-floppy --file --set=root $isofile
+    loopback loop $isofile
+    linux (loop)/boot/kernel.xz iso-scan/filename=$isofile rootdelay=5 quiet
+    initrd (loop)/boot/rootfs.xz
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Parameter details:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;isofile&lt;/code&gt;&lt;/strong&gt;: The path to the ISO file, relative to the root of the partition it resides on.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;iso-scan/filename&lt;/code&gt;&lt;/strong&gt;: Tells the MocaccinoOS initramfs which ISO file to find and mount.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;rootdelay=5&lt;/code&gt;&lt;/strong&gt;: Recommended — gives the kernel time to initialize storage devices before scanning.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then regenerate your GRUB configuration:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo grub-mkconfig -o /boot/grub/grub.cfg
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Reboot and select &lt;strong&gt;MocaccinoOS Live (ISO Loopback)&lt;/strong&gt; from the GRUB menu.&lt;/p&gt;
+&lt;h3 id=&#34;manual-boot-from-the-grub-console&#34;&gt;Manual boot from the GRUB console&lt;/h3&gt;
+&lt;p&gt;If you are at the GRUB command line, you can boot manually:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Find and set root to the partition containing the ISO:&lt;/strong&gt;
+&lt;code&gt;grub&amp;gt; search --no-floppy --file --set=root /boot/iso/MocaccinoOS.iso&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Loop-mount the ISO:&lt;/strong&gt;
+&lt;code&gt;grub&amp;gt; loopback loop /boot/iso/MocaccinoOS.iso&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Load the kernel:&lt;/strong&gt;
+&lt;code&gt;grub&amp;gt; linux (loop)/boot/kernel.xz iso-scan/filename=/boot/iso/MocaccinoOS.iso rootdelay=5&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Load the initramfs:&lt;/strong&gt;
+&lt;code&gt;grub&amp;gt; initrd (loop)/boot/rootfs.xz&lt;/code&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: &lt;code&gt;rootfs.xz&lt;/code&gt; is the MocaccinoOS live initramfs, despite the name.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Boot:&lt;/strong&gt;
+&lt;code&gt;grub&amp;gt; boot&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;requirements&#34;&gt;Requirements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The ISO must be a MocaccinoOS ISO. ISOs from other distributions will not work with this method.&lt;/li&gt;
+&lt;li&gt;The ISO must be stored on a filesystem supported by the initramfs (ext2/4, FAT32, NTFS).&lt;/li&gt;
+&lt;li&gt;An existing GRUB2 installation is required.&lt;/li&gt;
+&lt;li&gt;The path to the ISO must be the absolute path from the root of the partition it resides on.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Installation</title>
       <link>https://www.mocaccino.org/docs/desktop/install/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
