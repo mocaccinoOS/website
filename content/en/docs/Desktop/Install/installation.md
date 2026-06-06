@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 linkTitle: "Installation"
-weight: 2
+weight: 3
 description: >-
      Install MocaccinoOS using the Calamares installer
 ---
