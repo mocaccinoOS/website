@@ -16,7 +16,7 @@ These dictionaries are used by applications such as:
 ## Install all dictionaries
 
 ```bash
-luet install app/myspel-dicts
+luet install app/myspell-dicts
 ```
 
 This installs MySpell dictionaries for many languages, including:
