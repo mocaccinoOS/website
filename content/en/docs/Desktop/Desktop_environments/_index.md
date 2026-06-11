@@ -129,3 +129,12 @@ $ sudo luet install apps/slim
 ```bash
 $ sudo systemctl enable slim --force
 ```
+If you prefer to use Ly as your login manager run these commands:
+
+```bash
+$ sudo luet install apps/ly
+```
+```bash
+$ sudo systemctl enable ly@tty2.service --force
+```
+Ly available in the [community repository](/docs/desktop/luet/repositories/#community-repository).
