@@ -180,7 +180,7 @@ $ curl -sL https://github.com/noctalia-dev/noctalia/releases/latest/download/noc
 &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&lt;/span&gt;  | tar -xz --strip-components=&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; -C ~/.config/quickshell/noctalia-shell
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Log out and select &lt;strong&gt;Niri&lt;/strong&gt; from the SDDM session menu.&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Log out and select &lt;strong&gt;Niri&lt;/strong&gt; from your login manager&amp;rsquo;s session menu.&lt;/p&gt;
 &lt;h2 id=&#34;fluxbox&#34;&gt;Fluxbox&lt;/h2&gt;
 &lt;p&gt;This command installs the Fluxbox desktop environment.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
