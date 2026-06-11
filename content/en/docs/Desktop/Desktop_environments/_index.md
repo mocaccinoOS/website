@@ -117,7 +117,7 @@ $ curl -sL https://github.com/noctalia-dev/noctalia/releases/latest/download/noc
   | tar -xz --strip-components=1 -C ~/.config/quickshell/noctalia-shell
 ```
 
-Log out and select **Niri** from the SDDM session menu.
+Log out and select **Niri** from your login manager's session menu.
 
 ## Fluxbox
 
