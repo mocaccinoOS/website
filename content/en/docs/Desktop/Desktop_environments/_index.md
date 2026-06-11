@@ -14,7 +14,7 @@ This page explains how to install several desktop environments.
 This command installs the KDE Plasma desktop environment.
 
 ```bash
-$ sudo luet install layers/plasma layers/kde-apps-minimal apps/discover
+$ sudo luet install layers/plasma apps/discover
 ```
 The layers/plasma package ships with the SDDM login manager.
 If you prefer to use SDDM as your login manager run this command:
