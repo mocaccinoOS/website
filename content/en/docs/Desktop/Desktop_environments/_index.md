@@ -93,6 +93,32 @@ This command installs the Hyprland desktop environment.
 $ sudo luet install layers/hyprland apps/kitty
 ```
 
+## Niri + Noctalia shell
+
+Niri is a scrollable-tiling Wayland compositor.
+
+This command installs Niri:
+
+```bash
+$ sudo luet install layers/niri
+```
+
+The following applications are required and available in the [community repository](https://www.mocaccino.org/docs/desktop/luet/repositories/#community-repository):
+
+```bash
+$ sudo luet install apps/alacritty apps/fastfetch apps/noctalia
+```
+
+After installation, set up the Noctalia shell configuration:
+
+```bash
+$ mkdir -p ~/.config/quickshell/noctalia-shell
+$ curl -sL https://github.com/noctalia-dev/noctalia/releases/latest/download/noctalia-latest.tar.gz \
+  | tar -xz --strip-components=1 -C ~/.config/quickshell/noctalia-shell
+```
+
+Log out and select **Niri** from the SDDM session menu.
+
 ## Fluxbox
 
 This command installs the Fluxbox desktop environment.
