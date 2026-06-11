@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.80e9f3ea29f00c5438834cd9dce3a284.json"
+  data-offline-search-index-json-src="/offline-search-index.2586aa6ff62ab798fd10879fe6e933cc.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.80e9f3ea29f00c5438834cd9dce3a284.json"
+  data-offline-search-index-json-src="/offline-search-index.2586aa6ff62ab798fd10879fe6e933cc.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -363,6 +363,7 @@
     <li><a href="#enlightenment">Enlightenment</a></li>
     <li><a href="#trinity">Trinity</a></li>
     <li><a href="#hyprland">Hyprland</a></li>
+    <li><a href="#niri--noctalia-shell">Niri + Noctalia shell</a></li>
     <li><a href="#fluxbox">Fluxbox</a></li>
     <li><a href="#cosmic">COSMIC</a></li>
     <li><a href="#login-managers">Login managers</a></li>
@@ -540,7 +541,41 @@ If you prefer to use GDM as your login manager run this command:</p>
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo luet install layers/hyprland apps/kitty
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="fluxbox">Fluxbox</h2>
+</div><h2 id="niri--noctalia-shell">Niri + Noctalia shell</h2>
+<p>Niri is a scrollable-tiling Wayland compositor.</p>
+<p>This command installs Niri:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo luet install layers/niri
+</code></pre></td></tr></table>
+</div>
+</div><p>The following applications are required and available in the <a href="https://www.mocaccino.org/docs/desktop/luet/repositories/#community-repository">community repository</a>:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo luet install apps/alacritty apps/fastfetch apps/noctalia
+</code></pre></td></tr></table>
+</div>
+</div><p>After installation, set up the Noctalia shell configuration:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir -p ~/.config/quickshell/noctalia-shell
+$ curl -sL https://github.com/noctalia-dev/noctalia/releases/latest/download/noctalia-latest.tar.gz <span style="color:#ed9d13">\
+</span><span style="color:#ed9d13"></span>  | tar -xz --strip-components=<span style="color:#3677a9">1</span> -C ~/.config/quickshell/noctalia-shell
+</code></pre></td></tr></table>
+</div>
+</div><p>Log out and select <strong>Niri</strong> from the SDDM session menu.</p>
+<h2 id="fluxbox">Fluxbox</h2>
 <p>This command installs the Fluxbox desktop environment.</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -629,7 +664,7 @@ If you prefer to use GDM as your login manager run this command:</p>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified June 11, 2026: <a href="https://github.com/MocaccinoOS/website/commit/e9f84c5d89f487fe662c2e6609283ab41c103fb8">Desktop_environments: Update KDE Plasma install command (e9f84c5)</a>
+  Last modified June 11, 2026: <a href="https://github.com/MocaccinoOS/website/commit/73824398bfe7e2686af20140ca019b1ea22d8a0b">Desktop_environments: Add Niri &#43; Noctalia shell (7382439)</a>
 </div>
 
 </div>
