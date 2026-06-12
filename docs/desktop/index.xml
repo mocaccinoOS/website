@@ -168,6 +168,10 @@ If you prefer to use GDM as your login manager run this command:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;After installation, set up the Noctalia shell configuration:&lt;/p&gt;
+&lt;p&gt;First add the following to &lt;code&gt;~/.config/niri/config.kdl&lt;/code&gt; to disable Waybar and start Noctalia on login:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-kdl&#34; data-lang=&#34;kdl&#34;&gt;// spawn-at-startup &amp;quot;waybar&amp;quot;
+spawn-at-startup &amp;quot;qs&amp;quot; &amp;quot;-c&amp;quot; &amp;quot;noctalia-shell&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then install the Noctalia shell configuration to your user directory:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
@@ -181,6 +185,13 @@ $ curl -sL https://github.com/noctalia-dev/noctalia/releases/latest/download/noc
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Log out and select &lt;strong&gt;Niri&lt;/strong&gt; from your login manager&amp;rsquo;s session menu.&lt;/p&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;apps/alacritty&lt;/code&gt; is required as the default terminal (&lt;code&gt;Super+T&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;apps/noctalia&lt;/code&gt; provides the &lt;code&gt;qs&lt;/code&gt; binary (Quickshell runtime)&lt;/li&gt;
+&lt;li&gt;The curl command installs the Noctalia shell config to your home directory; it is not managed by Luet and must be run once per user&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;apps/fastfetch&lt;/code&gt; is used by Noctalia for system info display&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;fluxbox&#34;&gt;Fluxbox&lt;/h2&gt;
 &lt;p&gt;This command installs the Fluxbox desktop environment.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
