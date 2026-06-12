@@ -12,6 +12,8 @@ It started like many things do in open source — with a question in the Discord
 
 Someone popped into the channel asking if anyone had managed to get niri running on MocaccinoOS with the Noctalia shell. They'd heard good things about the scrollable-tiling Wayland compositor and wanted to try something different from the usual desktop environments MocaccinoOS ships. Nobody had documented it yet, so I decided to figure it out.
 
+![Noctalia on niri](niri-noctalia.png)
+
 ## Installing the Pieces
 
 The first step was straightforward enough. `layers/niri` lives in the default desktop repository:
@@ -45,8 +47,6 @@ curl -sL https://github.com/noctalia-dev/noctalia/releases/latest/download/nocta
 ```
 
 After that, logging back into niri brought up Noctalia in all its glory — wallpaper-based color scheme, notification center, app launcher, the works.
-
-![Noctalia on niri](niri-noctalia.png)
 
 ## One More Thing
 
