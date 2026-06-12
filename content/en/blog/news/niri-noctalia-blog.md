@@ -46,6 +46,8 @@ curl -sL https://github.com/noctalia-dev/noctalia/releases/latest/download/nocta
 
 After that, logging back into niri brought up Noctalia in all its glory — wallpaper-based color scheme, notification center, app launcher, the works.
 
+![Noctalia on niri](niri-noctalia.png)
+
 ## One More Thing
 
 With Noctalia running, I tried launching Steam and hit a familiar wall: "Unable to open a connection to X". Niri is a pure Wayland compositor and doesn't include XWayland out of the box. For X11 applications like Steam to work, `xwayland-satellite` is needed. Niri's own log had been warning about this from the start:
