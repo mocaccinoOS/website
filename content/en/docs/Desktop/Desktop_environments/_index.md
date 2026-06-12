@@ -111,6 +111,14 @@ $ sudo luet install apps/alacritty apps/fastfetch apps/noctalia
 
 After installation, set up the Noctalia shell configuration:
 
+First add the following to `~/.config/niri/config.kdl` to disable Waybar and start Noctalia on login:
+ 
+```kdl
+// spawn-at-startup "waybar"
+spawn-at-startup "qs" "-c" "noctalia-shell"
+```
+Then install the Noctalia shell configuration to your user directory:
+
 ```bash
 $ mkdir -p ~/.config/quickshell/noctalia-shell
 $ curl -sL https://github.com/noctalia-dev/noctalia/releases/latest/download/noctalia-latest.tar.gz \
@@ -118,6 +126,14 @@ $ curl -sL https://github.com/noctalia-dev/noctalia/releases/latest/download/noc
 ```
 
 Log out and select **Niri** from your login manager's session menu.
+
+### Notes
+ 
+- `apps/alacritty` is required as the default terminal (`Super+T`)
+- `apps/noctalia` provides the `qs` binary (Quickshell runtime)
+- The curl command installs the Noctalia shell config to your home directory; it is not managed by Luet and must be run once per user
+- `apps/fastfetch` is used by Noctalia for system info display
+
 
 ## Fluxbox
 
