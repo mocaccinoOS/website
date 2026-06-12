@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/blog/2026/06/12/niri-noctalia-on-mocaccinoos/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2026-06-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2026-06-12T21:05:51+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2026-06-12T21:15:07+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Niri &#43; Noctalia on MocaccinoOS">
 <meta itemprop="description" content="Niri &#43; Noctalia on MocaccinoOS"><meta itemprop="datePublished" content="2026-06-12T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2026-06-12T21:05:51+02:00" />
-<meta itemprop="wordCount" content="508">
+<meta itemprop="dateModified" content="2026-06-12T21:15:07+02:00" />
+<meta itemprop="wordCount" content="545">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Niri &#43; Noctalia on MocaccinoOS"/>
 <meta name="twitter:description" content="Niri &#43; Noctalia on MocaccinoOS"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.626d81fa106803cf42249b20b7eb57d3.json"
+  data-offline-search-index-json-src="/offline-search-index.88373fdbe8a8022f708b80df65fd3b9f.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.626d81fa106803cf42249b20b7eb57d3.json"
+  data-offline-search-index-json-src="/offline-search-index.88373fdbe8a8022f708b80df65fd3b9f.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -284,6 +284,7 @@
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
     <li><a href="#installing-the-pieces">Installing the Pieces</a></li>
+    <li><a href="#configuring-niri">Configuring Niri</a></li>
     <li><a href="#the-grey-square">The Grey Square</a></li>
     <li><a href="#the-missing-piece">The Missing Piece</a></li>
     <li><a href="#one-more-thing">One More Thing</a></li>
@@ -364,7 +365,11 @@
 <pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo luet install apps/alacritty apps/fastfetch apps/noctalia
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="the-grey-square">The Grey Square</h2>
+</div><h2 id="configuring-niri">Configuring Niri</h2>
+<p>With the packages installed, two things need to be added to <code>~/.config/niri/config.kdl</code>. First, comment out waybar since Noctalia ships its own panel. Then add the Noctalia startup line:</p>
+<pre tabindex="0"><code class="language-kdl" data-lang="kdl">// spawn-at-startup &quot;waybar&quot;
+spawn-at-startup &quot;qs&quot; &quot;-c&quot; &quot;noctalia-shell&quot;
+</code></pre><h2 id="the-grey-square">The Grey Square</h2>
 <p>After logging into niri from SDDM, I was greeted by a grey square and nothing else. No panel, no launcher, just a grey void. Niri was running — but nothing else was.</p>
 <p>The <code>qs</code> binary was there (<code>/usr/bin/qs</code>), the <code>spawn-at-startup</code> line was in the niri config, and journalctl showed that <code>qs</code> had actually launched and consumed memory for 16 seconds before silently dying. Something was wrong, but nothing was complaining about it.</p>
 <p>The culprit turned out to be simple: <code>~/.config/quickshell/noctalia-shell/</code> didn&rsquo;t exist. The <code>apps/noctalia</code> package installs the <code>qs</code> binary but not the shell configuration itself. Quickshell found nothing to run and exited cleanly without a word.</p>

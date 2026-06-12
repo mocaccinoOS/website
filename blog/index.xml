@@ -45,7 +45,11 @@
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo luet install apps/alacritty apps/fastfetch apps/noctalia
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;the-grey-square&#34;&gt;The Grey Square&lt;/h2&gt;
+&lt;/div&gt;&lt;h2 id=&#34;configuring-niri&#34;&gt;Configuring Niri&lt;/h2&gt;
+&lt;p&gt;With the packages installed, two things need to be added to &lt;code&gt;~/.config/niri/config.kdl&lt;/code&gt;. First, comment out waybar since Noctalia ships its own panel. Then add the Noctalia startup line:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-kdl&#34; data-lang=&#34;kdl&#34;&gt;// spawn-at-startup &amp;quot;waybar&amp;quot;
+spawn-at-startup &amp;quot;qs&amp;quot; &amp;quot;-c&amp;quot; &amp;quot;noctalia-shell&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;the-grey-square&#34;&gt;The Grey Square&lt;/h2&gt;
 &lt;p&gt;After logging into niri from SDDM, I was greeted by a grey square and nothing else. No panel, no launcher, just a grey void. Niri was running — but nothing else was.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;qs&lt;/code&gt; binary was there (&lt;code&gt;/usr/bin/qs&lt;/code&gt;), the &lt;code&gt;spawn-at-startup&lt;/code&gt; line was in the niri config, and journalctl showed that &lt;code&gt;qs&lt;/code&gt; had actually launched and consumed memory for 16 seconds before silently dying. Something was wrong, but nothing was complaining about it.&lt;/p&gt;
 &lt;p&gt;The culprit turned out to be simple: &lt;code&gt;~/.config/quickshell/noctalia-shell/&lt;/code&gt; didn&amp;rsquo;t exist. The &lt;code&gt;apps/noctalia&lt;/code&gt; package installs the &lt;code&gt;qs&lt;/code&gt; binary but not the shell configuration itself. Quickshell found nothing to run and exited cleanly without a word.&lt;/p&gt;
