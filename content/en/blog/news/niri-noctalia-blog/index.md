@@ -28,6 +28,15 @@ For the rest — `apps/alacritty`, `apps/fastfetch`, and `apps/noctalia` — the
 $ sudo luet install apps/alacritty apps/fastfetch apps/noctalia
 ```
 
+## Configuring Niri
+
+With the packages installed, two things need to be added to `~/.config/niri/config.kdl`. First, comment out waybar since Noctalia ships its own panel. Then add the Noctalia startup line:
+
+```kdl
+// spawn-at-startup "waybar"
+spawn-at-startup "qs" "-c" "noctalia-shell"
+```
+
 ## The Grey Square
 
 After logging into niri from SDDM, I was greeted by a grey square and nothing else. No panel, no launcher, just a grey void. Niri was running — but nothing else was.
