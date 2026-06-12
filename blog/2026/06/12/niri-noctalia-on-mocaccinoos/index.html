@@ -25,11 +25,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/blog/2026/06/12/niri-noctalia-on-mocaccinoos/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2026-06-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2026-06-12T20:53:21+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2026-06-12T20:55:22+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Niri &#43; Noctalia on MocaccinoOS">
 <meta itemprop="description" content="Niri &#43; Noctalia on MocaccinoOS"><meta itemprop="datePublished" content="2026-06-12T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2026-06-12T20:53:21+02:00" />
+<meta itemprop="dateModified" content="2026-06-12T20:55:22+02:00" />
 <meta itemprop="wordCount" content="508">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Niri &#43; Noctalia on MocaccinoOS"/>
@@ -382,6 +382,7 @@ curl -sL https://github.com/noctalia-dev/noctalia/releases/latest/download/nocta
 </code></pre></td></tr></table>
 </div>
 </div><p>After that, logging back into niri brought up Noctalia in all its glory — wallpaper-based color scheme, notification center, app launcher, the works.</p>
+<p><img src="niri-noctalia.png" alt="Noctalia on niri"></p>
 <h2 id="one-more-thing">One More Thing</h2>
 <p>With Noctalia running, I tried launching Steam and hit a familiar wall: &ldquo;Unable to open a connection to X&rdquo;. Niri is a pure Wayland compositor and doesn&rsquo;t include XWayland out of the box. For X11 applications like Steam to work, <code>xwayland-satellite</code> is needed. Niri&rsquo;s own log had been warning about this from the start:</p>
 <pre tabindex="0"><code>WARN niri: error spawning xwayland-satellite, disabling integration: No such file or directory
