@@ -13,6 +13,56 @@
     
     
     <item>
+      <title>Blog: New Plasma Themes Coming to MocaccinoOS</title>
+      <link>https://www.mocaccino.org/blog/2026/06/25/new-plasma-themes-coming-to-mocaccinoos/</link>
+      <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mocaccino.org/blog/2026/06/25/new-plasma-themes-coming-to-mocaccinoos/</guid>
+      <description>
+        
+        
+        &lt;p&gt;One of the highlights of the upcoming MocaccinoOS release is the addition of new Plasma desktop themes available directly out of the box.&lt;/p&gt;
+&lt;p&gt;Users can now choose between a clean light appearance and a modern dark desktop, both designed to provide a consistent experience across KDE Plasma, applications, and system components.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;Light_1.png&#34; alt=&#34;MocaccinoOS Light Theme&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;Dark_1.png&#34; alt=&#34;MocaccinoOS Dark Theme&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;two-looks-one-experience&#34;&gt;Two Looks, One Experience&lt;/h2&gt;
+&lt;p&gt;The new themes share the same visual identity while offering different styles depending on user preference.&lt;/p&gt;
+&lt;h3 id=&#34;light-theme&#34;&gt;Light Theme&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Clean and bright appearance&lt;/li&gt;
+&lt;li&gt;Excellent readability&lt;/li&gt;
+&lt;li&gt;Ideal for well-lit environments&lt;/li&gt;
+&lt;li&gt;Minimal and distraction-free desktop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;dark-theme&#34;&gt;Dark Theme&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Modern and elegant design&lt;/li&gt;
+&lt;li&gt;Reduced eye strain in darker environments&lt;/li&gt;
+&lt;li&gt;Consistent dark styling throughout Plasma and KDE applications&lt;/li&gt;
+&lt;li&gt;Optimized for extended desktop sessions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both themes include matching window decorations, Plasma styling, and application integration to provide a polished desktop experience.&lt;/p&gt;
+&lt;h2 id=&#34;built-on-plasma-6&#34;&gt;Built on Plasma 6&lt;/h2&gt;
+&lt;p&gt;The upcoming release ships with:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;KDE Plasma 6.6.5&lt;/li&gt;
+&lt;li&gt;KDE Frameworks 6.25&lt;/li&gt;
+&lt;li&gt;Qt 6.11&lt;/li&gt;
+&lt;li&gt;Wayland by default&lt;/li&gt;
+&lt;li&gt;Linux 6.18.36 kernel&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Combined with MocaccinoOS optimizations and a carefully tuned Plasma setup, the result is a fast and responsive desktop environment suitable for everyday computing, development, and gaming.&lt;/p&gt;
+&lt;h2 id=&#34;choice-without-complexity&#34;&gt;Choice Without Complexity&lt;/h2&gt;
+&lt;p&gt;MocaccinoOS aims to provide sensible defaults while still giving users the freedom to personalize their desktop experience.&lt;/p&gt;
+&lt;p&gt;Whether you prefer a bright workspace during the day or a darker environment in the evening, both themes are available immediately after installation.&lt;/p&gt;
+&lt;p&gt;The upcoming release continues our focus on delivering a modern, optimized Linux desktop that is fast, responsive, and ready to use out of the box.&lt;/p&gt;
+&lt;p&gt;Which one do you prefer: Light or Dark?&lt;/p&gt;
+&lt;p&gt;Stay tuned for more details about the upcoming release.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: Niri &#43; Noctalia on MocaccinoOS</title>
       <link>https://www.mocaccino.org/blog/2026/06/12/niri-noctalia-on-mocaccinoos/</link>
       <pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
