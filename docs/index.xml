@@ -1677,8 +1677,9 @@ mocaccino-repository-index
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;
 
-    Please note that due a &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/issues/109&#34;&gt;bug&lt;/a&gt; you might end up without a working initramfs causing the system to fail to boot.
-Make sure you have the proper kernel/mocaccino-lts-initramfs or kernel/mocaccino-initramfs installed before rebooting the system!
+    &lt;p&gt;Please note that due a &lt;a href=&#34;https://github.com/mocaccinoOS/mocaccino/issues/109&#34;&gt;bug&lt;/a&gt; you might end up without a working initramfs causing the system to fail to boot. This problem affected MocaccinoOS installations older then 26.06.&lt;/p&gt;
+&lt;p&gt;Make sure to uninstall kernel/mocaccino-lts-initramfs if you have it installed and then run mocaccino-dracut &amp;ndash;rebuild-all &amp;ndash;force&lt;/p&gt;
+
 
 &lt;/div&gt;
 

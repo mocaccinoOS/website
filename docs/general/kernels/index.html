@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/general/kernels/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2026-06-28T20:44:22+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2026-06-28T22:00:44+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Switching kernels">
 <meta itemprop="description" content="Switching between the LTS and stable kernel">
-<meta itemprop="dateModified" content="2026-06-28T20:44:22+02:00" />
-<meta itemprop="wordCount" content="111">
+<meta itemprop="dateModified" content="2026-06-28T22:00:44+02:00" />
+<meta itemprop="wordCount" content="121">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Switching kernels"/>
 <meta name="twitter:description" content="Switching between the LTS and stable kernel"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1f40b8c5d13286772180399cdacbb687.json"
+  data-offline-search-index-json-src="/offline-search-index.1ef9743b5cc6edc7b9cd8a47cfccf857.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1f40b8c5d13286772180399cdacbb687.json"
+  data-offline-search-index-json-src="/offline-search-index.1ef9743b5cc6edc7b9cd8a47cfccf857.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -459,8 +459,9 @@
 <div class="alert alert-warning" role="alert">
 <h4 class="alert-heading">Warning</h4>
 
-    Please note that due a <a href="https://github.com/mocaccinoOS/mocaccino/issues/109">bug</a> you might end up without a working initramfs causing the system to fail to boot.
-Make sure you have the proper kernel/mocaccino-lts-initramfs or kernel/mocaccino-initramfs installed before rebooting the system!
+    <p>Please note that due a <a href="https://github.com/mocaccinoOS/mocaccino/issues/109">bug</a> you might end up without a working initramfs causing the system to fail to boot. This problem affected MocaccinoOS installations older then 26.06.</p>
+<p>Make sure to uninstall kernel/mocaccino-lts-initramfs if you have it installed and then run mocaccino-dracut &ndash;rebuild-all &ndash;force</p>
+
 
 </div>
 
@@ -468,7 +469,7 @@ Make sure you have the proper kernel/mocaccino-lts-initramfs or kernel/mocaccino
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified June 28, 2026: <a href="https://github.com/MocaccinoOS/website/commit/11f3a4145c702e9ee85f4b4edf1dede0625b4ff2">Blog: update (11f3a41)</a>
+  Last modified June 28, 2026: <a href="https://github.com/MocaccinoOS/website/commit/b3eb75f5eb9e665dbb449e918568147cb9edeece">Bump kernels.md (b3eb75f)</a>
 </div>
 
 </div>
