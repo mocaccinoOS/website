@@ -780,7 +780,72 @@ systemctl &lt;span style=&#34;color:#24909d&#34;&gt;enable&lt;/span&gt; --now sy
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;systemctl restart systemd-networkd
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;firewall&#34;&gt;Firewall&lt;/h2&gt;
+&lt;p&gt;MocaccinoOS includes the Linux kernel&amp;rsquo;s &lt;strong&gt;nftables&lt;/strong&gt; firewall framework and the &lt;code&gt;nft&lt;/code&gt; userspace utility. By default, no firewall rules are configured, allowing you to create a ruleset that matches your requirements.&lt;/p&gt;
+&lt;p&gt;A minimal configuration can be placed in &lt;code&gt;/etc/nftables.conf&lt;/code&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-nft&#34; data-lang=&#34;nft&#34;&gt;#!/usr/sbin/nft -f
+
+flush ruleset
+
+table inet filter {
+    chain input {
+        type filter hook input priority 0;
+        policy drop;
+
+        # Allow loopback
+        iif lo accept
+
+        # Allow established and related connections
+        ct state established,related accept
+
+        # Drop invalid packets
+        ct state invalid drop
+
+        # Allow ICMP
+        ip protocol icmp accept
+        ip6 nexthdr ipv6-icmp accept
+
+        # Allow SSH (optional)
+        tcp dport 22 accept
+    }
+
+    chain forward {
+        type filter hook forward priority 0;
+        policy drop;
+    }
+
+    chain output {
+        type filter hook output priority 0;
+        policy accept;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Enable the firewall at boot:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;systemctl &lt;span style=&#34;color:#24909d&#34;&gt;enable&lt;/span&gt; --now nftables
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;View the active ruleset:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;nft list ruleset
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Open additional services by adding the appropriate ports to the &lt;code&gt;input&lt;/code&gt; chain. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: &lt;code&gt;22/tcp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;HTTP: &lt;code&gt;80/tcp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;HTTPS: &lt;code&gt;443/tcp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;FTP: &lt;code&gt;21/tcp&lt;/code&gt; (plus the configured passive port range)&lt;/li&gt;
+&lt;li&gt;Samba: &lt;code&gt;445/tcp&lt;/code&gt; (and NetBIOS ports if required)&lt;/li&gt;
+&lt;/ul&gt;
+
       </description>
     </item>
     
