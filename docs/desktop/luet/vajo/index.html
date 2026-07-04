@@ -25,11 +25,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/luet/vajo/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2026-07-04T20:10:56+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2026-07-04T20:24:22+02:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Vajo">
 <meta itemprop="description" content="Using Vajo. A GUI/TUI for Luet.">
-<meta itemprop="dateModified" content="2026-07-04T20:10:56+02:00" />
+<meta itemprop="dateModified" content="2026-07-04T20:24:22+02:00" />
 <meta itemprop="wordCount" content="259">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vajo"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ea159cad1c163a7ff5a335e18a921124.json"
+  data-offline-search-index-json-src="/offline-search-index.1c91185cf4a759f7b350eecdc1331b89.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ea159cad1c163a7ff5a335e18a921124.json"
+  data-offline-search-index-json-src="/offline-search-index.1c91185cf4a759f7b350eecdc1331b89.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -470,19 +470,50 @@
 <h3 id="additional-functionality">Additional functionality</h3>
 <p>Click on the &ldquo;File&rdquo; menu to get additional options.</p>
 <img width="222" height="148" alt="Vajo2" src="https://github.com/user-attachments/assets/7b9384ba-9c84-4c3d-954d-06010b089cce" />
-<p>Update repositories: This syncs the repositories by running &ldquo;Luet repo update&rdquo;<br>
-Full system upgrade: This first syncs the repositories and directly afterwards runs &ldquo;Luet upgrade&rdquo;<br>
-Check the system:    This will run &ldquo;Luet oscheck&rdquo; and repair itself if missing files are detected.<br>
-Clear Luet cache:    This will clear system cache. Only available if applicable.<br>
-Quit:                Closes the program.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Action</th>
+<th style="text-align:left">Command Executed</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Update repositories</strong></td>
+<td style="text-align:left"><code>luet repo update</code></td>
+<td style="text-align:left">Syncs all configured repositories.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Full system upgrade</strong></td>
+<td style="text-align:left"><code>luet upgrade</code></td>
+<td style="text-align:left">Syncs repositories and updates the entire system.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Check the system</strong></td>
+<td style="text-align:left"><code>luet oscheck</code></td>
+<td style="text-align:left">Verifies system files and repairs missing components.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Clear Luet cache</strong></td>
+<td style="text-align:left"><em>N/A</em></td>
+<td style="text-align:left">Clears the Luet system cache if space can be reclaimed.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Quit</strong></td>
+<td style="text-align:left"><em>N/A</em></td>
+<td style="text-align:left">Safely closes the application.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="using-vajo-tui">Using Vajo-tui</h2>
-<p>The text-based version has excact the same functionality as the GUI version. Great advantage is that you can use this when connected to a MocaccinoOS system using a remote SSH (Secure Shell) session.</p>
+<p>The text-based version has exactly the same functionality as the GUI version. Great advantage is that you can use this when connected to a MocaccinoOS system using a remote SSH (Secure Shell) session.</p>
 <img width="1390" height="850" alt="Vajo-tui" src="https://github.com/user-attachments/assets/f7165359-7451-47e4-857a-b8a92814b015" />
 
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified July 4, 2026: <a href="https://github.com/MocaccinoOS/website/commit/c89dc29cdbb565e78b149a1431d402273544537e">workflows/pages: use actions/checkout@v4 (c89dc29)</a>
+  Last modified July 4, 2026: <a href="https://github.com/MocaccinoOS/website/commit/976074d6652528fa5a42dcff8d0e06b832905848">docs/vajo: bump (976074d)</a>
 </div>
 
 </div>
