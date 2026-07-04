@@ -51,13 +51,11 @@ Click on the "File" menu to get additional options.
 
 <img width="222" height="148" alt="Vajo2" src="https://github.com/user-attachments/assets/7b9384ba-9c84-4c3d-954d-06010b089cce" />
 
-| Action | Command Executed | Description |
-| :--- | :--- | :--- |
-| **Update repositories** | `luet repo update` | Syncs all configured repositories. |
-| **Full system upgrade** | `luet upgrade` | Syncs repositories and updates the entire system. |
-| **Check the system** | `luet oscheck` | Verifies system files and repairs missing components. |
-| **Clear Luet cache** | *N/A* | Clears the Luet system cache if space can be reclaimed. |
-| **Quit** | *N/A* | Safely closes the application. | 
+* **Update repositories:** Syncs the repositories by running `luet repo update`.
+* **Full system upgrade:** First syncs the repositories and directly afterwards runs `luet upgrade`.
+* **Check the system:** Runs `luet oscheck` and repairs itself if missing files are detected.
+* **Clear Luet cache:** Clears the system cache (only available if applicable).
+* **Quit:** Closes the program.
 
 ## Using Vajo-tui
 
