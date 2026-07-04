@@ -189,3 +189,68 @@ After saving the file, restart the service to apply your changes:
 ```bash
 systemctl restart systemd-networkd
 ```
+
+## Firewall
+
+MocaccinoOS includes the Linux kernel's **nftables** firewall framework and the `nft` userspace utility. By default, no firewall rules are configured, allowing you to create a ruleset that matches your requirements.
+
+A minimal configuration can be placed in `/etc/nftables.conf`:
+
+```nft
+#!/usr/sbin/nft -f
+
+flush ruleset
+
+table inet filter {
+    chain input {
+        type filter hook input priority 0;
+        policy drop;
+
+        # Allow loopback
+        iif lo accept
+
+        # Allow established and related connections
+        ct state established,related accept
+
+        # Drop invalid packets
+        ct state invalid drop
+
+        # Allow ICMP
+        ip protocol icmp accept
+        ip6 nexthdr ipv6-icmp accept
+
+        # Allow SSH (optional)
+        tcp dport 22 accept
+    }
+
+    chain forward {
+        type filter hook forward priority 0;
+        policy drop;
+    }
+
+    chain output {
+        type filter hook output priority 0;
+        policy accept;
+    }
+}
+```
+
+Enable the firewall at boot:
+
+```bash
+systemctl enable --now nftables
+```
+
+View the active ruleset:
+
+```bash
+nft list ruleset
+```
+
+Open additional services by adding the appropriate ports to the `input` chain. For example:
+
+- SSH: `22/tcp`
+- HTTP: `80/tcp`
+- HTTPS: `443/tcp`
+- FTP: `21/tcp` (plus the configured passive port range)
+- Samba: `445/tcp` (and NetBIOS ports if required)
