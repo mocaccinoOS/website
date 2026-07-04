@@ -51,15 +51,17 @@ Click on the "File" menu to get additional options.
 
 <img width="222" height="148" alt="Vajo2" src="https://github.com/user-attachments/assets/7b9384ba-9c84-4c3d-954d-06010b089cce" />
 
-Update repositories: This syncs the repositories by running "Luet repo update"  
-Full system upgrade: This first syncs the repositories and directly afterwards runs "Luet upgrade"  
-Check the system:    This will run "Luet oscheck" and repair itself if missing files are detected.  
-Clear Luet cache:    This will clear system cache. Only available if applicable.  
-Quit:                Closes the program.  
+| Action | Command Executed | Description |
+| :--- | :--- | :--- |
+| **Update repositories** | `luet repo update` | Syncs all configured repositories. |
+| **Full system upgrade** | `luet upgrade` | Syncs repositories and updates the entire system. |
+| **Check the system** | `luet oscheck` | Verifies system files and repairs missing components. |
+| **Clear Luet cache** | *N/A* | Clears the Luet system cache if space can be reclaimed. |
+| **Quit** | *N/A* | Safely closes the application. | 
 
 ## Using Vajo-tui
 
-The text-based version has excact the same functionality as the GUI version. Great advantage is that you can use this when connected to a MocaccinoOS system using a remote SSH (Secure Shell) session.
+The text-based version has exactly the same functionality as the GUI version. Great advantage is that you can use this when connected to a MocaccinoOS system using a remote SSH (Secure Shell) session.
 
 <img width="1390" height="850" alt="Vajo-tui" src="https://github.com/user-attachments/assets/f7165359-7451-47e4-857a-b8a92814b015" />
 
