@@ -117,6 +117,13 @@ First add the following to `~/.config/niri/config.kdl` to disable Waybar and sta
 // spawn-at-startup "waybar"
 spawn-at-startup "qs" "-c" "noctalia-shell"
 ```
+Since noctalia version 5.0.x this should be:
+
+```kdl
+// spawn-at-startup "waybar"
+spawn-at-startup "noctalia"
+```
+
 Then install the Noctalia shell configuration to your user directory:
 
 ```bash
