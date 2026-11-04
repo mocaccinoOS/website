@@ -30,7 +30,7 @@ Jerrod Frost
 - Layers, apps and ISO images now ship a package list
 - Improved config file handling: updates are now merged automatically in most cases. This was prompted by the eMudhra CA compromise, where an updated ca-certificates had to reach users reliably
 - linux-firmware and its split packages updated
-- Preparing our kernels so users can easily use scx
+- Kernel groundwork for sched_ext (scx) schedulers, so alternative CPU schedulers can be offered in a future release
 - Still testing optional [x86-64-v3 optimized](https://www.mocaccino.org/blog/2026/08/05/new-optional-x86-64-v3-builds-zero-risk-for-everyone-else/) builds for improved performance on supported modern CPUs
 
 ### Help Us Improve MocaccinoOS
