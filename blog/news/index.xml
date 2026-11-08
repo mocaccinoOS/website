@@ -30,7 +30,7 @@
 &lt;p&gt;It has a safety net built in: if the kernel detects a scheduling problem, it reverts to the default scheduler and carries on.&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt; And nothing changes until you load a scheduler yourself. Out of the box, MocaccinoOS behaves exactly as before.&lt;/p&gt;
 &lt;h2 id=&#34;what-we-changed&#34;&gt;What we changed&lt;/h2&gt;
 &lt;p&gt;The kernel configuration for sched_ext needs a few supporting options (BTF type information, function tracing hooks and a few BPF settings). That has a small cost for everyone: the kernel carries a few megabytes of extra type information, and the tracing hooks should be negligible when tracing isn&amp;rsquo;t in use. We think that&amp;rsquo;s a fair price for being able to offer this, but we&amp;rsquo;d rather say it than hide it.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;mocaccino-sched-ext-diagram.svg&#34; alt=&#34;Sched_ext diagram&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;mocaccino-sched-ext-diagram.svg&#34; alt=&#34;How sched_ext fits in&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;how-to-try-it&#34;&gt;How to try it&lt;/h2&gt;
 &lt;p&gt;Update to the new kernel and reboot, then install the schedulers:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;$ sudo luet install apps/scx&lt;/code&gt;&lt;/p&gt;
