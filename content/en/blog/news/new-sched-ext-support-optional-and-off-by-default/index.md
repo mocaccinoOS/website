@@ -23,7 +23,7 @@ It has a safety net built in: if the kernel detects a scheduling problem, it rev
 
 The kernel configuration for sched_ext needs a few supporting options (BTF type information, function tracing hooks and a few BPF settings). That has a small cost for everyone: the kernel carries a few megabytes of extra type information, and the tracing hooks should be negligible when tracing isn't in use. We think that's a fair price for being able to offer this, but we'd rather say it than hide it.
 
-![Sched_ext diagram](mocaccino-sched-ext-diagram.svg)
+![How sched_ext fits in](mocaccino-sched-ext-diagram.svg)
 
 ## How to try it
 
