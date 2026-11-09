@@ -17,13 +17,11 @@ With the next kernel update, that changes. Both our Stable and LTS kernels will 
 
 sched_ext is a Linux kernel feature (available since 6.12) that lets a CPU scheduler be written as a small BPF program and loaded from user space while the system is running. No reboot, no kernel rebuild.
 
-It has a safety net built in: if the kernel detects a scheduling problem, it reverts to the default scheduler and carries on.[1](#fn:1) And nothing changes until you load a scheduler yourself. Out of the box, MocaccinoOS behaves exactly as before.
+It has a safety net built in: if the kernel detects a scheduling problem, it reverts to the default scheduler and carries on.[^1] And nothing changes until you load a scheduler yourself. Out of the box, MocaccinoOS behaves exactly as before.
 
 ## What we changed
 
 The kernel configuration for sched_ext needs a few supporting options (BTF type information, function tracing hooks and a few BPF settings). That has a small cost for everyone: the kernel carries a few megabytes of extra type information, and the tracing hooks should be negligible when tracing isn't in use. We think that's a fair price for being able to offer this, but we'd rather say it than hide it.
-
-![How sched_ext fits in](mocaccino-sched-ext-diagram.svg)
 
 ## How to try it
 
@@ -43,15 +41,15 @@ enabled
 $ cat /sys/kernel/sched_ext/root/ops
 ```
 
-Press Ctrl+C to stop it and the kernel goes back to the default scheduler. A scheduler started this way also stops at reboot. We’ve confirmed that scx_lavd (aimed at gaming and interactive use) and scx_bpfland (aimed at low response times) load and run on our kernels: the kernel reports them as active. That’s all we’ve verified so far, and we haven’t benchmarked them (more on that below). The scx project ships other schedulers, which we haven’t tried.
+Press Ctrl+C to stop it and the kernel goes back to the default scheduler. A scheduler started this way also stops at reboot. We've confirmed that **scx_lavd** (aimed at gaming and interactive use) and **scx_bpfland** (aimed at low response times) load and run on our kernels: the kernel reports them as active. That's all we've verified so far, and we haven't benchmarked them (more on that below). The scx project ships other schedulers, which we haven't tried.
 
 ## What kind of gain should you actually expect?
 
 We want to be direct here, because scheduler claims are easy to inflate.
 
-The scx_lavd developers report that it consistently reaches higher frame rates than the default scheduler in games, with fewer stutters and slightly lower power use.[1](#fn:1) That's their measurement, on their workloads. We haven't run our own benchmarks yet.
+The scx_lavd developers report that it consistently reaches higher frame rates than the default scheduler in games, with fewer stutters and slightly lower power use.[^1] That's their measurement, on their workloads. We haven't run our own benchmarks yet.
 
-Independent results tell a more mixed story. In one third-party benchmark from June 2026 covering throughput-style workloads such as compiling and stress tests, the default scheduler (EEVDF) finished essentially tied for fastest, while scx_lavd took roughly 8% longer in total.[2](#fn:2) That makes sense: a scheduler tuned for low latency may give up some raw throughput. And in GPU-bound games the CPU scheduler has little room to matter at all.
+Independent results tell a more mixed story. In one third-party benchmark from June 2026 covering throughput-style workloads such as compiling and stress tests, the default scheduler (EEVDF) finished essentially tied for fastest, while scx_lavd took roughly 8% longer in total.[^2] That makes sense: a scheduler tuned for low latency may give up some raw throughput. And in GPU-bound games the CPU scheduler has little room to matter at all.
 
 So expect something workload-dependent: possibly smoother frame times under load, possibly nothing you can notice, and in some cases a slowdown. If you try it and it doesn't help, that's a legitimate outcome, not a bug.
 
@@ -64,10 +62,8 @@ Because the cost of opting in is one command, and the cost of not opting in is z
 ## Further technical reading
 
 - [Linux kernel documentation: Extensible Scheduler Class](https://docs.kernel.org/6.12/scheduler/sched-ext.html) — how sched_ext works and when it falls back
-- [LWN: sched_ext and the schedulers built on it](https://lwn.net/Articles/991205/) — talks on scx_lavd, scx_bpfland and others
+- [LWN: Sched_ext at LPC 2024](https://lwn.net/Articles/991205/) — overview talks on sched_ext, scx_lavd and scx_bpfland
 - [sched-ext/scx on GitHub](https://github.com/sched-ext/scx) — the scheduler collection we package
 
-* * *
-
-1. [LWN.net: sched_ext](https://lwn.net/Articles/991205/) [↩︎](#fn:1)
-2. [PANDEMONIUM scheduler benchmark (June 2026)](https://reddit.sentinel-team.org/posts/1u5uf16/snapshots/2026-06-19T21%3A03%3A49.564114Z) [↩︎](#fn:2)
+[^1]: [LWN: Sched_ext at LPC 2024](https://lwn.net/Articles/991205/) (Jonathan Corbet, September 2024)
+[^2]: [PANDEMONIUM scheduler benchmark (June 2026)](https://reddit.sentinel-team.org/posts/1u5uf16/snapshots/2026-06-19T21%3A03%3A49.564114Z)
