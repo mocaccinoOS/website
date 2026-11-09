@@ -39,7 +39,7 @@
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ cat /sys/kernel/sched_ext/state
 enabled
 $ cat /sys/kernel/sched_ext/root/ops
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Press Ctrl+C to stop it and the kernel goes back to the default scheduler. A scheduler started this way also stops at reboot. We&amp;rsquo;ve tested &lt;strong&gt;scx_lavd&lt;/strong&gt; (aimed at gaming and interactive use) and &lt;strong&gt;scx_bpfland&lt;/strong&gt; (aimed at low response times). The scx project ships others, but we haven&amp;rsquo;t tried them.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Press Ctrl+C to stop it and the kernel goes back to the default scheduler. A scheduler started this way also stops at reboot. We’ve confirmed that scx_lavd (aimed at gaming and interactive use) and scx_bpfland (aimed at low response times) load and run on our kernels: the kernel reports them as active. That’s all we’ve verified so far, and we haven’t benchmarked them (more on that below). The scx project ships other schedulers, which we haven’t tried.&lt;/p&gt;
 &lt;h2 id=&#34;what-kind-of-gain-should-you-actually-expect&#34;&gt;What kind of gain should you actually expect?&lt;/h2&gt;
 &lt;p&gt;We want to be direct here, because scheduler claims are easy to inflate.&lt;/p&gt;
 &lt;p&gt;The scx_lavd developers report that it consistently reaches higher frame rates than the default scheduler in games, with fewer stutters and slightly lower power use.&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt; That&amp;rsquo;s their measurement, on their workloads. We haven&amp;rsquo;t run our own benchmarks yet.&lt;/p&gt;
