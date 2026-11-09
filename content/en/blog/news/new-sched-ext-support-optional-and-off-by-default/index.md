@@ -43,7 +43,7 @@ enabled
 $ cat /sys/kernel/sched_ext/root/ops
 ```
 
-Press Ctrl+C to stop it and the kernel goes back to the default scheduler. A scheduler started this way also stops at reboot. We've tested **scx_lavd** (aimed at gaming and interactive use) and **scx_bpfland** (aimed at low response times). The scx project ships others, but we haven't tried them.
+Press Ctrl+C to stop it and the kernel goes back to the default scheduler. A scheduler started this way also stops at reboot. We’ve confirmed that scx_lavd (aimed at gaming and interactive use) and scx_bpfland (aimed at low response times) load and run on our kernels: the kernel reports them as active. That’s all we’ve verified so far, and we haven’t benchmarked them (more on that below). The scx project ships other schedulers, which we haven’t tried.
 
 ## What kind of gain should you actually expect?
 
