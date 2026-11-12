@@ -3648,8 +3648,25 @@ sudo sysctl --system
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;faq&#34;&gt;FAQ&lt;/h2&gt;
+&lt;h3 id=&#34;what-happens-if-i-edit-usrlibsysctld70-mocaccinoconf&#34;&gt;What happens if I edit &lt;code&gt;/usr/lib/sysctl.d/70-mocaccino.conf&lt;/code&gt;?&lt;/h3&gt;
+&lt;p&gt;⚠ Do &lt;strong&gt;NOT&lt;/strong&gt; edit this file. It will be overwritten during system updates. Always use &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;how-do-i-restore-default-settings&#34;&gt;How do I restore default settings?&lt;/h3&gt;
+&lt;p&gt;Delete your custom file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo rm /etc/sysctl.d/99-custom.conf
+sudo sysctl --system
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
 &lt;h2 id=&#34;optional-optimizations-opt-in&#34;&gt;Optional Optimizations (Opt-in)&lt;/h2&gt;
-&lt;p&gt;The following features are &lt;strong&gt;not enabled by default&lt;/strong&gt;. Installing them is optional, and not installing them carries no cost or risk.&lt;/p&gt;
+&lt;p&gt;The following features are &lt;strong&gt;not enabled by default&lt;/strong&gt;. Nothing changes in how your system behaves unless you opt in.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Set expectations:&lt;/strong&gt; both features below give workload-dependent results. You may see smoother performance, nothing noticeable, or in some cases a slowdown. If it doesn&amp;rsquo;t help for your workload, that is a legitimate outcome, not a bug.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3783,29 +3800,6 @@ cat /sys/kernel/sched_ext/root/ops
 &lt;li&gt;The &lt;code&gt;scx_lavd&lt;/code&gt; developers report higher frame rates, fewer stutters and slightly lower power use in games compared to the default scheduler&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. That is their measurement on their workloads.&lt;/li&gt;
 &lt;li&gt;In a third-party benchmark (June 2026) of throughput-style workloads such as compiling and stress tests, EEVDF was essentially tied for fastest, while &lt;code&gt;scx_lavd&lt;/code&gt; took roughly 8% longer in total&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;. Schedulers tuned for low latency may trade away some raw throughput.&lt;/li&gt;
 &lt;li&gt;In GPU-bound games, the CPU scheduler has little room to matter.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;faq&#34;&gt;FAQ&lt;/h2&gt;
-&lt;h3 id=&#34;what-happens-if-i-edit-usrlibsysctld70-mocaccinoconf&#34;&gt;What happens if I edit &lt;code&gt;/usr/lib/sysctl.d/70-mocaccino.conf&lt;/code&gt;?&lt;/h3&gt;
-&lt;p&gt;⚠ Do &lt;strong&gt;NOT&lt;/strong&gt; edit this file. It will be overwritten during system updates. Always use &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;how-do-i-restore-default-settings&#34;&gt;How do I restore default settings?&lt;/h3&gt;
-&lt;p&gt;Delete your custom file:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo rm /etc/sysctl.d/99-custom.conf
-sudo sysctl --system
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;hr&gt;
-&lt;h3 id=&#34;do-the-optional-features-affect-users-who-dont-install-them&#34;&gt;Do the optional features affect users who don&amp;rsquo;t install them?&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;x86-64-v3 layer:&lt;/strong&gt; no. Without it, nothing changes.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;sched_ext:&lt;/strong&gt; only the small kernel size overhead described above. The default scheduler stays in use until you load another one.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
