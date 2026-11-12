@@ -913,123 +913,56 @@ including &lt;strong&gt;runtime components only&lt;/strong&gt;, keeping the syst
       <description>
         
         
-        &lt;h1 id=&#34;mocaccinoos-performance-optimizations&#34;&gt;MocaccinoOS Performance Optimizations&lt;/h1&gt;
-&lt;p&gt;MocaccinoOS ships with carefully selected &lt;strong&gt;system and network optimizations&lt;/strong&gt; designed for:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Desktop responsiveness&lt;/li&gt;
-&lt;li&gt;Gaming performance&lt;/li&gt;
-&lt;li&gt;Low-latency networking&lt;/li&gt;
-&lt;li&gt;Efficient filesystem behavior&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Most users do &lt;strong&gt;not&lt;/strong&gt; need to change anything.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Core optimizations are &lt;strong&gt;enabled by default&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Additional examples are provided for advanced tuning.&lt;/li&gt;
-&lt;li&gt;Optional, opt-in features (CPU-optimized libraries, alternative CPU schedulers) are &lt;strong&gt;off by default&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Changes in &lt;code&gt;/usr/lib/sysctl.d/70-mocaccino.conf&lt;/code&gt; are &lt;strong&gt;overwritten on updates&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;To make permanent adjustments, create:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/etc/sysctl.d/99-custom.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h2 id=&#34;default-optimizations-already-enabled&#34;&gt;Default Optimizations (Already Enabled)&lt;/h2&gt;
-&lt;p&gt;The following settings are applied by default.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;network-performance-tweaks&#34;&gt;Network Performance Tweaks&lt;/h2&gt;
-&lt;h3 id=&#34;fq-fair-queuing--reduced-bufferbloat&#34;&gt;FQ (Fair Queuing) — Reduced Bufferbloat&lt;/h3&gt;
+        &lt;p&gt;MocaccinoOS ships with system and network optimizations for desktop responsiveness, gaming and low-latency networking. Most users do not need to change anything.&lt;/p&gt;
+&lt;p&gt;This page lists the default optimizations, explains how to customize them, and describes two optional features that are off by default.&lt;/p&gt;
+&lt;h2 id=&#34;default-optimizations&#34;&gt;Default optimizations&lt;/h2&gt;
+&lt;p&gt;The defaults are set in &lt;code&gt;/usr/lib/sysctl.d/70-mocaccino.conf&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;network&#34;&gt;Network&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#bbb&#34;&gt;net.core.default_qdisc&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;fq&lt;/span&gt;
+&lt;span style=&#34;color:#bbb&#34;&gt;net.ipv4.tcp_congestion_control&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;bbr&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Improves packet scheduling and reduces latency spikes under load.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;bbr-congestion-control--low-latency--high-throughput&#34;&gt;BBR Congestion Control — Low Latency + High Throughput&lt;/h3&gt;
+&lt;/div&gt;&lt;p&gt;FQ (Fair Queuing) improves packet scheduling and reduces latency spikes under load. BBR improves latency consistency and throughput on modern broadband.&lt;/p&gt;
+&lt;p&gt;To verify the congestion control algorithm:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#bbb&#34;&gt;net.ipv4.tcp_congestion_control&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;bbr&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sysctl net.ipv4.tcp_congestion_control
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;BBR improves:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Latency consistency&lt;/li&gt;
-&lt;li&gt;Throughput on modern broadband&lt;/li&gt;
-&lt;li&gt;Performance during uploads or downloads&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Verify:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sysctl net.ipv4.tcp_congestion_control
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;hr&gt;
-&lt;h2 id=&#34;memory-management-optimizations&#34;&gt;Memory Management Optimizations&lt;/h2&gt;
-&lt;h3 id=&#34;reduce-swap-usage-desktop-responsiveness&#34;&gt;Reduce Swap Usage (Desktop Responsiveness)&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#bbb&#34;&gt;vm.swappiness&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;10&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Lower swappiness:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Reduces background swapping&lt;/li&gt;
-&lt;li&gt;Keeps active applications in RAM&lt;/li&gt;
-&lt;li&gt;Improves gaming smoothness&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;optimize-disk-writeback-reduce-micro-stutters&#34;&gt;Optimize Disk Writeback (Reduce Micro-Stutters)&lt;/h3&gt;
+&lt;/div&gt;&lt;h3 id=&#34;memory&#34;&gt;Memory&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;6
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#bbb&#34;&gt;vm.dirty_background_ratio&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;3&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#bbb&#34;&gt;vm.swappiness&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;10&lt;/span&gt;
+&lt;span style=&#34;color:#bbb&#34;&gt;vm.dirty_background_ratio&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;3&lt;/span&gt;
 &lt;span style=&#34;color:#bbb&#34;&gt;vm.dirty_ratio&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;8&lt;/span&gt;
 &lt;span style=&#34;color:#bbb&#34;&gt;vm.dirty_expire_centisecs&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;1200&lt;/span&gt;
 &lt;span style=&#34;color:#bbb&#34;&gt;vm.dirty_writeback_centisecs&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;500&lt;/span&gt;
+&lt;span style=&#34;color:#bbb&#34;&gt;vm.vfs_cache_pressure&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;50&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Linux buffers disk writes in memory (&amp;ldquo;dirty pages&amp;rdquo;) before flushing them to disk. These settings:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Start writeback earlier&lt;/li&gt;
-&lt;li&gt;Reduce maximum dirty memory&lt;/li&gt;
-&lt;li&gt;Smooth disk I/O&lt;/li&gt;
-&lt;li&gt;Improve UI responsiveness&lt;/li&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;A low &lt;code&gt;vm.swappiness&lt;/code&gt; keeps active applications in RAM instead of swapping them out.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;vm.dirty_*&lt;/code&gt; settings start writing buffered data to disk earlier and limit how much can build up. This smooths disk I/O and reduces micro-stutters, at the cost of slightly lower peak sequential write throughput.&lt;/li&gt;
+&lt;li&gt;A lower &lt;code&gt;vm.vfs_cache_pressure&lt;/code&gt; keeps filesystem metadata cached longer, which helps games, development environments and large source trees.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Trade-off: slightly reduced peak sequential write throughput.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;reduce-vfs-cache-pressure&#34;&gt;Reduce VFS Cache Pressure&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#bbb&#34;&gt;vm.vfs_cache_pressure&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;50&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Keeps metadata and directory cache longer, benefiting:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Gaming workloads&lt;/li&gt;
-&lt;li&gt;Development environments&lt;/li&gt;
-&lt;li&gt;Large source trees&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;filesystem--process-optimizations&#34;&gt;Filesystem &amp;amp; Process Optimizations&lt;/h2&gt;
-&lt;h3 id=&#34;increase-inotify-limits-ides-docker-game-engines&#34;&gt;Increase inotify Limits (IDEs, Docker, Game Engines)&lt;/h3&gt;
+&lt;h3 id=&#34;filesystem&#34;&gt;Filesystem&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
@@ -1040,14 +973,41 @@ including &lt;strong&gt;runtime components only&lt;/strong&gt;, keeping the syst
 &lt;span style=&#34;color:#bbb&#34;&gt;fs.inotify.max_user_instances&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;1024&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Prevents file monitoring limits from being reached in large projects.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;customizing-tcp-buffer-sizes&#34;&gt;Customizing TCP Buffer Sizes&lt;/h2&gt;
-&lt;p&gt;MocaccinoOS provides &lt;strong&gt;example profiles&lt;/strong&gt; for different workloads.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt; Only one profile should be used at a time.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;low-latency-gaming-voice-chat-video-calls&#34;&gt;Low Latency (Gaming, Voice Chat, Video Calls)&lt;/h3&gt;
+&lt;/div&gt;&lt;p&gt;These higher inotify limits prevent file monitoring errors in IDEs, Docker and game engines working with large projects.&lt;/p&gt;
+&lt;h2 id=&#34;customizing-settings&#34;&gt;Customizing settings&lt;/h2&gt;
+&lt;p&gt;Changes to &lt;code&gt;/usr/lib/sysctl.d/70-mocaccino.conf&lt;/code&gt; are overwritten on updates. Put your own settings in &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt; instead.&lt;/p&gt;
+&lt;p&gt;After changing the file, apply the settings:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo sysctl --system
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;To check a single setting:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sysctl &amp;lt;setting&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;To restore the defaults, delete your custom file and reload:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo rm /etc/sysctl.d/99-custom.conf
+$ sudo sysctl --system
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;tcp-buffer-sizes&#34;&gt;TCP buffer sizes&lt;/h3&gt;
+&lt;p&gt;Two example profiles are available. Use only one at a time.&lt;/p&gt;
+&lt;p&gt;For gaming, voice chat and video calls (favors latency over maximum throughput):&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
@@ -1062,9 +1022,7 @@ including &lt;strong&gt;runtime components only&lt;/strong&gt;, keeping the syst
 &lt;span style=&#34;color:#bbb&#34;&gt;net.ipv4.tcp_wmem&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;4096 16384 4194304&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Optimized for latency stability over maximum throughput.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;high-bandwidth-file-transfers-streaming-nas&#34;&gt;High Bandwidth (File Transfers, Streaming, NAS)&lt;/h3&gt;
+&lt;/div&gt;&lt;p&gt;For file transfers, streaming and NAS (favors throughput):&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
@@ -1079,51 +1037,23 @@ including &lt;strong&gt;runtime components only&lt;/strong&gt;, keeping the syst
 &lt;span style=&#34;color:#bbb&#34;&gt;net.ipv4.tcp_wmem&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;4096 65536 16777216&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Apply permanently by copying the profile into:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/etc/sysctl.d/99-custom.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Reload settings:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo sysctl --system
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;hr&gt;
-&lt;h2 id=&#34;adjusting-vmmax_map_count-advanced-users&#34;&gt;Adjusting vm.max_map_count (Advanced Users)&lt;/h2&gt;
-&lt;p&gt;Default:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;color:#bbb&#34;&gt;vm.max_map_count&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;65530&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Some applications require higher limits:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Elasticsearch&lt;/li&gt;
-&lt;li&gt;Game engines&lt;/li&gt;
-&lt;li&gt;AI / ML workloads&lt;/li&gt;
-&lt;li&gt;Certain modern games&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Example: Increase to 262144&lt;/p&gt;
+&lt;/div&gt;&lt;h3 id=&#34;vmmax_map_count&#34;&gt;vm.max_map_count&lt;/h3&gt;
+&lt;p&gt;The default is &lt;code&gt;65530&lt;/code&gt;. Some applications need a higher limit, such as Elasticsearch, game engines, AI/ML workloads and certain modern games. For example, to set it to 262144:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;vm.max_map_count=262144&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; /etc/sysctl.d/99-custom.conf
-sudo sysctl --system
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;vm.max_map_count=262144&amp;#34;&lt;/span&gt; | sudo tee -a /etc/sysctl.d/99-custom.conf
+$ sudo sysctl --system
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Recommended Values:&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Recommended values:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Use Case&lt;/th&gt;
+&lt;th&gt;Use case&lt;/th&gt;
 &lt;th&gt;Value&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -1133,7 +1063,7 @@ sudo sysctl --system
 &lt;td&gt;65530&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Elasticsearch / Databases&lt;/td&gt;
+&lt;td&gt;Elasticsearch / databases&lt;/td&gt;
 &lt;td&gt;262144&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1142,198 +1072,71 @@ sudo sysctl --system
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;The game &lt;strong&gt;DayZ&lt;/strong&gt; requires &lt;code&gt;1048576&lt;/code&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;how-to-apply-changes&#34;&gt;How to Apply Changes&lt;/h2&gt;
-&lt;p&gt;After modifying &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;The game DayZ requires &lt;code&gt;1048576&lt;/code&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;optional-cpu-optimized-graphics-libraries&#34;&gt;Optional: CPU-optimized graphics libraries&lt;/h2&gt;
+&lt;p&gt;MocaccinoOS is built for the baseline x86-64 instruction set so it runs on every x86-64 CPU. The optional &lt;code&gt;layers/X-v3&lt;/code&gt; layer provides graphics and media libraries rebuilt for the &lt;strong&gt;x86-64-v3&lt;/strong&gt; level (AVX, AVX2, FMA, BMI1/BMI2), supported by Intel Haswell / AMD Excavator and newer CPUs (about 2013 and later).&lt;/p&gt;
+&lt;p&gt;The layer contains Mesa, Vulkan-loader, libepoxy, libglvnd, GLEW, FFmpeg and OpenAL. More libraries are planned. They are installed in &lt;code&gt;/usr/lib64/glibc-hwcaps/x86-64-v3/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;glibc (2.33 and newer) checks at every process launch whether the CPU supports v3. If it does, the optimized libraries are used. If it does not, the normal system libraries are used. No configuration is needed, so installing the layer is safe on any CPU.&lt;/p&gt;
+&lt;p&gt;This command installs the layer:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo sysctl --system
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo luet install layers/X-v3
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Verify any setting:&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;The layer is not part of the graphical installer.&lt;/p&gt;
+&lt;p&gt;The expected gain is small:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mesa, Vulkan-loader, libepoxy, libglvnd and GLEW mostly pass work between the game and the GPU driver. In GPU-bound scenarios, which is most gaming at higher resolutions, there is little room to matter. CPU-bound cases such as very high refresh-rate games or a weak CPU with a strong GPU may benefit slightly.&lt;/li&gt;
+&lt;li&gt;FFmpeg already uses hand-written SIMD code with runtime CPU detection for its main codecs, so the standard build already gets most of the AVX2 benefit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;One user comparing an x86-64-v3 Proton build to a standard build on capable AMD hardware measured no additional FPS&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. If you notice no difference, that is an expected result, not a bug.&lt;/p&gt;
+&lt;h2 id=&#34;optional-sched_ext-schedulers&#34;&gt;Optional: sched_ext schedulers&lt;/h2&gt;
+&lt;p&gt;The CPU scheduler decides which program runs on which core, and when. Linux uses EEVDF by default. &lt;strong&gt;sched_ext&lt;/strong&gt; (kernel 6.12 and newer) lets you load an alternative scheduler while the system is running, without a reboot or a kernel rebuild.&lt;/p&gt;
+&lt;p&gt;The Stable and LTS kernels ship with sched_ext enabled. Nothing changes until you load a scheduler yourself. If the kernel detects a scheduling problem, it falls back to the default scheduler automatically&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Enabling sched_ext requires a few supporting kernel options (BTF type information, function tracing hooks and some BPF settings). This adds a few megabytes of type information to the kernel for everyone. The tracing hooks should have a negligible effect when tracing is not in use.&lt;/p&gt;
+&lt;p&gt;Update to the latest kernel, reboot, and install the schedulers:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sysctl &amp;lt;setting&amp;gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo luet install apps/scx
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Example:&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Start a scheduler from a terminal:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sysctl net.ipv4.tcp_congestion_control
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ sudo scx_lavd
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;hr&gt;
-&lt;h2 id=&#34;faq&#34;&gt;FAQ&lt;/h2&gt;
-&lt;h3 id=&#34;what-happens-if-i-edit-usrlibsysctld70-mocaccinoconf&#34;&gt;What happens if I edit &lt;code&gt;/usr/lib/sysctl.d/70-mocaccino.conf&lt;/code&gt;?&lt;/h3&gt;
-&lt;p&gt;⚠ Do &lt;strong&gt;NOT&lt;/strong&gt; edit this file. It will be overwritten during system updates. Always use &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;how-do-i-restore-default-settings&#34;&gt;How do I restore default settings?&lt;/h3&gt;
-&lt;p&gt;Delete your custom file:&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;To check that it is active, run this in another terminal:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;3
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo rm /etc/sysctl.d/99-custom.conf
-sudo sysctl --system
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cat /sys/kernel/sched_ext/state
+enabled
+$ cat /sys/kernel/sched_ext/root/ops
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;hr&gt;
-&lt;h2 id=&#34;optional-optimizations-opt-in&#34;&gt;Optional Optimizations (Opt-in)&lt;/h2&gt;
-&lt;p&gt;The following features are &lt;strong&gt;not enabled by default&lt;/strong&gt;. Nothing changes in how your system behaves unless you opt in.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Set expectations:&lt;/strong&gt; both features below give workload-dependent results. You may see smoother performance, nothing noticeable, or in some cases a slowdown. If it doesn&amp;rsquo;t help for your workload, that is a legitimate outcome, not a bug.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;cpu-optimized-graphics-libraries-x86-64-v3&#34;&gt;CPU-Optimized Graphics Libraries (x86-64-v3)&lt;/h3&gt;
-&lt;p&gt;MocaccinoOS targets the baseline x86-64 instruction set so it runs on every x86-64 CPU. Newer CPUs support more. The x86-64 psABI defines standard levels:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Level&lt;/th&gt;
-&lt;th&gt;Instructions&lt;/th&gt;
-&lt;th&gt;Hardware&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;v2&lt;/td&gt;
-&lt;td&gt;SSE3/SSSE3/SSE4.1/SSE4.2, POPCNT&lt;/td&gt;
-&lt;td&gt;Nehalem/Bulldozer and newer (~2008+)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;v3&lt;/td&gt;
-&lt;td&gt;AVX, AVX2, FMA, BMI1/BMI2, and more&lt;/td&gt;
-&lt;td&gt;Haswell/Excavator and newer (~2013+)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;v4&lt;/td&gt;
-&lt;td&gt;AVX-512&lt;/td&gt;
-&lt;td&gt;Narrow slice of hardware&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;v3 covers essentially all mainstream desktop and gaming CPUs of the last decade, both Intel and AMD.&lt;/p&gt;
-&lt;h4 id=&#34;what-it-is&#34;&gt;What it is&lt;/h4&gt;
-&lt;p&gt;The optional &lt;code&gt;layers/X-v3&lt;/code&gt; layer provides graphics and media libraries rebuilt for x86-64-v3:&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;Press &lt;code&gt;Ctrl+C&lt;/code&gt; to stop the scheduler and return to the default one. A scheduler started this way also stops at reboot.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;scx_lavd&lt;/code&gt; (aimed at gaming and interactive use) and &lt;code&gt;scx_bpfland&lt;/code&gt; (aimed at low response times) have been verified to load and run on MocaccinoOS kernels. Other schedulers from the scx project have not been tried, and none have been benchmarked on MocaccinoOS yet.&lt;/p&gt;
+&lt;p&gt;Results depend on the workload:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Mesa&lt;/li&gt;
-&lt;li&gt;Vulkan-loader&lt;/li&gt;
-&lt;li&gt;libepoxy&lt;/li&gt;
-&lt;li&gt;libglvnd&lt;/li&gt;
-&lt;li&gt;GLEW&lt;/li&gt;
-&lt;li&gt;FFmpeg&lt;/li&gt;
-&lt;li&gt;OpenAL&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;More libraries are planned. They are installed into &lt;code&gt;/usr/lib64/glibc-hwcaps/x86-64-v3/&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;This uses a mechanism supported by glibc since 2.33. At every process launch, the dynamic linker checks whether the CPU supports v3:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;CPU supports v3&lt;/strong&gt; → the optimized libraries are used automatically.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;CPU does not support v3&lt;/strong&gt; → the normal system libraries are used.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;No detection script or configuration is needed.&lt;/p&gt;
-&lt;h4 id=&#34;install&#34;&gt;Install&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo luet install layers/X-v3
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;It is not part of the graphical installer (yet).&lt;/p&gt;
-&lt;h4 id=&#34;what-to-expect&#34;&gt;What to expect&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Mesa, Vulkan-loader, libepoxy, libglvnd, GLEW&lt;/strong&gt; are mostly dispatch and glue code between the application and the GPU driver. In GPU-bound scenarios (most gaming at higher resolutions) there is very little room to matter.&lt;/li&gt;
-&lt;li&gt;It can matter slightly more in CPU-bound scenarios: very high refresh-rate competitive titles, draw-call-heavy games, or a weak CPU paired with a strong GPU.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;FFmpeg&lt;/strong&gt; already uses hand-written SIMD code with runtime CPU detection for its main codecs (libx264, libx265, dav1d, and others), so the standard build already gets most of the AVX2 benefit.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;One user comparing an x86-64-v3 Proton build against a standard build on capable AMD hardware measured no additional FPS&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. Expect something small, or nothing noticeable.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;sched_ext-alternative-cpu-schedulers&#34;&gt;sched_ext (Alternative CPU Schedulers)&lt;/h3&gt;
-&lt;p&gt;The CPU scheduler decides which program runs on which core, and when. Linux uses &lt;strong&gt;EEVDF&lt;/strong&gt; by default (replacing CFS in kernel 6.6). &lt;strong&gt;sched_ext&lt;/strong&gt; (kernel 6.12+) allows a scheduler to be written as a BPF program and loaded while the system is running: no reboot, no kernel rebuild.&lt;/p&gt;
-&lt;p&gt;The MocaccinoOS &lt;strong&gt;Stable&lt;/strong&gt; and &lt;strong&gt;LTS&lt;/strong&gt; kernels ship with sched_ext enabled. Nothing changes until you load a scheduler yourself. If the kernel detects a scheduling problem, it automatically falls back to the default scheduler&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-&lt;h4 id=&#34;cost-of-enabling-it&#34;&gt;Cost of enabling it&lt;/h4&gt;
-&lt;p&gt;sched_ext requires a few supporting kernel options (BTF type information, function tracing hooks, some BPF settings). For everyone, this means a few megabytes of extra type information in the kernel. The tracing hooks should be negligible when tracing is not in use.&lt;/p&gt;
-&lt;h4 id=&#34;try-it&#34;&gt;Try it&lt;/h4&gt;
-&lt;p&gt;Update to the latest kernel, reboot, then install the schedulers:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo luet install apps/scx
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Start one from a terminal:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo scx_lavd
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Check that it is active from another terminal:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;1
-&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;cat /sys/kernel/sched_ext/state
-cat /sys/kernel/sched_ext/root/ops
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Press &lt;code&gt;Ctrl+C&lt;/code&gt; to stop it; the kernel returns to the default scheduler. A scheduler started this way also stops at reboot.&lt;/p&gt;
-&lt;h4 id=&#34;verified-schedulers&#34;&gt;Verified schedulers&lt;/h4&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Scheduler&lt;/th&gt;
-&lt;th&gt;Aimed at&lt;/th&gt;
-&lt;th&gt;Status&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;scx_lavd&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Gaming and interactive use&lt;/td&gt;
-&lt;td&gt;Loads and runs, reported active by the kernel&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;scx_bpfland&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Low response times&lt;/td&gt;
-&lt;td&gt;Loads and runs, reported active by the kernel&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Other schedulers from the scx project have not been tried. MocaccinoOS has not benchmarked any of them yet.&lt;/p&gt;
-&lt;h4 id=&#34;what-to-expect-1&#34;&gt;What to expect&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;The &lt;code&gt;scx_lavd&lt;/code&gt; developers report higher frame rates, fewer stutters and slightly lower power use in games compared to the default scheduler&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. That is their measurement on their workloads.&lt;/li&gt;
-&lt;li&gt;In a third-party benchmark (June 2026) of throughput-style workloads such as compiling and stress tests, EEVDF was essentially tied for fastest, while &lt;code&gt;scx_lavd&lt;/code&gt; took roughly 8% longer in total&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;. Schedulers tuned for low latency may trade away some raw throughput.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;scx_lavd&lt;/code&gt; developers report higher frame rates, fewer stutters and slightly lower power use in games&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. This is their measurement on their workloads.&lt;/li&gt;
+&lt;li&gt;In a third-party benchmark (June 2026) of compiling and stress tests, EEVDF was essentially tied for fastest, while &lt;code&gt;scx_lavd&lt;/code&gt; took roughly 8% longer in total&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;. Schedulers tuned for low latency may give up some raw throughput.&lt;/li&gt;
 &lt;li&gt;In GPU-bound games, the CPU scheduler has little room to matter.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-&lt;p&gt;✔ MocaccinoOS includes performance optimizations by default&lt;br&gt;
-✔ Network, memory, and filesystem tuning are preconfigured for desktop use&lt;br&gt;
-✔ Advanced users can override settings safely via &lt;code&gt;/etc/sysctl.d/99-custom.conf&lt;/code&gt;&lt;br&gt;
-✔ Changes in &lt;code&gt;/usr/lib/sysctl.d/&lt;/code&gt; are not persistent across updates&lt;br&gt;
-✔ Optional x86-64-v3 libraries and sched_ext schedulers are available, off by default&lt;/p&gt;
-&lt;p&gt;These defaults are designed to balance &lt;strong&gt;performance, stability, and responsiveness&lt;/strong&gt; for modern desktop systems.&lt;/p&gt;
+&lt;p&gt;If a scheduler does not help your workload, stop it and carry on with the default.&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
