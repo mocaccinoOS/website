@@ -19,6 +19,7 @@ Most users do **not** need to change anything.
 
 - Core optimizations are **enabled by default**.
 - Additional examples are provided for advanced tuning.
+- Optional, opt-in features (CPU-optimized libraries, alternative CPU schedulers) are **off by default**.
 - Changes in `/usr/lib/sysctl.d/70-mocaccino.conf` are **overwritten on updates**.
 - To make permanent adjustments, create:
 
@@ -205,6 +206,115 @@ The game **DayZ** requires `1048576`[^1].
 
 ---
 
+## Optional Optimizations (Opt-in)
+
+The following features are **not enabled by default**. Installing them is optional, and not installing them carries no cost or risk.
+
+> **Set expectations:** both features below give workload-dependent results. You may see smoother performance, nothing noticeable, or in some cases a slowdown. If it doesn't help for your workload, that is a legitimate outcome, not a bug.
+
+---
+
+### CPU-Optimized Graphics Libraries (x86-64-v3)
+
+MocaccinoOS targets the baseline x86-64 instruction set so it runs on every x86-64 CPU. Newer CPUs support more. The x86-64 psABI defines standard levels:
+
+| Level | Instructions | Hardware |
+|-------|--------------|----------|
+| v2 | SSE3/SSSE3/SSE4.1/SSE4.2, POPCNT | Nehalem/Bulldozer and newer (~2008+) |
+| v3 | AVX, AVX2, FMA, BMI1/BMI2, and more | Haswell/Excavator and newer (~2013+) |
+| v4 | AVX-512 | Narrow slice of hardware |
+
+v3 covers essentially all mainstream desktop and gaming CPUs of the last decade, both Intel and AMD.
+
+#### What it is
+
+The optional `layers/X-v3` layer provides graphics and media libraries rebuilt for x86-64-v3:
+
+- Mesa
+- Vulkan-loader
+- libepoxy
+- libglvnd
+- GLEW
+- FFmpeg
+- OpenAL
+
+More libraries are planned. They are installed into `/usr/lib64/glibc-hwcaps/x86-64-v3/`.
+
+This uses a mechanism supported by glibc since 2.33. At every process launch, the dynamic linker checks whether the CPU supports v3:
+
+- **CPU supports v3** → the optimized libraries are used automatically.
+- **CPU does not support v3** → the normal system libraries are used.
+
+No detection script or configuration is needed.
+
+#### Install
+
+```bash
+sudo luet install layers/X-v3
+```
+
+It is not part of the graphical installer (yet).
+
+#### What to expect
+
+- **Mesa, Vulkan-loader, libepoxy, libglvnd, GLEW** are mostly dispatch and glue code between the application and the GPU driver. In GPU-bound scenarios (most gaming at higher resolutions) there is very little room to matter.
+- It can matter slightly more in CPU-bound scenarios: very high refresh-rate competitive titles, draw-call-heavy games, or a weak CPU paired with a strong GPU.
+- **FFmpeg** already uses hand-written SIMD code with runtime CPU detection for its main codecs (libx264, libx265, dav1d, and others), so the standard build already gets most of the AVX2 benefit.
+
+One user comparing an x86-64-v3 Proton build against a standard build on capable AMD hardware measured no additional FPS[^2]. Expect something small, or nothing noticeable.
+
+---
+
+### sched_ext (Alternative CPU Schedulers)
+
+The CPU scheduler decides which program runs on which core, and when. Linux uses **EEVDF** by default (replacing CFS in kernel 6.6). **sched_ext** (kernel 6.12+) allows a scheduler to be written as a BPF program and loaded while the system is running: no reboot, no kernel rebuild.
+
+The MocaccinoOS **Stable** and **LTS** kernels ship with sched_ext enabled. Nothing changes until you load a scheduler yourself. If the kernel detects a scheduling problem, it automatically falls back to the default scheduler[^3].
+
+#### Cost of enabling it
+
+sched_ext requires a few supporting kernel options (BTF type information, function tracing hooks, some BPF settings). For everyone, this means a few megabytes of extra type information in the kernel. The tracing hooks should be negligible when tracing is not in use.
+
+#### Try it
+
+Update to the latest kernel, reboot, then install the schedulers:
+
+```bash
+sudo luet install apps/scx
+```
+
+Start one from a terminal:
+
+```bash
+sudo scx_lavd
+```
+
+Check that it is active from another terminal:
+
+```bash
+cat /sys/kernel/sched_ext/state
+cat /sys/kernel/sched_ext/root/ops
+```
+
+Press `Ctrl+C` to stop it; the kernel returns to the default scheduler. A scheduler started this way also stops at reboot.
+
+#### Verified schedulers
+
+| Scheduler | Aimed at | Status |
+|-----------|----------|--------|
+| `scx_lavd` | Gaming and interactive use | Loads and runs, reported active by the kernel |
+| `scx_bpfland` | Low response times | Loads and runs, reported active by the kernel |
+
+Other schedulers from the scx project have not been tried. MocaccinoOS has not benchmarked any of them yet.
+
+#### What to expect
+
+- The `scx_lavd` developers report higher frame rates, fewer stutters and slightly lower power use in games compared to the default scheduler[^3]. That is their measurement on their workloads.
+- In a third-party benchmark (June 2026) of throughput-style workloads such as compiling and stress tests, EEVDF was essentially tied for fastest, while `scx_lavd` took roughly 8% longer in total[^4]. Schedulers tuned for low latency may trade away some raw throughput.
+- In GPU-bound games, the CPU scheduler has little room to matter.
+
+---
+
 ## How to Apply Changes
 
 After modifying `/etc/sysctl.d/99-custom.conf`:
@@ -246,14 +356,24 @@ sudo sysctl --system
 
 ---
 
+### Do the optional features affect users who don't install them?
+
+- **x86-64-v3 layer:** no. Without it, nothing changes.
+- **sched_ext:** only the small kernel size overhead described above. The default scheduler stays in use until you load another one.
+
+---
+
 ## Summary
 
 ✔ MocaccinoOS includes performance optimizations by default  
 ✔ Network, memory, and filesystem tuning are preconfigured for desktop use  
 ✔ Advanced users can override settings safely via `/etc/sysctl.d/99-custom.conf`  
 ✔ Changes in `/usr/lib/sysctl.d/` are not persistent across updates  
+✔ Optional x86-64-v3 libraries and sched_ext schedulers are available, off by default  
 
 These defaults are designed to balance **performance, stability, and responsiveness** for modern desktop systems.
 
 [^1]: https://steamcommunity.com/app/221100/discussions/0/3199241400256965913/#c3199241400263431941
-
+[^2]: https://forums.linuxmint.com/viewtopic.php?t=457800
+[^3]: https://lwn.net/Articles/991205/
+[^4]: https://reddit.sentinel-team.org/posts/1u5uf16/snapshots/2026-06-19T21%3A03%3A49.564114Z
