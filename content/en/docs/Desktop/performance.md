@@ -206,6 +206,28 @@ The game **DayZ** requires `1048576`[^1].
 
 ---
 
+## How to Apply Changes
+
+After modifying `/etc/sysctl.d/99-custom.conf`:
+
+```bash
+sudo sysctl --system
+```
+
+Verify any setting:
+
+```bash
+sysctl <setting>
+```
+
+Example:
+
+```bash
+sysctl net.ipv4.tcp_congestion_control
+```
+
+---
+
 ## Optional Optimizations (Opt-in)
 
 The following features are **not enabled by default**. Installing them is optional, and not installing them carries no cost or risk.
@@ -312,28 +334,6 @@ Other schedulers from the scx project have not been tried. MocaccinoOS has not b
 - The `scx_lavd` developers report higher frame rates, fewer stutters and slightly lower power use in games compared to the default scheduler[^3]. That is their measurement on their workloads.
 - In a third-party benchmark (June 2026) of throughput-style workloads such as compiling and stress tests, EEVDF was essentially tied for fastest, while `scx_lavd` took roughly 8% longer in total[^4]. Schedulers tuned for low latency may trade away some raw throughput.
 - In GPU-bound games, the CPU scheduler has little room to matter.
-
----
-
-## How to Apply Changes
-
-After modifying `/etc/sysctl.d/99-custom.conf`:
-
-```bash
-sudo sysctl --system
-```
-
-Verify any setting:
-
-```bash
-sysctl <setting>
-```
-
-Example:
-
-```bash
-sysctl net.ipv4.tcp_congestion_control
-```
 
 ---
 
