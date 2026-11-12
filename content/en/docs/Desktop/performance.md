@@ -228,9 +228,28 @@ sysctl net.ipv4.tcp_congestion_control
 
 ---
 
+## FAQ
+
+### What happens if I edit `/usr/lib/sysctl.d/70-mocaccino.conf`?
+
+⚠ Do **NOT** edit this file. It will be overwritten during system updates. Always use `/etc/sysctl.d/99-custom.conf`.
+
+---
+
+### How do I restore default settings?
+
+Delete your custom file:
+
+```bash
+sudo rm /etc/sysctl.d/99-custom.conf
+sudo sysctl --system
+```
+
+---
+
 ## Optional Optimizations (Opt-in)
 
-The following features are **not enabled by default**. Installing them is optional, and not installing them carries no cost or risk.
+The following features are **not enabled by default**. Nothing changes in how your system behaves unless you opt in.
 
 > **Set expectations:** both features below give workload-dependent results. You may see smoother performance, nothing noticeable, or in some cases a slowdown. If it doesn't help for your workload, that is a legitimate outcome, not a bug.
 
@@ -334,32 +353,6 @@ Other schedulers from the scx project have not been tried. MocaccinoOS has not b
 - The `scx_lavd` developers report higher frame rates, fewer stutters and slightly lower power use in games compared to the default scheduler[^3]. That is their measurement on their workloads.
 - In a third-party benchmark (June 2026) of throughput-style workloads such as compiling and stress tests, EEVDF was essentially tied for fastest, while `scx_lavd` took roughly 8% longer in total[^4]. Schedulers tuned for low latency may trade away some raw throughput.
 - In GPU-bound games, the CPU scheduler has little room to matter.
-
----
-
-## FAQ
-
-### What happens if I edit `/usr/lib/sysctl.d/70-mocaccino.conf`?
-
-⚠ Do **NOT** edit this file. It will be overwritten during system updates. Always use `/etc/sysctl.d/99-custom.conf`.
-
----
-
-### How do I restore default settings?
-
-Delete your custom file:
-
-```bash
-sudo rm /etc/sysctl.d/99-custom.conf
-sudo sysctl --system
-```
-
----
-
-### Do the optional features affect users who don't install them?
-
-- **x86-64-v3 layer:** no. Without it, nothing changes.
-- **sched_ext:** only the small kernel size overhead described above. The default scheduler stays in use until you load another one.
 
 ---
 
