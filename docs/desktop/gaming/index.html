@@ -20,16 +20,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Gaming | MocaccinoOS</title>
-<meta name="description" content="Essentials you need to know.">
+<meta name="description" content="Install and set up Steam, Proton GE, Heroic, Lutris, Nvidia drivers and MangoHud.">
 <meta property="og:title" content="Gaming" />
-<meta property="og:description" content="Essentials you need to know." />
+<meta property="og:description" content="Install and set up Steam, Proton GE, Heroic, Lutris, Nvidia drivers and MangoHud." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/gaming/" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Gaming">
-<meta itemprop="description" content="Essentials you need to know."><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="Install and set up Steam, Proton GE, Heroic, Lutris, Nvidia drivers and MangoHud."><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Gaming"/>
-<meta name="twitter:description" content="Essentials you need to know."/>
+<meta name="twitter:description" content="Install and set up Steam, Proton GE, Heroic, Lutris, Nvidia drivers and MangoHud."/>
 
 
 
@@ -150,7 +150,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e4ac0baf45d9ffdade92f5d98bab5760.json"
+  data-offline-search-index-json-src="/offline-search-index.9631f44965fa37fcf560e39061bb272a.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -173,7 +173,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e4ac0baf45d9ffdade92f5d98bab5760.json"
+  data-offline-search-index-json-src="/offline-search-index.9631f44965fa37fcf560e39061bb272a.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -350,15 +350,21 @@
 
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#quick-reference">Quick reference</a></li>
+    <li><a href="#steam">Steam</a>
       <ul>
-        <li><a href="#steam">Steam</a></li>
-        <li><a href="#heroic-games-launcher">Heroic Games Launcher</a></li>
-        <li><a href="#lutris">Lutris</a></li>
-        <li><a href="#nvidia-drivers">Nvidia drivers</a></li>
-        <li><a href="#mangohud">Mangohud</a></li>
+        <li><a href="#gamemode">Gamemode</a></li>
+        <li><a href="#vkbasalt">VKBasalt</a></li>
+        <li><a href="#steam-library-on-an-ntfs-partition">Steam library on an NTFS partition</a></li>
+        <li><a href="#proton-ge">Proton GE</a></li>
       </ul>
     </li>
+    <li><a href="#heroic-games-launcher">Heroic Games Launcher</a></li>
+    <li><a href="#epic-games-launcher">Epic Games Launcher</a></li>
+    <li><a href="#lutris">Lutris</a></li>
+    <li><a href="#nvidia-drivers">Nvidia drivers</a></li>
+    <li><a href="#mangohud">MangoHud</a></li>
+    <li><a href="#tuning-your-system-for-games">Tuning your system for games</a></li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav></div>
@@ -406,7 +412,7 @@
             
 <div class="td-content">
 	<h1>Gaming</h1>
-  <div class="lead">Essentials you need to know.</div>
+  <div class="lead">Install and set up Steam, Proton GE, Heroic, Lutris, Nvidia drivers and MangoHud.</div>
 	<header class="article-meta">
 		
 		
@@ -422,150 +428,115 @@
 		
 		
 	</header>
-	<h3 id="steam">Steam</h3>
-<p>We recommend installing Steam directly from the desktop repository. You can also use the <a href="/docs/desktop/software/flatpak/">flatpak</a> version but that could give problems because it is basically running in a sandbox.
-To install Steam from the desktop repository you can issue the following installation command:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ sudo luet install apps/steam
-
-</code></pre></td></tr></table>
-</div>
-</div><h5 id="gamemode">Gamemode</h5>
-<p>Gamemode allows you to temporarily apply some optimizations when you launch a game. This functionality is bundled in the apps/steam package. So if you install Steam you also have Gamemode installed.
-To make Steam start a game with gamemode, right click the game in the Library, select Properties&hellip;, then in the Launch Options text box enter:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-gamemoderun %command%
-
-</code></pre></td></tr></table>
-</div>
-</div><h5 id="vkbasalt">VKBasalt</h5>
-<p>VKBasalt is a post processing layer for Vulkan which enables you to enhance graphics further. It only works with Vulkan, This includes all Proton games.
-This functionality is bundled in the apps/steam package. So if you install Steam you also have VKBasalt installed.</p>
-<p>To use VKBasalt for any particular game enter this as a launch option:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-<span style="color:#40ffff">ENABLE_VKBASALT</span>=<span style="color:#3677a9">1</span> %command%
-
-</code></pre></td></tr></table>
-</div>
-</div><p>You can also start non Steam games this way by typing the following command:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-<span style="color:#40ffff">ENABLE_VKBASALT</span>=<span style="color:#3677a9">1</span> mygame
-
-</code></pre></td></tr></table>
-</div>
-</div><h5 id="additional-steam-library-ntfs">Additional Steam library NTFS</h5>
-<p>If you share a partition between Windows and MocaccinoOS that has a Steam library, please keep in mind that this can cause issues when trying to launch the game.
-Due to the nature of NTFS, creating files/folders with names that are invalid on Windows will cause disk errors (leading to games that don&rsquo;t launch). The most common issue is a : (colon) character in filenames that Proton creates on the NTFS disk.</p>
-<p>Fixing this is pretty simple: create the /compatdata folder on the mounted NTFS disk as a symlink that points to a folder on a Linux partition.</p>
-<p>Creating the symlink:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ mkdir -p ~/.steam/steam/steamapps/compatdata
+	<p>This page covers the main ways to play games on MocaccinoOS Desktop, from the Steam client to GOG and Epic games, and the tools that go with them.</p>
+<h2 id="quick-reference">Quick reference</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Used for</th>
+<th>Where it comes from</th>
+<th>Install</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Steam</td>
+<td>Steam library, includes Gamemode and VKBasalt</td>
+<td>Desktop repository</td>
+<td><code>sudo luet install apps/steam</code></td>
+</tr>
+<tr>
+<td>Proton GE</td>
+<td>Custom Proton with extra patches</td>
+<td>Community repository</td>
+<td><code>sudo luet install apps/proton-ge-custom-bin</code></td>
+</tr>
+<tr>
+<td>Heroic Games Launcher</td>
+<td>Epic Games Store and GOG</td>
+<td>Flatpak</td>
+<td><code>flatpak install flathub com.heroicgameslauncher.hgl</code></td>
+</tr>
+<tr>
+<td>Epic Games Launcher</td>
+<td>Official Epic launcher for Linux (preview)</td>
+<td>Luet</td>
+<td><code>sudo luet install apps/epic-games-launcher</code></td>
+</tr>
+<tr>
+<td>Lutris</td>
+<td>Game platform for non-Steam games</td>
+<td>Community repository</td>
+<td><code>sudo luet install apps/lutris</code></td>
+</tr>
+<tr>
+<td>Nvidia drivers</td>
+<td>Proprietary Nvidia GPU drivers</td>
+<td>Desktop repository</td>
+<td><code>sudo luet install kernel-modules/nvidia-drivers-lts</code></td>
+</tr>
+<tr>
+<td>MangoHud</td>
+<td>FPS and hardware overlay</td>
+<td>Community repository</td>
+<td><code>sudo luet install apps/mangohud</code></td>
+</tr>
+</tbody>
+</table>
+<p>Proton GE, Lutris and MangoHud are in the <a href="/docs/desktop/luet/repositories/#community-repository">community repository</a>. Enable it first if you have not done so already.</p>
+<h2 id="steam">Steam</h2>
+<p>We recommend installing Steam directly from the desktop repository:</p>
+<pre tabindex="0"><code>$ sudo luet install apps/steam
+</code></pre><p>You can also use the <a href="/docs/desktop/software/flatpak/">Flatpak</a> version, but it runs in a sandbox, which can cause problems with some games.</p>
+<h3 id="gamemode">Gamemode</h3>
+<p>Gamemode temporarily applies optimizations while a game is running. It is bundled in the <code>apps/steam</code> package, so it is installed together with Steam.</p>
+<p>To start a game with Gamemode, right-click the game in your Library, select <strong>Properties&hellip;</strong> and enter this in the <strong>Launch Options</strong> box:</p>
+<pre tabindex="0"><code>gamemoderun %command%
+</code></pre><h3 id="vkbasalt">VKBasalt</h3>
+<p>VKBasalt is a post-processing layer for Vulkan that lets you enhance graphics further. It only works with Vulkan, which includes all Proton games. It is bundled in the <code>apps/steam</code> package, so it is installed together with Steam.</p>
+<p>To use VKBasalt for a Steam game, enter this as a launch option:</p>
+<pre tabindex="0"><code>ENABLE_VKBASALT=1 %command%
+</code></pre><p>For non-Steam games, start the game from a terminal like this:</p>
+<pre tabindex="0"><code>$ ENABLE_VKBASALT=1 mygame
+</code></pre><h3 id="steam-library-on-an-ntfs-partition">Steam library on an NTFS partition</h3>
+<p>If you share a partition with Windows that holds a Steam library, games can fail to launch. Proton creates files and folders with names that are not valid on Windows, most commonly with a <code>:</code> (colon) in the name. NTFS cannot store these, which leads to disk errors.</p>
+<p>The fix is to make the <code>compatdata</code> folder on the NTFS disk a symlink to a folder on a Linux partition.</p>
+<p>First, if a <code>compatdata</code> folder already exists on the NTFS disk, remove it. The symlink cannot be created while it is there. It holds Proton prefixes (per-game Wine environments), so back up any game saves you need from it first.</p>
+<p>Then create the folder on the Linux side and link to it from the NTFS disk (adjust the path to your mounted disk):</p>
+<pre tabindex="0"><code>$ mkdir -p ~/.steam/steam/steamapps/compatdata
 $ ln -s ~/.steam/steam/steamapps/compatdata /media/gamedisk/Steam/steamapps/
-
-</code></pre></td></tr></table>
-</div>
-</div><p><em>If the /compatdata folder already exists on the mounted disk BEFORE the symlink, DELETE IT!</em></p>
-<h4 id="proton-ge">Proton GE</h4>
-<p><a href="https://github.com/GloriousEggroll/proton-ge-custom?tab=readme-ov-file#proton-ge-custom">Proton GE</a> is a fork of Valve&rsquo;s Proton.
-This custom Proton version has several patches and bleeding edge technology that could help increase performance.</p>
-<p><em>GE stands for &ldquo;GloriousEggroll&rdquo; and is the nickname of Thomas Crider who works for RedHat.</em></p>
-<p>Proton GE is available in the <a href="/docs/desktop/luet/repositories/#community-repository">community repository</a>. If you have enabled this repository you can install it by using this command:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ sudo luet install apps/proton-ge-custom-bin
-
-</code></pre></td></tr></table>
-</div>
-</div><p>After installation you should restart Steam. Afterwards you will have Proton GE available in the compatibility settings.</p>
-<h3 id="heroic-games-launcher">Heroic Games Launcher</h3>
-<p>Installing and playing games using the Epic games store or GOG we recommend using Heroic Games Launcher. You can install this using <a href="docs/desktop/software/flatpak">flatpak</a>.</p>
-<h3 id="lutris">Lutris</h3>
-<p>An alternative platform for gamers is Lutris.</p>
-<p>Lutris is available in the <a href="/docs/desktop/luet/repositories/#community-repository">community repository</a>. If you have enabled this repository you can install it by using this command:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ sudo luet install apps/lutris
-
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="nvidia-drivers">Nvidia drivers</h3>
-<p>MocaccinoOS does not come with Nvidia-drivers pre-installed.
-If you require these proprietary drivers you can issue this command:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ sudo luet install kernel-modules/nvidia-drivers-lts
-
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="mangohud">Mangohud</h3>
-<p>Mangohud is available in the <a href="/docs/desktop/luet/repositories/#community-repository">community repository</a>. If you have enabled this repository you can install it by using this command:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-$ sudo luet install apps/mangohud
-
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="references">References</h2>
+</code></pre><h3 id="proton-ge">Proton GE</h3>
+<p><a href="https://github.com/GloriousEggroll/proton-ge-custom?tab=readme-ov-file#proton-ge-custom">Proton GE</a> is a fork of Valve&rsquo;s Proton, made by GloriousEggroll (GE). This custom Proton version has several patches and bleeding-edge technology that can help increase performance.</p>
+<p>Proton GE is in the <a href="/docs/desktop/luet/repositories/#community-repository">community repository</a>. With that repository enabled, install it with:</p>
+<pre tabindex="0"><code>$ sudo luet install apps/proton-ge-custom-bin
+</code></pre><p>Restart Steam afterwards. Proton GE then shows up in the compatibility settings.</p>
+<h2 id="heroic-games-launcher">Heroic Games Launcher</h2>
+<p>For games from the Epic Games Store or GOG, we recommend Heroic Games Launcher. Install it using <a href="/docs/desktop/software/flatpak/">Flatpak</a>:</p>
+<pre tabindex="0"><code>$ flatpak install flathub com.heroicgameslauncher.hgl
+</code></pre><h2 id="epic-games-launcher">Epic Games Launcher</h2>
+<p>The Epic Games Launcher for Linux is available on MocaccinoOS. It is currently in preview, so expect it to change. Install it with:</p>
+<pre tabindex="0"><code>$ sudo luet install apps/epic-games-launcher
+</code></pre><p>Heroic Games Launcher (above) remains an alternative for Epic Games Store and GOG games.</p>
+<h2 id="lutris">Lutris</h2>
+<p>Lutris is an alternative game platform. It is in the <a href="/docs/desktop/luet/repositories/#community-repository">community repository</a>. With that repository enabled, install it with:</p>
+<pre tabindex="0"><code>$ sudo luet install apps/lutris
+</code></pre><h2 id="nvidia-drivers">Nvidia drivers</h2>
+<p>MocaccinoOS does not come with the proprietary Nvidia drivers pre-installed. If you need them, run:</p>
+<pre tabindex="0"><code>$ sudo luet install kernel-modules/nvidia-drivers-lts
+</code></pre><h2 id="mangohud">MangoHud</h2>
+<p>MangoHud is an overlay that shows FPS, temperatures, CPU/GPU load and more. It is in the <a href="/docs/desktop/luet/repositories/#community-repository">community repository</a>. With that repository enabled, install it with:</p>
+<pre tabindex="0"><code>$ sudo luet install apps/mangohud
+</code></pre><p>To show it in a Steam game, enter this as a launch option:</p>
+<pre tabindex="0"><code>mangohud %command%
+</code></pre><h2 id="tuning-your-system-for-games">Tuning your system for games</h2>
+<p>The <a href="/docs/desktop/performance/">Performance</a> page covers settings that matter for gaming:</p>
+<ul>
+<li>a low-latency TCP profile for online games and voice chat</li>
+<li>a higher <code>vm.max_map_count</code>, which some games need (DayZ requires <code>1048576</code>)</li>
+<li>optional <code>sched_ext</code> schedulers, such as <code>scx_lavd</code>, which is aimed at gaming and interactive use</li>
+</ul>
+<h2 id="references">References</h2>
 <ul>
 <li><a href="https://github.com/ValveSoftware/Proton/wiki/Using-a-NTFS-disk-with-Linux-and-Windows#preventing-ntfs-read-errors">https://github.com/ValveSoftware/Proton/wiki/Using-a-NTFS-disk-with-Linux-and-Windows#preventing-ntfs-read-errors</a></li>
 <li><a href="https://wiki.archlinux.org/title/Gamemode#Run_Steam_with_gamemode">https://wiki.archlinux.org/title/Gamemode#Run_Steam_with_gamemode</a></li>
@@ -587,7 +558,7 @@ $ sudo luet install apps/mangohud
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified November 12, 2026: <a href="https://github.com/MocaccinoOS/website/commit/4bc60d3a513de4b13b76f0cbaeeffd3733b8ad86">Update performance documentation (4bc60d3)</a>
+  Last modified November 12, 2026: <a href="https://github.com/MocaccinoOS/website/commit/9b2d5707fc957aa808f77470d93e5614439f3da8">Update Gaming documentation (9b2d570)</a>
 </div>
 
 </div>
