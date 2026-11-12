@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/performance/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2026-11-09T08:40:02+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2026-11-12T12:56:09+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Performance Optimizations">
 <meta itemprop="description" content="Optimizing MocaccinoOS for enhanced performance.">
-<meta itemprop="dateModified" content="2026-11-09T08:40:02+01:00" />
-<meta itemprop="wordCount" content="480">
+<meta itemprop="dateModified" content="2026-11-12T12:56:09+01:00" />
+<meta itemprop="wordCount" content="1209">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Performance Optimizations"/>
 <meta name="twitter:description" content="Optimizing MocaccinoOS for enhanced performance."/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6472184cddc3a35c2c66e38d1cce709a.json"
+  data-offline-search-index-json-src="/offline-search-index.ee87f8e7edc63efc2640272442ea2f1b.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6472184cddc3a35c2c66e38d1cce709a.json"
+  data-offline-search-index-json-src="/offline-search-index.ee87f8e7edc63efc2640272442ea2f1b.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -380,11 +380,18 @@
       </ul>
     </li>
     <li><a href="#adjusting-vmmax_map_count-advanced-users">Adjusting vm.max_map_count (Advanced Users)</a></li>
+    <li><a href="#optional-optimizations-opt-in">Optional Optimizations (Opt-in)</a>
+      <ul>
+        <li><a href="#cpu-optimized-graphics-libraries-x86-64-v3">CPU-Optimized Graphics Libraries (x86-64-v3)</a></li>
+        <li><a href="#sched_ext-alternative-cpu-schedulers">sched_ext (Alternative CPU Schedulers)</a></li>
+      </ul>
+    </li>
     <li><a href="#how-to-apply-changes">How to Apply Changes</a></li>
     <li><a href="#faq">FAQ</a>
       <ul>
         <li><a href="#what-happens-if-i-edit-usrlibsysctld70-mocaccinoconf">What happens if I edit <code>/usr/lib/sysctl.d/70-mocaccino.conf</code>?</a></li>
         <li><a href="#how-do-i-restore-default-settings">How do I restore default settings?</a></li>
+        <li><a href="#do-the-optional-features-affect-users-who-dont-install-them">Do the optional features affect users who don&rsquo;t install them?</a></li>
       </ul>
     </li>
     <li><a href="#summary">Summary</a></li>
@@ -462,6 +469,7 @@
 <ul>
 <li>Core optimizations are <strong>enabled by default</strong>.</li>
 <li>Additional examples are provided for advanced tuning.</li>
+<li>Optional, opt-in features (CPU-optimized libraries, alternative CPU schedulers) are <strong>off by default</strong>.</li>
 <li>Changes in <code>/usr/lib/sysctl.d/70-mocaccino.conf</code> are <strong>overwritten on updates</strong>.</li>
 <li>To make permanent adjustments, create:</li>
 </ul>
@@ -680,6 +688,143 @@ sudo sysctl --system
 </table>
 <p>The game <strong>DayZ</strong> requires <code>1048576</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
 <hr>
+<h2 id="optional-optimizations-opt-in">Optional Optimizations (Opt-in)</h2>
+<p>The following features are <strong>not enabled by default</strong>. Installing them is optional, and not installing them carries no cost or risk.</p>
+<blockquote>
+<p><strong>Set expectations:</strong> both features below give workload-dependent results. You may see smoother performance, nothing noticeable, or in some cases a slowdown. If it doesn&rsquo;t help for your workload, that is a legitimate outcome, not a bug.</p>
+</blockquote>
+<hr>
+<h3 id="cpu-optimized-graphics-libraries-x86-64-v3">CPU-Optimized Graphics Libraries (x86-64-v3)</h3>
+<p>MocaccinoOS targets the baseline x86-64 instruction set so it runs on every x86-64 CPU. Newer CPUs support more. The x86-64 psABI defines standard levels:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Instructions</th>
+<th>Hardware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v2</td>
+<td>SSE3/SSSE3/SSE4.1/SSE4.2, POPCNT</td>
+<td>Nehalem/Bulldozer and newer (~2008+)</td>
+</tr>
+<tr>
+<td>v3</td>
+<td>AVX, AVX2, FMA, BMI1/BMI2, and more</td>
+<td>Haswell/Excavator and newer (~2013+)</td>
+</tr>
+<tr>
+<td>v4</td>
+<td>AVX-512</td>
+<td>Narrow slice of hardware</td>
+</tr>
+</tbody>
+</table>
+<p>v3 covers essentially all mainstream desktop and gaming CPUs of the last decade, both Intel and AMD.</p>
+<h4 id="what-it-is">What it is</h4>
+<p>The optional <code>layers/X-v3</code> layer provides graphics and media libraries rebuilt for x86-64-v3:</p>
+<ul>
+<li>Mesa</li>
+<li>Vulkan-loader</li>
+<li>libepoxy</li>
+<li>libglvnd</li>
+<li>GLEW</li>
+<li>FFmpeg</li>
+<li>OpenAL</li>
+</ul>
+<p>More libraries are planned. They are installed into <code>/usr/lib64/glibc-hwcaps/x86-64-v3/</code>.</p>
+<p>This uses a mechanism supported by glibc since 2.33. At every process launch, the dynamic linker checks whether the CPU supports v3:</p>
+<ul>
+<li><strong>CPU supports v3</strong> → the optimized libraries are used automatically.</li>
+<li><strong>CPU does not support v3</strong> → the normal system libraries are used.</li>
+</ul>
+<p>No detection script or configuration is needed.</p>
+<h4 id="install">Install</h4>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo luet install layers/X-v3
+</code></pre></td></tr></table>
+</div>
+</div><p>It is not part of the graphical installer (yet).</p>
+<h4 id="what-to-expect">What to expect</h4>
+<ul>
+<li><strong>Mesa, Vulkan-loader, libepoxy, libglvnd, GLEW</strong> are mostly dispatch and glue code between the application and the GPU driver. In GPU-bound scenarios (most gaming at higher resolutions) there is very little room to matter.</li>
+<li>It can matter slightly more in CPU-bound scenarios: very high refresh-rate competitive titles, draw-call-heavy games, or a weak CPU paired with a strong GPU.</li>
+<li><strong>FFmpeg</strong> already uses hand-written SIMD code with runtime CPU detection for its main codecs (libx264, libx265, dav1d, and others), so the standard build already gets most of the AVX2 benefit.</li>
+</ul>
+<p>One user comparing an x86-64-v3 Proton build against a standard build on capable AMD hardware measured no additional FPS<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Expect something small, or nothing noticeable.</p>
+<hr>
+<h3 id="sched_ext-alternative-cpu-schedulers">sched_ext (Alternative CPU Schedulers)</h3>
+<p>The CPU scheduler decides which program runs on which core, and when. Linux uses <strong>EEVDF</strong> by default (replacing CFS in kernel 6.6). <strong>sched_ext</strong> (kernel 6.12+) allows a scheduler to be written as a BPF program and loaded while the system is running: no reboot, no kernel rebuild.</p>
+<p>The MocaccinoOS <strong>Stable</strong> and <strong>LTS</strong> kernels ship with sched_ext enabled. Nothing changes until you load a scheduler yourself. If the kernel detects a scheduling problem, it automatically falls back to the default scheduler<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<h4 id="cost-of-enabling-it">Cost of enabling it</h4>
+<p>sched_ext requires a few supporting kernel options (BTF type information, function tracing hooks, some BPF settings). For everyone, this means a few megabytes of extra type information in the kernel. The tracing hooks should be negligible when tracing is not in use.</p>
+<h4 id="try-it">Try it</h4>
+<p>Update to the latest kernel, reboot, then install the schedulers:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo luet install apps/scx
+</code></pre></td></tr></table>
+</div>
+</div><p>Start one from a terminal:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo scx_lavd
+</code></pre></td></tr></table>
+</div>
+</div><p>Check that it is active from another terminal:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /sys/kernel/sched_ext/state
+cat /sys/kernel/sched_ext/root/ops
+</code></pre></td></tr></table>
+</div>
+</div><p>Press <code>Ctrl+C</code> to stop it; the kernel returns to the default scheduler. A scheduler started this way also stops at reboot.</p>
+<h4 id="verified-schedulers">Verified schedulers</h4>
+<table>
+<thead>
+<tr>
+<th>Scheduler</th>
+<th>Aimed at</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scx_lavd</code></td>
+<td>Gaming and interactive use</td>
+<td>Loads and runs, reported active by the kernel</td>
+</tr>
+<tr>
+<td><code>scx_bpfland</code></td>
+<td>Low response times</td>
+<td>Loads and runs, reported active by the kernel</td>
+</tr>
+</tbody>
+</table>
+<p>Other schedulers from the scx project have not been tried. MocaccinoOS has not benchmarked any of them yet.</p>
+<h4 id="what-to-expect-1">What to expect</h4>
+<ul>
+<li>The <code>scx_lavd</code> developers report higher frame rates, fewer stutters and slightly lower power use in games compared to the default scheduler<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. That is their measurement on their workloads.</li>
+<li>In a third-party benchmark (June 2026) of throughput-style workloads such as compiling and stress tests, EEVDF was essentially tied for fastest, while <code>scx_lavd</code> took roughly 8% longer in total<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>. Schedulers tuned for low latency may trade away some raw throughput.</li>
+<li>In GPU-bound games, the CPU scheduler has little room to matter.</li>
+</ul>
+<hr>
 <h2 id="how-to-apply-changes">How to Apply Changes</h2>
 <p>After modifying <code>/etc/sysctl.d/99-custom.conf</code>:</p>
 <div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -726,11 +871,18 @@ sudo sysctl --system
 </code></pre></td></tr></table>
 </div>
 </div><hr>
+<h3 id="do-the-optional-features-affect-users-who-dont-install-them">Do the optional features affect users who don&rsquo;t install them?</h3>
+<ul>
+<li><strong>x86-64-v3 layer:</strong> no. Without it, nothing changes.</li>
+<li><strong>sched_ext:</strong> only the small kernel size overhead described above. The default scheduler stays in use until you load another one.</li>
+</ul>
+<hr>
 <h2 id="summary">Summary</h2>
 <p>✔ MocaccinoOS includes performance optimizations by default<br>
 ✔ Network, memory, and filesystem tuning are preconfigured for desktop use<br>
 ✔ Advanced users can override settings safely via <code>/etc/sysctl.d/99-custom.conf</code><br>
-✔ Changes in <code>/usr/lib/sysctl.d/</code> are not persistent across updates</p>
+✔ Changes in <code>/usr/lib/sysctl.d/</code> are not persistent across updates<br>
+✔ Optional x86-64-v3 libraries and sched_ext schedulers are available, off by default</p>
 <p>These defaults are designed to balance <strong>performance, stability, and responsiveness</strong> for modern desktop systems.</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
@@ -738,13 +890,22 @@ sudo sysctl --system
 <li id="fn:1" role="doc-endnote">
 <p><a href="https://steamcommunity.com/app/221100/discussions/0/3199241400256965913/#c3199241400263431941">https://steamcommunity.com/app/221100/discussions/0/3199241400256965913/#c3199241400263431941</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://forums.linuxmint.com/viewtopic.php?t=457800">https://forums.linuxmint.com/viewtopic.php?t=457800</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="https://lwn.net/Articles/991205/">https://lwn.net/Articles/991205/</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p><a href="https://reddit.sentinel-team.org/posts/1u5uf16/snapshots/2026-06-19T21%3A03%3A49.564114Z">https://reddit.sentinel-team.org/posts/1u5uf16/snapshots/2026-06-19T21%3A03%3A49.564114Z</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
 </section>
 
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified November 9, 2026: <a href="https://github.com/MocaccinoOS/website/commit/0876f76aab40b9852999ce73a21721d1331cb77f">Minor update in text (0876f76)</a>
+  Last modified November 12, 2026: <a href="https://github.com/MocaccinoOS/website/commit/73a2135d5ea24db0f7f9626e7aacccf01b9ad6b5">Update performance documentation (73a2135)</a>
 </div>
 
 </div>

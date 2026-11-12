@@ -27,10 +27,9 @@
 &lt;p&gt;With the next kernel update, that changes. Both our Stable and LTS kernels will ship with &lt;strong&gt;sched_ext&lt;/strong&gt; enabled.&lt;/p&gt;
 &lt;h2 id=&#34;what-is-sched_ext&#34;&gt;What is sched_ext?&lt;/h2&gt;
 &lt;p&gt;sched_ext is a Linux kernel feature (available since 6.12) that lets a CPU scheduler be written as a small BPF program and loaded from user space while the system is running. No reboot, no kernel rebuild.&lt;/p&gt;
-&lt;p&gt;It has a safety net built in: if the kernel detects a scheduling problem, it reverts to the default scheduler and carries on.&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt; And nothing changes until you load a scheduler yourself. Out of the box, MocaccinoOS behaves exactly as before.&lt;/p&gt;
+&lt;p&gt;It has a safety net built in: if the kernel detects a scheduling problem, it reverts to the default scheduler and carries on.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; And nothing changes until you load a scheduler yourself. Out of the box, MocaccinoOS behaves exactly as before.&lt;/p&gt;
 &lt;h2 id=&#34;what-we-changed&#34;&gt;What we changed&lt;/h2&gt;
 &lt;p&gt;The kernel configuration for sched_ext needs a few supporting options (BTF type information, function tracing hooks and a few BPF settings). That has a small cost for everyone: the kernel carries a few megabytes of extra type information, and the tracing hooks should be negligible when tracing isn&amp;rsquo;t in use. We think that&amp;rsquo;s a fair price for being able to offer this, but we&amp;rsquo;d rather say it than hide it.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;mocaccino-sched-ext-diagram.svg&#34; alt=&#34;How sched_ext fits in&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;how-to-try-it&#34;&gt;How to try it&lt;/h2&gt;
 &lt;p&gt;Update to the new kernel and reboot, then install the schedulers:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;$ sudo luet install apps/scx&lt;/code&gt;&lt;/p&gt;
@@ -40,11 +39,11 @@
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ cat /sys/kernel/sched_ext/state
 enabled
 $ cat /sys/kernel/sched_ext/root/ops
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Press Ctrl+C to stop it and the kernel goes back to the default scheduler. A scheduler started this way also stops at reboot. We’ve confirmed that scx_lavd (aimed at gaming and interactive use) and scx_bpfland (aimed at low response times) load and run on our kernels: the kernel reports them as active. That’s all we’ve verified so far, and we haven’t benchmarked them (more on that below). The scx project ships other schedulers, which we haven’t tried.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Press Ctrl+C to stop it and the kernel goes back to the default scheduler. A scheduler started this way also stops at reboot. We&amp;rsquo;ve confirmed that &lt;strong&gt;scx_lavd&lt;/strong&gt; (aimed at gaming and interactive use) and &lt;strong&gt;scx_bpfland&lt;/strong&gt; (aimed at low response times) load and run on our kernels: the kernel reports them as active. That&amp;rsquo;s all we&amp;rsquo;ve verified so far, and we haven&amp;rsquo;t benchmarked them (more on that below). The scx project ships other schedulers, which we haven&amp;rsquo;t tried.&lt;/p&gt;
 &lt;h2 id=&#34;what-kind-of-gain-should-you-actually-expect&#34;&gt;What kind of gain should you actually expect?&lt;/h2&gt;
 &lt;p&gt;We want to be direct here, because scheduler claims are easy to inflate.&lt;/p&gt;
-&lt;p&gt;The scx_lavd developers report that it consistently reaches higher frame rates than the default scheduler in games, with fewer stutters and slightly lower power use.&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt; That&amp;rsquo;s their measurement, on their workloads. We haven&amp;rsquo;t run our own benchmarks yet.&lt;/p&gt;
-&lt;p&gt;Independent results tell a more mixed story. In one third-party benchmark from June 2026 covering throughput-style workloads such as compiling and stress tests, the default scheduler (EEVDF) finished essentially tied for fastest, while scx_lavd took roughly 8% longer in total.&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt; That makes sense: a scheduler tuned for low latency may give up some raw throughput. And in GPU-bound games the CPU scheduler has little room to matter at all.&lt;/p&gt;
+&lt;p&gt;The scx_lavd developers report that it consistently reaches higher frame rates than the default scheduler in games, with fewer stutters and slightly lower power use.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; That&amp;rsquo;s their measurement, on their workloads. We haven&amp;rsquo;t run our own benchmarks yet.&lt;/p&gt;
+&lt;p&gt;Independent results tell a more mixed story. In one third-party benchmark from June 2026 covering throughput-style workloads such as compiling and stress tests, the default scheduler (EEVDF) finished essentially tied for fastest, while scx_lavd took roughly 8% longer in total.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; That makes sense: a scheduler tuned for low latency may give up some raw throughput. And in GPU-bound games the CPU scheduler has little room to matter at all.&lt;/p&gt;
 &lt;p&gt;So expect something workload-dependent: possibly smoother frame times under load, possibly nothing you can notice, and in some cases a slowdown. If you try it and it doesn&amp;rsquo;t help, that&amp;rsquo;s a legitimate outcome, not a bug.&lt;/p&gt;
 &lt;h2 id=&#34;then-why-add-it-at-all&#34;&gt;Then why add it at all?&lt;/h2&gt;
 &lt;p&gt;Because the cost of opting in is one command, and the cost of not opting in is zero. Anyone who wants to experiment with schedulers, for gaming, for desktop responsiveness or just out of curiosity, can do it on a stock kernel now, without compiling anything. And if a scheduler misbehaves, the kernel falls back by itself.&lt;/p&gt;
@@ -52,14 +51,20 @@ $ cat /sys/kernel/sched_ext/root/ops
 &lt;h2 id=&#34;further-technical-reading&#34;&gt;Further technical reading&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.kernel.org/6.12/scheduler/sched-ext.html&#34;&gt;Linux kernel documentation: Extensible Scheduler Class&lt;/a&gt; — how sched_ext works and when it falls back&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lwn.net/Articles/991205/&#34;&gt;LWN: sched_ext and the schedulers built on it&lt;/a&gt; — talks on scx_lavd, scx_bpfland and others&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lwn.net/Articles/991205/&#34;&gt;LWN: Sched_ext at LPC 2024&lt;/a&gt; — overview talks on sched_ext, scx_lavd and scx_bpfland&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/sched-ext/scx&#34;&gt;sched-ext/scx on GitHub&lt;/a&gt; — the scheduler collection we package&lt;/li&gt;
 &lt;/ul&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://lwn.net/Articles/991205/&#34;&gt;LWN.net: sched_ext&lt;/a&gt; &lt;a href=&#34;#fn:1&#34;&gt;↩︎&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://reddit.sentinel-team.org/posts/1u5uf16/snapshots/2026-06-19T21%3A03%3A49.564114Z&#34;&gt;PANDEMONIUM scheduler benchmark (June 2026)&lt;/a&gt; &lt;a href=&#34;#fn:2&#34;&gt;↩︎&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://lwn.net/Articles/991205/&#34;&gt;LWN: Sched_ext at LPC 2024&lt;/a&gt; (Jonathan Corbet, September 2024)&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://reddit.sentinel-team.org/posts/1u5uf16/snapshots/2026-06-19T21%3A03%3A49.564114Z&#34;&gt;PANDEMONIUM scheduler benchmark (June 2026)&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/section&gt;
 
       </description>
     </item>

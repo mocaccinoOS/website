@@ -25,12 +25,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/blog/2026/11/08/new-sched-ext-support-optional-and-off-by-default/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2026-11-08T00:00:00+00:00" />
-<meta property="article:modified_time" content="2026-11-09T08:40:02+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2026-11-12T12:56:09+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="New: sched_ext support, optional and off by default">
 <meta itemprop="description" content="New: sched_ext support, optional and off by default"><meta itemprop="datePublished" content="2026-11-08T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2026-11-09T08:40:02+01:00" />
-<meta itemprop="wordCount" content="652">
+<meta itemprop="dateModified" content="2026-11-12T12:56:09+01:00" />
+<meta itemprop="wordCount" content="655">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="New: sched_ext support, optional and off by default"/>
 <meta name="twitter:description" content="New: sched_ext support, optional and off by default"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6472184cddc3a35c2c66e38d1cce709a.json"
+  data-offline-search-index-json-src="/offline-search-index.ee87f8e7edc63efc2640272442ea2f1b.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6472184cddc3a35c2c66e38d1cce709a.json"
+  data-offline-search-index-json-src="/offline-search-index.ee87f8e7edc63efc2640272442ea2f1b.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -363,10 +363,9 @@
 <p>With the next kernel update, that changes. Both our Stable and LTS kernels will ship with <strong>sched_ext</strong> enabled.</p>
 <h2 id="what-is-sched_ext">What is sched_ext?</h2>
 <p>sched_ext is a Linux kernel feature (available since 6.12) that lets a CPU scheduler be written as a small BPF program and loaded from user space while the system is running. No reboot, no kernel rebuild.</p>
-<p>It has a safety net built in: if the kernel detects a scheduling problem, it reverts to the default scheduler and carries on.<a href="#fn:1">1</a> And nothing changes until you load a scheduler yourself. Out of the box, MocaccinoOS behaves exactly as before.</p>
+<p>It has a safety net built in: if the kernel detects a scheduling problem, it reverts to the default scheduler and carries on.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> And nothing changes until you load a scheduler yourself. Out of the box, MocaccinoOS behaves exactly as before.</p>
 <h2 id="what-we-changed">What we changed</h2>
 <p>The kernel configuration for sched_ext needs a few supporting options (BTF type information, function tracing hooks and a few BPF settings). That has a small cost for everyone: the kernel carries a few megabytes of extra type information, and the tracing hooks should be negligible when tracing isn&rsquo;t in use. We think that&rsquo;s a fair price for being able to offer this, but we&rsquo;d rather say it than hide it.</p>
-<p><img src="mocaccino-sched-ext-diagram.svg" alt="How sched_ext fits in"></p>
 <h2 id="how-to-try-it">How to try it</h2>
 <p>Update to the new kernel and reboot, then install the schedulers:</p>
 <p><code>$ sudo luet install apps/scx</code></p>
@@ -376,11 +375,11 @@
 <pre tabindex="0"><code>$ cat /sys/kernel/sched_ext/state
 enabled
 $ cat /sys/kernel/sched_ext/root/ops
-</code></pre><p>Press Ctrl+C to stop it and the kernel goes back to the default scheduler. A scheduler started this way also stops at reboot. We’ve confirmed that scx_lavd (aimed at gaming and interactive use) and scx_bpfland (aimed at low response times) load and run on our kernels: the kernel reports them as active. That’s all we’ve verified so far, and we haven’t benchmarked them (more on that below). The scx project ships other schedulers, which we haven’t tried.</p>
+</code></pre><p>Press Ctrl+C to stop it and the kernel goes back to the default scheduler. A scheduler started this way also stops at reboot. We&rsquo;ve confirmed that <strong>scx_lavd</strong> (aimed at gaming and interactive use) and <strong>scx_bpfland</strong> (aimed at low response times) load and run on our kernels: the kernel reports them as active. That&rsquo;s all we&rsquo;ve verified so far, and we haven&rsquo;t benchmarked them (more on that below). The scx project ships other schedulers, which we haven&rsquo;t tried.</p>
 <h2 id="what-kind-of-gain-should-you-actually-expect">What kind of gain should you actually expect?</h2>
 <p>We want to be direct here, because scheduler claims are easy to inflate.</p>
-<p>The scx_lavd developers report that it consistently reaches higher frame rates than the default scheduler in games, with fewer stutters and slightly lower power use.<a href="#fn:1">1</a> That&rsquo;s their measurement, on their workloads. We haven&rsquo;t run our own benchmarks yet.</p>
-<p>Independent results tell a more mixed story. In one third-party benchmark from June 2026 covering throughput-style workloads such as compiling and stress tests, the default scheduler (EEVDF) finished essentially tied for fastest, while scx_lavd took roughly 8% longer in total.<a href="#fn:2">2</a> That makes sense: a scheduler tuned for low latency may give up some raw throughput. And in GPU-bound games the CPU scheduler has little room to matter at all.</p>
+<p>The scx_lavd developers report that it consistently reaches higher frame rates than the default scheduler in games, with fewer stutters and slightly lower power use.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> That&rsquo;s their measurement, on their workloads. We haven&rsquo;t run our own benchmarks yet.</p>
+<p>Independent results tell a more mixed story. In one third-party benchmark from June 2026 covering throughput-style workloads such as compiling and stress tests, the default scheduler (EEVDF) finished essentially tied for fastest, while scx_lavd took roughly 8% longer in total.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> That makes sense: a scheduler tuned for low latency may give up some raw throughput. And in GPU-bound games the CPU scheduler has little room to matter at all.</p>
 <p>So expect something workload-dependent: possibly smoother frame times under load, possibly nothing you can notice, and in some cases a slowdown. If you try it and it doesn&rsquo;t help, that&rsquo;s a legitimate outcome, not a bug.</p>
 <h2 id="then-why-add-it-at-all">Then why add it at all?</h2>
 <p>Because the cost of opting in is one command, and the cost of not opting in is zero. Anyone who wants to experiment with schedulers, for gaming, for desktop responsiveness or just out of curiosity, can do it on a stock kernel now, without compiling anything. And if a scheduler misbehaves, the kernel falls back by itself.</p>
@@ -388,14 +387,20 @@ $ cat /sys/kernel/sched_ext/root/ops
 <h2 id="further-technical-reading">Further technical reading</h2>
 <ul>
 <li><a href="https://docs.kernel.org/6.12/scheduler/sched-ext.html">Linux kernel documentation: Extensible Scheduler Class</a> — how sched_ext works and when it falls back</li>
-<li><a href="https://lwn.net/Articles/991205/">LWN: sched_ext and the schedulers built on it</a> — talks on scx_lavd, scx_bpfland and others</li>
+<li><a href="https://lwn.net/Articles/991205/">LWN: Sched_ext at LPC 2024</a> — overview talks on sched_ext, scx_lavd and scx_bpfland</li>
 <li><a href="https://github.com/sched-ext/scx">sched-ext/scx on GitHub</a> — the scheduler collection we package</li>
 </ul>
+<section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li><a href="https://lwn.net/Articles/991205/">LWN.net: sched_ext</a> <a href="#fn:1">↩︎</a></li>
-<li><a href="https://reddit.sentinel-team.org/posts/1u5uf16/snapshots/2026-06-19T21%3A03%3A49.564114Z">PANDEMONIUM scheduler benchmark (June 2026)</a> <a href="#fn:2">↩︎</a></li>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://lwn.net/Articles/991205/">LWN: Sched_ext at LPC 2024</a> (Jonathan Corbet, September 2024)&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://reddit.sentinel-team.org/posts/1u5uf16/snapshots/2026-06-19T21%3A03%3A49.564114Z">PANDEMONIUM scheduler benchmark (June 2026)</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
+</section>
 
 	
 
