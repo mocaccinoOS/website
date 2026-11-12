@@ -12,9 +12,9 @@ This page covers the main ways to play games on MocaccinoOS Desktop, from the St
 | Tool | Used for | Where it comes from | Install |
 |---|---|---|---|
 | Steam | Steam library, includes Gamemode and VKBasalt | Desktop repository | `sudo luet install apps/steam` |
+| Epic Games Launcher | Official Epic launcher for Linux (preview) | Desktop repository | `sudo luet install apps/epic-games-launcher` |
 | Proton GE | Custom Proton with extra patches | Community repository | `sudo luet install apps/proton-ge-custom-bin` |
 | Heroic Games Launcher | Epic Games Store and GOG | Flatpak | `flatpak install flathub com.heroicgameslauncher.hgl` |
-| Epic Games Launcher | Official Epic launcher for Linux (preview) | Luet | `sudo luet install apps/epic-games-launcher` |
 | Lutris | Game platform for non-Steam games | Community repository | `sudo luet install apps/lutris` |
 | Nvidia drivers | Proprietary Nvidia GPU drivers | Desktop repository | `sudo luet install kernel-modules/nvidia-drivers-lts` |
 | MangoHud | FPS and hardware overlay | Community repository | `sudo luet install apps/mangohud` |
@@ -84,14 +84,6 @@ $ sudo luet install apps/proton-ge-custom-bin
 
 Restart Steam afterwards. Proton GE then shows up in the compatibility settings.
 
-## Heroic Games Launcher
-
-For games from the Epic Games Store or GOG, we recommend Heroic Games Launcher. Install it using [Flatpak](/docs/desktop/software/flatpak/):
-
-```
-$ flatpak install flathub com.heroicgameslauncher.hgl
-```
-
 ## Epic Games Launcher
 
 The Epic Games Launcher for Linux is available on MocaccinoOS. It is currently in preview, so expect it to change. Install it with:
@@ -100,7 +92,15 @@ The Epic Games Launcher for Linux is available on MocaccinoOS. It is currently i
 $ sudo luet install apps/epic-games-launcher
 ```
 
-Heroic Games Launcher (above) remains an alternative for Epic Games Store and GOG games.
+Heroic Games Launcher (below) remains an alternative for Epic Games Store and GOG games.
+
+## Heroic Games Launcher
+
+For games from the Epic Games Store or GOG, we recommend Heroic Games Launcher. Install it using [Flatpak](/docs/desktop/software/flatpak/):
+
+```
+$ flatpak install flathub com.heroicgameslauncher.hgl
+```
 
 ## Lutris
 
