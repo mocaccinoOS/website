@@ -25,11 +25,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.mocaccino.org/docs/desktop/performance/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2026-11-12T12:56:09+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
+<meta property="article:modified_time" content="2026-11-12T13:03:57+01:00" /><meta property="og:site_name" content="MocaccinoOS" />
 
 <meta itemprop="name" content="Performance Optimizations">
 <meta itemprop="description" content="Optimizing MocaccinoOS for enhanced performance.">
-<meta itemprop="dateModified" content="2026-11-12T12:56:09+01:00" />
+<meta itemprop="dateModified" content="2026-11-12T13:03:57+01:00" />
 <meta itemprop="wordCount" content="1209">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Performance Optimizations"/>
@@ -154,7 +154,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ee87f8e7edc63efc2640272442ea2f1b.json"
+  data-offline-search-index-json-src="/offline-search-index.2bfe80ce044cbc90c1cba8edfd180109.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -177,7 +177,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ee87f8e7edc63efc2640272442ea2f1b.json"
+  data-offline-search-index-json-src="/offline-search-index.2bfe80ce044cbc90c1cba8edfd180109.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -380,13 +380,13 @@
       </ul>
     </li>
     <li><a href="#adjusting-vmmax_map_count-advanced-users">Adjusting vm.max_map_count (Advanced Users)</a></li>
+    <li><a href="#how-to-apply-changes">How to Apply Changes</a></li>
     <li><a href="#optional-optimizations-opt-in">Optional Optimizations (Opt-in)</a>
       <ul>
         <li><a href="#cpu-optimized-graphics-libraries-x86-64-v3">CPU-Optimized Graphics Libraries (x86-64-v3)</a></li>
         <li><a href="#sched_ext-alternative-cpu-schedulers">sched_ext (Alternative CPU Schedulers)</a></li>
       </ul>
     </li>
-    <li><a href="#how-to-apply-changes">How to Apply Changes</a></li>
     <li><a href="#faq">FAQ</a>
       <ul>
         <li><a href="#what-happens-if-i-edit-usrlibsysctld70-mocaccinoconf">What happens if I edit <code>/usr/lib/sysctl.d/70-mocaccino.conf</code>?</a></li>
@@ -688,6 +688,35 @@ sudo sysctl --system
 </table>
 <p>The game <strong>DayZ</strong> requires <code>1048576</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
 <hr>
+<h2 id="how-to-apply-changes">How to Apply Changes</h2>
+<p>After modifying <code>/etc/sysctl.d/99-custom.conf</code>:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo sysctl --system
+</code></pre></td></tr></table>
+</div>
+</div><p>Verify any setting:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sysctl &lt;setting&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>Example:</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sysctl net.ipv4.tcp_congestion_control
+</code></pre></td></tr></table>
+</div>
+</div><hr>
 <h2 id="optional-optimizations-opt-in">Optional Optimizations (Opt-in)</h2>
 <p>The following features are <strong>not enabled by default</strong>. Installing them is optional, and not installing them carries no cost or risk.</p>
 <blockquote>
@@ -825,35 +854,6 @@ cat /sys/kernel/sched_ext/root/ops
 <li>In GPU-bound games, the CPU scheduler has little room to matter.</li>
 </ul>
 <hr>
-<h2 id="how-to-apply-changes">How to Apply Changes</h2>
-<p>After modifying <code>/etc/sysctl.d/99-custom.conf</code>:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo sysctl --system
-</code></pre></td></tr></table>
-</div>
-</div><p>Verify any setting:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sysctl &lt;setting&gt;
-</code></pre></td></tr></table>
-</div>
-</div><p>Example:</p>
-<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sysctl net.ipv4.tcp_congestion_control
-</code></pre></td></tr></table>
-</div>
-</div><hr>
 <h2 id="faq">FAQ</h2>
 <h3 id="what-happens-if-i-edit-usrlibsysctld70-mocaccinoconf">What happens if I edit <code>/usr/lib/sysctl.d/70-mocaccino.conf</code>?</h3>
 <p>⚠ Do <strong>NOT</strong> edit this file. It will be overwritten during system updates. Always use <code>/etc/sysctl.d/99-custom.conf</code>.</p>
@@ -905,7 +905,7 @@ sudo sysctl --system
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified November 12, 2026: <a href="https://github.com/MocaccinoOS/website/commit/73a2135d5ea24db0f7f9626e7aacccf01b9ad6b5">Update performance documentation (73a2135)</a>
+  Last modified November 12, 2026: <a href="https://github.com/MocaccinoOS/website/commit/4a04815a288d7e8e8d4d80f7ea4344520ab97c0c">Update performance documentation (4a04815)</a>
 </div>
 
 </div>
