@@ -327,6 +327,12 @@ $ curl -sL https://github.com/noctalia-dev/noctalia/releases/latest/download/noc
 &lt;td&gt;&lt;code&gt;sudo luet install apps/steam&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;Epic Games Launcher&lt;/td&gt;
+&lt;td&gt;Official Epic launcher for Linux (preview)&lt;/td&gt;
+&lt;td&gt;Desktop repository&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;sudo luet install apps/epic-games-launcher&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;Proton GE&lt;/td&gt;
 &lt;td&gt;Custom Proton with extra patches&lt;/td&gt;
 &lt;td&gt;Community repository&lt;/td&gt;
@@ -337,12 +343,6 @@ $ curl -sL https://github.com/noctalia-dev/noctalia/releases/latest/download/noc
 &lt;td&gt;Epic Games Store and GOG&lt;/td&gt;
 &lt;td&gt;Flatpak&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;flatpak install flathub com.heroicgameslauncher.hgl&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Epic Games Launcher&lt;/td&gt;
-&lt;td&gt;Official Epic launcher for Linux (preview)&lt;/td&gt;
-&lt;td&gt;Luet&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;sudo luet install apps/epic-games-launcher&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Lutris&lt;/td&gt;
@@ -391,14 +391,14 @@ $ ln -s ~/.steam/steam/steamapps/compatdata /media/gamedisk/Steam/steamapps/
 &lt;p&gt;Proton GE is in the &lt;a href=&#34;https://www.mocaccino.org/docs/desktop/luet/repositories/#community-repository&#34;&gt;community repository&lt;/a&gt;. With that repository enabled, install it with:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ sudo luet install apps/proton-ge-custom-bin
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Restart Steam afterwards. Proton GE then shows up in the compatibility settings.&lt;/p&gt;
+&lt;h2 id=&#34;epic-games-launcher&#34;&gt;Epic Games Launcher&lt;/h2&gt;
+&lt;p&gt;The Epic Games Launcher for Linux is available on MocaccinoOS. It is currently in preview, so expect it to change. Install it with:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ sudo luet install apps/epic-games-launcher
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Heroic Games Launcher (below) remains an alternative for Epic Games Store and GOG games.&lt;/p&gt;
 &lt;h2 id=&#34;heroic-games-launcher&#34;&gt;Heroic Games Launcher&lt;/h2&gt;
 &lt;p&gt;For games from the Epic Games Store or GOG, we recommend Heroic Games Launcher. Install it using &lt;a href=&#34;https://www.mocaccino.org/docs/desktop/software/flatpak/&#34;&gt;Flatpak&lt;/a&gt;:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ flatpak install flathub com.heroicgameslauncher.hgl
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;epic-games-launcher&#34;&gt;Epic Games Launcher&lt;/h2&gt;
-&lt;p&gt;The Epic Games Launcher for Linux is available on MocaccinoOS. It is currently in preview, so expect it to change. Install it with:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ sudo luet install apps/epic-games-launcher
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Heroic Games Launcher (above) remains an alternative for Epic Games Store and GOG games.&lt;/p&gt;
-&lt;h2 id=&#34;lutris&#34;&gt;Lutris&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;lutris&#34;&gt;Lutris&lt;/h2&gt;
 &lt;p&gt;Lutris is an alternative game platform. It is in the &lt;a href=&#34;https://www.mocaccino.org/docs/desktop/luet/repositories/#community-repository&#34;&gt;community repository&lt;/a&gt;. With that repository enabled, install it with:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ sudo luet install apps/lutris
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;nvidia-drivers&#34;&gt;Nvidia drivers&lt;/h2&gt;
